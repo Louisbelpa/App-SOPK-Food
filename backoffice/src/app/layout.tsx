@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import SentryErrorBoundary from '@/components/SentryErrorBoundary'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +13,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <SentryErrorBoundary>
+          {children}
+        </SentryErrorBoundary>
+      </body>
     </html>
   )
 }

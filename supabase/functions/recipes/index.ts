@@ -82,9 +82,35 @@ function formatQty(quantity: number | null, unit: string | null): string {
 
 // ─── Main handler ─────────────────────────────────────────────────────────────
 
+// ─── Simple in-memory rate limiter (per-IP, resets on cold start) ────────────
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
+const RATE_LIMIT = 60       // requêtes max
+const RATE_WINDOW_MS = 60_000  // par minute
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateLimitMap.get(ip)
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS })
+    return true
+  }
+  if (entry.count >= RATE_LIMIT) return false
+  entry.count++
+  return true
+}
+
+const VALID_CONDITIONS = ["sopk", "endometriose", "both"]
+const VALID_MEAL_TYPES  = ["breakfast", "lunch", "dinner", "snack"]
+const PAGE_SIZE = 20
+
 Deno.serve(async (req) => {
   const corsResult = handleCors(req)
   if (corsResult) return corsResult
+
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown"
+  if (!checkRateLimit(ip)) {
+    return errorResponse("Too many requests", 429)
+  }
 
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
@@ -92,18 +118,28 @@ Deno.serve(async (req) => {
   )
 
   const url = new URL(req.url)
-  const condition = url.searchParams.get("condition")
+  const condition  = url.searchParams.get("condition")
+  const meal_type  = url.searchParams.get("meal_type")
+  const pageParam  = url.searchParams.get("page")
+  const page       = Math.max(1, parseInt(pageParam ?? "1", 10) || 1)
+  const from       = (page - 1) * PAGE_SIZE
+  const to         = from + PAGE_SIZE - 1
+
+  if (condition && !VALID_CONDITIONS.includes(condition))
+    return errorResponse("condition invalide", 400)
+  if (meal_type && !VALID_MEAL_TYPES.includes(meal_type))
+    return errorResponse("meal_type invalide", 400)
 
   let query = supabase
     .from("recipes")
-    .select("*, ingredients(*), steps(*)")
+    .select("*, ingredients(*), steps(*)", { count: "exact" })
     .order("created_at", { ascending: true })
+    .range(from, to)
 
-  if (condition) {
-    query = query.contains("conditions", [condition])
-  }
+  if (condition) query = query.contains("conditions", [condition])
+  if (meal_type) query = query.eq("meal_type", meal_type)
 
-  const { data, error } = await query
+  const { data, error, count } = await query
 
   if (error) return errorResponse(error.message)
 
@@ -140,5 +176,13 @@ Deno.serve(async (req) => {
     }
   })
 
-  return jsonResponse(recipes)
+  return jsonResponse({
+    data: recipes,
+    meta: {
+      page,
+      page_size: PAGE_SIZE,
+      total: count ?? 0,
+      total_pages: Math.ceil((count ?? 0) / PAGE_SIZE),
+    },
+  })
 })

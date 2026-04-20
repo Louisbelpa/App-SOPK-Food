@@ -30,9 +30,13 @@ private let slotLabels: [String: String] = [
 final class MealPlanStore: ObservableObject {
     @Published private(set) var week: [WeekDay] = []
     @Published private(set) var isLoading = false
-    @Published private(set) var error: String?
+    @Published var error: AppError?
 
-    private let client = SupabaseClient.shared
+    private let repository: any MealPlanRepository
+
+    init(repository: any MealPlanRepository = SupabaseMealPlanRepository()) {
+        self.repository = repository
+    }
 
     /// Load the week containing `date` (Mon–Sun). Requires familyId.
     func loadWeek(for date: Date = Date(), familyId: UUID?) async {
@@ -45,28 +49,8 @@ final class MealPlanStore: ObservableObject {
         defer { isLoading = false }
         error = nil
 
-        let dateStr = DateFormatter.isoDate.string(from: date)
-
         do {
-            struct DBEntry: Decodable {
-                let id: String
-                let familyId: String
-                let recipeId: String
-                let date: String
-                let mealType: String
-
-                enum CodingKeys: String, CodingKey {
-                    case id, date
-                    case familyId  = "family_id"
-                    case recipeId  = "recipe_id"
-                    case mealType  = "meal_type"
-                }
-            }
-            let entries: [DBEntry] = try await client.callFunction(
-                "meal-plan",
-                method: .GET,
-                query: [("family_id", fid.uuidString), ("date", dateStr)]
-            )
+            let entries = try await repository.fetchEntries(familyId: fid, date: date)
             var newWeek = buildEmptyWeek(for: date)
             for entry in entries {
                 guard let dayIdx = newWeek.firstIndex(where: { $0.id == entry.date }),
@@ -76,43 +60,35 @@ final class MealPlanStore: ObservableObject {
                 newWeek[dayIdx].meals[slotIdx].entryId = entry.id
             }
             week = newWeek
+        } catch let appError as AppError {
+            self.error = appError
+            week = buildSampleWeek(for: date)
         } catch {
-            self.error = error.localizedDescription
+            self.error = AppError(from: error)
             week = buildSampleWeek(for: date)
         }
     }
 
     func addEntry(date: Date, mealType: String, recipeId: String, familyId: UUID) async {
-        struct Body: Encodable {
-            let family_id: String
-            let recipe_id: String
-            let date: String
-            let meal_type: String
-        }
         do {
-            try await client.callFunctionVoid(
-                "meal-plan",
-                method: .POST,
-                body: Body(
-                    family_id: familyId.uuidString,
-                    recipe_id: recipeId,
-                    date: DateFormatter.isoDate.string(from: date),
-                    meal_type: mealType
-                )
-            )
+            try await repository.addEntry(familyId: familyId, recipeId: recipeId, date: date, mealType: mealType)
             await loadWeek(for: date, familyId: familyId)
-        } catch { self.error = error.localizedDescription }
+        } catch let appError as AppError {
+            self.error = appError
+        } catch {
+            self.error = AppError(from: error)
+        }
     }
 
     func removeEntry(entryId: String, date: Date, familyId: UUID) async {
         do {
-            try await client.callFunctionVoid(
-                "meal-plan",
-                method: .DELETE,
-                body: ["entry_id": entryId]
-            )
+            try await repository.removeEntry(entryId: entryId)
             await loadWeek(for: date, familyId: familyId)
-        } catch { self.error = error.localizedDescription }
+        } catch let appError as AppError {
+            self.error = appError
+        } catch {
+            self.error = AppError(from: error)
+        }
     }
 
     // MARK: - Helpers

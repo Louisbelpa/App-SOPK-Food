@@ -16,28 +16,17 @@ struct ShoppingEntry: Identifiable {
     var dbId: String?     // nil = local only
 }
 
-// Shared decodable type for DB shopping items
-private struct FetchedShoppingItem: Decodable {
-    let id: String
-    let name: String
-    let quantity: Double?
-    let unit: String?
-    let category: String?
-    let isChecked: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case id, name, quantity, unit, category
-        case isChecked = "is_checked"
-    }
-}
-
 @MainActor
 final class ShoppingStore: ObservableObject {
     @Published private(set) var categories: [ShoppingSection] = []
     @Published private(set) var isLoading = false
-    @Published private(set) var error: String?
+    @Published var error: AppError?
 
-    private let client = SupabaseClient.shared
+    private let repository: any ShoppingRepository
+
+    init(repository: any ShoppingRepository = SupabaseShoppingRepository()) {
+        self.repository = repository
+    }
 
     var totalItems: Int { categories.reduce(0) { $0 + $1.items.count } }
     var checkedItems: Int { categories.reduce(0) { $0 + $1.items.filter(\.isChecked).count } }
@@ -50,14 +39,13 @@ final class ShoppingStore: ObservableObject {
         error = nil
 
         do {
-            let items: [FetchedShoppingItem] = try await client.callFunction(
-                "shopping",
-                method: .GET,
-                query: [("family_id", fid.uuidString)]
-            )
+            let items = try await repository.fetchItems(familyId: fid)
             categories = groupItems(items)
+        } catch let appError as AppError {
+            self.error = appError
+            loadSample()
         } catch {
-            self.error = error.localizedDescription
+            self.error = AppError(from: error)
             loadSample()
         }
     }
@@ -70,15 +58,13 @@ final class ShoppingStore: ObservableObject {
                     categories[ci].items[ii].isChecked.toggle()
                     let newVal = categories[ci].items[ii].isChecked
                     if let dbId = categories[ci].items[ii].dbId {
-                        struct ToggleBody: Encodable {
-                            let item_id: String
-                            let is_checked: Bool
+                        do {
+                            try await repository.toggleItem(itemId: dbId, isChecked: newVal)
+                        } catch let appError as AppError {
+                            self.error = appError
+                        } catch {
+                            self.error = AppError(from: error)
                         }
-                        try? await client.callFunctionVoid(
-                            "shopping",
-                            method: .PATCH,
-                            body: ToggleBody(item_id: dbId, is_checked: newVal)
-                        )
                     }
                     return
                 }
@@ -93,19 +79,13 @@ final class ShoppingStore: ObservableObject {
             return
         }
         do {
-            struct NewItem: Encodable {
-                let family_id: String
-                let name: String
-                let qty: String
-                let category: String
-            }
-            try await client.callFunctionVoid(
-                "shopping",
-                method: .POST,
-                body: NewItem(family_id: fid.uuidString, name: name, qty: qty, category: category)
-            )
+            try await repository.addItem(familyId: fid, name: name, qty: qty, category: category)
             await load(familyId: fid)
-        } catch { self.error = error.localizedDescription }
+        } catch let appError as AppError {
+            self.error = appError
+        } catch {
+            self.error = AppError(from: error)
+        }
     }
 
     // MARK: - Clear checked
@@ -116,13 +96,13 @@ final class ShoppingStore: ObservableObject {
             return
         }
         do {
-            try await client.callFunctionVoid(
-                "shopping",
-                method: .DELETE,
-                body: ["family_id": fid.uuidString]
-            )
+            try await repository.clearCheckedItems(familyId: fid)
             await load(familyId: fid)
-        } catch { self.error = error.localizedDescription }
+        } catch let appError as AppError {
+            self.error = appError
+        } catch {
+            self.error = AppError(from: error)
+        }
     }
 
     // MARK: - Helpers
@@ -135,7 +115,7 @@ final class ShoppingStore: ObservableObject {
         }
     }
 
-    private func groupItems(_ items: [FetchedShoppingItem]) -> [ShoppingSection] {
+    private func groupItems(_ items: [ShoppingItemDTO]) -> [ShoppingSection] {
         var dict: [String: [ShoppingEntry]] = [:]
         for item in items {
             let cat = item.category ?? "autre"

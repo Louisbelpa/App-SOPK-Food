@@ -4,13 +4,15 @@ import Combine
 @MainActor
 final class FavoritesStore: ObservableObject {
     @Published private(set) var ids: Set<String> = []
+    @Published var error: AppError?
 
     private let localKey = "nourrir.favs.v2"
-    private let client   = SupabaseClient.shared
+    private let client: SupabaseClient
     private var userId: UUID?
 
     // MARK: - Init (charge depuis UserDefaults en attendant la synchro)
-    init() {
+    init(client: SupabaseClient = .shared) {
+        self.client = client
         if let saved = UserDefaults.standard.array(forKey: localKey) as? [String] {
             ids = Set(saved)
         }
@@ -28,7 +30,7 @@ final class FavoritesStore: ObservableObject {
             ids = Set(rows.map(\.recipe_id))
             persist()
         } catch {
-            // On garde les favoris locaux si le réseau échoue
+            // On garde les favoris locaux si le réseau échoue — pas d'erreur publiée ici
         }
     }
 
@@ -62,22 +64,30 @@ final class FavoritesStore: ObservableObject {
     private func addRemote(_ recipeId: String) async {
         guard let uid = userId else { return }
         struct Body: Encodable { let user_id: String; let recipe_id: String }
-        try? await client.requestVoid(
-            table: "favorites",
-            method: .POST,
-            body: Body(user_id: uid.uuidString, recipe_id: recipeId)
-        )
+        do {
+            try await client.requestVoid(
+                table: "favorites",
+                method: .POST,
+                body: Body(user_id: uid.uuidString, recipe_id: recipeId)
+            )
+        } catch {
+            self.error = AppError(from: error)
+        }
     }
 
     private func removeRemote(_ recipeId: String) async {
         guard let uid = userId else { return }
-        try? await client.requestVoid(
-            table: "favorites",
-            method: .DELETE,
-            query: [
-                ("user_id",   "eq.\(uid.uuidString)"),
-                ("recipe_id", "eq.\(recipeId)"),
-            ]
-        )
+        do {
+            try await client.requestVoid(
+                table: "favorites",
+                method: .DELETE,
+                query: [
+                    ("user_id",   "eq.\(uid.uuidString)"),
+                    ("recipe_id", "eq.\(recipeId)"),
+                ]
+            )
+        } catch {
+            self.error = AppError(from: error)
+        }
     }
 }
