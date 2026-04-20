@@ -13,30 +13,90 @@ function mealTypeLabel(type: string): string {
   return map[type] ?? type.charAt(0).toUpperCase() + type.slice(1)
 }
 
-function phaseForConditions(conditions: string[], mealType: string, tags: string[]): string {
-  const tagsLower = tags.map(t => t.toLowerCase())
-  if (tagsLower.some(t => t.includes("fer") || t.includes("vitamine c"))) return "Menstruelle"
-  if (tagsLower.some(t => t.includes("antioxydant") || t.includes("folate") || t.includes("protéine"))) return "Folliculaire"
-  if (tagsLower.some(t => t.includes("zinc") || t.includes("oméga"))) return "Ovulatoire"
-  if (tagsLower.some(t => t.includes("magnésium") || t.includes("anti-stress"))) return "Lutéale"
+// Matrice nutritionnelle par phase du cycle (basée sur la littérature endocrinologique)
+// Menstruelle  (j1-5)  : perte de fer → fer, B12, vit C, oméga-3 anti-prostaglandines
+// Folliculaire (j6-13) : oestrogènes montants → folates, antioxydants, protéines, vit D
+// Ovulatoire   (j14-16): pic LH/FSH → zinc, oméga-3, fibres, détox hormonale (I3C)
+// Lutéale      (j17-28): progestérone → magnésium, B6, calcium, réconfort
+function phaseForConditions(_conditions: string[], mealType: string, tags: string[]): string {
+  const tl = tags.map(t => t.toLowerCase())
+  const has = (kw: string) => tl.some(t => t.includes(kw))
+
+  const scores: Record<string, number> = {
+    Menstruelle: 0,
+    Folliculaire: 0,
+    Ovulatoire: 0,
+    Lutéale: 0,
+  }
+
+  // Menstruelle
+  if (has("riche en fer") || has("en fer")) scores.Menstruelle += 3
+  if (has("b12") || has("riche en b12"))    scores.Menstruelle += 3
+  if (has("anti-douleur"))                   scores.Menstruelle += 2
+  if (has("vitamine c"))                     scores.Menstruelle += 1
+
+  // Folliculaire
+  if (has("folate"))                         scores.Folliculaire += 3
+  if (has("antioxydant"))                    scores.Folliculaire += 2
+  if (has("protéine") || has("protéin"))     scores.Folliculaire += 2
+  if (has("vitamine d"))                     scores.Folliculaire += 2
+
+  // Ovulatoire
+  if (has("zinc"))                           scores.Ovulatoire += 3
+  if (has("oméga") || has("omega"))          scores.Ovulatoire += 2
+  if (has("riche en fibres") || has("fibre")) scores.Ovulatoire += 2
+  if (has("détox hormonale") || has("lignane")) scores.Ovulatoire += 2
+  if (has("choline"))                        scores.Ovulatoire += 1
+
+  // Lutéale
+  if (has("magnésium"))                      scores.Lutéale += 3
+  if (has("vitamine b6") || has("b6"))       scores.Lutéale += 3
+  if (has("calcium"))                        scores.Lutéale += 2
+  if (has("réconfortant"))                   scores.Lutéale += 2
+  if (has("collagène"))                      scores.Lutéale += 2
+  if (has("boost énergie") || has("boost"))  scores.Lutéale += 1
+
+  const best = Object.entries(scores).reduce((a, b) => a[1] >= b[1] ? a : b)
+  if (best[1] > 0) return best[0]
+
+  // Fallback par type de repas
   if (mealType === "breakfast") return "Folliculaire"
-  if (mealType === "snack") return "Lutéale"
+  if (mealType === "dinner")    return "Lutéale"
+  if (mealType === "snack")     return "Lutéale"
   return "Folliculaire"
 }
 
+// Score anti-inflammatoire pondéré par niveau de preuve clinique (base 4, max 10)
+// EPA/DHA : -40% TNF-α | Curcumine : -50% IL-6 | Vit D : -30% CRP
 function estimateAntiInflam(tags: string[]): number {
-  let score = 6
-  const boosts = [
-    "Anti-inflammatoire",
-    "Riche en oméga-3",
-    "Antioxydant",
-    "Soutien hépatique",
-    "Riche en magnésium",
-  ]
-  for (const t of tags) {
-    if (boosts.includes(t)) score++
+  const weights: Record<string, number> = {
+    "Riche en oméga-3":    3.0,
+    "Anti-inflammatoire":  3.0,
+    "Vitamine D":          2.5,
+    "Antioxydant":         2.0,
+    "Riche en magnésium":  2.0,
+    "Détox hormonale":     1.5,
+    "Lignanes":            1.5,
+    "Soutien hépatique":   1.5,
+    "Collagène":           1.0,
+    "Riche en fibres":     1.0,
+    "IG bas":              1.0,
+    "Zinc":                1.0,
+    "Choline":             1.0,
+    "Vitamine B6":         0.5,
+    "Folates":             0.5,
+    "Riche en fer":        0.5,
   }
-  return Math.min(score, 10)
+
+  let raw = 4
+  for (const tag of tags) raw += weights[tag] ?? 0
+
+  // Bonus synergie : oméga-3 + anti-inflammatoire (ex. saumon + curcuma)
+  const hasOmega  = tags.some(t => t.includes("oméga-3"))
+  const hasAntiI  = tags.some(t => t === "Anti-inflammatoire")
+  if (hasOmega && hasAntiI) raw += 0.5
+
+  return Math.min(10, Math.max(4, Math.round(raw)))
 }
 
 function estimateCalories(id: string, title: string, mealType: string): number {
@@ -53,18 +113,28 @@ function estimateCalories(id: string, title: string, mealType: string): number {
 }
 
 const benefitsMap: Record<string, [string, string]> = {
-  "Riche en oméga-3": ["Oméga-3 EPA/DHA", "Anti-inflammatoires majeurs"],
-  "Anti-inflammatoire": ["Anti-inflammatoire", "Réduit les cytokines pro-inflammatoires"],
-  "Riche en fer": ["Riche en fer", "Combat la fatigue menstruelle"],
-  "Riche en magnésium": ["Magnésium", "Détente musculaire et nerveuse"],
-  "IG bas": ["Index glycémique bas", "Stabilise l'insuline"],
-  "Antioxydant": ["Antioxydants", "Protège les cellules du stress oxydatif"],
-  "Riche en fibres": ["Fibres prébiotiques", "Soutient le microbiote intestinal"],
-  "Soutien hépatique": ["Soutien hépatique", "Soutient la fonction hépatique"],
-  "Zinc": ["Zinc", "Régulation hormonale et immunité"],
-  "Folates": ["Folates", "Essentiels en phase folliculaire"],
-  "Protéines": ["Protéines complètes", "Satiété et réparation cellulaire"],
-  "Sensibilité à l'insuline": ["Sensibilité à l'insuline", "Certaines études suggèrent un potentiel bénéfice de la cannelle"],
+  "Riche en oméga-3":      ["Oméga-3 EPA/DHA",          "Réduit TNF-α de 40% — anti-inflammatoire majeur"],
+  "Anti-inflammatoire":    ["Anti-inflammatoire",        "Réduit IL-6 et cytokines pro-inflammatoires"],
+  "Riche en fer":          ["Fer biodisponible",         "Combat la fatigue et l'anémie menstruelle"],
+  "Riche en magnésium":    ["Magnésium",                 "Réduit les crampes et le syndrome prémenstruel"],
+  "IG bas":                ["Index glycémique bas",      "Stabilise l'insuline — clé dans le SOPK"],
+  "Antioxydant":           ["Antioxydants",              "Protège les follicules du stress oxydatif"],
+  "Riche en fibres":       ["Fibres prébiotiques",       "Soutient le microbiote et élimine les œstrogènes"],
+  "Soutien hépatique":     ["Soutien hépatique",         "Favorise la détoxification des œstrogènes"],
+  "Détox hormonale":       ["Détox hormonale (I3C)",     "L'indole-3-carbinol élimine l'excès d'œstrogènes"],
+  "Zinc":                  ["Zinc",                      "Régule le pic de LH et soutient l'immunité"],
+  "Folates":               ["Folates",                   "Essentiels à la maturation folliculaire"],
+  "Protéines":             ["Protéines complètes",       "25-30g/repas recommandés dans le SOPK"],
+  "Vitamine D":            ["Vitamine D",                "Réduit CRP de 30% — carence fréquente dans le SOPK"],
+  "Riche en B12":          ["Vitamine B12",              "Prévient l'anémie et soutient le système nerveux"],
+  "Vitamine B6":           ["Vitamine B6",               "Réduit le SPM et régule la synthèse de progestérone"],
+  "Lignanes":              ["Lignanes",                  "Phytoestrogènes qui régulent l'excès d'œstrogènes"],
+  "Collagène":             ["Collagène",                 "Soutient les tissus et réduit l'inflammation pelvienne"],
+  "Sensibilité à l'insuline": ["Sensibilité à l'insuline", "La cannelle de Ceylan améliore la sensibilité à l'insuline"],
+  "Choline":               ["Choline",                   "Essentielle à la santé hépatique et détox des œstrogènes"],
+  "Anti-douleur":          ["Anti-douleur naturel",      "Gingembre et curcuma inhibent les prostaglandines"],
+  "Calcium":               ["Calcium",                   "Réduit les symptômes du SPM et soutient l'humeur"],
+  "Riche en protéines végétales": ["Protéines végétales", "Légumineuses : satiété et fibres prébiotiques"],
 }
 
 function benefitsFromTags(tags: string[]): { label: string; detail: string }[] {
