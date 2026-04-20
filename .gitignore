@@ -141,3 +141,21 @@ Pods/
 /fastlane/fastlane/Appfile
 /Gemfile.lock
 /enterprise/register/Gemfile.lock
+
+# ── Secrets — ne jamais commiter ─────────────────────────────────────────────
+# iOS — clés Supabase injectées via Build Settings
+Secrets.xcconfig
+*.xcconfig
+!*.xcconfig.example
+
+# Backoffice — variables d'environnement
+backoffice/.env.local
+backoffice/.env.*.local
+backoffice/.env.production
+
+# Supabase local
+.env.local
+supabase/.temp/
+
+# TypeScript build cache
+backoffice/tsconfig.tsbuildinfo
