@@ -32,14 +32,19 @@ Deno.serve(async (req) => {
   // ── POST — add item ───────────────────────────────────────────────────────
   if (req.method === "POST") {
     const body = await req.json()
-    const { family_id, name, qty, category } = body
+    const { family_id, name, quantity, unit, category } = body
     if (!family_id || !name) return errorResponse("family_id, name required", 400)
+
+    const parsedQty = quantity != null ? parseFloat(quantity) : null
+    if (parsedQty !== null && isNaN(parsedQty))
+      return errorResponse("quantity must be a number", 400)
 
     const { error } = await supabase.from("shopping_items").insert({
       family_id,
       name,
+      quantity: parsedQty,
+      unit: unit ?? null,
       category: category ?? "autre",
-      unit: qty ?? null,
     })
 
     if (error) return errorResponse(error.message)
