@@ -55,7 +55,7 @@ struct NourriHomeView: View {
 
                 featuredSection
 
-                if let featured = recipeStore.recipes.first {
+                if !recipeStore.recipes.isEmpty {
                     RecipesGridSection(
                         palette: palette,
                         recipes: Array(recipeStore.recipes.dropFirst()),
@@ -64,7 +64,6 @@ struct NourriHomeView: View {
                         onRecipeTap: onRecipeTap,
                         onFavTap: { favsStore.toggle($0) }
                     )
-                    .opacity(featured.id.isEmpty ? 0 : 1) // ensures recipes array was non-empty
                 }
             }
             .padding(.bottom, 110)
