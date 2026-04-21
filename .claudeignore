@@ -1,0 +1,26 @@
+# Dépendances
+node_modules/
+backoffice/node_modules/
+
+# Build artifacts
+backoffice/.next/
+backoffice/out/
+backoffice/tsconfig.tsbuildinfo
+
+# Xcode
+iOS/SOPK/DerivedData/
+iOS/SOPK/*.xcodeproj/project.xcworkspace/xcuserdata/
+iOS/SOPK/*.xcodeproj/xcuserdata/
+**/*.xcuserstate
+**/*.xcuserdata/
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Lock files (trop verbeux, pas utile à lire)
+package-lock.json
+backoffice/package-lock.json
+
+# Sentry auto-généré
+backoffice/.sentryclirc
