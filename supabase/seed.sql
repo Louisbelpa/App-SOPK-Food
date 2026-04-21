@@ -19,86 +19,129 @@ DECLARE
   r13 UUID := 'a1000000-0000-0000-0000-000000000013';
   r14 UUID := 'a1000000-0000-0000-0000-000000000014';
   r15 UUID := 'a1000000-0000-0000-0000-000000000015';
+  r16 UUID := 'a1000000-0000-0000-0000-000000000016';
+  r17 UUID := 'a1000000-0000-0000-0000-000000000017';
+  r18 UUID := 'a1000000-0000-0000-0000-000000000018';
+  r19 UUID := 'a1000000-0000-0000-0000-000000000019';
 BEGIN
 
 -- ────────────────────────────────────────────────────────────
 -- RECETTES
 -- ────────────────────────────────────────────────────────────
-INSERT INTO recipes (id, title, description, prep_time, cook_time, servings, conditions, meal_type, tags) VALUES
+INSERT INTO recipes (id, title, description, prep_time, cook_time, servings, conditions, meal_type, tags, allergens) VALUES
 (r1,  'Bowl curcuma, lentilles corail et épinards',
  'Un bowl chaleureux riche en fer et anti-inflammatoires naturels. Le curcuma et le gingembre frais agissent en synergie pour réduire l''inflammation pelvienne.',
  10, 15, 2, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fer','Anti-inflammatoire']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fer','Anti-inflammatoire'],
+ ARRAY[]::TEXT[]),
 
 (r2,  'Saumon sauvage, quinoa et brocoli rôti',
  'Le saumon sauvage est l''une des meilleures sources d''oméga-3 EPA/DHA. Associé au brocoli et son indole-3-carbinol, il soutient l''équilibre hormonal.',
  10, 20, 2, ARRAY['sopk','endometriose'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Détox hormonale']),
+ ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Détox hormonale'],
+ ARRAY['poisson']),
 
 (r3,  'Porridge chia, myrtilles et cannelle',
  'Un petit-déjeuner à index glycémique bas qui stabilise l''insuline dès le matin. Idéal pour les femmes atteintes de SOPK avec résistance à l''insuline.',
  5, 0, 1, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Vegan','IG bas','Riche en oméga-3']),
+ ARRAY['Sans gluten','Vegan','IG bas','Riche en oméga-3'],
+ ARRAY['fruits_a_coque']),
 
 (r4,  'Velouté de patate douce au gingembre',
  'Doux et réconfortant, ce velouté apaise les douleurs menstruelles grâce au gingembre. Le bêta-carotène de la patate douce soutient la production de progestérone.',
  10, 25, 3, ARRAY['endometriose','sopk'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Vegan','Réconfortant','Anti-douleur']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Réconfortant','Anti-douleur'],
+ ARRAY[]::TEXT[]),
 
 (r5,  'Salade tiède pois chiches, avocat et grenade',
  'Une salade complète riche en phytoestrogènes équilibrants et en graisses saines. La grenade est l''une des rares sources alimentaires de punicalagines ultra-antioxydants.',
  15, 5, 2, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fibres']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fibres'],
+ ARRAY['sesame']),
 
 (r6,  'Smoothie anti-fatigue cacao et banane',
  'Le cacao cru est l''aliment le plus riche en magnésium : parfait en phase lutéale pour lutter contre la fatigue et les crampes.',
  5, 0, 1, ARRAY['sopk','endometriose'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Riche en magnésium','Boost énergie']),
+ ARRAY['Sans gluten','Vegan','Riche en magnésium','Vitamine B6','Lignanes','Boost énergie'],
+ ARRAY['arachides']),
 
 (r7,  'Tartines de seigle, sardines et concombre',
  'Les sardines en boîte sont une source économique et puissante d''oméga-3. Associées aux fibres du seigle, elles constituent un snack anti-inflammatoire complet.',
  10, 0, 1, ARRAY['sopk','endometriose'], 'snack',
- ARRAY['Riche en oméga-3','Calcium','Sans lactose']),
+ ARRAY['Riche en oméga-3','Calcium','Sans lactose','Riche en B12'],
+ ARRAY['gluten','poisson']),
 
 (r8,  'Curry de pois chiches au lait de coco et épinards',
  'Ce curry végétalien regorge de curcuma, cumin et coriandre — un trio anti-inflammatoire puissant. Les pois chiches apportent des protéines et des fibres prébiotiques.',
  15, 20, 3, ARRAY['sopk','endometriose'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Vegan','Riche en protéines végétales']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Riche en protéines végétales'],
+ ARRAY[]::TEXT[]),
 
 (r9,  'Granola maison aux noix et graines',
  'Un granola sans sucre ajouté, riche en oméga-3 (noix), zinc (graines de courge) et magnésium (noix du Brésil). Préparez-en une grande quantité pour toute la semaine.',
  10, 20, 6, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Sans sucre ajouté','Zinc','Magnésium']),
+ ARRAY['Sans gluten','Vegan','Sans sucre ajouté','Zinc','Magnésium'],
+ ARRAY['fruits_a_coque','gluten']),
 
 (r10, 'Salade de roquette, noix et poires rôties',
  'Les noix sont une des meilleures sources végétales d''oméga-3 et d''acide ellagique. Les poires rôties au miel de thym caramélisent sans sucre raffiné.',
  10, 15, 2, ARRAY['endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Végétarien','Antioxydant']),
+ ARRAY['Sans gluten','Sans lactose','Végétarien','Antioxydant'],
+ ARRAY['fruits_a_coque','lait']),
 
 (r11, 'Filet de truite, asperges et citron confit',
  'La truite arc-en-ciel est riche en oméga-3 tout comme le saumon, et souvent plus accessible. Les asperges sont diurétiques et riches en folates — importantes en phase folliculaire.',
  10, 15, 2, ARRAY['endometriose','sopk'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Folates']),
+ ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Folates'],
+ ARRAY['poisson']),
 
 (r12, 'Bowl açaï, banane et fruits rouges',
  'L''açaï est l''un des fruits les plus riches en antioxydants. Ce bowl rafraîchissant stabilise la glycémie grâce aux fruits entiers et aux graines de chia.',
  10, 0, 1, ARRAY['sopk','endometriose'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Antioxydant','IG bas']),
+ ARRAY['Sans gluten','Vegan','Antioxydant','IG bas'],
+ ARRAY['gluten']),
 
 (r13, 'Omelette aux herbes, champignons et avocat',
  'Les œufs apportent de la choline, essentielle à la santé hépatique et à la détoxification des œstrogènes. Les champignons sont riches en vitamine D.',
  5, 10, 1, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Sans lactose','Végétarien','Protéines','Choline']),
+ ARRAY['Sans gluten','Sans lactose','Végétarien','Protéines','Choline','Vitamine D'],
+ ARRAY['oeufs']),
 
 (r14, 'Taboulé de chou-fleur au persil et menthe',
  'Le chou-fleur râpé remplace le boulgour pour un taboulé sans gluten et à IG quasi nul. Le persil frais est exceptionnellement riche en vitamine C et en fer.',
  20, 0, 3, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Vegan','Cru','Riche en vitamine C']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Cru','Riche en vitamine C','Détox hormonale'],
+ ARRAY[]::TEXT[]),
 
 (r15, 'Compote pomme-cannelle et crème d''amande',
  'Une douceur saine pour combler les envies sucrées sans sucre raffiné. La cannelle de Ceylan est cliniquement reconnue pour améliorer la sensibilité à l''insuline dans le SOPK.',
  5, 15, 2, ARRAY['sopk'], 'snack',
- ARRAY['Sans gluten','Vegan','Sans sucre ajouté','IG bas','Sensibilité à l''insuline']);
+ ARRAY['Sans gluten','Vegan','Sans sucre ajouté','IG bas','Sensibilité à l''insuline'],
+ ARRAY['fruits_a_coque']),
+
+(r16, 'Bouillon d''os doré au gingembre et curcuma',
+ 'Le bouillon d''os mijote 48h pour libérer collagène, glycine et minéraux. Le gingembre et le curcuma amplifient ses effets anti-inflammatoires — idéal pour apaiser les douleurs pelviennes de l''endométriose.',
+ 15, 240, 4, ARRAY['sopk','endometriose'], 'dinner',
+ ARRAY['Sans gluten','Sans lactose','Anti-inflammatoire','Collagène','Soutien hépatique','Anti-douleur'],
+ ARRAY[]::TEXT[]),
+
+(r17, 'Buddha bowl menstruelle : crevettes, betterave et quinoa',
+ 'Conçu spécifiquement pour la phase menstruelle : les crevettes apportent fer héminique + B12, la betterave des folates, le quinoa des protéines complètes. Ce bowl couvre 60% des besoins en fer d''une journée.',
+ 15, 15, 2, ARRAY['sopk','endometriose'], 'lunch',
+ ARRAY['Sans gluten','Sans lactose','Riche en fer','Folates','Riche en B12','Protéines'],
+ ARRAY['fruits_de_mer','sesame']),
+
+(r18, 'Smoothie lutéal cacao, banane et beurre d''amande',
+ 'Formulé pour la phase lutéale : la banane et la levure nutritionnelle sont parmi les meilleures sources de vitamine B6 — prouvée pour réduire le syndrome prémenstruel. Le cacao cru apporte magnésium et tryptophane précurseur de sérotonine.',
+ 5, 0, 1, ARRAY['sopk','endometriose'], 'breakfast',
+ ARRAY['Sans gluten','Vegan','Riche en magnésium','Vitamine B6','Boost énergie','IG bas'],
+ ARRAY['fruits_a_coque']),
+
+(r19, 'Œufs cocotte aux champignons shiitake et herbes',
+ 'Les champignons shiitake sont l''une des rares sources alimentaires de vitamine D — déficience quasi-systématique dans le SOPK. Les 3 œufs apportent 18g de protéines de haute valeur biologique et de la choline pour la détoxification hépatique des œstrogènes.',
+ 10, 12, 1, ARRAY['sopk'], 'breakfast',
+ ARRAY['Sans gluten','Sans lactose','Végétarien','Vitamine D','Zinc','Protéines','Choline'],
+ ARRAY['oeufs']);
 
 -- ────────────────────────────────────────────────────────────
 -- INGRÉDIENTS
@@ -206,7 +249,40 @@ INSERT INTO ingredients (recipe_id, name, quantity, unit, category) VALUES
 (r15,'Pommes',4,'','fruits'),
 (r15,'Cannelle de Ceylan',1,'c. à c.','épices'),
 (r15,'Crème d''amande',4,'c. à s.','matières grasses'),
-(r15,'Vanille en poudre',1,'pincée','épices');
+(r15,'Vanille en poudre',1,'pincée','épices'),
+-- r16 – Bouillon d'os
+(r16,'Os à moelle de bœuf',500,'g','protéines'),
+(r16,'Gingembre frais',5,'cm','épices'),
+(r16,'Curcuma frais râpé',2,'c. à c.','épices'),
+(r16,'Ail',4,'gousses','légumes'),
+(r16,'Oignon',1,'','légumes'),
+(r16,'Carottes',2,'','légumes'),
+(r16,'Céleri branche',2,'branches','légumes'),
+(r16,'Poivre noir en grains',1,'c. à c.','épices'),
+(r16,'Vinaigre de cidre',2,'c. à s.','autre'),
+-- r17 – Buddha bowl menstruelle
+(r17,'Crevettes sauvages décortiquées',200,'g','protéines'),
+(r17,'Betterave cuite',200,'g','légumes'),
+(r17,'Quinoa',80,'g','céréales'),
+(r17,'Épinards frais',60,'g','légumes'),
+(r17,'Graines de courge',20,'g','épices'),
+(r17,'Citron',1,'','fruits'),
+(r17,'Huile d''olive extra vierge',2,'c. à s.','matières grasses'),
+(r17,'Graines de sésame',1,'c. à s.','épices'),
+-- r18 – Smoothie lutéal
+(r18,'Banane bien mûre',1,'','fruits'),
+(r18,'Cacao cru en poudre',2,'c. à s.','épices'),
+(r18,'Beurre d''amande',2,'c. à s.','matières grasses'),
+(r18,'Lait de noisette',250,'ml','produits laitiers'),
+(r18,'Levure nutritionnelle',1,'c. à s.','épices'),
+(r18,'Cannelle de Ceylan',0.5,'c. à c.','épices'),
+-- r19 – Œufs cocotte champignons
+(r19,'Œufs bio',3,'','protéines'),
+(r19,'Champignons shiitake',100,'g','légumes'),
+(r19,'Champignons de Paris',50,'g','légumes'),
+(r19,'Ail',1,'gousse','légumes'),
+(r19,'Herbes de Provence',1,'c. à c.','épices'),
+(r19,'Huile d''olive',1,'c. à s.','matières grasses');
 
 -- ────────────────────────────────────────────────────────────
 -- ÉTAPES
@@ -292,7 +368,28 @@ INSERT INTO steps (recipe_id, position, instruction) VALUES
 (r15,1,'Éplucher et couper les pommes en cubes.'),
 (r15,2,'Cuire à feu doux avec 2 c. à s. d''eau et la cannelle pendant 15 min.'),
 (r15,3,'Écraser grossièrement à la fourchette (ou mixer pour une texture lisse).'),
-(r15,4,'Servir tiède avec une cuillerée de crème d''amande.');
+(r15,4,'Servir tiède avec une cuillerée de crème d''amande.'),
+-- r16 – Bouillon d'os
+(r16,1,'Faire rôtir les os 30 min au four à 200 °C pour les colorer et développer les arômes.'),
+(r16,2,'Transférer les os dans une grande cocotte, couvrir d''eau froide. Ajouter le vinaigre de cidre (libère les minéraux) et laisser reposer 30 min.'),
+(r16,3,'Ajouter oignon, carottes, céleri, ail, gingembre, curcuma et poivre. Porter à frémissement.'),
+(r16,4,'Mijoter à feu très doux avec couvercle entrouvert pendant au moins 4h (idéalement 12-24h). Écumer régulièrement.'),
+(r16,5,'Filtrer, saler légèrement. Consommer chaud en entrée ou utiliser comme base de soupe.'),
+-- r17 – Buddha bowl menstruelle
+(r17,1,'Cuire le quinoa 12 min dans deux fois son volume d''eau salée. Laisser reposer 5 min puis égrener.'),
+(r17,2,'Poêler les crevettes à feu vif dans l''huile d''olive, 2 min de chaque côté. Déglacer avec le jus de citron.'),
+(r17,3,'Couper la betterave en cubes ou en lamelles.'),
+(r17,4,'Dresser dans un bol : lit d''épinards frais, quinoa, betterave, crevettes.'),
+(r17,5,'Parsemer de graines de courge et de sésame. Arroser d''un filet d''huile d''olive.'),
+-- r18 – Smoothie lutéal
+(r18,1,'Éplucher et congeler la banane la veille pour une texture plus crémeuse.'),
+(r18,2,'Placer tous les ingrédients dans un blender : banane, cacao, beurre d''amande, lait de noisette, levure nutritionnelle, cannelle.'),
+(r18,3,'Mixer 45 secondes à pleine puissance jusqu''à consistance lisse. Servir immédiatement.'),
+-- r19 – Œufs cocotte champignons
+(r19,1,'Préchauffer le four à 180 °C. Beurrer ou huiler légèrement des ramequins.'),
+(r19,2,'Émincer les champignons, les poêler avec l''ail 5 min dans l''huile d''olive jusqu''à évaporation de l''eau. Assaisonner.'),
+(r19,3,'Répartir les champignons dans les ramequins. Casser les œufs par-dessus délicatement.'),
+(r19,4,'Saupoudrer d''herbes de Provence. Cuire au bain-marie au four 10-12 min (jaune encore coulant). Servir aussitôt.');
 
-RAISE NOTICE 'Seed terminé : 15 recettes insérées.';
+RAISE NOTICE 'Seed terminé : 19 recettes insérées.';
 END $$;

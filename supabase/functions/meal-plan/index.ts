@@ -1,9 +1,16 @@
 import { createClient } from "npm:@supabase/supabase-js@2"
-import { handleCors, jsonResponse, errorResponse } from "../_shared/cors.ts"
+import { handleCors, jsonResponse, errorResponse, checkRateLimit, getClientIp } from "../_shared/cors.ts"
+
+const VALID_MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"]
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
+
+function isValidUuid(v: string): boolean { return UUID_RE.test(v) }
+function isValidDate(v: string): boolean { return DATE_RE.test(v) && !isNaN(Date.parse(v)) }
 
 function mondayOf(dateStr: string): string {
   const d = new Date(dateStr)
-  const day = d.getUTCDay() || 7 // Sun=0 → 7
+  const day = d.getUTCDay() || 7
   d.setUTCDate(d.getUTCDate() - (day - 1))
   return d.toISOString().slice(0, 10)
 }
@@ -18,8 +25,14 @@ Deno.serve(async (req) => {
   const corsResult = handleCors(req)
   if (corsResult) return corsResult
 
-  // Forward user JWT so RLS applies
+  const ip = getClientIp(req)
+  if (!checkRateLimit(ip, 30, 60_000))
+    return errorResponse("Too many requests", 429)
+
   const authHeader = req.headers.get("Authorization") ?? ""
+  if (!authHeader.startsWith("Bearer "))
+    return errorResponse("Authorization requis", 401)
+
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
     Deno.env.get("SUPABASE_ANON_KEY")!,
@@ -32,7 +45,10 @@ Deno.serve(async (req) => {
     const familyId = url.searchParams.get("family_id")
     const date = url.searchParams.get("date") ?? new Date().toISOString().slice(0, 10)
 
-    if (!familyId) return errorResponse("family_id required", 400)
+    if (!familyId || !isValidUuid(familyId))
+      return errorResponse("family_id UUID valide requis", 400)
+    if (!isValidDate(date))
+      return errorResponse("date doit être au format YYYY-MM-DD", 400)
 
     const monday = mondayOf(date)
     const sunday = sundayOf(monday)
@@ -52,10 +68,19 @@ Deno.serve(async (req) => {
 
   // ── POST — add entry ──────────────────────────────────────────────────────
   if (req.method === "POST") {
-    const body = await req.json()
+    const body = await req.json().catch(() => null)
+    if (!body) return errorResponse("Body JSON invalide", 400)
+
     const { family_id, recipe_id, date, meal_type } = body
-    if (!family_id || !recipe_id || !date || !meal_type)
-      return errorResponse("family_id, recipe_id, date, meal_type required", 400)
+
+    if (!family_id || !isValidUuid(family_id))
+      return errorResponse("family_id UUID valide requis", 400)
+    if (!recipe_id || !isValidUuid(recipe_id))
+      return errorResponse("recipe_id UUID valide requis", 400)
+    if (!date || !isValidDate(date))
+      return errorResponse("date doit être au format YYYY-MM-DD", 400)
+    if (!meal_type || !VALID_MEAL_TYPES.includes(meal_type))
+      return errorResponse(`meal_type doit être parmi : ${VALID_MEAL_TYPES.join(", ")}`, 400)
 
     const { error } = await supabase
       .from("meal_plan_entries")
@@ -67,9 +92,12 @@ Deno.serve(async (req) => {
 
   // ── DELETE — remove entry ─────────────────────────────────────────────────
   if (req.method === "DELETE") {
-    const body = await req.json()
+    const body = await req.json().catch(() => null)
+    if (!body) return errorResponse("Body JSON invalide", 400)
+
     const { entry_id } = body
-    if (!entry_id) return errorResponse("entry_id required", 400)
+    if (!entry_id || !isValidUuid(entry_id))
+      return errorResponse("entry_id UUID valide requis", 400)
 
     const { error } = await supabase
       .from("meal_plan_entries")

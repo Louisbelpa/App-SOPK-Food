@@ -258,6 +258,7 @@ enum SampleData {
             calories: r.calories,
             conditions: ["sopk", "endometriose"],
             tags: r.tags,
+            allergens: [],
             phase: r.phase,
             description: "",
             benefits: r.benefits.map { AppRecipe.Benefit(label: $0.label, detail: $0.detail) },

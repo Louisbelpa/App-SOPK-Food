@@ -9,10 +9,11 @@ final class CycleStore: ObservableObject {
 
     private let lastPeriodKey  = "cycle_last_period"
     private let cycleLengthKey = "cycle_length"
-    private let client = SupabaseClient.shared
+    private let client: SupabaseClient
     private var userId: UUID?
 
-    init() {
+    init(client: SupabaseClient = .shared) {
+        self.client = client
         if let ts = UserDefaults.standard.object(forKey: lastPeriodKey) as? Double {
             lastPeriodDate = Date(timeIntervalSince1970: ts)
         }
@@ -69,9 +70,11 @@ final class CycleStore: ObservableObject {
     var isConfigured: Bool { lastPeriodDate != nil }
 
     static func phaseFor(day: Int, length: Int) -> String {
-        if day <= 5                           { return "Menstruelle" }
-        if day <= Int(Double(length) * 0.46)  { return "Folliculaire" }
-        if day <= Int(Double(length) * 0.53)  { return "Ovulatoire" }
+        // La phase lutéale dure toujours 14j → ovulation = cycleLength - 14
+        let ovulationDay = max(length - 14, 7)
+        if day <= 5                    { return "Menstruelle" }
+        if day < ovulationDay - 1      { return "Folliculaire" }
+        if day <= ovulationDay + 2     { return "Ovulatoire" }
         return "Lutéale"
     }
 

@@ -2,22 +2,18 @@ import SwiftUI
 
 @main
 struct SOPKApp: App {
-    @StateObject private var authViewModel = AuthViewModel()
-    @StateObject private var favsStore = FavoritesStore()
-    @StateObject private var recipeStore = RecipeStore()
-    @StateObject private var cycleStore = CycleStore()
-    @StateObject private var mealPlanStore = MealPlanStore()
-    @StateObject private var shoppingStore = ShoppingStore()
+    // All stores are vended by the DI container so they can be replaced in tests.
+    private let container = AppContainer.shared
 
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(authViewModel)
-                .environmentObject(favsStore)
-                .environmentObject(recipeStore)
-                .environmentObject(cycleStore)
-                .environmentObject(mealPlanStore)
-                .environmentObject(shoppingStore)
+                .environmentObject(container.authViewModel)
+                .environmentObject(container.favoritesStore)
+                .environmentObject(container.recipeStore)
+                .environmentObject(container.cycleStore)
+                .environmentObject(container.mealPlanStore)
+                .environmentObject(container.shoppingStore)
         }
     }
 }
@@ -28,10 +24,13 @@ struct RootView: View {
     @EnvironmentObject var cycleStore: CycleStore
     @AppStorage("onboarding_completed") private var onboardingCompleted = false
     @AppStorage("family_setup_skipped") private var familySetupSkipped = false
+    @AppStorage("hasSeenDisclaimer") private var hasSeenDisclaimer = false
 
     var body: some View {
         Group {
-            if authViewModel.isLoading {
+            if !hasSeenDisclaimer {
+                DisclaimerView()
+            } else if authViewModel.isLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if authViewModel.currentUser == nil {

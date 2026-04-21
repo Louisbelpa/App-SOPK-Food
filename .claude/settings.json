@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)",
+      "Bash(git branch*)",
+      "Bash(ls*)",
+      "Bash(find*)",
+      "Bash(cat*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(wc*)",
+      "Bash(mkdir*)",
+      "Bash(npm run lint*)",
+      "Bash(npm run build*)",
+      "Bash(npx tsc*)",
+      "Bash(npm ci)",
+      "Bash(supabase start)",
+      "Bash(supabase stop)",
+      "Bash(supabase status)",
+      "Bash(supabase db reset)",
+      "Bash(supabase db push)",
+      "Bash(supabase functions serve*)",
+      "Bash(deno check*)",
+      "Bash(swiftlint*)"
+    ]
+  }
+}

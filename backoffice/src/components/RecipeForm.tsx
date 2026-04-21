@@ -9,6 +9,22 @@ interface Props {
   onSuccess: () => void
 }
 
+interface FormErrors {
+  title?: string
+  prepTime?: string
+  cookTime?: string
+  conditions?: string
+}
+
+function validatePositiveInteger(value: string, fieldName: string): string | undefined {
+  if (value === '') return undefined
+  const num = Number(value)
+  if (!Number.isInteger(num) || num < 0) {
+    return `${fieldName} doit être un entier positif ou nul`
+  }
+  return undefined
+}
+
 export default function RecipeForm({ recipe, onSuccess }: Props) {
   const isEdit = !!recipe
 
@@ -30,9 +46,46 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
   )
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState<FormErrors>({})
+  const [touched, setTouched] = useState<Record<string, boolean>>({})
+
+  function validateForm(): FormErrors {
+    const errors: FormErrors = {}
+
+    if (!title.trim()) {
+      errors.title = 'Le titre est obligatoire'
+    } else if (title.trim().length < 3) {
+      errors.title = 'Le titre doit contenir au moins 3 caractères'
+    }
+
+    const prepTimeError = validatePositiveInteger(prepTime, 'Le temps de préparation')
+    if (prepTimeError) errors.prepTime = prepTimeError
+
+    const cookTimeError = validatePositiveInteger(cookTime, 'Le temps de cuisson')
+    if (cookTimeError) errors.cookTime = cookTimeError
+
+    if (conditions.length === 0) {
+      errors.conditions = 'Sélectionnez au moins une condition'
+    }
+
+    return errors
+  }
+
+  function handleBlur(field: string) {
+    setTouched(prev => ({ ...prev, [field]: true }))
+    const errors = validateForm()
+    setFieldErrors(errors)
+  }
 
   function toggleCondition(c: string) {
-    setConditions(prev => prev.includes(c) ? prev.filter(x => x !== c) : [...prev, c])
+    const next = conditions.includes(c) ? conditions.filter(x => x !== c) : [...conditions, c]
+    setConditions(next)
+    if (touched.conditions) {
+      setFieldErrors(prev => ({
+        ...prev,
+        conditions: next.length === 0 ? 'Sélectionnez au moins une condition' : undefined,
+      }))
+    }
   }
 
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -54,6 +107,13 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError('')
+
+    // Mark all validatable fields as touched and run full validation
+    setTouched({ title: true, prepTime: true, cookTime: true, conditions: true })
+    const errors = validateForm()
+    setFieldErrors(errors)
+    if (Object.keys(errors).length > 0) return
+
     setSaving(true)
 
     try {
@@ -114,10 +174,31 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
         <div>
           <label className="block text-sm font-medium mb-1">Titre *</label>
           <input
-            type="text" value={title} onChange={e => setTitle(e.target.value)} required
-            className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
+            type="text"
+            value={title}
+            onChange={e => {
+              setTitle(e.target.value)
+              if (touched.title) {
+                const val = e.target.value.trim()
+                setFieldErrors(prev => ({
+                  ...prev,
+                  title: !val
+                    ? 'Le titre est obligatoire'
+                    : val.length < 3
+                    ? 'Le titre doit contenir au moins 3 caractères'
+                    : undefined,
+                }))
+              }
+            }}
+            onBlur={() => handleBlur('title')}
+            className={`w-full px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 ${
+              fieldErrors.title ? 'border-red-400' : 'border-gray-200'
+            }`}
             placeholder="Ex : Smoothie anti-inflammatoire au curcuma"
           />
+          {fieldErrors.title && (
+            <p className="mt-1 text-xs text-red-500">{fieldErrors.title}</p>
+          )}
         </div>
 
         <div>
@@ -131,13 +212,53 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
         <div className="grid grid-cols-3 gap-3">
           <div>
             <label className="block text-sm font-medium mb-1">Prép. (min)</label>
-            <input type="number" value={prepTime} onChange={e => setPrepTime(e.target.value)} min="0"
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500" />
+            <input
+              type="number"
+              value={prepTime}
+              onChange={e => {
+                setPrepTime(e.target.value)
+                if (touched.prepTime) {
+                  setFieldErrors(prev => ({
+                    ...prev,
+                    prepTime: validatePositiveInteger(e.target.value, 'Le temps de préparation'),
+                  }))
+                }
+              }}
+              onBlur={() => handleBlur('prepTime')}
+              min="0"
+              step="1"
+              className={`w-full px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                fieldErrors.prepTime ? 'border-red-400' : 'border-gray-200'
+              }`}
+            />
+            {fieldErrors.prepTime && (
+              <p className="mt-1 text-xs text-red-500">{fieldErrors.prepTime}</p>
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Cuisson (min)</label>
-            <input type="number" value={cookTime} onChange={e => setCookTime(e.target.value)} min="0"
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500" />
+            <input
+              type="number"
+              value={cookTime}
+              onChange={e => {
+                setCookTime(e.target.value)
+                if (touched.cookTime) {
+                  setFieldErrors(prev => ({
+                    ...prev,
+                    cookTime: validatePositiveInteger(e.target.value, 'Le temps de cuisson'),
+                  }))
+                }
+              }}
+              onBlur={() => handleBlur('cookTime')}
+              min="0"
+              step="1"
+              className={`w-full px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 ${
+                fieldErrors.cookTime ? 'border-red-400' : 'border-gray-200'
+              }`}
+            />
+            {fieldErrors.cookTime && (
+              <p className="mt-1 text-xs text-red-500">{fieldErrors.cookTime}</p>
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Portions</label>
@@ -156,7 +277,7 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
 
         <div>
           <label className="block text-sm font-medium mb-2">Conditions ciblées *</label>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap">
             {CONDITIONS.map(c => (
               <button key={c} type="button" onClick={() => toggleCondition(c)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${conditions.includes(c) ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
@@ -164,6 +285,9 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
               </button>
             ))}
           </div>
+          {fieldErrors.conditions && (
+            <p className="mt-2 text-xs text-red-500">{fieldErrors.conditions}</p>
+          )}
         </div>
 
         <div>
@@ -243,7 +367,7 @@ export default function RecipeForm({ recipe, onSuccess }: Props) {
       {error && <p className="text-red-500 text-sm">{error}</p>}
 
       <div className="flex gap-3">
-        <button type="submit" disabled={saving || !title || conditions.length === 0}
+        <button type="submit" disabled={saving}
           className="flex-1 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-semibold transition-colors disabled:opacity-50">
           {saving ? 'Enregistrement…' : isEdit ? 'Mettre à jour' : 'Créer la recette'}
         </button>

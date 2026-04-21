@@ -12,6 +12,8 @@ struct NourriHomeView: View {
     @EnvironmentObject private var cycleStore: CycleStore
     @State private var showProfile = false
 
+    // MARK: - Derived properties
+
     private var todayString: String {
         let f = DateFormatter()
         f.dateFormat = "EEEE d MMMM"
@@ -28,7 +30,7 @@ struct NourriHomeView: View {
         (name: cycleStore.currentPhase, day: cycleStore.currentDay, of: cycleStore.cycleLength)
     }
 
-    // Derive collections from recipe categories
+    /// Derive collections from recipe categories.
     private var collections: [(name: String, seed: Int, count: Int)] {
         let grouped = Dictionary(grouping: recipeStore.recipes, by: \.category)
         return grouped.sorted { $0.key < $1.key }.map { key, recipes in
@@ -36,13 +38,33 @@ struct NourriHomeView: View {
         }
     }
 
+    // MARK: - Body
+
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
-                header
-                featuredHero
-                recipeGrid
-                collectionsSection
+                HomeHeaderView(
+                    palette: palette,
+                    firstName: firstName,
+                    todayString: todayString,
+                    phase: phase,
+                    phaseAdvice: cycleStore.phaseAdvice,
+                    isCycleConfigured: cycleStore.isConfigured,
+                    onProfileTap: { showProfile = true }
+                )
+
+                featuredSection
+
+                if !recipeStore.recipes.isEmpty {
+                    RecipesGridSection(
+                        palette: palette,
+                        recipes: Array(recipeStore.recipes.dropFirst()),
+                        collections: collections,
+                        favIds: favsStore.ids,
+                        onRecipeTap: onRecipeTap,
+                        onFavTap: { favsStore.toggle($0) }
+                    )
+                }
             }
             .padding(.bottom, 110)
         }
@@ -52,230 +74,24 @@ struct NourriHomeView: View {
         }
     }
 
-    // MARK: - Header
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(todayString)
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundColor(palette.inkMuted)
-                        .kerning(0.3)
-                        .textCase(.uppercase)
-                    Text("Bonjour ") + Text(firstName.isEmpty ? "" : firstName).italic().foregroundColor(palette.sageDeep) + Text("")
-                }
-                .font(.custom("Fraunces", size: 30).weight(.regular))
-                .foregroundColor(palette.ink)
+    // MARK: - Featured section (loading / empty / hero)
 
-                Spacer()
-
-                Button { showProfile = true } label: {
-                    Image(systemName: "person")
-                        .font(.system(size: 20, weight: .regular))
-                        .foregroundColor(palette.ink)
-                        .frame(width: 42, height: 42)
-                        .background(palette.surface)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(palette.line, lineWidth: 1))
-                }
-            }
-
-            // Cycle phase banner
-            HStack(spacing: 14) {
-                CycleDial(day: phase.day, of: phase.of, palette: palette)
-                    .frame(width: 56, height: 56)
-
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Phase \(phase.name.lowercased()) · J\(phase.day)")
-                        .font(.system(size: 11, weight: .semibold))
-                        .foregroundColor(palette.inkMuted)
-                        .kerning(0.4)
-                        .textCase(.uppercase)
-                    Text(cycleStore.isConfigured ? cycleStore.phaseAdvice : "Configurez votre cycle pour des recommandations personnalisées")
-                        .font(.custom("Fraunces", size: 17))
-                        .foregroundColor(palette.ink)
-                        .lineSpacing(2)
-                }
-                Spacer()
-            }
-            .padding(16)
-            .background(palette.cardAlt)
-            .clipShape(RoundedRectangle(cornerRadius: 22))
-        }
-        .padding(.top, 70)
-        .padding(.horizontal, 20)
-        .padding(.bottom, 8)
-    }
-
-    // MARK: - Section title
-    private var sectionHeader: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text("Pour votre phase")
-                .font(.custom("Fraunces", size: 22).weight(.medium))
-                .foregroundColor(palette.ink)
-                .kerning(-0.3)
-            Spacer()
-            Button { onTabChange(.search) } label: {
-                Text("Tout voir")
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(palette.sageDeep)
-            }
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 8)
-        .padding(.bottom, 4)
-    }
-
-    // MARK: - Featured hero
-    private var featuredHero: some View {
+    @ViewBuilder
+    private var featuredSection: some View {
         if recipeStore.isLoading && recipeStore.recipes.isEmpty {
-            return AnyView(
-                ProgressView()
-                    .frame(maxWidth: .infinity)
-                    .padding(.top, 60)
+            FeaturedRecipePlaceholder(palette: palette, isLoading: true)
+        } else if let featured = recipeStore.recipes.first {
+            FeaturedRecipeSection(
+                palette: palette,
+                featured: featured,
+                isFav: favsStore.contains(featured.id),
+                onRecipeTap: onRecipeTap,
+                onFavTap: { favsStore.toggle($0) },
+                onSeeAllTap: { onTabChange(.search) }
             )
+        } else {
+            FeaturedRecipePlaceholder(palette: palette, isLoading: false)
         }
-        guard let featured = recipeStore.recipes.first else {
-            return AnyView(
-                VStack(spacing: 12) {
-                    Image(systemName: "fork.knife")
-                        .font(.system(size: 36))
-                        .foregroundColor(palette.inkMuted)
-                    Text("Aucune recette disponible")
-                        .font(.custom("Fraunces", size: 18))
-                        .foregroundColor(palette.inkSoft)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.top, 60)
-            )
-        }
-        return AnyView(VStack(spacing: 0) {
-            sectionHeader
-
-            Button { onRecipeTap(featured.id) } label: {
-                ZStack(alignment: .bottom) {
-                    RecipePlateView(seed: featured.seed, palette: palette)
-                        .aspectRatio(4/3, contentMode: .fill)
-
-                    // gradient overlay
-                    LinearGradient(
-                        colors: [.black.opacity(0.6), .clear],
-                        startPoint: .bottom, endPoint: .init(x: 0.5, y: 0.45)
-                    )
-
-                    VStack(alignment: .leading, spacing: 8) {
-                        Spacer()
-                        HStack {
-                            HStack(spacing: 4) {
-                                Image(systemName: "sparkle")
-                                    .font(.system(size: 10, weight: .semibold))
-                                Text("Recommandé")
-                                    .font(.system(size: 11, weight: .medium))
-                            }
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 9).padding(.vertical, 4)
-                            .background(.white.opacity(0.2))
-                            .clipShape(Capsule())
-                            .background(Capsule().fill(.ultraThinMaterial).opacity(0.6))
-                            Spacer()
-
-                            // Fav button
-                            Button { toggleFav(featured.id) } label: {
-                                Image(systemName: favsStore.contains(featured.id) ? "heart.fill" : "heart")
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.white)
-                                    .frame(width: 40, height: 40)
-                                    .background(.white.opacity(0.25))
-                                    .clipShape(Circle())
-                                    .background(Circle().fill(.ultraThinMaterial).opacity(0.6))
-                            }
-                        }
-                        .padding(.horizontal, 16)
-
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(featured.name)
-                                .font(.custom("Fraunces", size: 22).weight(.medium))
-                                .foregroundColor(.white)
-                                .lineSpacing(1)
-                                .kerning(-0.2)
-                            HStack(spacing: 10) {
-                                Label("\(featured.time) min", systemImage: "clock")
-                                Text("·")
-                                Text("\(featured.calories) kcal")
-                                Text("·")
-                                Text("Anti-inflam \(featured.antiInflam)/10")
-                            }
-                            .font(.system(size: 12))
-                            .foregroundColor(.white.opacity(0.9))
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
-                    }
-                }
-            }
-            .buttonStyle(.plain)
-            .clipShape(RoundedRectangle(cornerRadius: 26))
-            .shadow(color: .black.opacity(0.06), radius: 12, y: 4)
-            .padding(.horizontal, 20)
-            .padding(.top, 12)
-        })
-    }
-
-    // MARK: - Recipe grid
-    private var recipeGrid: some View {
-        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-            ForEach(Array(recipeStore.recipes.dropFirst().prefix(4))) { recipe in
-                NourriRecipeCard(recipe: recipe, palette: palette, isFav: favsStore.contains(recipe.id),
-                                 onTap: { onRecipeTap(recipe.id) }, onFav: { toggleFav(recipe.id) })
-            }
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 20)
-    }
-
-    // MARK: - Collections
-    private var collectionsSection: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("Collections")
-                .font(.custom("Fraunces", size: 22).weight(.medium))
-                .foregroundColor(palette.ink)
-                .kerning(-0.3)
-                .padding(.horizontal, 20)
-
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(collections, id: \.name) { col in
-                        VStack(alignment: .leading, spacing: 0) {
-                            RecipePlateView(seed: col.seed, palette: palette)
-                                .aspectRatio(1.3, contentMode: .fill)
-                                .frame(width: 180)
-                                .clipped()
-
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(col.name)
-                                    .font(.custom("Fraunces", size: 15).weight(.medium))
-                                    .foregroundColor(palette.ink)
-                                Text("\(col.count) recette\(col.count != 1 ? "s" : "")")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(palette.inkMuted)
-                            }
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 10)
-                        }
-                        .frame(width: 180)
-                        .background(palette.card)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(palette.line, lineWidth: 1))
-                    }
-                }
-                .padding(.horizontal, 20)
-            }
-        }
-        .padding(.top, 20)
-    }
-
-    private func toggleFav(_ id: String) {
-        favsStore.toggle(id)
     }
 }
 
