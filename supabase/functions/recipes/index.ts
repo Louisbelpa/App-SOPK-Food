@@ -238,6 +238,7 @@ Deno.serve(async (req) => {
       calories: estimateCalories(r.id, r.title, r.meal_type),
       conditions,
       tags,
+      allergens: r.allergens ?? [],
       phase: phaseForConditions(conditions, r.meal_type, tags),
       description: r.description ?? "",
       benefits: benefitsFromTags(tags),

@@ -28,101 +28,120 @@ BEGIN
 -- ────────────────────────────────────────────────────────────
 -- RECETTES
 -- ────────────────────────────────────────────────────────────
-INSERT INTO recipes (id, title, description, prep_time, cook_time, servings, conditions, meal_type, tags) VALUES
+INSERT INTO recipes (id, title, description, prep_time, cook_time, servings, conditions, meal_type, tags, allergens) VALUES
 (r1,  'Bowl curcuma, lentilles corail et épinards',
  'Un bowl chaleureux riche en fer et anti-inflammatoires naturels. Le curcuma et le gingembre frais agissent en synergie pour réduire l''inflammation pelvienne.',
  10, 15, 2, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fer','Anti-inflammatoire']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fer','Anti-inflammatoire'],
+ ARRAY[]::TEXT[]),
 
 (r2,  'Saumon sauvage, quinoa et brocoli rôti',
  'Le saumon sauvage est l''une des meilleures sources d''oméga-3 EPA/DHA. Associé au brocoli et son indole-3-carbinol, il soutient l''équilibre hormonal.',
  10, 20, 2, ARRAY['sopk','endometriose'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Détox hormonale']),
+ ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Détox hormonale'],
+ ARRAY['poisson']),
 
 (r3,  'Porridge chia, myrtilles et cannelle',
  'Un petit-déjeuner à index glycémique bas qui stabilise l''insuline dès le matin. Idéal pour les femmes atteintes de SOPK avec résistance à l''insuline.',
  5, 0, 1, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Vegan','IG bas','Riche en oméga-3']),
+ ARRAY['Sans gluten','Vegan','IG bas','Riche en oméga-3'],
+ ARRAY['fruits_a_coque']),
 
 (r4,  'Velouté de patate douce au gingembre',
  'Doux et réconfortant, ce velouté apaise les douleurs menstruelles grâce au gingembre. Le bêta-carotène de la patate douce soutient la production de progestérone.',
  10, 25, 3, ARRAY['endometriose','sopk'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Vegan','Réconfortant','Anti-douleur']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Réconfortant','Anti-douleur'],
+ ARRAY[]::TEXT[]),
 
 (r5,  'Salade tiède pois chiches, avocat et grenade',
  'Une salade complète riche en phytoestrogènes équilibrants et en graisses saines. La grenade est l''une des rares sources alimentaires de punicalagines ultra-antioxydants.',
  15, 5, 2, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fibres']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Riche en fibres'],
+ ARRAY['sesame']),
 
 (r6,  'Smoothie anti-fatigue cacao et banane',
  'Le cacao cru est l''aliment le plus riche en magnésium : parfait en phase lutéale pour lutter contre la fatigue et les crampes.',
  5, 0, 1, ARRAY['sopk','endometriose'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Riche en magnésium','Vitamine B6','Lignanes','Boost énergie']),
+ ARRAY['Sans gluten','Vegan','Riche en magnésium','Vitamine B6','Lignanes','Boost énergie'],
+ ARRAY['arachides']),
 
 (r7,  'Tartines de seigle, sardines et concombre',
  'Les sardines en boîte sont une source économique et puissante d''oméga-3. Associées aux fibres du seigle, elles constituent un snack anti-inflammatoire complet.',
  10, 0, 1, ARRAY['sopk','endometriose'], 'snack',
- ARRAY['Riche en oméga-3','Calcium','Sans lactose','Riche en B12']),
+ ARRAY['Riche en oméga-3','Calcium','Sans lactose','Riche en B12'],
+ ARRAY['gluten','poisson']),
 
 (r8,  'Curry de pois chiches au lait de coco et épinards',
  'Ce curry végétalien regorge de curcuma, cumin et coriandre — un trio anti-inflammatoire puissant. Les pois chiches apportent des protéines et des fibres prébiotiques.',
  15, 20, 3, ARRAY['sopk','endometriose'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Vegan','Riche en protéines végétales']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Riche en protéines végétales'],
+ ARRAY[]::TEXT[]),
 
 (r9,  'Granola maison aux noix et graines',
  'Un granola sans sucre ajouté, riche en oméga-3 (noix), zinc (graines de courge) et magnésium (noix du Brésil). Préparez-en une grande quantité pour toute la semaine.',
  10, 20, 6, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Sans sucre ajouté','Zinc','Magnésium']),
+ ARRAY['Sans gluten','Vegan','Sans sucre ajouté','Zinc','Magnésium'],
+ ARRAY['fruits_a_coque','gluten']),
 
 (r10, 'Salade de roquette, noix et poires rôties',
  'Les noix sont une des meilleures sources végétales d''oméga-3 et d''acide ellagique. Les poires rôties au miel de thym caramélisent sans sucre raffiné.',
  10, 15, 2, ARRAY['endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Végétarien','Antioxydant']),
+ ARRAY['Sans gluten','Sans lactose','Végétarien','Antioxydant'],
+ ARRAY['fruits_a_coque','lait']),
 
 (r11, 'Filet de truite, asperges et citron confit',
  'La truite arc-en-ciel est riche en oméga-3 tout comme le saumon, et souvent plus accessible. Les asperges sont diurétiques et riches en folates — importantes en phase folliculaire.',
  10, 15, 2, ARRAY['endometriose','sopk'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Folates']),
+ ARRAY['Sans gluten','Sans lactose','Riche en oméga-3','Folates'],
+ ARRAY['poisson']),
 
 (r12, 'Bowl açaï, banane et fruits rouges',
  'L''açaï est l''un des fruits les plus riches en antioxydants. Ce bowl rafraîchissant stabilise la glycémie grâce aux fruits entiers et aux graines de chia.',
  10, 0, 1, ARRAY['sopk','endometriose'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Antioxydant','IG bas']),
+ ARRAY['Sans gluten','Vegan','Antioxydant','IG bas'],
+ ARRAY['gluten']),
 
 (r13, 'Omelette aux herbes, champignons et avocat',
  'Les œufs apportent de la choline, essentielle à la santé hépatique et à la détoxification des œstrogènes. Les champignons sont riches en vitamine D.',
  5, 10, 1, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Sans lactose','Végétarien','Protéines','Choline','Vitamine D']),
+ ARRAY['Sans gluten','Sans lactose','Végétarien','Protéines','Choline','Vitamine D'],
+ ARRAY['oeufs']),
 
 (r14, 'Taboulé de chou-fleur au persil et menthe',
  'Le chou-fleur râpé remplace le boulgour pour un taboulé sans gluten et à IG quasi nul. Le persil frais est exceptionnellement riche en vitamine C et en fer.',
  20, 0, 3, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Vegan','Cru','Riche en vitamine C','Détox hormonale']),
+ ARRAY['Sans gluten','Sans lactose','Vegan','Cru','Riche en vitamine C','Détox hormonale'],
+ ARRAY[]::TEXT[]),
 
 (r15, 'Compote pomme-cannelle et crème d''amande',
  'Une douceur saine pour combler les envies sucrées sans sucre raffiné. La cannelle de Ceylan est cliniquement reconnue pour améliorer la sensibilité à l''insuline dans le SOPK.',
  5, 15, 2, ARRAY['sopk'], 'snack',
- ARRAY['Sans gluten','Vegan','Sans sucre ajouté','IG bas','Sensibilité à l''insuline']),
+ ARRAY['Sans gluten','Vegan','Sans sucre ajouté','IG bas','Sensibilité à l''insuline'],
+ ARRAY['fruits_a_coque']),
 
 (r16, 'Bouillon d''os doré au gingembre et curcuma',
  'Le bouillon d''os mijote 48h pour libérer collagène, glycine et minéraux. Le gingembre et le curcuma amplifient ses effets anti-inflammatoires — idéal pour apaiser les douleurs pelviennes de l''endométriose.',
  15, 240, 4, ARRAY['sopk','endometriose'], 'dinner',
- ARRAY['Sans gluten','Sans lactose','Anti-inflammatoire','Collagène','Soutien hépatique','Anti-douleur']),
+ ARRAY['Sans gluten','Sans lactose','Anti-inflammatoire','Collagène','Soutien hépatique','Anti-douleur'],
+ ARRAY[]::TEXT[]),
 
 (r17, 'Buddha bowl menstruelle : crevettes, betterave et quinoa',
  'Conçu spécifiquement pour la phase menstruelle : les crevettes apportent fer héminique + B12, la betterave des folates, le quinoa des protéines complètes. Ce bowl couvre 60% des besoins en fer d''une journée.',
  15, 15, 2, ARRAY['sopk','endometriose'], 'lunch',
- ARRAY['Sans gluten','Sans lactose','Riche en fer','Folates','Riche en B12','Protéines']),
+ ARRAY['Sans gluten','Sans lactose','Riche en fer','Folates','Riche en B12','Protéines'],
+ ARRAY['fruits_de_mer','sesame']),
 
 (r18, 'Smoothie lutéal cacao, banane et beurre d''amande',
  'Formulé pour la phase lutéale : la banane et la levure nutritionnelle sont parmi les meilleures sources de vitamine B6 — prouvée pour réduire le syndrome prémenstruel. Le cacao cru apporte magnésium et tryptophane précurseur de sérotonine.',
  5, 0, 1, ARRAY['sopk','endometriose'], 'breakfast',
- ARRAY['Sans gluten','Vegan','Riche en magnésium','Vitamine B6','Boost énergie','IG bas']),
+ ARRAY['Sans gluten','Vegan','Riche en magnésium','Vitamine B6','Boost énergie','IG bas'],
+ ARRAY['fruits_a_coque']),
 
 (r19, 'Œufs cocotte aux champignons shiitake et herbes',
  'Les champignons shiitake sont l''une des rares sources alimentaires de vitamine D — déficience quasi-systématique dans le SOPK. Les 3 œufs apportent 18g de protéines de haute valeur biologique et de la choline pour la détoxification hépatique des œstrogènes.',
  10, 12, 1, ARRAY['sopk'], 'breakfast',
- ARRAY['Sans gluten','Sans lactose','Végétarien','Vitamine D','Zinc','Protéines','Choline']);
+ ARRAY['Sans gluten','Sans lactose','Végétarien','Vitamine D','Zinc','Protéines','Choline'],
+ ARRAY['oeufs']);
 
 -- ────────────────────────────────────────────────────────────
 -- INGRÉDIENTS

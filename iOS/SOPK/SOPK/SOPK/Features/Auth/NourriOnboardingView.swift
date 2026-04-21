@@ -131,6 +131,17 @@ struct NourriOnboardingView: View {
             }
             .padding(.horizontal, 24)
 
+            HStack(spacing: 8) {
+                Image(systemName: "lock.fill")
+                    .font(.system(size: 11))
+                    .foregroundColor(palette.inkMuted)
+                Text("Tes données de santé sont stockées de façon sécurisée et ne sont jamais partagées. Tu peux les supprimer à tout moment dans les Réglages.")
+                    .font(.system(size: 12))
+                    .foregroundColor(palette.inkMuted)
+                    .lineSpacing(3)
+            }
+            .padding(.horizontal, 24)
+
             Spacer()
         }
         .padding(.top, 32)

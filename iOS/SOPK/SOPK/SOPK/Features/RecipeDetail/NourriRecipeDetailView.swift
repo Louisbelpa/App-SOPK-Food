@@ -145,22 +145,52 @@ struct NourriRecipeDetailView: View {
             }
             .padding(.bottom, 20)
 
-            // Avoid tags
-            HStack(spacing: 6) {
-                ForEach(recipe.tags, id: \.self) { tag in
-                    HStack(spacing: 4) {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 10, weight: .bold))
-                        Text(tag)
-                            .font(.system(size: 11, weight: .medium))
+            // Tags
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 6) {
+                    ForEach(recipe.tags, id: \.self) { tag in
+                        HStack(spacing: 4) {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 10, weight: .bold))
+                            Text(tag)
+                                .font(.system(size: 11, weight: .medium))
+                        }
+                        .foregroundColor(palette.terre)
+                        .padding(.horizontal, 9).padding(.vertical, 4)
+                        .background(palette.beige)
+                        .clipShape(Capsule())
                     }
-                    .foregroundColor(palette.terre)
-                    .padding(.horizontal, 9).padding(.vertical, 4)
-                    .background(palette.beige)
-                    .clipShape(Capsule())
                 }
             }
-            .padding(.bottom, 22)
+            .padding(.bottom, recipe.allergens.isEmpty ? 22 : 10)
+
+            // Allergènes
+            if !recipe.allergens.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Allergènes")
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundColor(palette.inkMuted)
+                        .kerning(0.5)
+                        .textCase(.uppercase)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 6) {
+                            ForEach(recipe.allergens, id: \.self) { allergen in
+                                HStack(spacing: 4) {
+                                    Text(allergenEmoji(allergen))
+                                        .font(.system(size: 12))
+                                    Text(allergenLabel(allergen))
+                                        .font(.system(size: 11, weight: .semibold))
+                                }
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 9).padding(.vertical, 5)
+                                .background(Color.orange.opacity(0.85))
+                                .clipShape(Capsule())
+                            }
+                        }
+                    }
+                }
+                .padding(.bottom, 22)
+            }
 
             // Tab switch
             HStack(spacing: 4) {
@@ -433,6 +463,36 @@ struct AddToPlanSheet: View {
                 }
             }
         }
+    }
+}
+
+private func allergenEmoji(_ key: String) -> String {
+    switch key {
+    case "gluten":         return "🌾"
+    case "oeufs":          return "🥚"
+    case "fruits_de_mer":  return "🦐"
+    case "arachides":      return "🥜"
+    case "soja":           return "🌱"
+    case "lait":           return "🥛"
+    case "fruits_a_coque": return "🌰"
+    case "sesame":         return "🫘"
+    case "poisson":        return "🐟"
+    default:               return "⚠️"
+    }
+}
+
+private func allergenLabel(_ key: String) -> String {
+    switch key {
+    case "gluten":         return "Gluten"
+    case "oeufs":          return "Œufs"
+    case "fruits_de_mer":  return "Fruits de mer"
+    case "arachides":      return "Arachides"
+    case "soja":           return "Soja"
+    case "lait":           return "Lait"
+    case "fruits_a_coque": return "Fruits à coque"
+    case "sesame":         return "Sésame"
+    case "poisson":        return "Poisson"
+    default:               return key
     }
 }
 

@@ -11,6 +11,7 @@ struct AppRecipe: Identifiable, Hashable, Decodable {
     let calories: Int
     let conditions: [String]
     let tags: [String]
+    let allergens: [String]
     let phase: String
     let description: String
     let benefits: [Benefit]
@@ -48,6 +49,7 @@ struct AppRecipe: Identifiable, Hashable, Decodable {
         case mealType   = "meal_type"
         case antiInflam = "anti_inflam"
         case calories
+        case allergens
     }
 
     func hash(into hasher: inout Hasher) { hasher.combine(id) }

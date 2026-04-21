@@ -109,11 +109,13 @@ struct CycleSetupView: View {
                             .kerning(0.5)
                             .textCase(.uppercase)
 
+                        let len = Int(cycleLength)
+                        let ovDay = max(len - 14, 7)
                         let phases: [(String, String, Color)] = [
-                            ("Menstruelle", "J1–J5", palette.terracotta),
-                            ("Folliculaire", "J6–J13", palette.sage),
-                            ("Ovulatoire", "J14–J17", palette.sageDeep),
-                            ("Lutéale", "J18–J28", palette.terracottaDeep),
+                            ("Menstruelle",  "J1–J5",                    palette.terracotta),
+                            ("Folliculaire", "J6–J\(ovDay - 2)",         palette.sage),
+                            ("Ovulatoire",   "J\(ovDay - 1)–J\(ovDay + 2)", palette.sageDeep),
+                            ("Lutéale",      "J\(ovDay + 3)–J\(len)",    palette.terracottaDeep),
                         ]
                         ForEach(phases, id: \.0) { name, range, color in
                             HStack {
@@ -145,6 +147,13 @@ struct CycleSetupView: View {
                             .background(palette.sageDeep)
                             .clipShape(Capsule())
                     }
+
+                    // RGPD
+                    Text("🔒 Tes données de santé sont stockées de façon sécurisée et ne sont jamais partagées avec des tiers. Tu peux les supprimer à tout moment dans les Réglages.")
+                        .font(.system(size: 11))
+                        .foregroundColor(palette.inkMuted)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 8)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 24)

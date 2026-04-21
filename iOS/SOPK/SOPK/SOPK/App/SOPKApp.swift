@@ -24,10 +24,13 @@ struct RootView: View {
     @EnvironmentObject var cycleStore: CycleStore
     @AppStorage("onboarding_completed") private var onboardingCompleted = false
     @AppStorage("family_setup_skipped") private var familySetupSkipped = false
+    @AppStorage("hasSeenDisclaimer") private var hasSeenDisclaimer = false
 
     var body: some View {
         Group {
-            if authViewModel.isLoading {
+            if !hasSeenDisclaimer {
+                DisclaimerView()
+            } else if authViewModel.isLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if authViewModel.currentUser == nil {
