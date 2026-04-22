@@ -27,10 +27,10 @@ export default function LoginPage() {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) { setError('Utilisateur introuvable'); setLoading(false); return }
 
-    const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-    if (profile?.role !== 'admin') {
+    const { data: profile, error: profileError } = await supabase.from('profiles').select('role').eq('id', user.id).single()
+    if (profileError || profile?.role !== 'admin') {
       await supabase.auth.signOut()
-      setError('Accès réservé aux administrateurs')
+      setError(profileError ? `Erreur profil: ${profileError.message}` : 'Accès réservé aux administrateurs')
       setLoading(false)
       return
     }
