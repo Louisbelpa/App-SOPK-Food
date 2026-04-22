@@ -1,9 +1,0 @@
-{
-  "buildCommand": "cd backoffice && npm install && npm run build",
-  "outputDirectory": "backoffice/.next",
-  "installCommand": "cd backoffice && npm install",
-  "framework": "nextjs",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
-  ]
-}
