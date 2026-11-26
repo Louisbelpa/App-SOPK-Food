@@ -1,0 +1,2667 @@
+[
+  {
+    "schema_version": 1,
+    "id": "petit-dejeuner-overnight-oats-pomme-cannelle-noix",
+    "titre": "Overnight oats pomme, cannelle et noix",
+    "description": "Des flocons d'avoine qui gonflent toute la nuit avec du yaourt et de la pomme râpée : le matin, il n'y a plus qu'à ouvrir le bocal.",
+    "types_repas": [
+      "petit_dejeuner"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 0,
+      "repos_min": 480,
+      "total_min": 10
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "flocons_avoine",
+        "nom": "flocons d'avoine (gros flocons)",
+        "quantite": 80,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "gluten"
+        ]
+      },
+      {
+        "cle": "yaourt_grec_nature",
+        "nom": "yaourt grec nature (ou skyr)",
+        "quantite": 200,
+        "unite": "g",
+        "rayon": "cremerie_oeufs",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "lait"
+        ]
+      },
+      {
+        "cle": "lait",
+        "nom": "lait (ou boisson végétale non sucrée)",
+        "quantite": 150,
+        "unite": "ml",
+        "rayon": "cremerie_oeufs",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "lait"
+        ]
+      },
+      {
+        "cle": "graines_chia",
+        "nom": "graines de chia (ou de lin moulues)",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "pomme",
+        "nom": "pomme",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "râpée avec la peau",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "noix_cerneaux",
+        "nom": "cerneaux de noix",
+        "quantite": 30,
+        "unite": "g",
+        "rayon": "fruits_secs_graines",
+        "preparation": "concassés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "fruits_a_coque"
+        ]
+      },
+      {
+        "cle": "cannelle_moulue",
+        "nom": "cannelle moulue",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Râper la pomme avec la peau directement dans un saladier."
+      },
+      {
+        "ordre": 2,
+        "texte": "Ajouter les flocons d'avoine, les graines de chia, la cannelle, le yaourt et le lait. Bien mélanger."
+      },
+      {
+        "ordre": 3,
+        "texte": "Répartir dans 2 bocaux, fermer et placer au réfrigérateur pour la nuit (au moins 6 h)."
+      },
+      {
+        "ordre": 4,
+        "texte": "Le matin, détendre avec un trait de lait si besoin et parsemer de noix concassées."
+      }
+    ],
+    "tags": {
+      "temps": "express",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien"
+      ],
+      "caracteristiques": [
+        "source_omega3",
+        "riche_en_fibres",
+        "sans_cuisson",
+        "batch_cooking",
+        "a_emporter",
+        "petit_budget"
+      ]
+    },
+    "allergenes": [
+      "gluten",
+      "lait",
+      "fruits_a_coque"
+    ],
+    "saisons": [
+      "automne",
+      "hiver",
+      "printemps"
+    ],
+    "composition_assiette": {
+      "legumes": false,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Les gros flocons, le yaourt et les noix rendent ce petit-déjeuner rassasiant et doux pour la glycémie ; évitez les flocons « instantanés », plus fins."
+      },
+      {
+        "type": "batch",
+        "texte": "Préparez 4 bocaux le dimanche soir : ils se gardent 3 jours. Ajoutez les noix au dernier moment pour qu'elles restent croquantes."
+      },
+      {
+        "type": "substitution",
+        "texte": "En été, remplacez la pomme par des fruits rouges ; en hiver, par une poire bien mûre."
+      },
+      {
+        "type": "gout",
+        "texte": "Sans gluten nécessaire ? Choisissez des flocons d'avoine certifiés sans gluten."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 3,
+      "congelation": false,
+      "note": "Bocaux fermés au réfrigérateur, noix à part."
+    },
+    "image": {
+      "url": null,
+      "alt": "Deux bocaux en verre de flocons d'avoine crémeux, pomme râpée et noix concassées.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "petit-dejeuner-oeufs-brouilles-epinards-feta-seigle",
+    "titre": "Œufs brouillés épinards-feta sur pain de seigle",
+    "description": "Des œufs crémeux cuits doucement avec des épinards et un peu de feta, servis sur une tartine de seigle au levain.",
+    "types_repas": [
+      "petit_dejeuner",
+      "diner"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 5,
+      "cuisson_min": 7,
+      "repos_min": 0,
+      "total_min": 12
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "oeuf",
+        "nom": "œufs",
+        "quantite": 4,
+        "unite": "piece",
+        "rayon": "cremerie_oeufs",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "oeufs"
+        ]
+      },
+      {
+        "cle": "epinard_pousse",
+        "nom": "pousses d'épinards (frais ou surgelés)",
+        "quantite": 100,
+        "unite": "g",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "feta",
+        "nom": "feta",
+        "quantite": 50,
+        "unite": "g",
+        "rayon": "cremerie_oeufs",
+        "preparation": "émiettée",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "lait"
+        ]
+      },
+      {
+        "cle": "pain_seigle_levain",
+        "nom": "pain de seigle au levain",
+        "quantite": 2,
+        "unite": "tranche",
+        "rayon": "boulangerie",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "gluten"
+        ]
+      },
+      {
+        "cle": "ail",
+        "nom": "ail",
+        "quantite": 1,
+        "unite": "gousse",
+        "rayon": "fruits_legumes",
+        "preparation": "coupée en deux",
+        "optionnel": true,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 1,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "poivre",
+        "nom": "poivre",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Faire tomber les épinards 2 min dans une poêle avec l'huile d'olive. Saler très peu (la feta est salée).",
+        "duree_min": 2,
+        "minuteur": true
+      },
+      {
+        "ordre": 2,
+        "texte": "Battre les œufs à la fourchette avec du poivre."
+      },
+      {
+        "ordre": 3,
+        "texte": "Baisser le feu, verser les œufs sur les épinards et remuer doucement à la spatule jusqu'à ce qu'ils soient crémeux.",
+        "duree_min": 4,
+        "minuteur": true
+      },
+      {
+        "ordre": 4,
+        "texte": "Hors du feu, ajouter la feta émiettée."
+      },
+      {
+        "ordre": 5,
+        "texte": "Griller le pain, le frotter avec l'ail si vous aimez, et y déposer les œufs."
+      }
+    ],
+    "tags": {
+      "temps": "express",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien"
+      ],
+      "caracteristiques": [
+        "riche_en_proteines"
+      ]
+    },
+    "allergenes": [
+      "gluten",
+      "oeufs",
+      "lait"
+    ],
+    "saisons": [
+      "printemps",
+      "ete",
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Le pain de seigle au levain, associé aux protéines des œufs, donne un petit-déjeuner qui tient bien jusqu'au midi."
+      },
+      {
+        "type": "budget",
+        "texte": "Les épinards surgelés en galets font très bien l'affaire : comptez 2 galets et 3 min de cuisson."
+      },
+      {
+        "type": "saison",
+        "texte": "Au printemps, ajoutez des asperges vertes poêlées ; en été, des tomates cerises."
+      },
+      {
+        "type": "substitution",
+        "texte": "Sans lactose : remplacez la feta par quelques graines de courge et des herbes fraîches."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 0,
+      "congelation": false,
+      "note": "À déguster tout de suite."
+    },
+    "image": {
+      "url": null,
+      "alt": "Tartine de pain de seigle garnie d'œufs brouillés, d'épinards et de feta émiettée.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "petit-dejeuner-pudding-chia-coco-framboises",
+    "titre": "Pudding de chia coco-framboises",
+    "description": "Un pudding végétal qui prend tout seul au frigo, avec des framboises fondantes et des amandes effilées pour le croquant.",
+    "types_repas": [
+      "petit_dejeuner",
+      "collation"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 5,
+      "cuisson_min": 0,
+      "repos_min": 240,
+      "total_min": 5
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "boisson_soja",
+        "nom": "boisson au soja nature non sucrée",
+        "quantite": 250,
+        "unite": "ml",
+        "rayon": "frais_vegetal",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "soja"
+        ]
+      },
+      {
+        "cle": "graines_chia",
+        "nom": "graines de chia",
+        "quantite": 40,
+        "unite": "g",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "noix_coco_rapee",
+        "nom": "noix de coco râpée",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "framboise_surgelee",
+        "nom": "framboises surgelées",
+        "quantite": 150,
+        "unite": "g",
+        "rayon": "surgeles",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "amande_effilee",
+        "nom": "amandes effilées",
+        "quantite": 20,
+        "unite": "g",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "fruits_a_coque"
+        ]
+      },
+      {
+        "cle": "vanille_extrait",
+        "nom": "extrait de vanille",
+        "quantite": 0.5,
+        "unite": "cac",
+        "rayon": "epicerie_sucree",
+        "preparation": null,
+        "optionnel": true,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Mélanger la boisson au soja, les graines de chia, la noix de coco et la vanille dans un bol."
+      },
+      {
+        "ordre": 2,
+        "texte": "Attendre 5 min puis mélanger à nouveau pour éviter les grumeaux."
+      },
+      {
+        "ordre": 3,
+        "texte": "Répartir dans 2 pots, ajouter les framboises encore surgelées par-dessus et réserver au frais au moins 4 h (idéalement une nuit)."
+      },
+      {
+        "ordre": 4,
+        "texte": "Au moment de servir, parsemer d'amandes effilées (dorées 2 min à sec à la poêle si vous aimez le côté grillé)."
+      }
+    ],
+    "tags": {
+      "temps": "express",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien",
+        "vegan",
+        "sans_lactose",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "riche_en_fibres",
+        "source_omega3",
+        "sans_cuisson",
+        "batch_cooking",
+        "a_emporter"
+      ]
+    },
+    "allergenes": [
+      "soja",
+      "fruits_a_coque"
+    ],
+    "saisons": [
+      "printemps",
+      "ete",
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": false,
+      "proteines": true,
+      "feculents": false,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "La boisson au soja apporte des protéines que n'ont pas les boissons d'amande ou de riz : c'est elle qui rend ce pudding plus rassasiant."
+      },
+      {
+        "type": "batch",
+        "texte": "Se garde 3 jours au frigo : préparez-en 4 pots d'un coup."
+      },
+      {
+        "type": "saison",
+        "texte": "En été, framboises ou fraises fraîches ; en automne, compotée de poire sans sucre ajouté."
+      },
+      {
+        "type": "gout",
+        "texte": "La noix de coco n'est pas un fruit à coque au sens réglementaire, mais vérifiez auprès de votre allergologue en cas d'allergie."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 3,
+      "congelation": false,
+      "note": "Pots fermés au réfrigérateur ; amandes à ajouter au dernier moment."
+    },
+    "image": {
+      "url": null,
+      "alt": "Deux verrines de pudding de chia blanc nappé de framboises et d'amandes dorées.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "dejeuner-salade-tiede-lentilles-betterave-chevre-noix",
+    "titre": "Salade tiède lentilles, betterave, chèvre et noix",
+    "description": "Des lentilles vertes encore tièdes qui boivent la vinaigrette à la moutarde, avec betterave, mâche, chèvre frais et noix.",
+    "types_repas": [
+      "dejeuner",
+      "diner"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 20,
+      "repos_min": 0,
+      "total_min": 30
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "lentille_verte",
+        "nom": "lentilles vertes sèches",
+        "quantite": 150,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": "rincées",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "betterave_cuite",
+        "nom": "betterave cuite",
+        "quantite": 2,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "en dés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "mache",
+        "nom": "mâche",
+        "quantite": 60,
+        "unite": "g",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "chevre_frais",
+        "nom": "chèvre frais",
+        "quantite": 80,
+        "unite": "g",
+        "rayon": "cremerie_oeufs",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "lait"
+        ]
+      },
+      {
+        "cle": "noix_cerneaux",
+        "nom": "cerneaux de noix",
+        "quantite": 30,
+        "unite": "g",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "fruits_a_coque"
+        ]
+      },
+      {
+        "cle": "echalote",
+        "nom": "échalote",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "ciselée finement",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "moutarde",
+        "nom": "moutarde de Dijon",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la vinaigrette",
+        "allergenes": [
+          "moutarde"
+        ]
+      },
+      {
+        "cle": "vinaigre_cidre",
+        "nom": "vinaigre de cidre",
+        "quantite": 1,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la vinaigrette",
+        "allergenes": [
+          "sulfites"
+        ]
+      },
+      {
+        "cle": "huile_noix",
+        "nom": "huile de noix (ou de colza)",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la vinaigrette",
+        "allergenes": [
+          "fruits_a_coque"
+        ]
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "poivre",
+        "nom": "poivre",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Couvrir les lentilles de 3 fois leur volume d'eau froide, porter à frémissement et cuire 20 min. Saler en fin de cuisson.",
+        "duree_min": 20,
+        "minuteur": true
+      },
+      {
+        "ordre": 2,
+        "texte": "Pendant ce temps, fouetter moutarde, vinaigre, huile de noix, sel et poivre ; ajouter l'échalote ciselée."
+      },
+      {
+        "ordre": 3,
+        "texte": "Couper la betterave en dés."
+      },
+      {
+        "ordre": 4,
+        "texte": "Égoutter les lentilles et les mélanger encore chaudes avec la vinaigrette."
+      },
+      {
+        "ordre": 5,
+        "texte": "Servir sur la mâche avec la betterave, le chèvre émietté et les noix."
+      }
+    ],
+    "tags": {
+      "temps": "rapide",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "legumineuses",
+        "riche_en_fibres",
+        "source_omega3",
+        "batch_cooking",
+        "a_emporter",
+        "petit_budget"
+      ]
+    },
+    "allergenes": [
+      "lait",
+      "fruits_a_coque",
+      "moutarde",
+      "sulfites"
+    ],
+    "saisons": [
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Les lentilles cuites al dente et la vinaigrette au vinaigre font de ce plat un champion de l'index glycémique bas."
+      },
+      {
+        "type": "batch",
+        "texte": "Doublez la quantité de lentilles : les restes servent pour un dahl ou une soupe. Assemblez la salade au dernier moment pour que la mâche reste croquante."
+      },
+      {
+        "type": "substitution",
+        "texte": "Sans lactose : remplacez le chèvre par un œuf mollet ou des pois chiches rôtis. Huile de noix et de colza ne se chauffent pas."
+      },
+      {
+        "type": "budget",
+        "texte": "Les lentilles en bocal (déjà cuites) font gagner 20 min ; rincez-les avant usage."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 3,
+      "congelation": false,
+      "note": "Lentilles assaisonnées 3 jours au frigo ; mâche, chèvre et noix à ajouter au moment de servir."
+    },
+    "image": {
+      "url": null,
+      "alt": "Assiette de lentilles vertes avec dés de betterave pourpre, mâche, chèvre frais et noix.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "dejeuner-bowl-quinoa-pois-chiches-cumin-tahini",
+    "titre": "Bowl quinoa, pois chiches au cumin et sauce tahini",
+    "description": "Des carottes et pois chiches rôtis au cumin sur un lit de quinoa et de chou rouge, nappés d'une sauce tahini citronnée.",
+    "types_repas": [
+      "dejeuner",
+      "diner"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 20,
+      "repos_min": 0,
+      "total_min": 30
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "quinoa",
+        "nom": "quinoa",
+        "quantite": 120,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": "bien rincé",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "pois_chiche_conserve",
+        "nom": "pois chiches en conserve (400 g, 240 g égouttés)",
+        "quantite": 1,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": "rincés et égouttés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "carotte",
+        "nom": "carottes",
+        "quantite": 3,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "en bâtonnets",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "chou_rouge",
+        "nom": "chou rouge",
+        "quantite": 150,
+        "unite": "g",
+        "rayon": "fruits_legumes",
+        "preparation": "émincé finement",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "persil_plat",
+        "nom": "persil plat ou coriandre",
+        "quantite": 0.5,
+        "unite": "botte",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "tahini",
+        "nom": "tahini (purée de sésame)",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": [
+          "sesame"
+        ]
+      },
+      {
+        "cle": "citron",
+        "nom": "citron",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": []
+      },
+      {
+        "cle": "ail",
+        "nom": "ail",
+        "quantite": 1,
+        "unite": "gousse",
+        "rayon": "fruits_legumes",
+        "preparation": "râpée",
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": []
+      },
+      {
+        "cle": "cumin_moulu",
+        "nom": "cumin moulu",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Préchauffer le four à 210 °C."
+      },
+      {
+        "ordre": 2,
+        "texte": "Mélanger carottes et pois chiches avec l'huile d'olive, le cumin et le sel sur une plaque. Enfourner 20 min en remuant à mi-cuisson.",
+        "duree_min": 20,
+        "minuteur": true
+      },
+      {
+        "ordre": 3,
+        "texte": "Pendant ce temps, cuire le quinoa dans 2 fois son volume d'eau salée, à couvert, 12 min, puis laisser gonfler hors du feu.",
+        "duree_min": 12,
+        "minuteur": true
+      },
+      {
+        "ordre": 4,
+        "texte": "Préparer la sauce : mélanger le tahini, le jus du citron, l'ail râpé, une pincée de sel et 3 à 4 c. à soupe d'eau jusqu'à obtenir une sauce nappante."
+      },
+      {
+        "ordre": 5,
+        "texte": "Dans des bols, disposer le quinoa, le chou rouge, les légumes rôtis et les pois chiches. Napper de sauce et parsemer d'herbes."
+      }
+    ],
+    "tags": {
+      "temps": "rapide",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien",
+        "vegan",
+        "sans_lactose",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "legumineuses",
+        "riche_en_fibres",
+        "batch_cooking",
+        "a_emporter",
+        "petit_budget"
+      ]
+    },
+    "allergenes": [
+      "sesame"
+    ],
+    "saisons": [
+      "automne",
+      "hiver",
+      "printemps"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Le quinoa et les pois chiches s'associent pour des protéines complètes et beaucoup de fibres : une base idéale pour une énergie stable."
+      },
+      {
+        "type": "batch",
+        "texte": "Quinoa, légumes rôtis et sauce se gardent 4 jours dans des boîtes séparées : montez les bowls en 2 min."
+      },
+      {
+        "type": "saison",
+        "texte": "Printemps : radis et petits pois ; été : courgettes et poivrons rôtis ; hiver : butternut en dés."
+      },
+      {
+        "type": "anti_gaspi",
+        "texte": "Le reste de chou rouge se garde une semaine et se glisse dans toutes les salades."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 4,
+      "congelation": false,
+      "note": "Éléments séparés en boîtes hermétiques ; sauce dans un petit bocal."
+    },
+    "image": {
+      "url": null,
+      "alt": "Bol de quinoa avec carottes rôties, pois chiches dorés, chou rouge et filet de sauce tahini.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "dejeuner-boulgour-maquereau-fenouil-yaourt-aneth",
+    "titre": "Boulgour au maquereau, fenouil et sauce yaourt-aneth",
+    "description": "Un plat complet de placard : boulgour, maquereau en conserve, fenouil croquant et une sauce fraîche au yaourt et à l'aneth.",
+    "types_repas": [
+      "dejeuner",
+      "diner"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 10,
+      "repos_min": 0,
+      "total_min": 20
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "boulgour_complet",
+        "nom": "boulgour complet",
+        "quantite": 120,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "gluten"
+        ]
+      },
+      {
+        "cle": "maquereau_naturel",
+        "nom": "maquereau au naturel (boîtes de 125 g)",
+        "quantite": 2,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": "égoutté",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "poissons"
+        ]
+      },
+      {
+        "cle": "fenouil",
+        "nom": "fenouil",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "émincé très finement",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "citron",
+        "nom": "citron",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "yaourt_nature",
+        "nom": "yaourt nature",
+        "quantite": 125,
+        "unite": "g",
+        "rayon": "cremerie_oeufs",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": [
+          "lait"
+        ]
+      },
+      {
+        "cle": "aneth",
+        "nom": "aneth",
+        "quantite": 0.5,
+        "unite": "botte",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": []
+      },
+      {
+        "cle": "graines_courge",
+        "nom": "graines de courge",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "poivre",
+        "nom": "poivre",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Verser le boulgour dans une casserole avec 2 fois son volume d'eau salée, couvrir et cuire 10 min à feu doux.",
+        "duree_min": 10,
+        "minuteur": true
+      },
+      {
+        "ordre": 2,
+        "texte": "Pendant ce temps, émincer le fenouil très finement et l'arroser de la moitié du jus de citron et d'une cuillère d'huile d'olive."
+      },
+      {
+        "ordre": 3,
+        "texte": "Préparer la sauce : yaourt, aneth ciselé, le reste du jus de citron, sel et poivre."
+      },
+      {
+        "ordre": 4,
+        "texte": "Égrener le boulgour à la fourchette avec le reste d'huile d'olive."
+      },
+      {
+        "ordre": 5,
+        "texte": "Servir le boulgour avec le fenouil, le maquereau en morceaux, la sauce et les graines de courge."
+      }
+    ],
+    "tags": {
+      "temps": "rapide",
+      "ig_estime": "bas",
+      "regimes": [],
+      "caracteristiques": [
+        "riche_en_proteines",
+        "source_omega3",
+        "a_emporter",
+        "petit_budget"
+      ]
+    },
+    "allergenes": [
+      "gluten",
+      "poissons",
+      "lait"
+    ],
+    "saisons": [
+      "ete",
+      "automne"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Le boulgour complet a un index glycémique bas, encore plus s'il est mangé tiède ou froid : parfait en lunchbox."
+      },
+      {
+        "type": "budget",
+        "texte": "Le maquereau en conserve est l'une des sources d'oméga-3 les moins chères. Les sardines marchent aussi."
+      },
+      {
+        "type": "saison",
+        "texte": "Hors saison du fenouil, remplacez-le par du concombre en été ou des carottes râpées en hiver."
+      },
+      {
+        "type": "substitution",
+        "texte": "Le boulgour contient du gluten : en cas d'intolérance, utilisez du sarrasin ou du quinoa."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 2,
+      "congelation": false,
+      "note": "Se garde 2 jours au frigo ; sauce à part."
+    },
+    "image": {
+      "url": null,
+      "alt": "Assiette de boulgour, morceaux de maquereau, fenouil émincé et sauce blanche à l'aneth.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "diner-dahl-lentilles-corail-butternut",
+    "titre": "Dahl de lentilles corail et butternut",
+    "description": "Un dahl doux et épicé, avec des lentilles corail qui fondent et de la butternut, servi avec du riz semi-complet.",
+    "types_repas": [
+      "diner",
+      "dejeuner"
+    ],
+    "portions": 4,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 20,
+      "repos_min": 0,
+      "total_min": 30
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "lentille_corail",
+        "nom": "lentilles corail",
+        "quantite": 250,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": "rincées",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "courge_butternut",
+        "nom": "courge butternut",
+        "quantite": 600,
+        "unite": "g",
+        "rayon": "fruits_legumes",
+        "preparation": "pelée, en petits dés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "oignon_jaune",
+        "nom": "oignon",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "émincé",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "ail",
+        "nom": "ail",
+        "quantite": 2,
+        "unite": "gousse",
+        "rayon": "fruits_legumes",
+        "preparation": "hachées",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "gingembre_frais",
+        "nom": "gingembre frais",
+        "quantite": 20,
+        "unite": "g",
+        "rayon": "fruits_legumes",
+        "preparation": "râpé",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "tomate_concassee",
+        "nom": "tomates concassées (400 g)",
+        "quantite": 1,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "lait_coco",
+        "nom": "lait de coco",
+        "quantite": 200,
+        "unite": "ml",
+        "rayon": "conserves",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "riz_semi_complet",
+        "nom": "riz semi-complet",
+        "quantite": 200,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "coriandre_fraiche",
+        "nom": "coriandre fraîche",
+        "quantite": 0.5,
+        "unite": "botte",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": true,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "curcuma_moulu",
+        "nom": "curcuma",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "cumin_moulu",
+        "nom": "cumin moulu",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "coriandre_moulue",
+        "nom": "coriandre moulue",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 1,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "poivre",
+        "nom": "poivre",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Lancer la cuisson du riz semi-complet dans une grande casserole d'eau salée (15 à 20 min selon le paquet).",
+        "duree_min": 18,
+        "minuteur": true
+      },
+      {
+        "ordre": 2,
+        "texte": "Dans une cocotte, faire revenir l'oignon dans l'huile 3 min. Ajouter l'ail, le gingembre, le curcuma, le cumin, la coriandre moulue et une bonne pincée de poivre ; remuer 1 min.",
+        "duree_min": 4,
+        "minuteur": true
+      },
+      {
+        "ordre": 3,
+        "texte": "Ajouter la butternut, les lentilles, les tomates, le lait de coco et 500 ml d'eau. Saler."
+      },
+      {
+        "ordre": 4,
+        "texte": "Laisser mijoter 15 min à couvert en remuant de temps en temps, jusqu'à ce que lentilles et courge soient fondantes. Ajouter un peu d'eau si besoin.",
+        "duree_min": 15,
+        "minuteur": true
+      },
+      {
+        "ordre": 5,
+        "texte": "Servir le dahl sur le riz égoutté, avec de la coriandre fraîche."
+      }
+    ],
+    "tags": {
+      "temps": "rapide",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien",
+        "vegan",
+        "sans_lactose",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "legumineuses",
+        "riche_en_fibres",
+        "batch_cooking",
+        "congelable",
+        "petit_budget",
+        "reconfortant"
+      ]
+    },
+    "allergenes": [],
+    "saisons": [
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "L'association lentilles + riz semi-complet ralentit l'absorption des glucides et apporte des protéines végétales complètes."
+      },
+      {
+        "type": "gout",
+        "texte": "Le poivre aide l'organisme à mieux utiliser le curcuma : n'en oubliez pas une pincée."
+      },
+      {
+        "type": "batch",
+        "texte": "Le dahl est encore meilleur le lendemain. Il se congèle 3 mois en portions."
+      },
+      {
+        "type": "saison",
+        "texte": "Hors saison des courges, utilisez des épinards (frais ou surgelés) ajoutés 3 min avant la fin."
+      },
+      {
+        "type": "budget",
+        "texte": "Environ 1,50 € la portion avec le riz."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 4,
+      "congelation": true,
+      "note": "Boîtes hermétiques ; réchauffer avec un trait d'eau."
+    },
+    "image": {
+      "url": null,
+      "alt": "Cocotte de dahl orangé parsemé de coriandre, à côté d'un bol de riz.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "diner-saumon-poireaux-fondants-ecrase-haricots-blancs",
+    "titre": "Saumon, poireaux fondants et écrasé de haricots blancs",
+    "description": "Un pavé de saumon nacré posé sur des poireaux fondants, avec un écrasé de haricots blancs à l'ail et au citron.",
+    "types_repas": [
+      "diner"
+    ],
+    "portions": 2,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 15,
+      "repos_min": 0,
+      "total_min": 25
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "saumon_pave",
+        "nom": "pavés de saumon (environ 120 g chacun)",
+        "quantite": 2,
+        "unite": "piece",
+        "rayon": "poissonnerie",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "poissons"
+        ]
+      },
+      {
+        "cle": "poireau",
+        "nom": "poireaux",
+        "quantite": 2,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "émincés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "haricot_blanc_conserve",
+        "nom": "haricots blancs en conserve (400 g)",
+        "quantite": 1,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": "rincés et égouttés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "ail",
+        "nom": "ail",
+        "quantite": 1,
+        "unite": "gousse",
+        "rayon": "fruits_legumes",
+        "preparation": "hachée",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "citron",
+        "nom": "citron",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "thym",
+        "nom": "thym",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 3,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "poivre",
+        "nom": "poivre",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Faire fondre les poireaux dans une poêle avec 1 c. à soupe d'huile, le thym, du sel et 3 c. à soupe d'eau, à couvert et à feu doux.",
+        "duree_min": 12,
+        "minuteur": true
+      },
+      {
+        "ordre": 2,
+        "texte": "Pendant ce temps, chauffer les haricots blancs dans une casserole avec l'ail, 1 c. à soupe d'huile et 4 c. à soupe d'eau, 5 min.",
+        "duree_min": 5,
+        "minuteur": true
+      },
+      {
+        "ordre": 3,
+        "texte": "Écraser grossièrement les haricots à la fourchette avec le zeste et la moitié du jus du citron. Saler, poivrer."
+      },
+      {
+        "ordre": 4,
+        "texte": "Cuire le saumon côté peau dans une poêle chaude avec le reste d'huile 4 min, puis 1 à 2 min de l'autre côté : il doit rester nacré à cœur.",
+        "duree_min": 6,
+        "minuteur": true
+      },
+      {
+        "ordre": 5,
+        "texte": "Servir le saumon sur les poireaux, avec l'écrasé et un filet de citron."
+      }
+    ],
+    "tags": {
+      "temps": "rapide",
+      "ig_estime": "bas",
+      "regimes": [
+        "sans_lactose",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "riche_en_proteines",
+        "source_omega3",
+        "legumineuses",
+        "riche_en_fibres",
+        "reconfortant"
+      ]
+    },
+    "allergenes": [
+      "poissons"
+    ],
+    "saisons": [
+      "automne",
+      "hiver",
+      "printemps"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "L'écrasé de haricots blancs remplace la purée de pommes de terre : plus de fibres et de protéines, index glycémique bien plus bas."
+      },
+      {
+        "type": "budget",
+        "texte": "Remplacez le saumon par de la truite, du maquereau frais ou un filet de lieu ; les poissons gras restent les plus riches en oméga-3."
+      },
+      {
+        "type": "substitution",
+        "texte": "Version végétarienne : deux œufs mollets ou du tofu fumé à la place du poisson."
+      },
+      {
+        "type": "saison",
+        "texte": "Au printemps, des asperges à la place des poireaux."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 1,
+      "congelation": false,
+      "note": "À consommer de préférence le jour même ; poireaux et écrasé se gardent 2 jours."
+    },
+    "image": {
+      "url": null,
+      "alt": "Pavé de saumon doré sur un lit de poireaux, à côté d'un écrasé de haricots blancs.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "diner-plaque-poulet-chou-fleur-pois-chiches-paprika",
+    "titre": "Plaque de poulet, chou-fleur et pois chiches au paprika fumé",
+    "description": "Tout cuit ensemble sur une seule plaque : poulet, chou-fleur doré et pois chiches au paprika fumé, avec une sauce yaourt-citron.",
+    "types_repas": [
+      "diner",
+      "dejeuner"
+    ],
+    "portions": 4,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 25,
+      "repos_min": 0,
+      "total_min": 35
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "poulet_haut_cuisse",
+        "nom": "hauts de cuisse de poulet désossés (ou blancs)",
+        "quantite": 500,
+        "unite": "g",
+        "rayon": "boucherie_volaille",
+        "preparation": "en gros morceaux",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "chou_fleur",
+        "nom": "chou-fleur",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "en petits bouquets",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "pois_chiche_conserve",
+        "nom": "pois chiches en conserve (400 g)",
+        "quantite": 1,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": "rincés et égouttés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "oignon_rouge",
+        "nom": "oignons rouges",
+        "quantite": 2,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "en quartiers",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "yaourt_nature",
+        "nom": "yaourt nature",
+        "quantite": 250,
+        "unite": "g",
+        "rayon": "cremerie_oeufs",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": [
+          "lait"
+        ]
+      },
+      {
+        "cle": "citron",
+        "nom": "citron",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": []
+      },
+      {
+        "cle": "ail",
+        "nom": "ail",
+        "quantite": 1,
+        "unite": "gousse",
+        "rayon": "fruits_legumes",
+        "preparation": "râpée",
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour la sauce",
+        "allergenes": []
+      },
+      {
+        "cle": "persil_plat",
+        "nom": "persil plat",
+        "quantite": 0.5,
+        "unite": "botte",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "paprika_fume",
+        "nom": "paprika fumé",
+        "quantite": 2,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "cumin_moulu",
+        "nom": "cumin moulu",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 3,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "poivre",
+        "nom": "poivre",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Préchauffer le four à 220 °C."
+      },
+      {
+        "ordre": 2,
+        "texte": "Sur une grande plaque, mélanger poulet, chou-fleur, pois chiches et oignons avec l'huile, le paprika, le cumin, sel et poivre. Bien étaler en une seule couche."
+      },
+      {
+        "ordre": 3,
+        "texte": "Enfourner 25 min en remuant à mi-cuisson, jusqu'à ce que le chou-fleur soit doré et le poulet bien cuit.",
+        "duree_min": 25,
+        "minuteur": true
+      },
+      {
+        "ordre": 4,
+        "texte": "Pendant la cuisson, mélanger le yaourt, l'ail râpé, le zeste et le jus d'un demi-citron, sel et poivre."
+      },
+      {
+        "ordre": 5,
+        "texte": "Servir parsemé de persil, avec la sauce et des quartiers de citron."
+      }
+    ],
+    "tags": {
+      "temps": "mijote",
+      "ig_estime": "bas",
+      "regimes": [
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "riche_en_proteines",
+        "legumineuses",
+        "riche_en_fibres",
+        "batch_cooking",
+        "a_emporter"
+      ]
+    },
+    "allergenes": [
+      "lait"
+    ],
+    "saisons": [
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Les pois chiches jouent ici le rôle de féculent : pas besoin d'ajouter de pain ou de riz pour un repas complet et rassasiant."
+      },
+      {
+        "type": "batch",
+        "texte": "Les restes se mangent froids en salade le lendemain, avec une poignée de jeunes pousses."
+      },
+      {
+        "type": "substitution",
+        "texte": "Version végétarienne : remplacez le poulet par une seconde boîte de pois chiches et 200 g de feta en cubes ajoutée 10 min avant la fin. Sans lactose : sauce tahini-citron."
+      },
+      {
+        "type": "saison",
+        "texte": "En été, poivrons et courgettes remplacent le chou-fleur (cuisson 20 min)."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 3,
+      "congelation": false,
+      "note": "Boîtes hermétiques ; sauce à part."
+    },
+    "image": {
+      "url": null,
+      "alt": "Plaque de four avec poulet doré, bouquets de chou-fleur, pois chiches et oignons rouges.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "collation-houmous-betterave-crudites",
+    "titre": "Houmous de betterave et crudités",
+    "description": "Un houmous rose vif, doux et citronné, à tartiner ou à dipper avec des bâtonnets de carotte et des feuilles d'endive.",
+    "types_repas": [
+      "collation"
+    ],
+    "portions": 6,
+    "temps": {
+      "preparation_min": 10,
+      "cuisson_min": 0,
+      "repos_min": 0,
+      "total_min": 10
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "pois_chiche_conserve",
+        "nom": "pois chiches en conserve (400 g)",
+        "quantite": 1,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": "rincés et égouttés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "betterave_cuite",
+        "nom": "betterave cuite",
+        "quantite": 1,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "tahini",
+        "nom": "tahini (purée de sésame)",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "sesame"
+        ]
+      },
+      {
+        "cle": "citron",
+        "nom": "citron",
+        "quantite": 0.5,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "ail",
+        "nom": "ail",
+        "quantite": 1,
+        "unite": "gousse",
+        "rayon": "fruits_legumes",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "carotte",
+        "nom": "carottes",
+        "quantite": 3,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "en bâtonnets",
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour servir",
+        "allergenes": []
+      },
+      {
+        "cle": "endive",
+        "nom": "endives",
+        "quantite": 2,
+        "unite": "piece",
+        "rayon": "fruits_legumes",
+        "preparation": "feuilles détachées",
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour servir",
+        "allergenes": []
+      },
+      {
+        "cle": "cumin_moulu",
+        "nom": "cumin moulu",
+        "quantite": 0.5,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Mixer les pois chiches, la betterave en morceaux, le tahini, le jus du demi-citron, l'ail, le cumin, l'huile et une pincée de sel."
+      },
+      {
+        "ordre": 2,
+        "texte": "Ajouter 2 à 4 c. à soupe d'eau froide en mixant jusqu'à obtenir une texture lisse. Rectifier sel et citron."
+      },
+      {
+        "ordre": 3,
+        "texte": "Servir avec les bâtonnets de carotte et les feuilles d'endive."
+      }
+    ],
+    "tags": {
+      "temps": "express",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien",
+        "vegan",
+        "sans_lactose",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "legumineuses",
+        "riche_en_fibres",
+        "sans_cuisson",
+        "batch_cooking",
+        "a_emporter",
+        "petit_budget"
+      ]
+    },
+    "allergenes": [
+      "sesame"
+    ],
+    "saisons": [
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": true,
+      "proteines": true,
+      "feculents": false,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Associer des crudités à une tartinade de légumineuses : une collation qui cale sans faire grimper la glycémie."
+      },
+      {
+        "type": "batch",
+        "texte": "Le houmous se garde 4 jours au frigo dans un bocal, avec un filet d'huile d'olive en surface."
+      },
+      {
+        "type": "saison",
+        "texte": "En été : radis, concombre et poivron pour dipper."
+      },
+      {
+        "type": "anti_gaspi",
+        "texte": "L'eau des pois chiches (aquafaba) remplace l'eau pour un houmous encore plus crémeux."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 4,
+      "congelation": false,
+      "note": "Bocal fermé au réfrigérateur ; crudités dans une boîte avec un essuie-tout humide."
+    },
+    "image": {
+      "url": null,
+      "alt": "Bol de houmous rose vif entouré de bâtonnets de carottes et de feuilles d'endive.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "collation-pois-chiches-croustillants-paprika",
+    "titre": "Pois chiches croustillants au paprika",
+    "description": "Des pois chiches rôtis jusqu'à devenir croquants, à grignoter comme des chips ou à parsemer sur une salade.",
+    "types_repas": [
+      "collation"
+    ],
+    "portions": 4,
+    "temps": {
+      "preparation_min": 5,
+      "cuisson_min": 25,
+      "repos_min": 0,
+      "total_min": 30
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "pois_chiche_conserve",
+        "nom": "pois chiches en conserve (400 g)",
+        "quantite": 1,
+        "unite": "boite",
+        "rayon": "conserves",
+        "preparation": "rincés, égouttés et bien séchés",
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "paprika_doux",
+        "nom": "paprika (doux ou fumé)",
+        "quantite": 1,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "ail_poudre",
+        "nom": "ail en poudre",
+        "quantite": 0.5,
+        "unite": "cac",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "huile_olive",
+        "nom": "huile d'olive",
+        "quantite": 1,
+        "unite": "cas",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": null,
+        "unite": "au_gout",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Préchauffer le four à 200 °C."
+      },
+      {
+        "ordre": 2,
+        "texte": "Sécher soigneusement les pois chiches dans un torchon propre et retirer les peaux qui se détachent : c'est le secret du croustillant."
+      },
+      {
+        "ordre": 3,
+        "texte": "Les mélanger avec l'huile, le paprika, l'ail en poudre et le sel, puis les étaler sur une plaque."
+      },
+      {
+        "ordre": 4,
+        "texte": "Enfourner 25 min en secouant la plaque 2 fois, jusqu'à ce qu'ils soient dorés et croquants.",
+        "duree_min": 25,
+        "minuteur": true
+      },
+      {
+        "ordre": 5,
+        "texte": "Laisser refroidir sur la plaque : ils croustillent encore en refroidissant."
+      }
+    ],
+    "tags": {
+      "temps": "rapide",
+      "ig_estime": "bas",
+      "regimes": [
+        "vegetarien",
+        "vegan",
+        "sans_lactose",
+        "sans_gluten"
+      ],
+      "caracteristiques": [
+        "legumineuses",
+        "riche_en_fibres",
+        "a_emporter",
+        "petit_budget"
+      ]
+    },
+    "allergenes": [],
+    "saisons": [
+      "printemps",
+      "ete",
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": false,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Une alternative aux chips ou biscuits apéritifs, riche en fibres et en protéines végétales."
+      },
+      {
+        "type": "batch",
+        "texte": "Se gardent 3 jours à température ambiante dans un bocal non hermétique (ils ramollissent dans une boîte fermée)."
+      },
+      {
+        "type": "gout",
+        "texte": "Variantes : cumin et zeste de citron, ou curry doux, ou cannelle avec une pointe de sirop d'érable."
+      },
+      {
+        "type": "budget",
+        "texte": "Moins de 0,40 € la portion."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 0,
+      "congelation": false,
+      "note": "Conservation hors frigo : 3 jours dans un bocal entrouvert."
+    },
+    "image": {
+      "url": null,
+      "alt": "Petit bol de pois chiches dorés et croustillants saupoudrés de paprika.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "collation-bouchees-cacao-amandes-sans-cuisson",
+    "titre": "Bouchées cacao-amandes sans cuisson",
+    "description": "Des petites bouchées au goût de brownie, faites d'amandes, de flocons d'avoine, de dattes et de cacao, roulées dans la coco.",
+    "types_repas": [
+      "collation"
+    ],
+    "portions": 6,
+    "temps": {
+      "preparation_min": 15,
+      "cuisson_min": 0,
+      "repos_min": 30,
+      "total_min": 15
+    },
+    "difficulte": "facile",
+    "ingredients": [
+      {
+        "cle": "amande_entiere",
+        "nom": "amandes entières",
+        "quantite": 80,
+        "unite": "g",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "fruits_a_coque"
+        ]
+      },
+      {
+        "cle": "flocons_avoine",
+        "nom": "flocons d'avoine",
+        "quantite": 40,
+        "unite": "g",
+        "rayon": "epicerie_seche",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": [
+          "gluten"
+        ]
+      },
+      {
+        "cle": "datte_medjool",
+        "nom": "dattes Medjool dénoyautées (environ 6)",
+        "quantite": 100,
+        "unite": "g",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "cacao_non_sucre",
+        "nom": "cacao en poudre non sucré",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "epicerie_sucree",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "graines_lin_moulues",
+        "nom": "graines de lin moulues",
+        "quantite": 1,
+        "unite": "cas",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": null,
+        "allergenes": []
+      },
+      {
+        "cle": "noix_coco_rapee",
+        "nom": "noix de coco râpée",
+        "quantite": 2,
+        "unite": "cas",
+        "rayon": "fruits_secs_graines",
+        "preparation": null,
+        "optionnel": false,
+        "placard": false,
+        "groupe": "Pour l'enrobage",
+        "allergenes": []
+      },
+      {
+        "cle": "sel",
+        "nom": "sel",
+        "quantite": 1,
+        "unite": "pincee",
+        "rayon": "huiles_condiments",
+        "preparation": null,
+        "optionnel": false,
+        "placard": true,
+        "groupe": null,
+        "allergenes": []
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "texte": "Mixer les amandes et les flocons d'avoine en poudre grossière."
+      },
+      {
+        "ordre": 2,
+        "texte": "Ajouter les dattes, le cacao, les graines de lin, le sel et 1 à 2 c. à soupe d'eau. Mixer jusqu'à ce que la pâte se tienne quand on la presse."
+      },
+      {
+        "ordre": 3,
+        "texte": "Former 12 boules avec les mains légèrement humides et les rouler dans la noix de coco."
+      },
+      {
+        "ordre": 4,
+        "texte": "Réserver 30 min au frais pour qu'elles se raffermissent."
+      }
+    ],
+    "tags": {
+      "temps": "express",
+      "ig_estime": "modere",
+      "regimes": [
+        "vegetarien",
+        "vegan",
+        "sans_lactose"
+      ],
+      "caracteristiques": [
+        "sans_cuisson",
+        "batch_cooking",
+        "congelable",
+        "a_emporter"
+      ]
+    },
+    "allergenes": [
+      "gluten",
+      "fruits_a_coque"
+    ],
+    "saisons": [
+      "printemps",
+      "ete",
+      "automne",
+      "hiver"
+    ],
+    "composition_assiette": {
+      "legumes": false,
+      "proteines": true,
+      "feculents": true,
+      "bons_gras": true
+    },
+    "astuces": [
+      {
+        "type": "glycemie",
+        "texte": "Les dattes apportent un sucre naturel mais rapide : c'est pour ça que l'IG estimé est modéré. Les amandes et le lin l'équilibrent ; comptez 2 bouchées, idéalement avec un yaourt ou après un repas."
+      },
+      {
+        "type": "batch",
+        "texte": "Se gardent 7 jours au frigo et 2 mois au congélateur : sorties 10 min avant, elles sont prêtes."
+      },
+      {
+        "type": "substitution",
+        "texte": "Sans gluten : flocons d'avoine certifiés sans gluten ou poudre d'amande à la place. Allergie aux fruits à coque : graines de tournesol et de courge."
+      },
+      {
+        "type": "gout",
+        "texte": "Ajoutez le zeste d'une orange en hiver pour une version chocolat-orange."
+      }
+    ],
+    "conservation": {
+      "refrigerateur_jours": 7,
+      "congelation": true,
+      "note": "Boîte hermétique au réfrigérateur."
+    },
+    "image": {
+      "url": null,
+      "alt": "Douze petites boules chocolatées enrobées de noix de coco râpée sur une planche.",
+      "credit": null
+    },
+    "nutrition": null,
+    "source": "originale",
+    "validation": {
+      "chef": true,
+      "dieteticienne": false,
+      "date": "2026-11-26"
+    }
+  }
+]
