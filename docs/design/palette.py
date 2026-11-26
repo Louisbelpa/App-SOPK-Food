@@ -17,69 +17,71 @@ def cr(a, b):
 
 # token: (light, dark, usage)
 C = {
- # fonds
- "background":        ("#F8F5EF", "#121614", "Fond d'écran (crème lin / nuit de sous-bois)"),
- "surface":           ("#FFFFFF", "#1B201D", "Cartes, listes groupées"),
- "surfaceMuted":      ("#EFEAE1", "#252C28", "Chips au repos, champs, segments"),
- "surfaceRaised":     ("#FFFFFF", "#222825", "Sheets, popovers (élévation 2)"),
- "separator":         ("#E2DCD1", "#323A35", "Filets décoratifs (non porteurs de sens)"),
- "border":            ("#8A8276", "#7D8680", "Contours de champs/contrôles (≥ 3:1)"),
- # texte
- "textPrimary":       ("#1E2621", "#F0EDE6", "Texte principal"),
- "textSecondary":     ("#566059", "#B4BBB5", "Légendes, métadonnées"),
- "textTertiary":      ("#5F6661", "#959D97", "Placeholders, aides (reste ≥ 4.5:1)"),
- # interaction
- "accent":            ("#3B6A55", "#8EC3A6", "Sauge : boutons, liens, sélection, anneau « aujourd'hui »"),
- "onAccent":          ("#FFFFFF", "#0E2218", "Texte/icône sur accent"),
- "accentSoft":        ("#E2ECE5", "#21362B", "Fond chip sélectionnée, carte mise en avant"),
- "onAccentSoft":      ("#2A4F3F", "#AAD6BD", "Texte sur accentSoft"),
- "highlight":         ("#A54F2E", "#EE9F7D", "Terracotta : mise en avant ponctuelle (badge, illustration)"),
- "onHighlight":       ("#FFFFFF", "#2A1206", "Texte sur highlight"),
- "highlightSoft":     ("#F6E5DB", "#3B251B", "Fond terracotta doux"),
+ # fonds — V2 « cosy » : lin, mie de pain, chocolat
+ "background":        ("#FBF3E7", "#1C1512", "Fond d'écran (lin ensoleillé / chocolat noir)"),
+ "surface":           ("#FFFAF2", "#271E1A", "Cartes, listes groupées (blanc crème, jamais #FFF pur)"),
+ "surfaceMuted":      ("#F4E7D5", "#33281F", "Chips au repos, champs, segments (lin)"),
+ "surfaceRaised":     ("#FFFCF7", "#2E241F", "Sheets, popovers (élévation 2)"),
+ "separator":         ("#EEE1CF", "#3A2E27", "Filets décoratifs, très discrets (non porteurs de sens)"),
+ "border":            ("#937F69", "#8F7D6F", "Contours de champs/contrôles (≥ 3:1)"),
+ # texte — bruns chauds au lieu de vert-de-gris
+ "textPrimary":       ("#2F221B", "#F6EBDD", "Texte principal (espresso / crème)"),
+ "textSecondary":     ("#6A5545", "#CDBBA9", "Légendes, métadonnées"),
+ "textTertiary":      ("#6F5B4B", "#AA988A", "Placeholders, aides (reste ≥ 4.5:1)"),
+ # interaction — terracotta « argile cuite » devient l'accent
+ "accent":            ("#A1482A", "#F0A27D", "Terracotta : boutons, liens, sélection, anneau « aujourd'hui »"),
+ "onAccent":          ("#FFFFFF", "#2B1307", "Texte/icône sur accent"),
+ "accentSoft":        ("#F9E3D5", "#45291D", "Fond abricot : chip sélectionnée, carte check-in"),
+ "onAccentSoft":      ("#7A3219", "#F9C5AA", "Texte sur accentSoft"),
+ "leaf":              ("#556A2C", "#BFD08F", "Sauge dorée : nature, IG bas, confidentialité, réussite"),
+ "leafSoft":          ("#EBEDD5", "#2E3119", "Fond sauge dorée"),
+ "highlight":         ("#855810", "#EDC47C", "Miel : petit mot du jour, mise en avant ponctuelle"),
+ "onHighlight":       ("#FFFFFF", "#2B1D06", "Texte sur highlight"),
+ "highlightSoft":     ("#FBEACB", "#3D2E17", "Fond miel"),
  # états
- "success":           ("#2D6A47", "#8DCB9F", "Confirmation (« C'est noté »)"),
- "successSoft":       ("#E1EEE4", "#1E3426", "Fond confirmation"),
- "warning":           ("#855600", "#E8BD69", "Alerte douce (seuil 90 j, contre-indication)"),
- "warningSoft":       ("#FAEFD8", "#372C13", "Fond alerte douce"),
- "info":              ("#2E5C78", "#90C1DE", "Information, source, mention d'estimation"),
- "infoSoft":          ("#E2EDF3", "#1B2E39", "Fond information"),
- "destructive":       ("#B3261E", "#FFB4AB", "Suppression de données UNIQUEMENT (jamais une donnée corporelle)"),
- # cycle
- "period":            ("#9E3957", "#F097AF", "Règles (toujours avec drop.fill + libellé)"),
- "onPeriod":          ("#FFFFFF", "#33101C", "Texte sur period"),
- "periodSoft":        ("#F5E3E7", "#3C1E28", "Fond jour de règles"),
- "spotting":          ("#B2647A", "#D99AAB", "Spotting (contour, jamais seul)"),
+ "success":           ("#4E6727", "#BBCD8C", "Confirmation (« C'est noté »)"),
+ "successSoft":       ("#E9EDD3", "#2C301B", "Fond confirmation"),
+ "warning":           ("#8A5300", "#F0C173", "Alerte douce (seuil 90 j, contre-indication)"),
+ "warningSoft":       ("#FCEBCB", "#3D2C12", "Fond alerte douce"),
+ "info":              ("#3D5F6B", "#A2C8D0", "Information, source, mention d'estimation (bleu-gris chaud)"),
+ "infoSoft":          ("#E4ECE9", "#1F2E30", "Fond information"),
+ "destructive":       ("#A3172B", "#FFB1AA", "Suppression de données UNIQUEMENT (jamais une donnée corporelle)"),
+ # cycle — prune, nettement distincte du terracotta
+ "period":            ("#86345F", "#E8A5C5", "Règles (toujours avec drop.fill + libellé)"),
+ "onPeriod":          ("#FFFFFF", "#3A0F25", "Texte sur period"),
+ "periodSoft":        ("#F6E2EA", "#3F2131", "Fond jour de règles"),
+ "spotting":          ("#A9688A", "#CA8DAC", "Quelques traces (contour, jamais seul)"),
  # teintes de saison (catégories)
- "miel":              ("#795610", "#E3BF72", "Teinte miel"),
- "mielSoft":          ("#F6ECD3", "#382E17", ""),
- "olive":             ("#4A6220", "#B6CB86", "Teinte olive"),
- "oliveSoft":         ("#E7EED8", "#2A321F", ""),
- "lagon":             ("#1E6662", "#80CAC7", "Teinte lagon"),
- "lagonSoft":         ("#DBEEED", "#173434", ""),
- "ardoise":           ("#3C4E86", "#A9B6EB", "Teinte ardoise"),
- "ardoiseSoft":       ("#E4E8F5", "#222A43", ""),
- "argile":            ("#984829", "#EDA585", "Teinte argile"),
- "argileSoft":        ("#F7E5DB", "#3B251B", ""),
- "lavande":           ("#654F8E", "#C7B7E6", "Teinte lavande"),
- "lavandeSoft":       ("#ECE6F5", "#2D273E", ""),
+ "miel":              ("#7E5512", "#E7C37D", "Teinte miel"),
+ "mielSoft":          ("#F9EACB", "#3B2D17", ""),
+ "olive":             ("#566529", "#C3CF8F", "Teinte olive"),
+ "oliveSoft":         ("#EDECD2", "#2F3019", ""),
+ "lagon":             ("#2C625C", "#8ECFC2", "Teinte lagon (vert d'eau chaud)"),
+ "lagonSoft":         ("#DFEDE6", "#1C3230", ""),
+ "ardoise":           ("#544878", "#C0B6E4", "Teinte ardoise (bleu nuit tirant sur la prune)"),
+ "ardoiseSoft":       ("#EDE5EC", "#30273A", ""),
+ "cacao":             ("#74482F", "#DEB391", "Teinte cacao"),
+ "cacaoSoft":         ("#F3E3D6", "#3A281D", ""),
+ "lavande":           ("#694E86", "#CEB9E3", "Teinte lavande"),
+ "lavandeSoft":       ("#EFE5F1", "#31263A", ""),
 }
 
 ALIASES = {
- "meal.breakfast": "miel", "meal.lunch": "olive", "meal.dinner": "ardoise", "meal.snack": "argile",
- "activity.strength": "argile", "activity.cardio": "miel", "activity.mobility": "lagon",
+ "meal.breakfast": "miel", "meal.lunch": "olive", "meal.dinner": "ardoise", "meal.snack": "cacao",
+ "activity.strength": "cacao", "activity.cardio": "miel", "activity.mobility": "lagon",
  "activity.breathing": "lavande", "activity.intervals": "ardoise",
 }
 
 HC = {  # variantes « Augmenter le contraste »
- "textSecondary": ("#3F4842", "#D2D8D3"),
- "border":        ("#5E574D", "#A3ACA6"),
- "accent":        ("#2C5442", "#A9DABF"),
- "period":        ("#7E2643", "#F7B8C9"),
+ "textSecondary": ("#4E3D31", "#E3D5C6"),
+ "border":        ("#64543F", "#B3A294"),
+ "accent":        ("#7E3418", "#F8BE9F"),
+ "period":        ("#6B2149", "#F3C2D9"),
 }
 
 BG3 = ["background", "surface", "surfaceMuted"]
 checks = []  # (fg, [bgs], min, kind)
-for t in ["textPrimary", "textSecondary", "textTertiary", "accent", "highlight", "success",
+for t in ["textPrimary", "textSecondary", "textTertiary", "accent", "leaf", "highlight", "success",
           "warning", "info", "destructive", "period"]:
     checks.append((t, BG3, 4.5, "texte"))
 for t in ["border", "spotting"]:
@@ -89,6 +91,8 @@ checks += [
  ("onAccentSoft", ["accentSoft"], 4.5, "texte"),
  ("accent", ["accentSoft"], 4.5, "texte"),
  ("onHighlight", ["highlight"], 4.5, "texte"),
+ ("leaf", ["leafSoft"], 4.5, "texte"),
+ ("textPrimary", ["leafSoft", "highlightSoft"], 4.5, "texte"),
  ("highlight", ["highlightSoft"], 4.5, "texte"),
  ("success", ["successSoft"], 4.5, "texte"),
  ("warning", ["warningSoft"], 4.5, "texte"),
@@ -96,10 +100,11 @@ checks += [
  ("onPeriod", ["period"], 4.5, "texte"),
  ("period", ["periodSoft"], 4.5, "texte"),
  ("textPrimary", ["periodSoft", "accentSoft", "surfaceRaised"], 4.5, "texte"),
- ("textSecondary", ["surfaceRaised"], 4.5, "texte"),
+ ("textSecondary", ["surfaceRaised", "accentSoft", "highlightSoft", "leafSoft"], 4.5, "texte"),
+ ("border", ["accentSoft", "highlightSoft"], 3.0, "UI"),
  ("accent", ["surfaceMuted"], 3.0, "UI"),
 ]
-for s in ["miel", "olive", "lagon", "ardoise", "argile", "lavande"]:
+for s in ["miel", "olive", "lagon", "ardoise", "cacao", "lavande"]:
     checks.append((s, ["surface", "background", s + "Soft"], 4.5, "texte"))
     checks.append((s + "Soft", ["surface"], 1.0, "déco"))  # informative only
 
@@ -142,28 +147,29 @@ if "--md" in sys.argv:
 
 if "--json" in sys.argv:
     tokens = {
-      "$schema_note": "Tokens Ovéa v1. Couleurs sRGB hex. Généré par script de contraste (WCAG 2.x).",
+      "$schema_note": "Tokens Ovéa v2 (direction cosy). Couleurs sRGB hex. Généré par script de contraste (WCAG 2.x).",
       "color": {k: {"light": l, "dark": d, **({"description": u} if u else {})} for k, (l, d, u) in C.items()},
       "colorAliases": ALIASES,
       "colorHighContrast": {k: {"light": l, "dark": d} for k, (l, d) in HC.items()},
       "spacing": {"xxs": 2, "xs": 4, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 48,
                   "screenMargin": 20, "cardPadding": 16, "sectionGap": 32, "minTapTarget": 44},
-      "radius": {"xs": 6, "sm": 10, "md": 14, "lg": 20, "xl": 28, "capsule": 999,
+      "radius": {"xs": 8, "sm": 12, "md": 18, "lg": 24, "xl": 32, "button": 999, "capsule": 999,
                  "_note": "RoundedRectangle(style: .continuous) partout"},
       "elevation": {
         "0": {"light": "aucune", "dark": "aucune"},
-        "1": {"light": {"color": "#2B3A30", "opacity": 0.06, "radius": 12, "y": 4, "plus": {"opacity": 0.04, "radius": 2, "y": 1}},
-              "dark": {"shadow": "aucune", "surface": "surface", "stroke": "separator 0.5pt"}},
-        "2": {"light": {"color": "#2B3A30", "opacity": 0.10, "radius": 24, "y": 8},
-              "dark": {"shadow": "aucune", "surface": "surfaceRaised", "stroke": "separator 0.5pt"}}
+        "1": {"light": {"color": "#5C341C", "opacity": 0.07, "radius": 20, "y": 8, "plus": {"opacity": 0.04, "radius": 2, "y": 1}},
+              "dark": {"color": "#000000", "opacity": 0.28, "radius": 16, "y": 6, "surface": "surface"}},
+        "2": {"light": {"color": "#5C341C", "opacity": 0.12, "radius": 32, "y": 12},
+              "dark": {"color": "#000000", "opacity": 0.40, "radius": 28, "y": 10, "surface": "surfaceRaised"}}
       },
       "typography": {
-        "_note": "Dynamic Type uniquement. design=serif => New York ; default => SF Pro ; rounded => SF Pro Rounded.",
-        "display":     {"textStyle": "largeTitle", "design": "serif", "weight": "semibold"},
-        "title1":      {"textStyle": "title", "design": "serif", "weight": "semibold"},
-        "title2":      {"textStyle": "title2", "design": "serif", "weight": "semibold"},
+        "_note": "Dynamic Type uniquement. family=Fraunces (OFL, embarquée, axe SOFT=100, opsz auto) avec repli New York ; default => SF Pro ; rounded => SF Pro Rounded.",
+        "display":     {"textStyle": "largeTitle", "family": "Fraunces", "fallbackDesign": "serif", "weight": "semibold", "soft": 100},
+        "title1":      {"textStyle": "title", "family": "Fraunces", "fallbackDesign": "serif", "weight": "semibold", "soft": 100},
+        "title2":      {"textStyle": "title2", "family": "Fraunces", "fallbackDesign": "serif", "weight": "semibold", "soft": 100},
         "title3":      {"textStyle": "title3", "design": "default", "weight": "semibold"},
         "headline":    {"textStyle": "headline", "design": "default", "weight": "semibold"},
+        "button":      {"textStyle": "headline", "design": "rounded", "weight": "semibold"},
         "body":        {"textStyle": "body", "design": "default", "weight": "regular"},
         "bodyEmphasis":{"textStyle": "body", "design": "default", "weight": "medium"},
         "callout":     {"textStyle": "callout", "design": "default", "weight": "regular"},
@@ -171,7 +177,7 @@ if "--json" in sys.argv:
         "footnote":    {"textStyle": "footnote", "design": "default", "weight": "regular"},
         "caption":     {"textStyle": "caption", "design": "default", "weight": "medium"},
         "overline":    {"textStyle": "caption2", "design": "default", "weight": "semibold", "tracking": 0.6, "case": "uppercase"},
-        "quote":       {"textStyle": "title3", "design": "serif", "weight": "regular", "italic": True},
+        "quote":       {"textStyle": "title3", "family": "Fraunces", "fallbackDesign": "serif", "weight": "regular", "italic": True, "soft": 100},
         "timer":       {"baseSize": 72, "relativeTo": "largeTitle", "design": "rounded", "weight": "light", "monospacedDigit": True},
         "metric":      {"textStyle": "title2", "design": "rounded", "weight": "semibold", "monospacedDigit": True}
       },

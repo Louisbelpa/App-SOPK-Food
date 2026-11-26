@@ -5,114 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ovéa — maquettes</title>
 <meta name="description" content="Maquettes haute fidélité des écrans du MVP d'Ovéa (iOS 18), light et dark, à partir des tokens de docs/design/tokens.json.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Nunito:wght@500..800&display=swap" rel="stylesheet">
 <style>
 /* ---- Tokens (générés depuis tokens.json) ---- */
 :root {
-  --background: #F8F5EF;
-  --surface: #FFFFFF;
-  --surface-muted: #EFEAE1;
-  --surface-raised: #FFFFFF;
-  --separator: #E2DCD1;
-  --border: #8A8276;
-  --text-primary: #1E2621;
-  --text-secondary: #566059;
-  --text-tertiary: #5F6661;
-  --accent: #3B6A55;
+  --background: #FBF3E7;
+  --surface: #FFFAF2;
+  --surface-muted: #F4E7D5;
+  --surface-raised: #FFFCF7;
+  --separator: #EEE1CF;
+  --border: #937F69;
+  --text-primary: #2F221B;
+  --text-secondary: #6A5545;
+  --text-tertiary: #6F5B4B;
+  --accent: #A1482A;
   --on-accent: #FFFFFF;
-  --accent-soft: #E2ECE5;
-  --on-accent-soft: #2A4F3F;
-  --highlight: #A54F2E;
+  --accent-soft: #F9E3D5;
+  --on-accent-soft: #7A3219;
+  --leaf: #556A2C;
+  --leaf-soft: #EBEDD5;
+  --highlight: #855810;
   --on-highlight: #FFFFFF;
-  --highlight-soft: #F6E5DB;
-  --success: #2D6A47;
-  --success-soft: #E1EEE4;
-  --warning: #855600;
-  --warning-soft: #FAEFD8;
-  --info: #2E5C78;
-  --info-soft: #E2EDF3;
-  --destructive: #B3261E;
-  --period: #9E3957;
+  --highlight-soft: #FBEACB;
+  --success: #4E6727;
+  --success-soft: #E9EDD3;
+  --warning: #8A5300;
+  --warning-soft: #FCEBCB;
+  --info: #3D5F6B;
+  --info-soft: #E4ECE9;
+  --destructive: #A3172B;
+  --period: #86345F;
   --on-period: #FFFFFF;
-  --period-soft: #F5E3E7;
-  --spotting: #B2647A;
-  --miel: #795610;
-  --miel-soft: #F6ECD3;
-  --olive: #4A6220;
-  --olive-soft: #E7EED8;
-  --lagon: #1E6662;
-  --lagon-soft: #DBEEED;
-  --ardoise: #3C4E86;
-  --ardoise-soft: #E4E8F5;
-  --argile: #984829;
-  --argile-soft: #F7E5DB;
-  --lavande: #654F8E;
-  --lavande-soft: #ECE6F5;
-  --shadow-card: 0 1px 2px rgba(43,58,48,.04), 0 4px 12px rgba(43,58,48,.06);
-  --shadow-raised: 0 8px 24px rgba(43,58,48,.10);
-  --card-stroke: var(--separator);
+  --period-soft: #F6E2EA;
+  --spotting: #A9688A;
+  --miel: #7E5512;
+  --miel-soft: #F9EACB;
+  --olive: #566529;
+  --olive-soft: #EDECD2;
+  --lagon: #2C625C;
+  --lagon-soft: #DFEDE6;
+  --ardoise: #544878;
+  --ardoise-soft: #EDE5EC;
+  --cacao: #74482F;
+  --cacao-soft: #F3E3D6;
+  --lavande: #694E86;
+  --lavande-soft: #EFE5F1;
+  --shadow-card: 0 1px 2px rgba(92,52,28,.04), 0 8px 20px rgba(92,52,28,.07);
+  --shadow-raised: 0 12px 32px rgba(92,52,28,.12);
+  --card-stroke: transparent;
+  --grain-blend: multiply;
 }
 html[data-theme="dark"] {
-  --background: #121614;
-  --surface: #1B201D;
-  --surface-muted: #252C28;
-  --surface-raised: #222825;
-  --separator: #323A35;
-  --border: #7D8680;
-  --text-primary: #F0EDE6;
-  --text-secondary: #B4BBB5;
-  --text-tertiary: #959D97;
-  --accent: #8EC3A6;
-  --on-accent: #0E2218;
-  --accent-soft: #21362B;
-  --on-accent-soft: #AAD6BD;
-  --highlight: #EE9F7D;
-  --on-highlight: #2A1206;
-  --highlight-soft: #3B251B;
-  --success: #8DCB9F;
-  --success-soft: #1E3426;
-  --warning: #E8BD69;
-  --warning-soft: #372C13;
-  --info: #90C1DE;
-  --info-soft: #1B2E39;
-  --destructive: #FFB4AB;
-  --period: #F097AF;
-  --on-period: #33101C;
-  --period-soft: #3C1E28;
-  --spotting: #D99AAB;
-  --miel: #E3BF72;
-  --miel-soft: #382E17;
-  --olive: #B6CB86;
-  --olive-soft: #2A321F;
-  --lagon: #80CAC7;
-  --lagon-soft: #173434;
-  --ardoise: #A9B6EB;
-  --ardoise-soft: #222A43;
-  --argile: #EDA585;
-  --argile-soft: #3B251B;
-  --lavande: #C7B7E6;
-  --lavande-soft: #2D273E;
-  --shadow-card: none;
-  --shadow-raised: none;
+  --background: #1C1512;
+  --surface: #271E1A;
+  --surface-muted: #33281F;
+  --surface-raised: #2E241F;
+  --separator: #3A2E27;
+  --border: #8F7D6F;
+  --text-primary: #F6EBDD;
+  --text-secondary: #CDBBA9;
+  --text-tertiary: #AA988A;
+  --accent: #F0A27D;
+  --on-accent: #2B1307;
+  --accent-soft: #45291D;
+  --on-accent-soft: #F9C5AA;
+  --leaf: #BFD08F;
+  --leaf-soft: #2E3119;
+  --highlight: #EDC47C;
+  --on-highlight: #2B1D06;
+  --highlight-soft: #3D2E17;
+  --success: #BBCD8C;
+  --success-soft: #2C301B;
+  --warning: #F0C173;
+  --warning-soft: #3D2C12;
+  --info: #A2C8D0;
+  --info-soft: #1F2E30;
+  --destructive: #FFB1AA;
+  --period: #E8A5C5;
+  --on-period: #3A0F25;
+  --period-soft: #3F2131;
+  --spotting: #CA8DAC;
+  --miel: #E7C37D;
+  --miel-soft: #3B2D17;
+  --olive: #C3CF8F;
+  --olive-soft: #2F3019;
+  --lagon: #8ECFC2;
+  --lagon-soft: #1C3230;
+  --ardoise: #C0B6E4;
+  --ardoise-soft: #30273A;
+  --cacao: #DEB391;
+  --cacao-soft: #3A281D;
+  --lavande: #CEB9E3;
+  --lavande-soft: #31263A;
+  --shadow-card: 0 6px 16px rgba(0,0,0,.28);
+  --shadow-raised: 0 10px 28px rgba(0,0,0,.40);
+  --card-stroke: transparent;
+  --grain-blend: soft-light;
 }
 
 :root {
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  --serif: "New York", ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --rounded: ui-rounded, "SF Pro Rounded", var(--sans);
-  --page-bg: #E9E4DA;
-  --page-text: #1E2621;
-  --frame: #1A1C1B;
+  --serif: "Fraunces", "New York", ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --rounded: ui-rounded, "SF Pro Rounded", "Nunito", var(--sans);
+  --page-bg: #EEDFCB;
+  --page-text: #2F221B;
+  --frame: #2B201B;
   color-scheme: light;
 }
-html[data-theme="dark"] { --page-bg: #0B0D0C; --page-text: #F0EDE6; --frame: #2A2E2C; color-scheme: dark; }
+html[data-theme="dark"] { --page-bg: #110C0A; --page-text: #F6EBDD; --frame: #3A2D26; color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { background: var(--page-bg); color: var(--page-text); font-family: var(--sans); -webkit-font-smoothing: antialiased; transition: background .25s; }
+body { background: var(--page-bg) radial-gradient(1200px 600px at 20% 0%, color-mix(in srgb, var(--highlight-soft) 70%, transparent), transparent); color: var(--page-text); font-family: var(--sans); -webkit-font-smoothing: antialiased; transition: background .25s; }
 .page-head { max-width: 1200px; margin: 0 auto; padding: 32px 16px 8px; display: flex; flex-wrap: wrap; gap: 16px; align-items: end; justify-content: space-between; }
-.page-head h1 { font-family: var(--serif); font-weight: 600; font-size: 32px; margin: 0 0 4px; }
+.page-head h1 { font-family: var(--serif); font-weight: 600; font-variation-settings: "SOFT" 100; font-size: 32px; margin: 0 0 4px; }
 .page-head p { margin: 0; color: var(--text-secondary); font-size: 15px; max-width: 640px; line-height: 1.45; }
-.toggle { font: 600 15px var(--sans); color: var(--on-accent); background: var(--accent); border: 0; border-radius: 999px; padding: 12px 20px; min-height: 44px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.toggle { font: 700 15px var(--rounded); color: var(--on-accent); background: var(--accent); border: 0; border-radius: 999px; padding: 12px 20px; min-height: 44px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
 .toggle:focus-visible, button:focus-visible { outline: 3px solid var(--info); outline-offset: 2px; }
 .rail { display: flex; gap: 48px; overflow-x: auto; padding: 32px 16px 56px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
 @media (min-width: 1300px) { .rail { flex-wrap: wrap; justify-content: center; overflow: visible; } }
@@ -121,7 +131,7 @@ body { background: var(--page-bg); color: var(--page-text); font-family: var(--s
 
 /* ---- Cadre iPhone 390×844 ---- */
 .phone { width: 390px; height: 844px; border-radius: 55px; position: relative; overflow: hidden; background: var(--background); color: var(--text-primary);
-  box-shadow: 0 0 0 11px var(--frame), 0 0 0 12px #4a4d4b, 0 30px 70px rgba(0,0,0,.28); font-size: 17px; line-height: 1.3; transition: background .25s, color .25s; }
+  box-shadow: 0 0 0 11px var(--frame), 0 0 0 12px #5a4a40, 0 30px 70px rgba(0,0,0,.28); font-size: 17px; line-height: 1.3; transition: background .25s, color .25s; }
 .island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 126px; height: 37px; background: #000; border-radius: 20px; z-index: 30; }
 .status { position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; justify-content: space-between; align-items: center; padding: 6px 34px 0 46px; font: 600 17px var(--sans); z-index: 25; }
 .status .sys { display: flex; gap: 6px; align-items: center; }
@@ -138,9 +148,9 @@ body { background: var(--page-bg); color: var(--page-text); font-family: var(--s
 .tab.on { color: var(--accent); }
 
 /* ---- Typo ---- */
-.display { font: 600 34px/1.12 var(--serif); letter-spacing: -.01em; margin: 0; }
-.title1 { font: 600 28px/1.15 var(--serif); margin: 0; }
-.title2 { font: 600 22px/1.2 var(--serif); margin: 0; }
+.display { font: 600 34px/1.12 var(--serif); letter-spacing: -.005em; font-variation-settings: "SOFT" 100, "opsz" 72; margin: 0; }
+.title1 { font: 600 28px/1.15 var(--serif); font-variation-settings: "SOFT" 100; margin: 0; }
+.title2 { font: 600 22px/1.2 var(--serif); font-variation-settings: "SOFT" 100; margin: 0; }
 .title3 { font: 600 20px/1.25 var(--sans); margin: 0; }
 .headline { font: 600 17px/1.3 var(--sans); }
 .callout { font-size: 16px; }
@@ -149,38 +159,38 @@ body { background: var(--page-bg); color: var(--page-text); font-family: var(--s
 .cap { font-size: 12px; font-weight: 500; }
 .overline { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 8px; }
 .metric { font: 600 22px var(--rounded); font-variant-numeric: tabular-nums; }
-.quote { font: italic 400 19px/1.35 var(--serif); }
+.quote { font: italic 400 19px/1.38 var(--serif); font-variation-settings: "SOFT" 100; }
 .muted { color: var(--text-secondary); }
 .c-accent { color: var(--accent); } .c-info { color: var(--info); } .c-period { color: var(--period); } .c-destructive { color: var(--destructive); }
 
 /* ---- Icônes ---- */
-svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } svg.i.xl { width: 44px; height: 44px; stroke-width: 1.5; }
 
 /* ---- Composants ---- */
-.card { background: var(--surface); border-radius: 20px; padding: 16px; box-shadow: var(--shadow-card); border: .5px solid var(--card-stroke); }
+.card { background: var(--surface); border-radius: 24px; padding: 16px; box-shadow: var(--shadow-card); border: .5px solid var(--card-stroke); }
 .card.soft { background: var(--accent-soft); box-shadow: none; border-color: transparent; }
 .row { display: flex; align-items: center; gap: 12px; }
 .stack > * + * { margin-top: 16px; }
 .sec { margin-top: 32px; }
 .chips { display: flex; gap: 8px; flex-wrap: nowrap; overflow: hidden; }
 .chips.wrap { flex-wrap: wrap; }
-.chip { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); font-size: 15px; font-weight: 500; white-space: nowrap; border: 1.5px solid transparent; flex: none; }
+.chip { font-family: var(--sans); display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); font-size: 15px; font-weight: 500; white-space: nowrap; border: 1.5px solid transparent; flex: none; }
 .chip.on { background: var(--accent-soft); color: var(--on-accent-soft); border-color: var(--accent); }
 .chip.dashed { background: transparent; border: 1.5px dashed var(--border); color: var(--text-secondary); }
-.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 14px; font: 600 17px var(--sans); border: 0; width: 100%; }
-.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 54px; border-radius: 999px; font: 700 17px var(--rounded); border: 0; width: 100%; }
+.btn.primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 28%, transparent); }
 .btn.secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
 .btn.ghost { background: transparent; color: var(--accent); height: 44px; }
 .btn.disabled { background: var(--surface-muted); color: var(--text-secondary); }
 .iconbtn { width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--surface-muted); color: var(--accent); flex: none; }
 .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); }
 .cat { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--fg); }
-.search { display: flex; align-items: center; gap: 8px; height: 40px; border-radius: 12px; background: var(--surface-muted); padding: 0 12px; color: var(--text-secondary); font-size: 17px; }
-.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--surface-muted); border-radius: 10px; padding: 2px; }
+.search { display: flex; align-items: center; gap: 8px; height: 44px; border-radius: 999px; padding-left: 16px !important; background: var(--surface-muted); padding: 0 12px; color: var(--text-secondary); font-size: 17px; }
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--surface-muted); border-radius: 999px; padding: 2px; }
 .seg span { text-align: center; font-size: 13px; font-weight: 500; padding: 7px 4px; border-radius: 8px; color: var(--text-primary); }
 .seg span.on { background: var(--surface-raised); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; border: .5px solid var(--separator); }
-.banner { display: flex; gap: 12px; padding: 14px 16px; border-radius: 20px; background: var(--info-soft); }
+.banner { display: flex; gap: 12px; padding: 14px 16px; border-radius: 24px; background: var(--info-soft); }
 .banner.warn { background: var(--warning-soft); }
 .banner > svg { color: var(--info); margin-top: 1px; }
 .banner.warn > svg { color: var(--warning); }
@@ -191,16 +201,26 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
 .t-olive { --fg: var(--olive); --soft: var(--olive-soft); }
 .t-lagon { --fg: var(--lagon); --soft: var(--lagon-soft); }
 .t-ardoise { --fg: var(--ardoise); --soft: var(--ardoise-soft); }
-.t-argile { --fg: var(--argile); --soft: var(--argile-soft); }
+.t-cacao { --fg: var(--cacao); --soft: var(--cacao-soft); }
 .t-lavande { --fg: var(--lavande); --soft: var(--lavande-soft); }
-.vig { background: var(--soft); color: var(--fg); position: relative; overflow: hidden; display: grid; place-items: center; border-radius: 14px; }
+.vig { background: var(--soft); color: var(--fg); position: relative; overflow: hidden; display: grid; place-items: center; border-radius: 20px; }
+.vig::after, .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35; mix-blend-mode: var(--grain-blend);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .22 0 0 0 0 .12 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.grain { position: relative; overflow: hidden; }
+.plaid { background-image:
+  repeating-linear-gradient(0deg, color-mix(in srgb, var(--fg, var(--accent)) 22%, transparent) 0 4px, transparent 4px 14px),
+  repeating-linear-gradient(90deg, color-mix(in srgb, var(--fg, var(--accent)) 22%, transparent) 0 4px, transparent 4px 14px),
+  repeating-linear-gradient(90deg, transparent 0 6px, color-mix(in srgb, var(--fg, var(--accent)) 10%, transparent) 6px 7px, transparent 7px 14px); }
+.doodle { fill: none; stroke: var(--text-primary); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .vig svg.blobs { position: absolute; inset: 0; width: 100%; height: 100%; }
 .vig svg.blobs * { fill: var(--fg); }
 .vig > svg.i { position: relative; }
 
 /* Énergie */
 .energy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.energy div { height: 76px; border-radius: 14px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600; }
+.energy div { height: 76px; border-radius: 20px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font: 700 15px var(--rounded); }
+.energy.on-soft div { background: var(--surface); box-shadow: 0 2px 6px rgba(92,52,28,.06); }
+.energy.on-soft div.on { background: var(--accent); }
 .energy div.on { background: var(--accent); color: var(--on-accent); }
 .bars { display: flex; align-items: flex-end; gap: 3px; height: 22px; }
 .bars i { width: 7px; border-radius: 2px; border: 1.5px solid var(--border); display: block; }
@@ -209,23 +229,23 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
 .on .bars i { border-color: color-mix(in srgb, var(--on-accent) 60%, transparent); }
 .on .bars i.f { background: var(--on-accent); border-color: var(--on-accent); }
 .mood { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.mood div { height: 64px; border-radius: 14px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 600; }
+.mood div { height: 64px; border-radius: 20px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 600; }
 .mood div svg { color: var(--accent); }
 .mood div.on { background: var(--accent); color: var(--on-accent); }
 .mood div.on svg { color: var(--on-accent); }
 .mood.compact div { height: 54px; flex-direction: row; gap: 6px; }
 .energy.compact div { height: 60px; gap: 6px; }
 .seg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.seg3 span { height: 38px; border-radius: 10px; background: var(--surface-muted); display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 500; }
+.seg3 span { height: 38px; border-radius: 999px; background: var(--surface-muted); display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 500; }
 .seg3 span.on { background: var(--accent-soft); color: var(--on-accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent); font-weight: 600; }
 
 /* Liste groupée (Réglages) */
-.group { background: var(--surface); border-radius: 14px; overflow: hidden; border: .5px solid var(--card-stroke); }
+.group { background: var(--surface); border-radius: 20px; box-shadow: var(--shadow-card); overflow: hidden; border: .5px solid var(--card-stroke); }
 .group .it { display: flex; align-items: center; gap: 12px; padding: 0 16px; min-height: 48px; font-size: 16px; }
 .group .it + .it { border-top: .5px solid var(--separator); margin-left: 52px; padding-left: 0; }
-.group .it .ico { width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); flex: none; }
+.group .it .ico { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); flex: none; }
 .group .it + .it .ico { margin-left: -40px; }
-.group .it .v { margin-left: auto; color: var(--text-secondary); font-size: 15px; display: flex; align-items: center; gap: 4px; }
+.group .it .v { white-space: nowrap; margin-left: auto; color: var(--text-secondary); font-size: 15px; display: flex; align-items: center; gap: 4px; }
 .group-title { font-size: 13px; color: var(--text-secondary); margin: 22px 16px 7px; text-transform: uppercase; letter-spacing: .04em; font-weight: 500; }
 .switch { width: 51px; height: 31px; border-radius: 16px; background: var(--accent); position: relative; margin-left: auto; flex: none; }
 .switch::after { content: ""; position: absolute; top: 2px; right: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
@@ -267,9 +287,9 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
 
 /* Sheet */
 .dim { position: absolute; inset: 0; background: rgba(10,14,12,.38); z-index: 10; }
-.sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 62px; background: var(--surface-raised); border-radius: 28px 28px 0 0; z-index: 15; padding: 8px 20px 0; box-shadow: var(--shadow-raised); }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 62px; background: var(--surface-raised); border-radius: 32px 32px 0 0; z-index: 15; padding: 8px 20px 0; box-shadow: var(--shadow-raised); }
 .grabber { width: 36px; height: 5px; border-radius: 3px; background: var(--border); opacity: .6; margin: 0 auto 10px; }
-.field { height: 44px; border-radius: 10px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 12px; color: var(--text-tertiary); font-size: 16px; }
+.field { height: 44px; border-radius: 14px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 12px; color: var(--text-tertiary); font-size: 16px; }
 .lbl { font-size: 15px; font-weight: 600; margin: 0 0 8px; display: flex; align-items: center; gap: 6px; }
 .optsep { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin: 18px 0 14px; }
 .optsep::before, .optsep::after { content: ""; flex: 1; height: .5px; background: var(--separator); }
@@ -281,7 +301,7 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
 .ingr .q { margin-left: auto; color: var(--text-secondary); font-variant-numeric: tabular-nums; font-size: 15px; white-space: nowrap; }
 .ingr.done .nm { color: var(--text-secondary); text-decoration: line-through; }
 .dock { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 20px 34px; background: color-mix(in srgb, var(--background) 94%, transparent); border-top: .5px solid var(--separator); display: flex; gap: 12px; z-index: 5; backdrop-filter: blur(20px); }
-.stepper { display: inline-flex; align-items: center; gap: 0; background: var(--surface-muted); border-radius: 10px; height: 36px; }
+.stepper { display: inline-flex; align-items: center; gap: 0; background: var(--surface-muted); border-radius: 999px; height: 36px; }
 .stepper span { width: 40px; display: grid; place-items: center; color: var(--accent); }
 .stepper b { font: 600 15px var(--rounded); padding: 0 6px; }
 </style>
@@ -339,8 +359,8 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
 
 <header class="page-head">
   <div>
-    <h1>Ovéa — maquettes MVP</h1>
-    <p>Neuf écrans iPhone 390 × 844 pt, à partir des tokens de <code>tokens.json</code>. Textes réalistes, aucun poids, aucune calorie, aucune prédiction d'ovulation. Les icônes sont des approximations des SF Symbols listés dans <code>02-ui.md</code>.</p>
+    <h1>Ovéa — maquettes MVP · V2 cosy</h1>
+    <p>Neuf écrans iPhone 390 × 844 pt, à partir des tokens V2 de <code>tokens.json</code> (lin, terracotta, miel, chocolat en sombre ; titres en Fraunces). Textes réalistes, aucun poids, aucune calorie, aucune prédiction d'ovulation. Les icônes sont des approximations des SF Symbols listés dans <code>02-ui.md</code>.</p>
   </div>
   <button class="toggle" id="themeToggle" type="button" aria-pressed="false">
     <svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span>Passer en sombre</span>
@@ -355,39 +375,56 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
   <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
   <div class="screen with-tabs">
     <div class="row" style="justify-content:space-between;margin-top:6px">
-      <span class="sub muted">Jeudi 26 novembre</span>
-      <span class="iconbtn" style="background:var(--accent-soft);color:var(--on-accent-soft);font:600 17px var(--rounded)" aria-label="Profil et réglages">L</span>
+      <span class="sub muted row" style="gap:6px">
+        <svg class="doodle" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="stroke:var(--highlight)"><circle cx="12" cy="12" r="4.2"/><path d="M12 3.2v2.2M12 18.6v2.2M3.2 12h2.2M18.6 12h2.2M5.9 5.8l1.5 1.6M16.6 16.6l1.6 1.5M5.8 18.1l1.6-1.5M16.7 7.3l1.4-1.5"/></svg>
+        Jeudi 26 novembre</span>
+      <span class="iconbtn" style="background:var(--accent-soft);color:var(--on-accent-soft);font:700 17px var(--rounded)" aria-label="Profil et réglages">L</span>
     </div>
     <h2 class="display" style="margin-top:2px">Bonjour Léa</h2>
 
-    <div class="card" style="margin-top:20px">
-      <p class="overline" style="margin-bottom:4px">Check-in du jour</p>
+    <div class="card soft" style="margin-top:16px">
+      <p class="overline" style="margin-bottom:4px;color:var(--on-accent-soft)">Check-in du jour</p>
       <div class="title2" style="font-size:21px">Comment est ton énergie ?</div><div class="foot muted" style="margin-top:2px">Un tap suffit. Le reste est facultatif.</div>
-      <div class="energy" style="margin-top:14px">
+      <div class="energy on-soft" style="margin-top:14px">
         <div style="height:64px"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
         <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
         <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
       </div>
     </div>
 
-    <div class="row" style="margin-top:12px;gap:10px">
-      <div class="card" style="flex:1;padding:12px 14px">
-        <div class="row" style="gap:10px"><svg class="i c-accent"><use href="#i-cal"/></svg>
-          <div><div class="metric" style="font-size:20px">Jour 23</div><div class="foot muted">du cycle</div></div></div>
-      </div>
-      <div class="card" style="padding:12px 14px;width:142px">
-        <div class="row" style="gap:8px"><svg class="i c-period"><use href="#i-drop"/></svg><div class="foot" style="font-weight:600;line-height:1.25">Noter mes règles</div></div>
+    <div class="card grain t-miel" style="margin-top:12px;background:var(--highlight-soft);box-shadow:none;padding:16px 16px 14px 28px">
+      <span class="plaid" style="position:absolute;left:0;top:0;bottom:0;width:14px" aria-hidden="true"></span>
+      <div class="row" style="align-items:flex-start;gap:10px">
+        <div style="flex:1">
+          <div class="row" style="gap:6px;color:var(--highlight)"><svg class="i sm"><use href="#i-sparkle"/></svg><span class="cap" style="font-weight:700">Petit mot du jour</span></div>
+          <p class="quote" style="margin:6px 0 6px;font-size:18px">Des protéines au petit-déjeuner aident à garder une énergie plus stable jusqu'à midi.</p>
+          <span class="sub" style="font-weight:700;color:var(--highlight)">Pourquoi ? ›</span>
+        </div>
+        <svg class="doodle" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true" style="flex:none;margin-top:4px">
+          <path d="M23 22c-3-4 3-6.5 0-11M31.5 21c-3-4 3-6.5 0-11M40 22c-3-4 3-6.5 0-11" opacity=".55"/>
+          <path d="M13.5 28.5c-.6 10 4.2 19 16.5 19.2 12.3-.2 16.8-9.4 16.2-19.4z" fill="var(--surface)"/>
+          <path d="M46 31.5c5.5-1.4 8.7 1.2 8.1 5.2-.6 3.9-4.6 5.6-9.1 4.6"/>
+          <path d="M19 37c3.4 1.7 7 1.7 10.6 0s7.2-1.7 10.6 0" style="stroke:var(--accent)"/>
+          <path d="M9 52.5c9.5 2.6 32.5 2.6 42 0"/>
+        </svg>
       </div>
     </div>
 
-    <p class="overline" style="margin-top:28px">Pour toi aujourd'hui</p>
+    <div class="card" style="margin-top:12px;padding:12px 14px">
+      <div class="row" style="justify-content:space-between">
+        <div class="row" style="gap:10px"><svg class="i c-accent"><use href="#i-cal"/></svg>
+          <div><span class="metric" style="font-size:19px">Jour 23</span> <span class="foot muted">du cycle</span></div></div>
+        <span class="row foot" style="gap:6px;font-weight:700;color:var(--period)"><svg class="i sm"><use href="#i-drop"/></svg>Noter mes règles</span>
+      </div>
+    </div>
+
+    <p class="overline" style="margin-top:22px">Pour toi aujourd'hui</p>
     <div class="row" style="gap:12px;align-items:stretch">
       <div class="card t-ardoise" style="flex:1;padding:0;overflow:hidden">
         <div class="vig" style="height:92px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl"><use href="#i-bowl"/></svg></div>
         <div style="padding:10px 12px 12px">
           <span class="cat"><svg class="i sm"><use href="#i-moon"/></svg>Dîner</span>
           <div class="headline" style="font-size:15px;margin-top:3px;line-height:1.25">Dahl de lentilles corail et butternut</div>
-          <div class="foot muted" style="margin-top:4px">30 min · IG bas</div>
         </div>
       </div>
       <div class="card t-miel" style="flex:1;padding:0;overflow:hidden">
@@ -395,15 +432,8 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
         <div style="padding:10px 12px 12px">
           <span class="cat"><svg class="i sm"><use href="#i-walk"/></svg>Cardio doux</span>
           <div class="headline" style="font-size:15px;margin-top:3px;line-height:1.25">Marche après le repas</div>
-          <div class="foot muted" style="margin-top:4px">12 min · sans matériel</div>
         </div>
       </div>
-    </div>
-
-    <div class="card" style="margin-top:12px;background:var(--highlight-soft);border-color:transparent;box-shadow:none">
-      <div class="row" style="gap:8px;color:var(--highlight)"><svg class="i sm"><use href="#i-sparkle"/></svg><span class="cap" style="font-weight:600">Une idée pour ce matin</span></div>
-      <p class="quote" style="margin:8px 0 6px;font-size:17px">Des protéines au petit-déjeuner aident à garder une énergie plus stable jusqu'à midi.</p>
-      <span class="sub c-info" style="font-weight:600">Pourquoi ? ›</span>
     </div>
   </div>
   <nav class="tabbar">
@@ -498,7 +528,7 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
         <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-fork"/></svg>Déjeuner</span><div class="headline" style="font-size:16px;line-height:1.25">Bowl quinoa, pois chiches au cumin et sauce tahini</div><div class="foot muted">30 min · IG bas · à emporter</div></div></div>
       <div class="row t-miel" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-cup"/></svg></div>
         <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-cup"/></svg>Petit-déjeuner</span><div class="headline" style="font-size:16px;line-height:1.25">Overnight oats pomme, cannelle et noix</div><div class="foot muted">10 min · IG bas · la veille</div></div></div>
-      <div class="row t-argile" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-carrot"/></svg></div>
+      <div class="row t-cacao" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-carrot"/></svg></div>
         <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-carrot"/></svg>Collation</span><div class="headline" style="font-size:16px;line-height:1.25">Houmous de betterave et crudités</div><div class="foot muted">10 min · IG bas · sans cuisson</div></div></div>
     </div>
   </div>
@@ -527,7 +557,7 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
         <h2 class="title1" style="font-size:26px;margin-top:6px">Dahl de lentilles corail et butternut</h2>
         <div class="chips wrap" style="margin-top:12px;gap:6px">
           <span class="badge"><svg class="i sm"><use href="#i-timer"/></svg>30 min</span>
-          <span class="badge" style="background:var(--accent-soft);color:var(--on-accent-soft)"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas (estimé)</span>
+          <span class="badge" style="background:var(--leaf-soft);color:var(--leaf)"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas (estimé)</span>
           <span class="badge">Végétalien</span><span class="badge">Se congèle</span>
         </div>
       </div>
@@ -575,10 +605,10 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
         <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-yoga"/></svg>Mobilité</span><div class="headline" style="line-height:1.25">Mobilité et respiration anti-stress</div><div class="foot muted">15 min · tapis · idéal pendant les règles</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
       <div class="card t-miel" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-walk"/></svg></div>
         <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-walk"/></svg>Cardio doux</span><div class="headline" style="line-height:1.25">Marche après le repas</div><div class="foot muted">12 min · sans matériel</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
-      <div class="card t-argile" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-strength"/></svg></div>
+      <div class="card t-cacao" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-strength"/></svg></div>
         <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-strength"/></svg>Renforcement doux</span><div class="headline" style="line-height:1.25">Réveil en douceur</div><div class="foot muted">10 min · une chaise</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
     </div>
-    <p class="sub muted" style="margin-top:16px;text-align:center;font-family:var(--serif);font-style:italic">Une petite séance douce compte autant. Le repos aussi.</p>
+    <p class="sub muted row" style="margin-top:14px;justify-content:center;gap:8px;font-family:var(--serif);font-style:italic"><svg class="doodle" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" style="stroke:var(--text-secondary)"><path d="M6 14c-.4 6 2.4 11 9 11s9.4-5 9-11z"/><path d="M24 16c3-.8 5 .6 4.6 2.8-.4 2.2-2.6 3.1-5.1 2.6M11 10c-2-2.6 2-4.2 0-7M17 10c-2-2.6 2-4.2 0-7"/></svg>Une petite séance douce compte autant. Le repos aussi.</p>
   </div>
   <nav class="tabbar">
     <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
@@ -677,9 +707,9 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
   <div class="screen" style="padding:0 16px">
     <div class="navbar"><span></span><span style="font-weight:600;color:var(--text-primary)">Réglages</span><span style="font-weight:600">OK</span></div>
 
-    <div class="card soft" style="margin-top:8px;display:flex;gap:14px;align-items:center">
-      <span style="width:48px;height:48px;border-radius:24px;background:var(--surface);display:grid;place-items:center;color:var(--accent);flex:none"><svg class="i lg"><use href="#i-lock"/></svg></span>
-      <div><div class="headline" style="color:var(--on-accent-soft)">Stocké uniquement sur cet iPhone</div><div class="foot" style="margin-top:2px">Pas de compte, pas de serveur, pas de publicité. Personne d'autre que toi n'y a accès.</div></div>
+    <div class="card" style="margin-top:8px;display:flex;gap:14px;align-items:center;background:var(--leaf-soft);box-shadow:none">
+      <span style="width:48px;height:48px;border-radius:24px;background:var(--surface);display:grid;place-items:center;color:var(--leaf);flex:none"><svg class="i lg"><use href="#i-lock"/></svg></span>
+      <div><div class="headline" style="color:var(--leaf)">Stocké uniquement sur cet iPhone</div><div class="foot" style="margin-top:2px">Pas de compte, pas de serveur, pas de publicité. Personne d'autre que toi n'y a accès.</div></div>
     </div>
 
     <div class="group-title">Confidentialité</div>
@@ -716,24 +746,41 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
   <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
   <div class="screen" style="padding:0 24px">
     <div class="row" style="justify-content:flex-end;height:44px"><span class="sub muted" style="font-weight:600">Passer</span></div>
-    <div style="position:relative;height:200px;margin:0 -24px 0">
-      <svg viewBox="0 25 390 220" width="100%" height="100%" aria-hidden="true">
-        <ellipse cx="200" cy="140" rx="128" ry="96" fill="var(--accent-soft)"/>
-        <path d="M120 175c10-60 50-95 115-100-5 65-45 100-115 100z" fill="var(--accent)" opacity=".85"/>
-        <path d="M120 175l70-62" stroke="var(--surface)" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <ellipse cx="268" cy="168" rx="44" ry="30" fill="var(--highlight)" opacity=".85" transform="rotate(-12 268 168)"/>
-        <ellipse cx="236" cy="198" rx="30" ry="18" fill="var(--miel)" opacity=".7" transform="rotate(8 236 198)"/>
-        <circle cx="292" cy="92" r="14" fill="var(--lagon)" opacity=".55"/>
-        <circle cx="112" cy="96" r="8" fill="var(--lavande)" opacity=".6"/>
+    <div style="position:relative;height:200px;margin:0 -24px 0" class="">
+      <svg viewBox="0 0 390 210" width="100%" height="100%" aria-hidden="true">
+        <defs>
+          <pattern id="tartan" width="14" height="14" patternUnits="userSpaceOnUse">
+            <rect width="14" height="14" fill="var(--accent)"/>
+            <rect width="14" height="4" fill="var(--on-accent)" opacity=".22"/>
+            <rect width="4" height="14" fill="var(--on-accent)" opacity=".22"/>
+            <rect x="8" width="1.2" height="14" fill="var(--highlight-soft)" opacity=".5"/>
+          </pattern>
+        </defs>
+        <path d="M38 196c-6-70 40-150 150-158 108-8 170 58 166 126-1 20-6 32-6 32z" fill="var(--highlight-soft)"/>
+        <g class="doodle">
+          <path d="M150 150V84c0-30 20-50 46-50s46 20 46 50v66" fill="var(--surface-raised)"/>
+          <path d="M196 35v115M151 100h90"/>
+          <circle cx="222" cy="66" r="11" fill="var(--miel)" opacity=".55" stroke="none"/>
+          <path d="M40 172c60 2.4 250 2.4 312-.6"/>
+          <path d="M56 170c-1-9 1-20 2-26 18-2 60-2 82 0 2 7 2 17 1 26" fill="url(#tartan)"/>
+          <path d="M66 142c-1-6 0-12 1-16 16-1.4 44-1.4 60 0 1 5 1 10 0 16" fill="var(--leaf-soft)"/>
+          <path d="M80 131h34M80 137h22" opacity=".6"/>
+          <path d="M258 128c-1 22 6 41 22 41s23-19 22-41z" fill="var(--surface)"/>
+          <path d="M302 135c8-2 12 2 11 7s-6 7-12 5.5"/>
+          <path d="M270 120c-3-5 3-8 0-13M282 118c-3-5 3-8 0-13M294 120c-3-5 3-8 0-13" opacity=".55"/>
+          <path d="M264 147c5 2.4 10 2.4 15 0s10-2.4 15 0" style="stroke:var(--accent)"/>
+          <path d="M326 170l-5-26h28l-5 26z" fill="var(--cacao)" opacity=".9"/>
+          <path d="M335 144c-6-12-2-24 4-30M335 144c8-8 18-10 24-8M335 144c-10-4-16-12-17-20" style="stroke:var(--leaf)"/>
+        </g>
       </svg>
     </div>
     <h2 class="display" style="margin-top:8px">Bienvenue dans Ovéa</h2>
     <p class="callout muted" style="margin:10px 0 0;line-height:1.45">Des recettes simples, des séances courtes et un journal pour toi. À ton rythme, sans jugement.</p>
     <div style="margin-top:22px;display:grid;gap:14px">
-      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--olive-soft);color:var(--olive)"><svg class="i sm"><use href="#i-fork"/></svg></span><span class="sub">Des recettes simples, à IG bas</span></div>
+      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--accent-soft);color:var(--accent)"><svg class="i sm"><use href="#i-fork"/></svg></span><span class="sub">Des recettes simples, à IG bas</span></div>
       <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--lagon-soft);color:var(--lagon)"><svg class="i sm"><use href="#i-walk"/></svg></span><span class="sub">Des séances qui suivent ton énergie du jour</span></div>
       <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--period-soft);color:var(--period)"><svg class="i sm"><use href="#i-cal"/></svg></span><span class="sub">Un journal de ton cycle, tel qu'il est, sans prédictions</span></div>
-      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--accent-soft);color:var(--accent)"><svg class="i sm"><use href="#i-lock"/></svg></span><span class="sub">Pas de compte. Tout reste sur ton iPhone.</span></div>
+      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--leaf-soft);color:var(--leaf)"><svg class="i sm"><use href="#i-lock"/></svg></span><span class="sub">Pas de compte. Tout reste sur ton iPhone.</span></div>
     </div>
     <div style="position:absolute;left:24px;right:24px;bottom:30px">
       <div class="row" style="justify-content:center;gap:6px;margin-bottom:18px" aria-label="Étape 1 sur 6"><i style="width:20px;height:6px;border-radius:3px;background:var(--accent)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i></div>
