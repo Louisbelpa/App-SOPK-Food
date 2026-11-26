@@ -2,7 +2,7 @@
 
 > Rédigé par : coach sportif / enseignant APA du projet.
 > Statut : proposition kickoff, à relire par un·e professionnel·le de santé avant publication.
-> Fichier associé : `docs/kickoff/seances-seed.json` (8 séances + 22 exercices).
+> Fichier associé : `docs/kickoff/seances-seed.json` (8 séances + 25 exercices).
 
 ## 0. Posture générale
 
@@ -104,7 +104,7 @@ Toutes les séances se font **à la maison, sur 2 m²**, sans sauts obligatoires
 | `s03-marche-apres-repas` | Marche après le repas | 1 | 12 min | Cardio léger (post-prandial) |
 | `s04-mobilite-anti-stress` | Mobilité et respiration anti-stress | 1 | 15 min | Mobilité / yoga (jours basse énergie, règles) |
 | `s05-force-corps-entier` | Force corps entier | 2 | 20 min | Renforcement |
-| `s06-elastique-haut-du-corps` | Élastique : dos et bras | 2 | 20 min | Renforcement (élastique) |
+| `s06-elastique-haut-du-corps` | Élastique : dos et bras | 2 | 23 min | Renforcement (élastique) |
 | `s07-cardio-fractionne-doux` | Cardio fractionné sans sauts | 2 | 18 min | HIIT low impact |
 | `s08-force-halteres` | Force avec haltères légers | 3 | 30 min | Renforcement (haltères) |
 

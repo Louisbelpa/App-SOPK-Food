@@ -1,0 +1,1610 @@
+{
+  "version": 1,
+  "locale": "fr-FR",
+  "disclaimer": "Ces séances sont des propositions générales d'activité physique. Elles ne remplacent pas l'avis d'un médecin ou d'un professionnel de l'activité physique adaptée. Arrête-toi en cas de douleur inhabituelle, de malaise ou d'essoufflement anormal.",
+  "exercises": [
+    {
+      "id": "marche-sur-place",
+      "name": "Marche sur place",
+      "category": "warmup",
+      "muscles": [
+        "cardio",
+        "jambes"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "low",
+      "instructions": [
+        "Tiens-toi debout, pieds écartés largeur de hanches.",
+        "Marche sur place en levant les genoux à hauteur confortable.",
+        "Balance les bras naturellement, coudes légèrement fléchis.",
+        "Accélère progressivement si tu te sens bien."
+      ],
+      "breathing": "Respire librement par le nez si possible.",
+      "common_mistakes": [
+        "Se pencher en avant ou regarder ses pieds",
+        "Retomber lourdement sur les talons"
+      ],
+      "easier_variant": "Marche plus lentement en gardant une main sur un dossier de chaise pour l'équilibre.",
+      "harder_variant": "Lève les genoux plus haut et accentue le mouvement des bras.",
+      "contraindications": [
+        "Vertiges en position debout"
+      ]
+    },
+    {
+      "id": "cercles-bras",
+      "name": "Cercles de bras et d'épaules",
+      "category": "warmup",
+      "muscles": [
+        "épaules",
+        "haut du dos"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout ou assise, bras tendus sur les côtés à hauteur d'épaules.",
+        "Fais de petits cercles vers l'avant, puis agrandis-les progressivement.",
+        "Change de sens à mi-temps.",
+        "Termine par 5 haussements d'épaules lents vers les oreilles puis relâche."
+      ],
+      "breathing": "Respiration calme et régulière.",
+      "common_mistakes": [
+        "Hausser les épaules en permanence",
+        "Cambrer le bas du dos"
+      ],
+      "easier_variant": "Garde les mains sur les épaules et fais des cercles avec les coudes.",
+      "harder_variant": "Fais les cercles plus grands et plus lents en contrôlant chaque position.",
+      "contraindications": [
+        "Douleur aiguë à l'épaule"
+      ]
+    },
+    {
+      "id": "cercles-bassin",
+      "name": "Cercles de bassin",
+      "category": "mobility",
+      "muscles": [
+        "bassin",
+        "bas du dos"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout, pieds largeur de hanches, genoux légèrement fléchis, mains sur les hanches.",
+        "Dessine de grands cercles lents avec le bassin, comme avec un hula-hoop.",
+        "Fais la moitié du temps dans un sens, puis dans l'autre."
+      ],
+      "breathing": "Respire lentement et profondément, laisse le ventre se relâcher.",
+      "common_mistakes": [
+        "Bloquer les genoux tendus",
+        "Aller trop vite ou trop loin dans l'amplitude"
+      ],
+      "easier_variant": "Fais-le assise sur une chaise ou un ballon, en roulant sur les ischions.",
+      "harder_variant": "Ajoute des mouvements de bassin en huit.",
+      "contraindications": [
+        "Douleur lombaire aiguë"
+      ]
+    },
+    {
+      "id": "squat-chaise",
+      "name": "Squat assis-debout sur chaise",
+      "category": "strength",
+      "muscles": [
+        "cuisses",
+        "fessiers"
+      ],
+      "equipment": [
+        "chaise"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Place une chaise stable derrière toi (contre un mur), pieds largeur de hanches.",
+        "Pousse les fesses vers l'arrière comme pour t'asseoir, buste légèrement penché, dos droit.",
+        "Assieds-toi brièvement sans t'affaler.",
+        "Relève-toi en poussant dans tout le pied, jusqu'à être bien droite."
+      ],
+      "breathing": "Inspire en descendant, expire en te relevant.",
+      "common_mistakes": [
+        "Genoux qui rentrent vers l'intérieur",
+        "Talons qui décollent du sol",
+        "Se laisser tomber sur la chaise",
+        "Arrondir le dos"
+      ],
+      "easier_variant": "Utilise une chaise plus haute ou aide-toi des mains sur les cuisses pour te relever.",
+      "harder_variant": "Effleure seulement la chaise sans t'asseoir, ou descends en 3 secondes.",
+      "contraindications": [
+        "Douleur aiguë au genou ou à la hanche"
+      ]
+    },
+    {
+      "id": "pont-fessier",
+      "name": "Pont fessier",
+      "category": "strength",
+      "muscles": [
+        "fessiers",
+        "ischio-jambiers",
+        "bas du dos"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Allongée sur le dos, genoux pliés, pieds à plat largeur de hanches, bras le long du corps.",
+        "Serre les fessiers et soulève le bassin jusqu'à former une ligne genoux-hanches-épaules.",
+        "Tiens 1 à 2 secondes en haut.",
+        "Redescends lentement, vertèbre par vertèbre."
+      ],
+      "breathing": "Expire en montant, inspire en descendant.",
+      "common_mistakes": [
+        "Cambrer le bas du dos en haut au lieu de serrer les fessiers",
+        "Pieds trop loin des fesses",
+        "Écarter les genoux"
+      ],
+      "easier_variant": "Monte moins haut et réduis l'amplitude.",
+      "harder_variant": "Tiens la position haute 20 secondes, ou fais-le sur une jambe.",
+      "contraindications": [
+        "Inconfort allongée sur le dos en fin de grossesse"
+      ]
+    },
+    {
+      "id": "pompes-mur",
+      "name": "Pompes contre le mur",
+      "category": "strength",
+      "muscles": [
+        "poitrine",
+        "bras",
+        "épaules"
+      ],
+      "equipment": [
+        "mur"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Face à un mur, à environ un bras de distance, mains à plat à hauteur d'épaules, un peu plus écartées que les épaules.",
+        "Garde le corps gainé, droit de la tête aux talons.",
+        "Plie les coudes pour amener la poitrine vers le mur.",
+        "Repousse le mur pour revenir."
+      ],
+      "breathing": "Inspire en approchant du mur, expire en repoussant.",
+      "common_mistakes": [
+        "Fesses en arrière ou ventre qui s'affaisse",
+        "Coudes complètement ouverts à 90° du corps",
+        "Tête qui avance avant la poitrine"
+      ],
+      "easier_variant": "Rapproche les pieds du mur.",
+      "harder_variant": "Fais-les en appui sur un plan de travail ou un canapé (plus incliné), puis au sol sur les genoux.",
+      "contraindications": [
+        "Douleur aiguë au poignet ou à l'épaule"
+      ]
+    },
+    {
+      "id": "fente-arriere",
+      "name": "Fente arrière avec appui",
+      "category": "strength",
+      "muscles": [
+        "cuisses",
+        "fessiers"
+      ],
+      "equipment": [
+        "chaise"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout, une main sur le dossier d'une chaise pour l'équilibre.",
+        "Recule une jambe d'un grand pas et pose la pointe du pied.",
+        "Descends en pliant les deux genoux, le genou arrière vers le sol.",
+        "Pousse sur le talon avant pour revenir pieds joints. Alterne ou fais un côté puis l'autre."
+      ],
+      "breathing": "Inspire en descendant, expire en remontant.",
+      "common_mistakes": [
+        "Genou avant qui part vers l'intérieur",
+        "Pas trop court qui surcharge le genou avant",
+        "Buste qui s'effondre vers l'avant"
+      ],
+      "easier_variant": "Réduis l'amplitude : descends seulement de quelques centimètres.",
+      "harder_variant": "Sans appui, ou avec un haltère dans chaque main.",
+      "contraindications": [
+        "Douleur au genou",
+        "Troubles de l'équilibre importants (garder l'appui)"
+      ]
+    },
+    {
+      "id": "gainage-genoux",
+      "name": "Planche sur les genoux",
+      "category": "strength",
+      "muscles": [
+        "abdominaux profonds",
+        "épaules"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "En appui sur les avant-bras, coudes sous les épaules, genoux au sol.",
+        "Avance les hanches pour former une ligne droite genoux-hanches-épaules.",
+        "Rentre légèrement le nombril et serre les fessiers.",
+        "Tiens la position en respirant."
+      ],
+      "breathing": "Ne bloque pas ta respiration : souffle longuement en rentrant le ventre.",
+      "common_mistakes": [
+        "Bloquer la respiration",
+        "Fesses trop hautes ou bas du dos creusé",
+        "Épaules qui s'enfoncent entre les omoplates"
+      ],
+      "easier_variant": "Fais-le debout, avant-bras contre un mur.",
+      "harder_variant": "Planche complète sur les pieds.",
+      "contraindications": [
+        "Diastasis abdominal non rééduqué (préférer dead bug)",
+        "Douleur aux épaules"
+      ]
+    },
+    {
+      "id": "bird-dog",
+      "name": "Bird dog (chien d'arrêt)",
+      "category": "strength",
+      "muscles": [
+        "dos",
+        "fessiers",
+        "abdominaux profonds"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "À quatre pattes, mains sous les épaules, genoux sous les hanches, dos plat.",
+        "Tends lentement un bras devant et la jambe opposée derrière.",
+        "Garde le bassin bien horizontal, sans pivoter.",
+        "Reviens en contrôle et change de côté."
+      ],
+      "breathing": "Expire en tendant, inspire en revenant.",
+      "common_mistakes": [
+        "Lever la jambe trop haut et cambrer",
+        "Bassin qui bascule sur le côté",
+        "Aller trop vite"
+      ],
+      "easier_variant": "Tends seulement une jambe (glissée au sol) ou seulement un bras.",
+      "harder_variant": "Tiens 5 secondes en extension, ou ramène coude et genou sous le ventre entre chaque répétition.",
+      "contraindications": [
+        "Douleur aux poignets (se mettre sur les poings ou les avant-bras)"
+      ]
+    },
+    {
+      "id": "dead-bug",
+      "name": "Dead bug",
+      "category": "strength",
+      "muscles": [
+        "abdominaux profonds"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Allongée sur le dos, bras tendus vers le plafond, genoux pliés à 90° au-dessus des hanches.",
+        "Plaque doucement le bas du dos vers le sol.",
+        "Descends lentement un bras derrière la tête et la jambe opposée vers le sol.",
+        "Reviens et change de côté, sans décoller le bas du dos."
+      ],
+      "breathing": "Expire longuement pendant que tu tends bras et jambe.",
+      "common_mistakes": [
+        "Bas du dos qui se creuse",
+        "Bloquer la respiration",
+        "Mouvements rapides et non contrôlés"
+      ],
+      "easier_variant": "Garde les pieds au sol et fais glisser un talon vers l'avant à la fois.",
+      "harder_variant": "Ralentis encore (4 secondes à l'aller) ou tiens un poids léger dans les mains.",
+      "contraindications": [
+        "Inconfort allongée sur le dos en fin de grossesse"
+      ]
+    },
+    {
+      "id": "abduction-hanche",
+      "name": "Ouverture de hanche allongée (clamshell)",
+      "category": "strength",
+      "muscles": [
+        "fessiers (moyen fessier)"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Allongée sur le côté, tête posée sur le bras, genoux pliés, talons alignés avec les fesses.",
+        "Garde les pieds collés et ouvre le genou du dessus comme une coquille.",
+        "Monte sans faire basculer le bassin vers l'arrière.",
+        "Redescends lentement. Fais toutes les répétitions puis change de côté."
+      ],
+      "breathing": "Expire en ouvrant.",
+      "common_mistakes": [
+        "Bassin qui roule vers l'arrière",
+        "Mouvement trop ample ou trop rapide"
+      ],
+      "easier_variant": "Réduis l'amplitude.",
+      "harder_variant": "Ajoute un élastique autour des cuisses, juste au-dessus des genoux.",
+      "contraindications": [
+        "Douleur aiguë de hanche"
+      ]
+    },
+    {
+      "id": "montees-genoux",
+      "name": "Montées de genoux marchées",
+      "category": "cardio",
+      "muscles": [
+        "cardio",
+        "jambes",
+        "abdominaux"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "low",
+      "instructions": [
+        "Debout, monte un genou vers la hanche en même temps que tu abaisses les bras.",
+        "Repose le pied et alterne avec l'autre genou.",
+        "Garde un rythme soutenu mais sans sauter."
+      ],
+      "breathing": "Respiration rythmée, tu dois pouvoir dire quelques mots.",
+      "common_mistakes": [
+        "Se pencher en arrière",
+        "Taper les pieds au sol"
+      ],
+      "easier_variant": "Monte les genoux moins haut, rythme plus lent, main sur une chaise.",
+      "harder_variant": "Accélère, ou passe en petits sautillés si ton corps le permet.",
+      "contraindications": [
+        "Fuites urinaires à l'effort (rester sans saut)"
+      ]
+    },
+    {
+      "id": "pas-chasses-bras",
+      "name": "Pas chassés avec bras (jumping jack sans saut)",
+      "category": "cardio",
+      "muscles": [
+        "cardio",
+        "jambes",
+        "épaules"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "low",
+      "instructions": [
+        "Pieds joints, bras le long du corps.",
+        "Écarte un pied sur le côté en levant les bras au-dessus de la tête.",
+        "Reviens pieds joints en baissant les bras.",
+        "Alterne le côté à chaque répétition."
+      ],
+      "breathing": "Expire en levant les bras.",
+      "common_mistakes": [
+        "Épaules crispées vers les oreilles",
+        "Genoux verrouillés"
+      ],
+      "easier_variant": "Lève les bras seulement à hauteur d'épaules.",
+      "harder_variant": "Plie légèrement les genoux à chaque pas (pas chassé en squat).",
+      "contraindications": [
+        "Douleur à l'épaule (garder les bras bas)"
+      ]
+    },
+    {
+      "id": "boxe-air",
+      "name": "Coups de poing dans le vide",
+      "category": "cardio",
+      "muscles": [
+        "cardio",
+        "épaules",
+        "abdominaux"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout, pieds écartés, genoux légèrement fléchis, poings à hauteur du menton.",
+        "Envoie alternativement les poings devant toi en tournant légèrement le buste.",
+        "Ramène toujours le poing en garde.",
+        "Garde un rythme rapide mais contrôlé."
+      ],
+      "breathing": "Souffle à chaque coup de poing.",
+      "common_mistakes": [
+        "Bloquer le coude en extension complète",
+        "Rester raide des jambes"
+      ],
+      "easier_variant": "Plus lentement, en restant assise si besoin.",
+      "harder_variant": "Ajoute un petit squat toutes les 4 frappes.",
+      "contraindications": [
+        "Douleur au coude ou à l'épaule"
+      ]
+    },
+    {
+      "id": "marche-rapide",
+      "name": "Marche (intérieur ou extérieur)",
+      "category": "cardio",
+      "muscles": [
+        "cardio",
+        "jambes"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "low",
+      "instructions": [
+        "Marche dehors, dans un couloir ou sur place.",
+        "Tiens-toi grande, regard à l'horizon, bras qui balancent.",
+        "Adapte l'allure à l'intensité demandée : tranquille (tu peux chanter) ou soutenue (tu peux parler mais pas chanter)."
+      ],
+      "breathing": "Respiration naturelle.",
+      "common_mistakes": [
+        "Regarder son téléphone en marchant",
+        "Partir trop vite et s'essouffler en 2 minutes"
+      ],
+      "easier_variant": "Allure tranquille, durée plus courte.",
+      "harder_variant": "Ajoute des montées (escaliers, côte) ou alterne 1 min rapide / 1 min normale.",
+      "contraindications": [
+        "Douleur à la marche (consulter si persistante)"
+      ]
+    },
+    {
+      "id": "rowing-elastique",
+      "name": "Tirage élastique (rowing)",
+      "category": "strength",
+      "muscles": [
+        "dos",
+        "biceps",
+        "arrière des épaules"
+      ],
+      "equipment": [
+        "elastique"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Assise jambes tendues, passe l'élastique sous la plante des pieds (ou accroche-le à une poignée de porte fermée, debout).",
+        "Tiens une extrémité dans chaque main, dos droit.",
+        "Tire les coudes vers l'arrière le long du corps en serrant les omoplates.",
+        "Reviens lentement en gardant la tension."
+      ],
+      "breathing": "Expire en tirant, inspire en relâchant.",
+      "common_mistakes": [
+        "Arrondir le dos ou se pencher en arrière",
+        "Hausser les épaules",
+        "Relâcher l'élastique d'un coup"
+      ],
+      "easier_variant": "Prends l'élastique plus long (moins de tension) ou un élastique plus souple.",
+      "harder_variant": "Raccourcis l'élastique ou marque 2 secondes de pause omoplates serrées.",
+      "contraindications": [
+        "Douleur aiguë au dos ou à l'épaule"
+      ]
+    },
+    {
+      "id": "ecarte-elastique",
+      "name": "Écarté d'élastique devant la poitrine",
+      "category": "strength",
+      "muscles": [
+        "haut du dos",
+        "arrière des épaules",
+        "posture"
+      ],
+      "equipment": [
+        "elastique"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout, tiens l'élastique bras tendus devant toi à hauteur de poitrine, mains écartées largeur d'épaules.",
+        "Écarte les bras sur les côtés en serrant les omoplates.",
+        "Reviens lentement."
+      ],
+      "breathing": "Expire en écartant.",
+      "common_mistakes": [
+        "Cambrer le bas du dos",
+        "Hausser les épaules",
+        "Plier fortement les coudes"
+      ],
+      "easier_variant": "Écarte les mains au départ pour diminuer la tension.",
+      "harder_variant": "Rapproche les mains au départ ou plie l'élastique en deux.",
+      "contraindications": [
+        "Douleur à l'épaule"
+      ]
+    },
+    {
+      "id": "developpe-epaules",
+      "name": "Développé épaules (élastique ou haltères)",
+      "category": "strength",
+      "muscles": [
+        "épaules",
+        "triceps"
+      ],
+      "equipment": [
+        "halteres",
+        "elastique"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout ou assise, dos droit, ventre légèrement rentré.",
+        "Haltères à hauteur d'épaules, paumes vers l'avant (ou élastique sous les pieds).",
+        "Pousse vers le plafond sans verrouiller complètement les coudes.",
+        "Redescends lentement à hauteur d'épaules."
+      ],
+      "breathing": "Expire en poussant.",
+      "common_mistakes": [
+        "Cambrer le bas du dos en poussant",
+        "Charge trop lourde qui fait compenser avec le dos"
+      ],
+      "easier_variant": "Sans charge ou avec des bouteilles d'eau de 50 cl, assise.",
+      "harder_variant": "Charge plus lourde ou un bras à la fois debout pour travailler le gainage.",
+      "contraindications": [
+        "Douleur ou instabilité d'épaule",
+        "Hypertension non contrôlée (éviter les charges lourdes)"
+      ]
+    },
+    {
+      "id": "souleve-roumain",
+      "name": "Soulevé de terre jambes semi-tendues (haltères)",
+      "category": "strength",
+      "muscles": [
+        "ischio-jambiers",
+        "fessiers",
+        "dos"
+      ],
+      "equipment": [
+        "halteres"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Debout, pieds largeur de hanches, un haltère dans chaque main devant les cuisses, genoux légèrement fléchis.",
+        "Pousse les fesses vers l'arrière en gardant le dos plat ; les haltères glissent le long des cuisses.",
+        "Descends jusqu'à sentir l'étirement derrière les cuisses (souvent sous les genoux).",
+        "Remonte en serrant les fessiers, sans te cambrer en haut."
+      ],
+      "breathing": "Inspire en descendant, expire en remontant.",
+      "common_mistakes": [
+        "Arrondir le dos",
+        "Plier fortement les genoux (ça devient un squat)",
+        "Éloigner les haltères du corps"
+      ],
+      "easier_variant": "Sans charge, mains sur les cuisses, amplitude réduite ; ou un bâton le long du dos pour vérifier la position.",
+      "harder_variant": "Charge plus lourde ou sur une jambe avec appui.",
+      "contraindications": [
+        "Lombalgie aiguë ou hernie discale symptomatique"
+      ]
+    },
+    {
+      "id": "squat-gobelet",
+      "name": "Squat gobelet (haltère)",
+      "category": "strength",
+      "muscles": [
+        "cuisses",
+        "fessiers",
+        "abdominaux"
+      ],
+      "equipment": [
+        "halteres"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Tiens un haltère verticalement contre la poitrine, à deux mains.",
+        "Pieds un peu plus écartés que les hanches, pointes légèrement ouvertes.",
+        "Descends en poussant les fesses en arrière et les genoux dans l'axe des pieds.",
+        "Remonte en poussant dans tout le pied."
+      ],
+      "breathing": "Inspire en descendant, expire en remontant.",
+      "common_mistakes": [
+        "Genoux qui rentrent vers l'intérieur",
+        "Talons qui décollent",
+        "Buste qui s'effondre vers l'avant"
+      ],
+      "easier_variant": "Squat sur chaise sans charge.",
+      "harder_variant": "Descente lente en 3 secondes ou pause en bas.",
+      "contraindications": [
+        "Douleur aiguë au genou ou à la hanche"
+      ]
+    },
+    {
+      "id": "rowing-halteres",
+      "name": "Rowing buste penché (haltères)",
+      "category": "strength",
+      "muscles": [
+        "dos",
+        "biceps"
+      ],
+      "equipment": [
+        "halteres",
+        "chaise"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Une main et un genou posés sur une chaise, l'autre pied au sol, dos plat.",
+        "L'haltère pend bras tendu sous l'épaule.",
+        "Tire le coude vers la hanche en gardant le bras près du corps.",
+        "Redescends lentement. Fais toutes les répétitions puis change de côté."
+      ],
+      "breathing": "Expire en tirant.",
+      "common_mistakes": [
+        "Tourner le buste pour lancer la charge",
+        "Arrondir le dos",
+        "Tirer vers l'épaule au lieu de la hanche"
+      ],
+      "easier_variant": "Charge plus légère, ou version élastique assise.",
+      "harder_variant": "Charge plus lourde, pause d'une seconde en haut.",
+      "contraindications": [
+        "Lombalgie aiguë"
+      ]
+    },
+    {
+      "id": "chat-vache",
+      "name": "Chat-vache",
+      "category": "mobility",
+      "muscles": [
+        "colonne vertébrale",
+        "bassin"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "À quatre pattes, mains sous les épaules, genoux sous les hanches.",
+        "Sur l'inspiration, creuse doucement le dos et regarde légèrement devant (vache).",
+        "Sur l'expiration, arrondis le dos en rentrant le menton et le bassin (chat).",
+        "Enchaîne lentement, au rythme de ta respiration."
+      ],
+      "breathing": "Inspire en creusant, expire en arrondissant.",
+      "common_mistakes": [
+        "Forcer l'amplitude dans le bas du dos",
+        "Aller plus vite que la respiration"
+      ],
+      "easier_variant": "Assise sur une chaise, mains sur les genoux.",
+      "harder_variant": "Ajoute des mouvements latéraux du bassin (regarder sa hanche).",
+      "contraindications": [
+        "Douleur aux poignets (se mettre sur les avant-bras)"
+      ]
+    },
+    {
+      "id": "posture-enfant",
+      "name": "Posture de l'enfant",
+      "category": "mobility",
+      "muscles": [
+        "dos",
+        "hanches"
+      ],
+      "equipment": [
+        "tapis"
+      ],
+      "impact": "none",
+      "instructions": [
+        "À genoux, gros orteils qui se touchent, genoux écartés si plus confortable.",
+        "Assieds-toi vers les talons et allonge le buste vers l'avant, bras devant ou le long du corps.",
+        "Pose le front au sol ou sur un coussin.",
+        "Relâche les épaules et respire dans le dos."
+      ],
+      "breathing": "Respiration lente, sens le dos se gonfler à l'inspiration.",
+      "common_mistakes": [
+        "Forcer pour poser les fesses sur les talons",
+        "Garder les épaules crispées"
+      ],
+      "easier_variant": "Place un coussin entre les fesses et les talons ou sous le ventre.",
+      "harder_variant": "Marche les mains d'un côté puis de l'autre pour étirer les flancs.",
+      "contraindications": [
+        "Douleur au genou en flexion"
+      ]
+    },
+    {
+      "id": "etirement-ischios",
+      "name": "Étirement arrière des cuisses",
+      "category": "mobility",
+      "muscles": [
+        "ischio-jambiers",
+        "mollets"
+      ],
+      "equipment": [
+        "chaise"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Assise au bord d'une chaise, tends une jambe devant toi, talon au sol, pointe vers le plafond.",
+        "Garde le dos droit et penche-toi légèrement en avant depuis les hanches.",
+        "Arrête-toi dès que tu sens un étirement doux à l'arrière de la cuisse.",
+        "Tiens en respirant, puis change de côté."
+      ],
+      "breathing": "Expire en te penchant, puis respire calmement.",
+      "common_mistakes": [
+        "Arrondir le dos pour aller plus loin",
+        "Chercher la douleur"
+      ],
+      "easier_variant": "Plie légèrement le genou de la jambe tendue.",
+      "harder_variant": "Debout, talon posé sur une marche.",
+      "contraindications": [
+        "Sciatique aiguë"
+      ]
+    },
+    {
+      "id": "respiration-abdominale",
+      "name": "Respiration abdominale lente",
+      "category": "breathing",
+      "muscles": [
+        "diaphragme"
+      ],
+      "equipment": [
+        "none"
+      ],
+      "impact": "none",
+      "instructions": [
+        "Installe-toi allongée (genoux pliés) ou assise confortablement.",
+        "Pose une main sur le ventre, une sur la poitrine.",
+        "Inspire par le nez 4 à 5 secondes en laissant le ventre se gonfler.",
+        "Expire lentement 5 à 6 secondes par la bouche ou le nez, le ventre se dégonfle.",
+        "Environ 6 respirations par minute."
+      ],
+      "breathing": "Rythme : 4-5 s d'inspiration, 5-6 s d'expiration.",
+      "common_mistakes": [
+        "Gonfler la poitrine et hausser les épaules",
+        "Forcer l'inspiration au point d'avoir la tête qui tourne"
+      ],
+      "easier_variant": "Raccourcis à 3 s d'inspiration, 4 s d'expiration.",
+      "harder_variant": "Allonge progressivement l'expiration jusqu'à 7-8 secondes.",
+      "contraindications": [
+        "Arrêter si vertiges ou fourmillements, reprendre une respiration normale"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "s01-reveil-doux",
+      "title": "Réveil en douceur",
+      "subtitle": "10 minutes pour réveiller le corps sans se brusquer.",
+      "duration_min": 10,
+      "level": 1,
+      "intensity": "light",
+      "rpe_target": "3-4/10",
+      "type": "strength",
+      "equipment": [
+        "none",
+        "chaise",
+        "tapis"
+      ],
+      "good_for": [
+        "energy_low",
+        "energy_medium",
+        "beginner"
+      ],
+      "avoid_if": [
+        "pain_acute"
+      ],
+      "instructions": [
+        "Va à ton rythme : tu dois pouvoir parler tout au long de la séance.",
+        "Si un exercice gêne, prends la variante plus facile ou passe-le."
+      ],
+      "contraindications": [
+        "Douleur aiguë inexpliquée",
+        "Fièvre ou infection en cours"
+      ],
+      "blocks": [
+        {
+          "name": "Échauffement",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "cercles-bras",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "cercles-bassin",
+              "duration_sec": 45
+            }
+          ]
+        },
+        {
+          "name": "Corps actif",
+          "kind": "main",
+          "rounds": 2,
+          "rest_between_rounds_sec": 45,
+          "items": [
+            {
+              "exercise_id": "squat-chaise",
+              "reps": 8,
+              "rest_sec": 20,
+              "note": "Lentement, avec les mains sur les cuisses si besoin."
+            },
+            {
+              "exercise_id": "pompes-mur",
+              "reps": 8,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "pont-fessier",
+              "reps": 8,
+              "rest_sec": 20
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "chat-vache",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02-force-chaise",
+      "title": "Force avec une chaise",
+      "subtitle": "Les bases du renforcement, avec une chaise comme alliée.",
+      "duration_min": 15,
+      "level": 1,
+      "intensity": "moderate",
+      "rpe_target": "4-6/10",
+      "type": "strength",
+      "equipment": [
+        "chaise",
+        "mur",
+        "tapis"
+      ],
+      "good_for": [
+        "energy_medium",
+        "energy_high",
+        "beginner"
+      ],
+      "avoid_if": [
+        "pain_acute"
+      ],
+      "instructions": [
+        "À faire 2 fois par semaine, avec au moins un jour entre les deux.",
+        "Les 2 dernières répétitions doivent être un peu difficiles, jamais douloureuses.",
+        "Quand 2 tours te semblent faciles deux fois de suite, ajoute un 3e tour, puis passe à la séance Force corps entier."
+      ],
+      "contraindications": [
+        "Douleur aiguë au genou, à la hanche ou au dos"
+      ],
+      "blocks": [
+        {
+          "name": "Échauffement",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 90
+            },
+            {
+              "exercise_id": "cercles-bras",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "cercles-bassin",
+              "duration_sec": 45
+            }
+          ]
+        },
+        {
+          "name": "Circuit force",
+          "kind": "main",
+          "rounds": 2,
+          "rest_between_rounds_sec": 60,
+          "items": [
+            {
+              "exercise_id": "squat-chaise",
+              "reps": 10,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "pompes-mur",
+              "reps": 10,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "fente-arriere",
+              "reps": 6,
+              "per_side": true,
+              "rest_sec": 20,
+              "note": "Garde la main sur la chaise."
+            },
+            {
+              "exercise_id": "bird-dog",
+              "reps": 6,
+              "per_side": true,
+              "rest_sec": 20
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "etirement-ischios",
+              "duration_sec": 30,
+              "per_side": true
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03-marche-apres-repas",
+      "title": "Marche après le repas",
+      "subtitle": "12 minutes qui aident ta glycémie après manger.",
+      "duration_min": 12,
+      "level": 1,
+      "intensity": "light",
+      "rpe_target": "3-4/10",
+      "type": "cardio",
+      "equipment": [
+        "none"
+      ],
+      "good_for": [
+        "energy_low",
+        "energy_medium",
+        "energy_high",
+        "period",
+        "post_meal"
+      ],
+      "avoid_if": [
+        "pain_acute"
+      ],
+      "instructions": [
+        "À faire dans les 30 minutes après un repas, idéalement le plus copieux de la journée.",
+        "Pas besoin d'aller vite : une marche tranquille suffit à aider ta glycémie.",
+        "Dehors, dans l'appartement ou sur place devant une série : tout compte."
+      ],
+      "contraindications": [
+        "Douleur à la marche"
+      ],
+      "blocks": [
+        {
+          "name": "Mise en route",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-rapide",
+              "duration_sec": 120,
+              "note": "Allure tranquille."
+            }
+          ]
+        },
+        {
+          "name": "Marche",
+          "kind": "main",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-rapide",
+              "duration_sec": 480,
+              "note": "Allure confortable : tu peux parler facilement. Accélère un peu si tu en as envie."
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-rapide",
+              "duration_sec": 60,
+              "note": "Ralentis progressivement."
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 60,
+              "note": "Debout ou assise."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04-mobilite-anti-stress",
+      "title": "Mobilité et respiration anti-stress",
+      "subtitle": "Pour les jours sans énergie, les règles difficiles ou juste pour souffler.",
+      "duration_min": 15,
+      "level": 1,
+      "intensity": "light",
+      "rpe_target": "2-3/10",
+      "type": "mobility",
+      "equipment": [
+        "tapis"
+      ],
+      "good_for": [
+        "energy_low",
+        "period",
+        "cramps",
+        "poor_sleep",
+        "stress"
+      ],
+      "avoid_if": [
+        "pain_acute"
+      ],
+      "instructions": [
+        "Aucune performance ici : cherche le confort, jamais la douleur.",
+        "Un coussin ou une couverture peuvent rendre les postures plus agréables.",
+        "Pendant les règles, une bouillotte sur le ventre pendant la respiration finale peut soulager."
+      ],
+      "contraindications": [
+        "Douleur pelvienne aiguë ou inhabituelle : consulte plutôt que de t'étirer"
+      ],
+      "blocks": [
+        {
+          "name": "Arrivée",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 90,
+              "note": "Allongée, genoux pliés."
+            },
+            {
+              "exercise_id": "cercles-bassin",
+              "duration_sec": 60
+            }
+          ]
+        },
+        {
+          "name": "Mobilité douce",
+          "kind": "main",
+          "rounds": 2,
+          "rest_between_rounds_sec": 20,
+          "items": [
+            {
+              "exercise_id": "chat-vache",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "posture-enfant",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "pont-fessier",
+              "reps": 6,
+              "rest_sec": 15,
+              "note": "Très lentement, en déroulant la colonne."
+            },
+            {
+              "exercise_id": "etirement-ischios",
+              "duration_sec": 30,
+              "per_side": true
+            }
+          ]
+        },
+        {
+          "name": "Relâchement",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "posture-enfant",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 120,
+              "note": "Allonge l'expiration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05-force-corps-entier",
+      "title": "Force corps entier",
+      "subtitle": "20 minutes pour travailler tous les grands muscles, sans matériel.",
+      "duration_min": 20,
+      "level": 2,
+      "intensity": "moderate",
+      "rpe_target": "5-7/10",
+      "type": "strength",
+      "equipment": [
+        "none",
+        "chaise",
+        "tapis"
+      ],
+      "good_for": [
+        "energy_medium",
+        "energy_high"
+      ],
+      "avoid_if": [
+        "pain_acute",
+        "energy_low"
+      ],
+      "instructions": [
+        "2 fois par semaine, jours non consécutifs.",
+        "En pleine forme et envie d'en faire plus ? Ajoute un 3e tour (environ 28 min).",
+        "Contrôle la descente de chaque mouvement : c'est là que le muscle travaille le plus."
+      ],
+      "contraindications": [
+        "Douleur aiguë au genou, à la hanche, au dos ou à l'épaule"
+      ],
+      "blocks": [
+        {
+          "name": "Échauffement",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "pas-chasses-bras",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "cercles-bassin",
+              "duration_sec": 30
+            },
+            {
+              "exercise_id": "squat-chaise",
+              "reps": 8,
+              "rest_sec": 0,
+              "note": "Amplitude réduite, pour s'échauffer."
+            }
+          ]
+        },
+        {
+          "name": "Circuit force",
+          "kind": "main",
+          "rounds": 2,
+          "rest_between_rounds_sec": 60,
+          "items": [
+            {
+              "exercise_id": "squat-chaise",
+              "reps": 12,
+              "rest_sec": 15,
+              "note": "Version effleurer la chaise si possible."
+            },
+            {
+              "exercise_id": "pompes-mur",
+              "reps": 12,
+              "rest_sec": 15,
+              "note": "Ou en appui sur un plan de travail."
+            },
+            {
+              "exercise_id": "fente-arriere",
+              "reps": 8,
+              "per_side": true,
+              "rest_sec": 15
+            },
+            {
+              "exercise_id": "pont-fessier",
+              "reps": 12,
+              "rest_sec": 15
+            },
+            {
+              "exercise_id": "gainage-genoux",
+              "duration_sec": 30,
+              "rest_sec": 15
+            },
+            {
+              "exercise_id": "abduction-hanche",
+              "reps": 10,
+              "per_side": true,
+              "rest_sec": 15
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "posture-enfant",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "etirement-ischios",
+              "duration_sec": 30,
+              "per_side": true
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06-elastique-haut-du-corps",
+      "title": "Élastique : dos et bras",
+      "subtitle": "Une posture plus droite et des bras plus forts avec un simple élastique.",
+      "duration_min": 23,
+      "level": 2,
+      "intensity": "moderate",
+      "rpe_target": "5-7/10",
+      "type": "strength",
+      "equipment": [
+        "elastique",
+        "tapis"
+      ],
+      "good_for": [
+        "energy_medium",
+        "energy_high",
+        "lower_body_pain"
+      ],
+      "avoid_if": [
+        "pain_acute"
+      ],
+      "instructions": [
+        "Choisis une tension d'élastique qui te permet de faire toutes les répétitions, les 2 dernières étant difficiles.",
+        "Vérifie l'élastique avant chaque séance (pas de fissure) et ne l'accroche qu'à un point stable.",
+        "Bonne option si tes jambes ou ton bassin sont douloureux aujourd'hui."
+      ],
+      "contraindications": [
+        "Douleur aiguë à l'épaule ou au dos",
+        "Hypertension non contrôlée : éviter de bloquer la respiration"
+      ],
+      "blocks": [
+        {
+          "name": "Échauffement",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "cercles-bras",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "chat-vache",
+              "duration_sec": 45
+            }
+          ]
+        },
+        {
+          "name": "Circuit élastique",
+          "kind": "main",
+          "rounds": 3,
+          "rest_between_rounds_sec": 60,
+          "items": [
+            {
+              "exercise_id": "rowing-elastique",
+              "reps": 12,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "pompes-mur",
+              "reps": 12,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "ecarte-elastique",
+              "reps": 12,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "developpe-epaules",
+              "reps": 10,
+              "rest_sec": 20,
+              "note": "Avec l'élastique sous les pieds."
+            },
+            {
+              "exercise_id": "dead-bug",
+              "reps": 6,
+              "per_side": true,
+              "rest_sec": 20
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "posture-enfant",
+              "duration_sec": 60
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07-cardio-fractionne-doux",
+      "title": "Cardio fractionné sans sauts",
+      "subtitle": "Des pics d'effort courts, sans impact, pour le cœur et l'insuline.",
+      "duration_min": 18,
+      "level": 2,
+      "intensity": "vigorous",
+      "rpe_target": "7-8/10 pendant les efforts, 3/10 pendant la récupération",
+      "type": "hiit",
+      "equipment": [
+        "none"
+      ],
+      "good_for": [
+        "energy_high"
+      ],
+      "avoid_if": [
+        "energy_low",
+        "poor_sleep",
+        "pain_acute",
+        "cramps"
+      ],
+      "instructions": [
+        "Pas plus de 2 fois par semaine, jamais deux jours de suite.",
+        "Pendant les 30 s d'effort, tu ne dois pouvoir dire que quelques mots. Pendant la récupération, marche tranquillement.",
+        "Énergie en baisse en cours de séance ? Remplace les efforts par de la marche sur place : la séance compte quand même."
+      ],
+      "contraindications": [
+        "Problème cardiaque connu, douleur thoracique ou malaise à l'effort : avis médical obligatoire avant ce type de séance",
+        "Hypertension non contrôlée",
+        "Grossesse : avis médical avant de pratiquer à haute intensité"
+      ],
+      "blocks": [
+        {
+          "name": "Échauffement progressif",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 120
+            },
+            {
+              "exercise_id": "cercles-bras",
+              "duration_sec": 30
+            },
+            {
+              "exercise_id": "pas-chasses-bras",
+              "duration_sec": 60,
+              "note": "Rythme modéré."
+            },
+            {
+              "exercise_id": "squat-chaise",
+              "reps": 8,
+              "rest_sec": 0
+            }
+          ]
+        },
+        {
+          "name": "Fractionné 30/30 (3 tours)",
+          "kind": "main",
+          "rounds": 3,
+          "rest_between_rounds_sec": 60,
+          "items": [
+            {
+              "exercise_id": "montees-genoux",
+              "duration_sec": 30,
+              "rest_sec": 30,
+              "note": "Récupération : marche sur place lente."
+            },
+            {
+              "exercise_id": "boxe-air",
+              "duration_sec": 30,
+              "rest_sec": 30
+            },
+            {
+              "exercise_id": "pas-chasses-bras",
+              "duration_sec": 30,
+              "rest_sec": 30,
+              "note": "Version squat si tu te sens bien."
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 90,
+              "note": "De plus en plus lentement."
+            },
+            {
+              "exercise_id": "etirement-ischios",
+              "duration_sec": 30,
+              "per_side": true
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08-force-halteres",
+      "title": "Force avec haltères légers",
+      "subtitle": "30 minutes pour progresser avec un peu de charge.",
+      "duration_min": 30,
+      "level": 3,
+      "intensity": "moderate",
+      "rpe_target": "6-8/10",
+      "type": "strength",
+      "equipment": [
+        "halteres",
+        "chaise",
+        "tapis"
+      ],
+      "good_for": [
+        "energy_high"
+      ],
+      "avoid_if": [
+        "energy_low",
+        "pain_acute"
+      ],
+      "instructions": [
+        "Haltères de 1 à 5 kg (ou bouteilles d'eau / sacs lestés). Choisis une charge qui rend les 2 dernières répétitions difficiles mais propres.",
+        "Fais chaque exercice en séries (3 séries) avant de passer au suivant.",
+        "Augmente la charge seulement quand les 3 séries deviennent faciles, en gardant une technique parfaite.",
+        "Énergie moyenne aujourd'hui ? Fais 2 séries au lieu de 3."
+      ],
+      "contraindications": [
+        "Lombalgie aiguë ou hernie discale symptomatique (retirer le soulevé de terre)",
+        "Hypertension non contrôlée : charges légères, ne pas bloquer la respiration",
+        "Douleur ou instabilité d'épaule"
+      ],
+      "blocks": [
+        {
+          "name": "Échauffement",
+          "kind": "warmup",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "marche-sur-place",
+              "duration_sec": 90
+            },
+            {
+              "exercise_id": "cercles-bras",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "cercles-bassin",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "squat-chaise",
+              "reps": 10,
+              "rest_sec": 0,
+              "note": "Sans charge."
+            },
+            {
+              "exercise_id": "bird-dog",
+              "reps": 5,
+              "per_side": true,
+              "rest_sec": 0
+            }
+          ]
+        },
+        {
+          "name": "Bas du corps",
+          "kind": "main",
+          "rounds": 3,
+          "rest_between_rounds_sec": 45,
+          "items": [
+            {
+              "exercise_id": "squat-gobelet",
+              "reps": 10,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "souleve-roumain",
+              "reps": 10,
+              "rest_sec": 20
+            }
+          ]
+        },
+        {
+          "name": "Haut du corps",
+          "kind": "main",
+          "rounds": 3,
+          "rest_between_rounds_sec": 45,
+          "items": [
+            {
+              "exercise_id": "rowing-halteres",
+              "reps": 10,
+              "per_side": true,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "developpe-epaules",
+              "reps": 10,
+              "rest_sec": 20
+            }
+          ]
+        },
+        {
+          "name": "Gainage et fessiers",
+          "kind": "main",
+          "rounds": 1,
+          "rest_between_rounds_sec": 45,
+          "items": [
+            {
+              "exercise_id": "fente-arriere",
+              "reps": 8,
+              "per_side": true,
+              "rest_sec": 20,
+              "note": "Haltères en main si tu te sens stable."
+            },
+            {
+              "exercise_id": "dead-bug",
+              "reps": 8,
+              "per_side": true,
+              "rest_sec": 20
+            },
+            {
+              "exercise_id": "gainage-genoux",
+              "duration_sec": 40,
+              "rest_sec": 20,
+              "note": "Ou planche complète."
+            }
+          ]
+        },
+        {
+          "name": "Retour au calme",
+          "kind": "cooldown",
+          "rounds": 1,
+          "rest_between_rounds_sec": 0,
+          "items": [
+            {
+              "exercise_id": "chat-vache",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "etirement-ischios",
+              "duration_sec": 30,
+              "per_side": true
+            },
+            {
+              "exercise_id": "posture-enfant",
+              "duration_sec": 45
+            },
+            {
+              "exercise_id": "respiration-abdominale",
+              "duration_sec": 60
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
