@@ -1,7 +1,7 @@
 # 05 — Cuisine : principes, tags, schéma de recette, semaine type
 
 > Rédigé par le chef cuisinier (nutrition), en binôme avec la diététicienne.
-> Fichier compagnon : [`recettes-seed.json`](./recettes-seed.json) (12 recettes respectant le schéma ci-dessous).
+> Fichier compagnon : [`recipes.json`](../../Packages/SOPKKit/Sources/SOPKKit/Resources/Content/recipes.json) (12 recettes respectant le schéma ci-dessous).
 >
 > Rappel : l'app informe et accompagne, elle ne remplace pas un suivi médical ni diététique. Aucune recette n'est un
 > traitement du SOPK. Le ton est toujours bienveillant : pas d'aliments « interdits », pas de « triche », pas de calories

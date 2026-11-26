@@ -1,94 +1,67 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guide pour Claude Code (claude.ai/code) dans ce dépôt.
 
-## Project overview
+## Projet
 
-SOPK Food is an anti-inflammatory recipe app for PCOS (SOPK) and endometriosis. It consists of three parts:
-- **iOS app** — SwiftUI, iOS 17+, MVVM + Repository pattern
-- **Backoffice** — Next.js 14, TypeScript, Tailwind CSS (admin CRUD for recipes)
-- **Backend** — Supabase (PostgreSQL + Auth + Storage + Realtime + Edge Functions in Deno)
+**Ovéa** est une app iOS qui aide les femmes atteintes de SOPK au quotidien : alimentation anti-inflammatoire
+à IG bas, activité physique adaptée, journal des symptômes et du cycle. **Ce n'est pas un dispositif médical.**
 
-## Commands
+Le dépôt a été remis à zéro en novembre 2026. La V0 (SwiftUI + Supabase + backoffice Next.js) reste sur `main`
+jusqu'au merge de la V1, et dans l'historique git. Ne pas s'en inspirer sans relire `docs/kickoff/`.
 
-### Backoffice (Next.js)
+## Documents de référence (à lire avant toute fonctionnalité)
+
+- `docs/kickoff/07-synthese-decisions.md` : décisions et arbitrages. **En cas de conflit, l'avis médical (`04`) prime.**
+- `01-architecture` · `02-ios` (conventions + backlog) · `03-design` · `04-medical` · `05-cuisine` · `06-sport`
+- `docs/adr/` : décisions d'architecture (ADR-001 : 100 % local).
+
+## Règles produit non négociables
+
+- **Jamais** de prédiction d'ovulation, de fenêtre fertile, de « jours sûrs » ni de phase du cycle.
+- Estimation des prochaines règles : désactivée par défaut, uniquement si les cycles sont réguliers
+  (voir `CycleEngine`), toujours en fourchette avec la mention « estimation indicative ».
+- Pas de poids (option masquée, désactivée par défaut) ni de calories. Pas de série de jours consécutifs, jamais « en retard ».
+- Suggestions de repas et de séances selon le **check-in du jour** (énergie, douleurs, règles, sommeil), pas selon la phase.
+- Aucune donnée ne quitte l'appareil. Aucun SDK tiers, aucun analytics.
+- Vocabulaire : voir le lexique de `03-design.md` et les formulations interdites de `04-medical.md`.
+
+## Structure
+
+```
+App/                 # projet Xcode (à créer sur un Mac, voir App/README.md)
+Packages/SOPKKit/    # logique pure + contenu, Foundation uniquement, testable sous Linux
+  Sources/SOPKKit/Cycle/     # LocalDate, CycleEngine
+  Sources/SOPKKit/Content/   # Recipe, Workout, ContentLibrary
+  Sources/SOPKKit/Resources/Content/{recipes,workouts}.json
+  Tests/SOPKKitTests/        # Swift Testing, dont validation du contenu
+docs/kickoff/  docs/adr/
+```
+
+## Commandes
+
 ```bash
-cd backoffice
-npm run dev          # dev server on localhost:3000
-npm run build        # production build
-npm run lint         # ESLint
-npx tsc --noEmit     # type-check only
+swift test --package-path Packages/SOPKKit   # tests du package (Linux ou macOS)
+swiftlint lint --strict                      # lint (bloquant en CI)
 ```
+App iOS : ouvrir `App/SOPK.xcodeproj` dans Xcode 26, `Cmd+U` pour les tests.
 
-### Supabase local
-```bash
-supabase start                        # start local stack (API :54321, Studio :54323)
-supabase db reset                     # reset DB + run migrations + seed
-supabase functions serve recipes      # serve one Edge Function locally
-supabase db push                      # push migrations to linked remote project
-supabase link --project-ref <ref>     # link to remote project
-```
+## Conventions iOS (détails dans `02-ios.md`)
 
-### iOS
-Open `iOS/SOPK/SOPK.xcodeproj` in Xcode. No CLI build commands — use Xcode or `xcodebuild`.  
-Tests live in `SOPKTests/` — run with `Cmd+U` in Xcode.
+- iOS 18 minimum, Swift 6 en mode strict, isolation `MainActor` par défaut.
+- SwiftUI + `@Observable` (pas d'`ObservableObject`), SwiftData avec schéma versionné (`SchemaV1` + `MigrationPlan`).
+- Une `NavigationStack` par onglet, routes en `enum`. Injection de dépendances via `Environment`, sans framework.
+- Toute logique testable (calculs, règles de suggestion, validation) va dans `SOPKKit`, pas dans les vues.
+- Les jours se manipulent en `LocalDate`, jamais en `Date` brut.
+- Textes dans un String Catalog, français d'abord. Accessibilité : Dynamic Type, VoiceOver, contrastes AA.
 
-## Architecture
+## Contenu
 
-### iOS (`iOS/SOPK/SOPK/SOPK/`)
+Ajouter une recette ou une séance = modifier le JSON correspondant dans `Resources/Content/` en respectant le schéma
+de `05-cuisine.md` / `06-sport.md`. `ContentValidationTests` doit passer : identifiants uniques, allergènes cohérents,
+exercices existants, aucun mot interdit. Mettre `validation.dieteticienne` à `false` tant qu'elle n'a pas relu.
 
-**Data flow**: `AppContainer` (DI) → `Repository` (protocol) → `Store` (ObservableObject) → SwiftUI View
+## CI (`.github/workflows/ci.yml`)
 
-- `Core/DI/AppContainer.swift` — singleton factory; swap repositories here for testing
-- `Core/Repositories/` — protocol + Supabase implementation for recipes, meal-plan, shopping
-- `Core/Store/` — `RecipeStore`, `MealPlanStore`, `ShoppingStore`, `CycleStore`
-- `Models/FavoritesStore.swift` — favorites (also a store, lives in Models/)
-- `Core/Network/SupabaseClient.swift` — custom REST client (no Supabase Swift SDK); handles auth tokens via Keychain, calls Edge Functions via `callFunction<T: Decodable>()`
-- `Models/AppRecipe.swift` — canonical API model decoded from Edge Function response `{ data: [AppRecipe], meta: {...} }`
-- `Models/SampleData.swift` — offline fallback; `SampleData.appRecipes` maps `SampleRecipe → AppRecipe`
-- `Features/` — one folder per screen (Auth, Home, RecipeDetail, MealPlanner, ShoppingList, Family, Onboarding)
-- `Core/Extensions/DesignSystem.swift` — `Palette` struct with all colors (`.light` / `.dark`)
-
-**Key conventions**:
-- All stores are `@MainActor final class`
-- Errors propagate via `@Published var error: AppError?` on each store
-- `CycleStore.phaseFor(day:length:)` uses the medically correct formula: luteal = always 14j, so `ovulationDay = cycleLength - 14`
-- Disclaimer shown once at first launch via `@AppStorage("hasSeenDisclaimer")` in `RootView`
-
-### Supabase backend
-
-**Migrations** (apply in order):
-1. `20260418000000_initial.sql` — all tables, RLS, trigger for profile auto-creation
-2. `20260419000001_profile_health_fields.sql` — adds `last_period_date`, `cycle_length`, `symptoms`, `avoid_tags`
-3. `20260420000002_indexes_rls_optimization.sql` — 12 indexes + `get_my_family_id()` / `get_my_role()` STABLE functions used in RLS policies
-4. `20260420000003_recipe_allergens.sql` — adds `allergens TEXT[]` column + GIN index
-
-**Edge Functions** (`supabase/functions/`):
-- `recipes/` — public (ANON_KEY, no JWT required); returns paginated `{ data, meta }` with 20 recipes/page; supports `?condition=`, `?meal_type=`, `?page=`
-- `meal-plan/` — requires JWT (Bearer token); GET/POST/DELETE week entries
-- `shopping/` — requires JWT; GET/POST/PATCH/DELETE shopping items
-- `_shared/cors.ts` — shared CORS headers, `checkRateLimit()`, `getClientIp()`; CORS origin controlled by `ALLOWED_ORIGIN` env var
-
-**RLS summary**: profiles (own only), families (members), recipes (public read, admin write), meal_plan + shopping (family-scoped via `get_my_family_id()`).
-
-**Seed**: `supabase/seed.sql` — 19 anti-inflammatory recipes with ingredients, steps, tags, and allergens. Runs automatically on `supabase db reset`.
-
-### Backoffice (`backoffice/`)
-
-Next.js App Router. All `/dashboard/*` routes protected by `middleware.ts` (Supabase SSR session check). Sentry wired in `sentry.*.config.ts` + `next.config.mjs`. Admin role required — set via SQL: `UPDATE profiles SET role = 'admin' WHERE id = '<uuid>'`.
-
-### CI/CD (`.github/workflows/`)
-- `ci.yml` — runs on every push: backoffice lint + type-check + build, Deno type-check for Edge Functions, migration order check, SwiftLint
-- `deploy-edge-functions.yml` — deploys functions on push to `main` when `supabase/functions/**` changes
-- `deploy-migrations.yml` — runs `supabase db push` on push to `main` when `supabase/migrations/**` changes
-
-## Required secrets (GitHub + Vercel)
-`SUPABASE_PROJECT_REF`, `SUPABASE_ACCESS_TOKEN`, `SUPABASE_DB_PASSWORD`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ALLOWED_ORIGIN`, `NEXT_PUBLIC_SENTRY_DSN`
-
-## iOS credentials setup
-Create `iOS/SOPK/Secrets.xcconfig` (git-ignored):
-```
-SUPABASE_URL = https://xxx.supabase.co
-SUPABASE_ANON_KEY = eyJ...
-```
-Assign in Xcode: Project → Info → Configurations. Add keys to `Info.plist` as `$(SUPABASE_URL)` / `$(SUPABASE_ANON_KEY)`.
+`lint` (SwiftLint strict) et `kit-tests` (`swift test` dans un conteneur `swift:6.2`) à chaque push.
+`app-build-test` (macOS, `xcodebuild test`) uniquement sur PR et `main`, et seulement si le projet Xcode existe.

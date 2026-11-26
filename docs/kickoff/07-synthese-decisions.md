@@ -24,7 +24,7 @@ Ce document consolide les 6 livrables (`01` à `06`) et tranche leurs contradict
 | Suggestions repas/activité « selon la phase » (`02`) vs selon l'énergie déclarée (`04`, `06`). | **Selon le check-in du jour** (énergie, douleurs, règles, sommeil). |
 | Nom du package : `SOPKKit` (`01`) vs `SOPKDomain` (`02`). | **`SOPKKit`** : il contient aussi le contenu JSON, pas seulement le domaine. |
 | Dossier app : `App/` (`01`) vs `ios/` (`02`). | **`App/`**. Ça évite aussi le conflit de casse avec l'ancien `iOS/` sur macOS. |
-| Recettes V0 (19) à réutiliser (`01`) vs à ne pas reprendre sans checklist (`04`). | Repartir des **12 nouvelles recettes** (`recettes-seed.json`). Les recettes V0 ne sont reprises qu'après relecture selon la checklist. |
+| Recettes V0 (19) à réutiliser (`01`) vs à ne pas reprendre sans checklist (`04`). | Repartir des **12 nouvelles recettes** (`recipes.json`). Les recettes V0 ne sont reprises qu'après relecture selon la checklist. |
 
 ## Architecture d'information (design `03`)
 

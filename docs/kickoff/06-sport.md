@@ -2,7 +2,7 @@
 
 > Rédigé par : coach sportif / enseignant APA du projet.
 > Statut : proposition kickoff, à relire par un·e professionnel·le de santé avant publication.
-> Fichier associé : `docs/kickoff/seances-seed.json` (8 séances + 25 exercices).
+> Fichier associé : `Packages/SOPKKit/Sources/SOPKKit/Resources/Content/workouts.json` (8 séances + 25 exercices).
 
 ## 0. Posture générale
 
