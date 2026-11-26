@@ -1,0 +1,932 @@
+{
+  "_meta": {
+    "_notes": "Micro-copies du MVP d’Ovéa, en français, tutoiement. Clés stables : ne jamais renommer une clé livrée, en ajouter une nouvelle. Variables nommées entre accolades ({name}, {day}, {count}, {minutes}, {date}, {time}). Pluriels : sous-clés one / other (à porter en variations de pluriel dans le String Catalog Xcode). Typographie française déjà appliquée (apostrophe ’, espaces insécables avant : ; ! ? et dans « »). Règles et lexique : docs/design/03-copy.md. Les textes de santé (onboarding.disclaimer, cycle.alert, checkin.safety, move.player.unwell, settings.whenToConsult, settings.pregnancy) reprennent docs/kickoff/04-medical.md et doivent être relus par le médecin avant la bêta.",
+    "version": "1.0.0",
+    "locale": "fr-FR",
+    "appName": "Ovéa"
+  },
+  "common": {
+    "_notes": "Libellés partagés par plusieurs écrans.",
+    "action": {
+      "continue": "Continuer",
+      "validate": "Valider",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "close": "Fermer",
+      "done": "Terminé",
+      "skip": "Passer",
+      "later": "Plus tard",
+      "back": "Retour",
+      "retry": "Réessayer",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "ok": "D’accord",
+      "seeMore": "En savoir plus",
+      "seeAll": "Tout voir",
+      "share": "Partager",
+      "start": "Commencer",
+      "resume": "Reprendre",
+      "pause": "Pause",
+      "stop": "Arrêter",
+      "openSettings": "Ouvrir les Réglages",
+      "call15": "Appeler le 15",
+      "call112": "Appeler le 112",
+      "call3114": "Appeler le 3114",
+      "talkToDoctor": "En parler à mon médecin",
+      "whenToConsult": "Quand consulter ?",
+      "reportError": "Signaler une erreur dans ce contenu"
+    },
+    "healthFootnote": "Informations générales, ne remplace pas un avis médical.",
+    "source": "Source : {source}",
+    "localBadge": "Stocké sur cet iPhone",
+    "optional": "Facultatif",
+    "estimated": "estimé",
+    "unit": {
+      "minutes": {
+        "one": "{count} min",
+        "other": "{count} min"
+      },
+      "days": {
+        "one": "{count} jour",
+        "other": "{count} jours"
+      },
+      "servings": {
+        "one": "{count} portion",
+        "other": "{count} portions"
+      }
+    },
+    "igExplainer": "IG : index glycémique. Il indique la vitesse à laquelle un aliment fait monter le sucre dans le sang. C’est une estimation, qui dépend aussi de la cuisson et de la portion.",
+    "noNumbersHidden": "Masqué (mode sans chiffres)",
+    "a11y": {
+      "closeButton": "Fermer",
+      "selected": "sélectionné",
+      "notSelected": "non sélectionné",
+      "optionalSection": "Section facultative",
+      "localBadge": "Tes données sont stockées uniquement sur cet iPhone"
+    }
+  },
+  "tabs": {
+    "today": "Aujourd’hui",
+    "cooking": "Cuisine",
+    "move": "Bouger",
+    "cycle": "Mon cycle",
+    "a11y": {
+      "settingsButton": "Profil et réglages"
+    }
+  },
+  "onboarding": {
+    "_notes": "6 écrans maximum, tous passables sauf le disclaimer (validation active obligatoire). Aucune question sur le poids. La permission de notifications n’est PAS demandée ici (au 3e check-in).",
+    "progress": "Étape {current} sur {total}",
+    "welcome": {
+      "title": "Bienvenue dans Ovéa",
+      "body": "Des recettes simples, des séances courtes et un journal pour toi. À ton rythme, sans jugement.",
+      "privacy": "Pas de compte. Tout reste sur ton iPhone.",
+      "cta": "Commencer"
+    },
+    "disclaimer": {
+      "_notes": "Texte de 04-medical.md §4.3 repris intégralement, au tutoiement et avec le nom Ovéa. Version d’origine : « SOPK Food est une application de bien-être et d’information générale. Elle ne pose pas de diagnostic, ne prédit pas l’ovulation ni la fertilité, ne remplace pas une consultation médicale et ne doit pas servir de contraception. En cas de doute ou de symptôme inhabituel, consultez un professionnel de santé. En cas d’urgence, appelez le 15 ou le 112. » À faire revalider par le médecin. Le bouton est le seul moyen de continuer ; enregistrer la date et la version acceptées.",
+      "title": "Avant de commencer",
+      "body": "Ovéa est une application de bien-être et d’information générale. Elle ne pose pas de diagnostic, ne prédit pas l’ovulation ni la fertilité, ne remplace pas une consultation médicale et ne doit pas servir de contraception. En cas de doute ou de symptôme inhabituel, consulte un professionnel de santé. En cas d’urgence, appelle le 15 ou le 112.",
+      "age": "Ovéa est réservée aux adultes (18 ans et plus).",
+      "cta": "J’ai compris",
+      "a11y": {
+        "cta": "J’ai compris. Confirme que tu as lu ces informations."
+      }
+    },
+    "name": {
+      "title": "Comment veux-tu qu’on t’appelle ?",
+      "body": "Un prénom, un surnom, ou rien du tout.",
+      "placeholder": "Ton prénom",
+      "cta": "Continuer",
+      "skip": "Passer"
+    },
+    "goals": {
+      "title": "Qu’est-ce qui t’aiderait le plus ?",
+      "body": "Choisis autant de réponses que tu veux. Tu pourras changer d’avis.",
+      "option": {
+        "energy": "Avoir plus d’énergie",
+        "cooking": "Cuisiner simple",
+        "move": "Bouger un peu",
+        "cycle": "Garder une trace de mon cycle",
+        "skin": "Suivre ma peau et mes cheveux",
+        "mood": "Prendre soin de mon humeur",
+        "digestion": "Mieux digérer",
+        "doctor": "Préparer mes rendez-vous médicaux"
+      },
+      "cta": "Continuer",
+      "skip": "Passer"
+    },
+    "lastPeriod": {
+      "title": "Tes dernières règles",
+      "body": "Si tu t’en souviens, note la date du premier jour. Une date approximative suffit.",
+      "datePickerLabel": "Premier jour des dernières règles",
+      "unknown": "Je ne sais plus",
+      "none": "Pas de règles en ce moment",
+      "pregnant": "Je suis enceinte ou j’allaite",
+      "cta": "Continuer",
+      "skip": "Passer"
+    },
+    "food": {
+      "title": "Allergies et préférences",
+      "body": "Pour te proposer des recettes qui te conviennent.",
+      "allergiesLabel": "Allergies ou intolérances",
+      "preferencesLabel": "Préférences",
+      "help": "Sans gluten et sans lactose sont utiles en cas d’intolérance, d’allergie ou de préférence. Ce n’est pas nécessaire pour le SOPK en général : parles-en à ton médecin, à un diététicien ou une diététicienne en cas de doute.",
+      "cta": "Continuer",
+      "skip": "Passer"
+    },
+    "privacy": {
+      "title": "Ton intimité d’abord",
+      "point1": "Tout est enregistré sur cet iPhone, nulle part ailleurs.",
+      "point2": "Pas de compte, pas de publicité, aucune mesure d’audience.",
+      "point3": "Tu peux exporter ou tout supprimer à tout moment.",
+      "faceIdToggle": "Verrouiller Ovéa avec Face ID",
+      "faceIdHelp": "Ovéa sera masquée dans le sélecteur d’apps et demandera Face ID à l’ouverture.",
+      "cta": "C’est parti"
+    },
+    "done": {
+      "title": "Tout est prêt",
+      "body": "On commence par un premier check-in ? Ça prend 10 secondes.",
+      "cta": "Faire mon check-in",
+      "secondary": "Découvrir l’app"
+    }
+  },
+  "today": {
+    "_notes": "Aucune phase de cycle affichée (décision 07). Suggestions basées sur le check-in du jour uniquement. En mode doux : une seule suggestion, pas de petit mot, pas de chiffres.",
+    "greeting": {
+      "morning": "Bonjour {name}",
+      "afternoon": "Bon après-midi {name}",
+      "evening": "Bonsoir {name}",
+      "morningNoName": "Bonjour",
+      "afternoonNoName": "Bon après-midi",
+      "eveningNoName": "Bonsoir"
+    },
+    "welcomeBack": "Te revoilà. On reprend en douceur ?",
+    "checkinCard": {
+      "title": "Comment ça va aujourd’hui ?",
+      "subtitle": "10 secondes pour toi.",
+      "mood": {
+        "good": "Bien",
+        "meh": "Bof",
+        "hard": "Dur"
+      },
+      "doneTitle": "Check-in fait",
+      "doneBody": "Merci de l’avoir noté.",
+      "editCta": "Modifier"
+    },
+    "cycleCard": {
+      "_notes": "Constat factuel uniquement. Masquée si aucune date de règles ou si mode grossesse.",
+      "day": "Jour {day} du cycle",
+      "periodToday": "Règles notées aujourd’hui",
+      "noData": "Note tes règles pour suivre ton cycle.",
+      "noDataCta": "Noter mes règles"
+    },
+    "suggestions": {
+      "title": "Pour toi aujourd’hui",
+      "basedOnCheckin": "D’après ton check-in",
+      "noCheckin": "Fais ton check-in pour des idées adaptées à ton énergie.",
+      "recipeLabel": "Une recette",
+      "moveLabel": "Un mouvement",
+      "restLabel": "Ou du repos",
+      "restBody": "Le repos compte aussi.",
+      "breathe": "Respirer 2 min"
+    },
+    "gentleMode": {
+      "_notes": "Activé si check-in « Dur » ou énergie basse. Phrases ≤ 8 mots.",
+      "title": "Aujourd’hui, on fait simple.",
+      "body": "Une seule idée, si tu en as envie.",
+      "rest": "Te reposer, c’est très bien aussi."
+    },
+    "weekMove": {
+      "_notes": "Jamais « il te manque X min ». Masqué en mode sans chiffres.",
+      "title": "Ta semaine en mouvement",
+      "minutes": {
+        "one": "{count} minute de mouvement cette semaine",
+        "other": "{count} minutes de mouvement cette semaine"
+      },
+      "zero": "La semaine commence. Tout mouvement compte.",
+      "regularity": "Tu as bougé {count} jours sur les 14 derniers."
+    },
+    "dailyWord": {
+      "title": "Petit mot du jour"
+    },
+    "empty": {
+      "title": "Ta journée commence ici",
+      "body": "Fais ton premier check-in pour recevoir des idées de recettes et de mouvement."
+    },
+    "a11y": {
+      "moodGood": "Humeur : bien",
+      "moodMeh": "Humeur : bof",
+      "moodHard": "Humeur : difficile",
+      "cycleCard": "Jour {day} du cycle",
+      "recipeCard": "Recette suggérée : {title}, {minutes} minutes",
+      "moveCard": "Séance suggérée : {title}, {minutes} minutes, intensité {intensity}",
+      "weekGauge": "{count} minutes de mouvement cette semaine"
+    }
+  },
+  "dailyWords": {
+    "_notes": "15 petits mots du jour, non médicaux, ≤ 90 caractères, sans injonction ni accord genré. Un par jour, en rotation, jamais affiché en mode doux.",
+    "w01": "Ton corps n’est pas un projet à corriger. C’est chez toi.",
+    "w02": "Un petit pas reste un pas. Aujourd’hui compte, même tranquille.",
+    "w03": "Tu as le droit de ralentir. Le repos fait partie du chemin.",
+    "w04": "Aucune journée n’est à rattraper. Celle-ci suffit.",
+    "w05": "Une assiette colorée, un verre d’eau, un peu d’air : ça compte.",
+    "w06": "Tu n’as rien à prouver. Prendre soin de toi, c’est déjà beaucoup.",
+    "w07": "Les jours se suivent et ne se ressemblent pas. C’est très bien comme ça.",
+    "w08": "Écoute ce dont tu as besoin aujourd’hui. Personne ne le sait mieux que toi.",
+    "w09": "Une respiration lente, puis une autre. Rien ne presse.",
+    "w10": "Cuisiner pour soi, c’est une forme de douceur.",
+    "w11": "Ce qui est fait est fait. Ce qui ne l’est pas peut attendre.",
+    "w12": "Ta valeur ne dépend d’aucun chiffre.",
+    "w13": "Un moment pour toi, même court, change souvent la couleur d’une journée.",
+    "w14": "La douceur envers soi s’apprend. Chaque jour est un essai.",
+    "w15": "Tu fais de ton mieux avec ce que tu as aujourd’hui. C’est suffisant."
+  },
+  "checkin": {
+    "_notes": "Sheet. Validation active dès humeur + énergie. Tout le reste est facultatif. Énergie : basse / moyenne / bonne (jamais « faible »).",
+    "title": "Check-in",
+    "subtitle": "Seules l’humeur et l’énergie sont demandées. Le reste est facultatif.",
+    "mood": {
+      "label": "Humeur",
+      "good": "Bien",
+      "meh": "Bof",
+      "hard": "Dur"
+    },
+    "energy": {
+      "label": "Énergie",
+      "low": "Basse",
+      "medium": "Moyenne",
+      "high": "Bonne"
+    },
+    "optionalSeparator": "Facultatif",
+    "period": {
+      "label": "Règles",
+      "no": "Non",
+      "spotting": "Quelques traces",
+      "yes": "Oui",
+      "heavy": "Flux abondant"
+    },
+    "pain": {
+      "label": "Douleurs",
+      "none": "Aucune",
+      "pelvic": "Bas-ventre, crampes",
+      "joints": "Articulations, dos",
+      "headache": "Maux de tête",
+      "unusual": "Douleur inhabituelle ou intense"
+    },
+    "sleep": {
+      "label": "Sommeil",
+      "bad": "Difficile",
+      "ok": "Correct",
+      "good": "Bon"
+    },
+    "symptoms": {
+      "label": "Autres ressentis",
+      "bloating": "Ballonnements",
+      "cravings": "Envies de sucré",
+      "skin": "Peau",
+      "hairLoss": "Chute de cheveux",
+      "hair": "Poils (visage, corps)",
+      "fatigue": "Fatigue",
+      "anxiety": "Anxiété",
+      "stress": "Stress",
+      "daytimeSleepiness": "Somnolence en journée",
+      "snoring": "Ronflements",
+      "bleedingBetween": "Saignement entre les règles",
+      "other": "Autre",
+      "otherPlaceholder": "Décris en quelques mots"
+    },
+    "note": {
+      "label": "Note",
+      "placeholder": "Ce que tu veux garder en tête…"
+    },
+    "cta": "Valider",
+    "ctaDisabledHint": "Choisis ton humeur et ton énergie pour valider.",
+    "confirmation": {
+      "default": "Merci, c’est noté.",
+      "hardDay": "Merci de l’avoir noté. Aujourd’hui, on fait simple.",
+      "goodDay": "C’est noté. Belle journée à toi.",
+      "updated": "Check-in mis à jour."
+    },
+    "safety": {
+      "_notes": "Messages déclenchés par des réponses du check-in (04 §4.1, 06 §2.2). Affichés dans l’app uniquement, jamais en notification. Sobres, pas de rouge.",
+      "unusualPain": {
+        "title": "Prends soin de toi",
+        "body": "Avec une douleur inhabituelle ou intense, on ne propose pas de séance aujourd’hui. Si elle est très forte, s’accompagne de fièvre ou de malaise, appelle le 15 ou le 112. Sinon, parles-en à ton médecin.",
+        "cta": "Compris"
+      },
+      "heavyBleeding": {
+        "title": "Un saignement très abondant ?",
+        "body": "Si tu changes de protection toutes les heures, s’il y a des caillots ou si tes règles durent plus de 8 jours, il est recommandé de consulter. En cas de malaise ou de vertiges, appelle le 15 ou le 112.",
+        "cta": "Compris"
+      },
+      "bleedingBetween": {
+        "title": "Saignement entre les règles",
+        "body": "Un saignement entre les règles ou après un rapport mérite d’en parler à ton médecin ou à ton gynécologue.",
+        "cta": "Compris"
+      },
+      "sleep": {
+        "title": "Ronflements et somnolence",
+        "body": "Si tu ronfles et que tu as souvent sommeil en journée, parles-en à ton médecin. Ce sont des signes à vérifier.",
+        "cta": "Compris"
+      },
+      "lowMoodPersistent": {
+        "_notes": "Déclenché si humeur « Dur » la plupart des jours sur plus de 2 semaines. Message identique pour toutes.",
+        "title": "Ces derniers temps ont l’air lourds",
+        "body": "Quand l’humeur reste basse plus de deux semaines, en parler à un professionnel peut vraiment aider. Ton médecin est un bon point de départ.",
+        "crisis": "Si tu as des idées noires, appelle le 3114, 24 h/24, gratuit et confidentiel.",
+        "cta": "Merci"
+      },
+      "crisisLine": "Idées noires ? Le 3114 répond 24 h/24, gratuitement. En cas de danger immédiat : 15 ou 112."
+    },
+    "notificationPrompt": {
+      "_notes": "Écran explicatif avant l’alerte système, au 3e check-in validé. Une seule fois ; si « Plus tard », ne plus le reproposer (accessible dans Réglages).",
+      "title": "Un petit rappel, si tu veux",
+      "body": "Ovéa peut te proposer un moment pour ton check-in, à l’heure de ton choix. Le texte reste discret : rien ne laisse deviner son sujet.",
+      "cta": "Choisir une heure",
+      "later": "Plus tard"
+    },
+    "error": {
+      "saveFailed": "Ton check-in n’a pas pu être enregistré. Réessaie dans un instant."
+    },
+    "a11y": {
+      "moodOption": "Humeur : {value}",
+      "energyOption": "Énergie : {value}",
+      "periodOption": "Règles : {value}",
+      "painOption": "Douleur : {value}",
+      "sleepOption": "Sommeil : {value}",
+      "symptomChip": "{value}, ressenti",
+      "validateDisabled": "Valider. Indisponible tant que l’humeur et l’énergie ne sont pas choisies.",
+      "sheetHandle": "Glisser vers le bas pour fermer"
+    }
+  },
+  "cooking": {
+    "_notes": "Jamais de calories. IG toujours « estimé ». Pas d’aliments interdits. Sans gluten / sans lactose = préférences.",
+    "list": {
+      "title": "Cuisine",
+      "searchPlaceholder": "Rechercher une recette",
+      "favoritesButton": "Mes favoris",
+      "forYou": "Pour toi aujourd’hui",
+      "all": "Toutes les recettes",
+      "count": {
+        "one": "{count} recette",
+        "other": "{count} recettes"
+      }
+    },
+    "filters": {
+      "title": "Filtres",
+      "reset": "Tout effacer",
+      "apply": "Voir les recettes",
+      "applyCount": {
+        "one": "Voir {count} recette",
+        "other": "Voir {count} recettes"
+      },
+      "time": {
+        "label": "Temps",
+        "under15": "15 min ou moins",
+        "under30": "30 min ou moins",
+        "over30": "Plus de 30 min"
+      },
+      "mealType": {
+        "label": "Repas",
+        "breakfast": "Petit-déjeuner",
+        "lunch": "Déjeuner",
+        "dinner": "Dîner",
+        "snack": "Collation"
+      },
+      "ig": {
+        "label": "Index glycémique",
+        "low": "IG bas",
+        "help": "Estimation qualitative, à titre indicatif."
+      },
+      "diet": {
+        "label": "Préférences",
+        "vegetarian": "Végétarien",
+        "vegan": "Végétalien",
+        "lactoseFree": "Sans lactose",
+        "glutenFree": "Sans gluten",
+        "help": "Utile si tu as une intolérance, une allergie ou une préférence. Ce n’est pas nécessaire pour le SOPK en général : parles-en à ton médecin, à un diététicien ou une diététicienne en cas de doute."
+      },
+      "features": {
+        "label": "Envies",
+        "protein": "Riche en protéines",
+        "fiber": "Riche en fibres",
+        "omega3": "Source d’oméga-3",
+        "legumes": "Légumineuses",
+        "batch": "Se prépare à l’avance",
+        "freezable": "Se congèle",
+        "budget": "Petit budget",
+        "noCook": "Sans cuisson",
+        "lunchbox": "À emporter",
+        "comfort": "Réconfortant"
+      },
+      "allergens": {
+        "label": "Sans ces allergènes",
+        "gluten": "Gluten",
+        "crustaceans": "Crustacés",
+        "eggs": "Œufs",
+        "fish": "Poissons",
+        "peanuts": "Arachides",
+        "soy": "Soja",
+        "milk": "Lait",
+        "nuts": "Fruits à coque",
+        "celery": "Céleri",
+        "mustard": "Moutarde",
+        "sesame": "Sésame",
+        "sulphites": "Sulfites",
+        "lupin": "Lupin",
+        "molluscs": "Mollusques"
+      }
+    },
+    "card": {
+      "time": "{minutes} min",
+      "igLow": "IG bas",
+      "igModerate": "IG modéré",
+      "favorite": "Ajouter aux favoris",
+      "unfavorite": "Retirer des favoris"
+    },
+    "empty": {
+      "noResultsTitle": "Aucune recette avec ces filtres",
+      "noResultsBody": "Essaie d’en retirer un ou deux.",
+      "noResultsCta": "Retirer les filtres",
+      "noFavoritesTitle": "Pas encore de favoris",
+      "noFavoritesBody": "Touche le cœur d’une recette pour la retrouver ici.",
+      "searchTitle": "Rien trouvé pour « {query} »",
+      "searchBody": "Essaie un ingrédient, comme « lentilles » ou « poulet »."
+    },
+    "detail": {
+      "prepTime": "Préparation : {minutes} min",
+      "cookTime": "Cuisson : {minutes} min",
+      "totalTime": "Prête en {minutes} min",
+      "servings": "Portions",
+      "servingsAdjust": "{count} portions",
+      "igLow": "IG bas (estimé)",
+      "igModerate": "IG modéré (estimé)",
+      "igModerateTip": "À déguster avec {pairing}.",
+      "igInfo": "Qu’est-ce que l’IG ?",
+      "whyTitle": "Pourquoi cette recette",
+      "plateTitle": "Composition de l’assiette",
+      "plateBody": "Un repère, pas une règle : environ la moitié de légumes, un quart de protéines, un quart de féculents complets. Une assiette différente n’a rien de grave : complète avec ce que tu as.",
+      "ingredientsTitle": "Ingrédients",
+      "ingredientOptional": "facultatif",
+      "stepsTitle": "Étapes",
+      "stepNumber": "Étape {number}",
+      "allergensTitle": "Allergènes",
+      "allergensOptional": "selon option",
+      "allergensNone": "Aucun des 14 allergènes réglementaires.",
+      "labelsCheck": "Vérifie les étiquettes des produits que tu achètes.",
+      "storageTitle": "Conservation",
+      "pregnancyWarning": "Pendant la grossesse : cette recette contient {ingredient}. Demande conseil à ta sage-femme ou à ton médecin.",
+      "startCooking": "Mode cuisine",
+      "favorite": "Ajouter aux favoris",
+      "unfavorite": "Retirer des favoris",
+      "noNumbers": "Temps et IG masqués (mode sans chiffres)."
+    },
+    "cookMode": {
+      "_notes": "Plein écran, écran maintenu allumé, grandes polices. Navigation par étapes.",
+      "title": "Mode cuisine",
+      "stepOf": "Étape {current} sur {total}",
+      "next": "Étape suivante",
+      "previous": "Étape précédente",
+      "ingredientsPeek": "Ingrédients",
+      "timerStart": "Lancer un minuteur de {minutes} min",
+      "timerRunning": "Minuteur : {time}",
+      "timerPause": "Mettre en pause",
+      "timerResume": "Reprendre",
+      "timerCancel": "Annuler le minuteur",
+      "timerDone": "Le minuteur est terminé.",
+      "screenAwake": "L’écran reste allumé pendant que tu cuisines.",
+      "finishTitle": "Bon appétit",
+      "finishBody": "Merci d’avoir pris ce temps pour toi.",
+      "finishCta": "Terminer",
+      "exitConfirmTitle": "Quitter le mode cuisine ?",
+      "exitConfirmBody": "Ton minuteur en cours sera arrêté.",
+      "exitConfirmCta": "Quitter",
+      "exitConfirmCancel": "Rester"
+    },
+    "error": {
+      "contentLoad": "Les recettes n’ont pas pu s’afficher. Ferme et rouvre Ovéa. Tes données ne sont pas concernées."
+    },
+    "a11y": {
+      "recipeCard": "{title}. {minutes} minutes. {ig}.",
+      "favoriteOn": "Dans tes favoris",
+      "favoriteOff": "Pas dans tes favoris",
+      "filterChip": "Filtre {value}",
+      "ingredientCheck": "{ingredient}, {checked}",
+      "ingredientChecked": "coché",
+      "ingredientUnchecked": "non coché",
+      "servingsStepper": "Nombre de portions : {count}",
+      "photo": "Photo de la recette {title}",
+      "timer": "Minuteur, {time} restantes",
+      "nextStep": "Étape suivante",
+      "previousStep": "Étape précédente"
+    }
+  },
+  "move": {
+    "_notes": "Suggestion selon l’énergie du jour, jamais selon la phase. Aucune calorie. Repos valorisé. Arrêt toujours possible, sans pénalité.",
+    "list": {
+      "title": "Bouger",
+      "energyLabel": "Ton énergie aujourd’hui",
+      "energyFromCheckin": "D’après ton check-in",
+      "energy": {
+        "low": "Basse",
+        "medium": "Moyenne",
+        "high": "Bonne"
+      },
+      "suggested": "Proposées pour toi",
+      "all": "Toutes les séances",
+      "lowEnergyNote": "Une petite séance douce compte autant. Le repos aussi.",
+      "restCard": "Aujourd’hui, je me repose",
+      "restCardDone": "Repos noté. C’est une bonne décision aussi."
+    },
+    "level": {
+      "1": "Je reprends",
+      "2": "Je m’installe",
+      "3": "Je progresse"
+    },
+    "intensity": {
+      "gentle": "Doux",
+      "moderate": "Modéré",
+      "tonic": "Tonique"
+    },
+    "card": {
+      "duration": "{minutes} min",
+      "noEquipment": "Sans matériel",
+      "equipment": "Matériel : {equipment}",
+      "noJumps": "Sans sauts"
+    },
+    "detail": {
+      "warmupNote": "Commence par un échauffement et se termine par un retour au calme.",
+      "easierVariant": "Chaque exercice a une variante plus facile.",
+      "cta": "Commencer la séance"
+    },
+    "safetyQuiz": {
+      "_notes": "Questionnaire inspiré du Q-AAP+ (06 §5.1). Affiché avant la 1re séance. Si une réponse « Oui » : recommandation d’avis médical, sans bloquer les séances de niveau 1 mobilité / respiration.",
+      "title": "Avant ta première séance",
+      "body": "Quelques questions pour bouger en sécurité. Tes réponses restent sur ton iPhone.",
+      "q1": "Un médecin t’a-t-il déjà dit que tu avais un problème cardiaque ou de tension ?",
+      "q2": "Ressens-tu des douleurs dans la poitrine au repos ou à l’effort ?",
+      "q3": "As-tu des malaises, des vertiges ou des pertes de connaissance ?",
+      "q4": "As-tu un problème osseux ou articulaire qui pourrait être aggravé par l’activité ?",
+      "q5": "Es-tu enceinte ou as-tu accouché il y a moins de 6 mois ?",
+      "q6": "Prends-tu un traitement qui peut provoquer des hypoglycémies (insuline, sulfamides) ou as-tu un diabète ?",
+      "q7": "As-tu une autre raison médicale de ne pas faire d’activité physique ?",
+      "yes": "Oui",
+      "no": "Non",
+      "cta": "Valider",
+      "allNoTitle": "C’est tout bon",
+      "allNoBody": "Tu peux choisir n’importe quelle séance. Écoute ton corps et ralentis si besoin.",
+      "someYesTitle": "Un avis médical d’abord",
+      "someYesBody": "D’après tes réponses, il est recommandé de demander l’avis de ton médecin avant de commencer. En attendant, les séances de mobilité et de respiration restent accessibles.",
+      "someYesCta": "Voir les séances douces"
+    },
+    "player": {
+      "warmup": "Échauffement",
+      "cooldown": "Retour au calme",
+      "exerciseOf": "Exercice {current} sur {total}",
+      "reps": {
+        "one": "{count} répétition",
+        "other": "{count} répétitions"
+      },
+      "repsDone": "Fait",
+      "next": "Suivant",
+      "skip": "Passer",
+      "pause": "Pause",
+      "resume": "Reprendre",
+      "paused": "En pause. Reprends quand tu veux.",
+      "easierVariant": "Variante plus facile",
+      "upNext": "Ensuite : {exercise}",
+      "rest": "Récupération",
+      "stop": "Arrêter",
+      "stopConfirmTitle": "Arrêter la séance ?",
+      "stopConfirmBody": "Les minutes déjà faites comptent.",
+      "stopConfirmCta": "Arrêter",
+      "stopConfirmCancel": "Continuer",
+      "unwellButton": "Je ne me sens pas bien",
+      "unwell": {
+        "_notes": "Signaux d’arrêt de 06 §5.3. Seul écran où l’impératif est permis.",
+        "title": "Arrête la séance et repose-toi",
+        "intro": "Arrête-toi immédiatement si tu ressens :",
+        "s1": "une douleur ou une oppression dans la poitrine, le bras ou la mâchoire ;",
+        "s2": "un essoufflement qui ne passe pas en ralentissant ;",
+        "s3": "des vertiges, un malaise, une vision trouble, des sueurs froides ;",
+        "s4": "des palpitations ou un cœur très irrégulier ;",
+        "s5": "une douleur vive ou aiguë (articulation, dos, bas-ventre) ;",
+        "s6": "une douleur pelvienne ou un saignement inhabituel.",
+        "emergency": "En cas de douleur dans la poitrine, de malaise avec perte de connaissance ou de difficulté à respirer qui persiste, appelle le 15 ou le 112.",
+        "normal": "Une sensation de brûlure dans les muscles pendant l’effort, ou des courbatures le lendemain, sont courantes. On adapte simplement la séance suivante.",
+        "cta": "J’ai arrêté la séance"
+      },
+      "finish": {
+        "title": "{minutes} minutes rien que pour toi",
+        "titleNoNumbers": "Ce temps rien que pour toi",
+        "body": "C’est noté.",
+        "feelingQuestion": "Comment tu te sens ?",
+        "feelingBetter": "Mieux",
+        "feelingSame": "Pareil",
+        "feelingWorse": "Moins bien",
+        "feelingWorseReply": "Merci de le dire. La prochaine fois, une séance plus douce peut convenir.",
+        "insight": "Après tes séances, tu te sens mieux {count} fois sur {total}.",
+        "cta": "Terminer"
+      }
+    },
+    "empty": {
+      "noSessionsTitle": "Aucune séance pour ce choix",
+      "noSessionsBody": "Essaie une autre énergie ou regarde toutes les séances."
+    },
+    "error": {
+      "contentLoad": "Les séances n’ont pas pu s’afficher. Ferme et rouvre Ovéa. Tes données ne sont pas concernées."
+    },
+    "a11y": {
+      "sessionCard": "{title}. {minutes} minutes. Intensité {intensity}. {equipment}.",
+      "energyPicker": "Énergie du jour : {value}",
+      "timer": "{time} restantes",
+      "progress": "Exercice {current} sur {total}",
+      "unwellButton": "Je ne me sens pas bien. Affiche les consignes de sécurité."
+    }
+  },
+  "cycle": {
+    "_notes": "Historique factuel uniquement. Jamais de phase, d’ovulation, de fenêtre fertile, ni de « retard ». Estimation des prochaines règles désactivée par défaut, activable seulement si les 3 derniers cycles varient de 7 jours au plus.",
+    "title": "Mon cycle",
+    "segment": {
+      "calendar": "Calendrier",
+      "history": "Historique"
+    },
+    "current": {
+      "day": "Jour {day} du cycle",
+      "since": "Depuis le {date}",
+      "periodOngoing": "Règles en cours, jour {day}",
+      "noData": "Pas encore de règles notées"
+    },
+    "calendar": {
+      "legendPeriod": "Règles",
+      "legendSpotting": "Quelques traces",
+      "legendCheckin": "Check-in",
+      "today": "Aujourd’hui",
+      "logPeriod": "Noter des règles",
+      "logPeriodStart": "Premier jour des règles",
+      "logPeriodEnd": "Dernier jour des règles",
+      "flow": {
+        "label": "Flux",
+        "light": "Léger",
+        "medium": "Moyen",
+        "heavy": "Abondant"
+      },
+      "editDay": "Modifier ce jour",
+      "deletePeriod": "Supprimer ces règles",
+      "addPast": "Ajouter des règles passées"
+    },
+    "history": {
+      "title": "Mes derniers cycles",
+      "cycleLength": "{days} jours",
+      "cycleRange": "Du {start} au {end}",
+      "ongoing": "En cours",
+      "average": "Durée moyenne : {days} jours",
+      "shortest": "Le plus court : {days} jours",
+      "longest": "Le plus long : {days} jours",
+      "longCycleNote": "Les cycles longs ou irréguliers sont fréquents avec le SOPK. Tu peux en parler à ton médecin si ça t’inquiète.",
+      "trendsTitle": "Ce que tu as noté",
+      "trendsObserved": "On observe plus souvent « {symptom} » les jours de règles, sur tes derniers cycles.",
+      "trendsFootnote": "Un constat sur tes notes, pas une interprétation médicale."
+    },
+    "estimate": {
+      "_notes": "Option désactivée par défaut (Réglages). Proposée uniquement si les 3 derniers cycles varient de 7 jours au plus.",
+      "label": "Prochaines règles possibles entre le {start} et le {end}",
+      "disclaimer": "Estimation indicative, non fiable en cas de cycles irréguliers.",
+      "unavailable": "L’estimation n’est pas disponible : tes derniers cycles varient trop pour qu’elle soit utile."
+    },
+    "alert": {
+      "noPeriod90": {
+        "_notes": "04 §4.1. Déclenchée si aucune règle enregistrée depuis 90 jours, hors mode grossesse. Dans l’app uniquement, jamais en notification. Carte calme, sans rouge. Message identique pour toutes.",
+        "title": "Plus de 3 mois sans règles",
+        "body": "Aucune règle enregistrée depuis {days} jours. Plus de 3 mois sans règles : il est recommandé d’en parler à ton médecin ou à ton gynécologue.",
+        "pregnancyLine": "Si une grossesse est possible, un test de grossesse peut aussi être utile.",
+        "missingData": "Tu as peut-être eu des règles sans les noter ?",
+        "ctaConsult": "Quand consulter ?",
+        "ctaAddPeriod": "Ajouter des règles",
+        "ctaDismiss": "D’accord",
+        "dismissedNote": "Ce message reviendra dans 30 jours si rien n’est noté d’ici là."
+      }
+    },
+    "export": {
+      "title": "Résumé pour mon médecin",
+      "body": "Un PDF de tes derniers cycles, ressentis et notes, à montrer ou envoyer à ton médecin.",
+      "periodLabel": "Période",
+      "period3": "3 derniers cycles",
+      "period6": "6 derniers mois",
+      "includeNotes": "Inclure mes notes",
+      "cta": "Créer le PDF",
+      "privacyNote": "Le PDF n’est pas chiffré. Partage-le uniquement avec des personnes de confiance.",
+      "pdfTitle": "Résumé de mes cycles et ressentis",
+      "pdfFooter": "Données saisies dans Ovéa, sans interprétation médicale.",
+      "success": "Ton PDF est prêt.",
+      "error": "Le PDF n’a pas pu être créé. Tes données sont intactes. Réessaie dans un instant."
+    },
+    "empty": {
+      "calendarTitle": "Ton calendrier t’attend",
+      "calendarBody": "Note tes règles quand elles arrivent. Ton historique se construira petit à petit.",
+      "calendarCta": "Noter des règles",
+      "historyTitle": "Pas encore d’historique",
+      "historyBody": "Ton historique apparaîtra ici après deux débuts de règles notés.",
+      "trendsTitle": "Pas encore de constat",
+      "trendsBody": "Ils apparaîtront après quelques semaines de check-ins."
+    },
+    "pregnancyMode": {
+      "title": "Suivi du cycle en pause",
+      "body": "Pendant la grossesse et l’allaitement, ton suivi relève de ta sage-femme ou de ton médecin. Tu peux réactiver le suivi dans les Réglages."
+    },
+    "confirm": {
+      "deletePeriodTitle": "Supprimer ces règles ?",
+      "deletePeriodBody": "Les jours du {start} au {end} ne seront plus comptés dans ton historique.",
+      "deletePeriodCta": "Supprimer",
+      "saved": "C’est noté."
+    },
+    "a11y": {
+      "calendarDay": "{date}",
+      "calendarDayPeriod": "{date}, règles, flux {flow}",
+      "calendarDaySpotting": "{date}, quelques traces",
+      "calendarDayCheckin": "{date}, check-in fait",
+      "calendarDayToday": "{date}, aujourd’hui",
+      "historyChart": "Durée de tes derniers cycles, en jours",
+      "historyChartSummary": "{count} cycles. Le plus court : {shortest} jours. Le plus long : {longest} jours.",
+      "alertCard": "Information : plus de 3 mois sans règles enregistrées"
+    }
+  },
+  "settings": {
+    "title": "Réglages",
+    "section": {
+      "profile": "Profil",
+      "reminders": "Rappels",
+      "privacy": "Confidentialité",
+      "options": "Options",
+      "data": "Mes données",
+      "about": "À propos"
+    },
+    "profile": {
+      "name": "Prénom",
+      "namePlaceholder": "Ton prénom (facultatif)",
+      "goals": "Ce qui m’aide",
+      "food": "Allergies et préférences"
+    },
+    "reminders": {
+      "_notes": "Chaque rappel est choisi par l’utilisatrice. 1 par type et par jour au maximum. Textes neutres : voir notifications.",
+      "title": "Rappels",
+      "body": "Les rappels restent discrets : rien sur l’écran verrouillé ne laisse deviner leur sujet.",
+      "checkin": "Rappel de check-in",
+      "recipe": "Idée recette",
+      "move": "Moment pour bouger",
+      "time": "Heure",
+      "days": "Jours",
+      "everyDay": "Tous les jours",
+      "permissionDeniedTitle": "Notifications désactivées",
+      "permissionDeniedBody": "Pour recevoir des rappels, autorise les notifications d’Ovéa dans les Réglages de l’iPhone.",
+      "previewTip": "Astuce : dans Réglages iPhone › Notifications › Ovéa, choisis « Aperçus : jamais » pour encore plus de discrétion."
+    },
+    "faceId": {
+      "toggle": "Verrouiller avec Face ID",
+      "touchIdToggle": "Verrouiller avec Touch ID",
+      "help": "Ovéa demandera Face ID à chaque ouverture et sera masquée dans le sélecteur d’apps.",
+      "lockedTitle": "Ovéa est verrouillée",
+      "unlockCta": "Déverrouiller",
+      "unlockReason": "Déverrouille Ovéa pour accéder à ton journal.",
+      "unavailable": "Face ID n’est pas configuré sur cet iPhone. Tu peux l’activer dans les Réglages de l’iPhone.",
+      "failed": "Le déverrouillage n’a pas abouti. Réessaie ou utilise le code de ton iPhone."
+    },
+    "noNumbers": {
+      "_notes": "04 §4.5 : mode sans chiffres (ni minutes, ni IG, ni durées affichées).",
+      "toggle": "Mode sans chiffres",
+      "help": "Masque les minutes, les durées et l’index glycémique. Utile si les chiffres te pèsent."
+    },
+    "cycleEstimate": {
+      "toggle": "Estimer mes prochaines règles",
+      "help": "Une fourchette indicative, proposée seulement si tes 3 derniers cycles sont proches (7 jours de différence au plus). Non fiable en cas de cycles irréguliers.",
+      "unavailable": "Indisponible pour l’instant : une estimation n’a de sens qu’avec 3 cycles proches."
+    },
+    "pregnancy": {
+      "_notes": "04 §4.5. Désactive le suivi du cycle et l’alerte 90 jours.",
+      "toggle": "Je suis enceinte ou j’allaite",
+      "help": "Le suivi du cycle et ses alertes sont mis en pause. Les recettes signalent les aliments à éviter pendant la grossesse.",
+      "onConfirm": "Pendant cette période, ton suivi relève de ta sage-femme ou de ton médecin. Ovéa garde les recettes et les séances douces."
+    },
+    "export": {
+      "title": "Exporter mes données",
+      "body": "Un fichier avec tout ce que tu as noté dans Ovéa. Tu choisis où l’enregistrer.",
+      "formatJson": "Fichier complet (JSON)",
+      "formatCsv": "Tableau (CSV)",
+      "cta": "Exporter",
+      "privacyNote": "Le fichier exporté n’est pas chiffré. Garde-le en lieu sûr.",
+      "success": "Ton export est prêt.",
+      "error": "L’export n’a pas abouti. Tes données sont intactes. Réessaie dans un instant.",
+      "empty": "Rien à exporter pour l’instant."
+    },
+    "delete": {
+      "title": "Supprimer toutes mes données",
+      "body": "Efface tout ce que tu as noté dans Ovéa sur cet iPhone : check-ins, cycles, séances, favoris, réglages.",
+      "cta": "Supprimer mes données",
+      "confirm": {
+        "title": "Tout supprimer ?",
+        "body": "Toutes tes données seront effacées de cet iPhone. C’est définitif et personne ne pourra les récupérer. Tu peux d’abord exporter tes données.",
+        "exportFirst": "Exporter d’abord",
+        "cta": "Supprimer définitivement",
+        "cancel": "Annuler"
+      },
+      "done": "Tes données ont été supprimées. Ovéa repart de zéro.",
+      "error": "La suppression n’a pas abouti. Réessaie. Si le problème continue, tu peux supprimer l’app depuis l’écran d’accueil : cela efface aussi ses données."
+    },
+    "about": {
+      "title": "À propos et limites",
+      "purposeTitle": "Ce qu’est Ovéa",
+      "purpose": "Ovéa est une application de bien-être proposant des recettes, des séances d’activité physique et un journal personnel, à visée d’information générale. Ce n’est pas un dispositif médical.",
+      "limitsTitle": "Ce qu’Ovéa ne fait pas",
+      "limit1": "Elle ne pose pas de diagnostic.",
+      "limit2": "Elle ne prédit pas l’ovulation ni la fertilité.",
+      "limit3": "Elle ne remplace pas une consultation médicale.",
+      "limit4": "Elle ne doit pas servir de contraception.",
+      "limit5": "Elle n’interprète pas tes symptômes.",
+      "treatment": "Ne modifie jamais un traitement sans avis médical.",
+      "sourcesTitle": "Sources",
+      "sourcesBody": "Contenus inspirés des recommandations internationales 2023 sur le SOPK (Monash University, ESHRE, ASRM), de l’OMS et de l’ANSES.",
+      "reviewTitle": "Relecture",
+      "reviewBody": "Dernière relecture le {date} par {reviewer}.",
+      "privacyTitle": "Confidentialité",
+      "privacyBody": "Tes données sont enregistrées uniquement sur cet iPhone. Ovéa n’a ni serveur, ni compte, ni publicité, ni mesure d’audience.",
+      "disclaimerReplay": "Relire l’avertissement de départ",
+      "version": "Version {version}",
+      "contact": "Nous écrire",
+      "reportError": "Signaler une erreur dans un contenu"
+    },
+    "whenToConsult": {
+      "_notes": "Page « Quand consulter » (04 §4.1). Sobre, numéros cliquables. Ligne TCA à vérifier avant publication.",
+      "title": "Quand consulter ?",
+      "intro": "Ces repères sont des informations générales. En cas de doute, demande l’avis d’un professionnel de santé.",
+      "emergencyTitle": "Urgence",
+      "emergency": "Douleur intense et soudaine dans le bas-ventre, fièvre, malaise, saignement très abondant avec vertiges : appelle le 15 ou le 112.",
+      "noPeriod": "Plus de 3 mois sans règles : parles-en à ton médecin ou à ton gynécologue. Si une grossesse est possible, fais un test de grossesse.",
+      "bleeding": "Règles très abondantes (protection changée toutes les heures, caillots), saignements entre les règles ou après un rapport, règles de plus de 8 jours : consulte.",
+      "diabetes": "Soif intense, envie fréquente d’uriner, amaigrissement inexpliqué, grande fatigue, vision trouble : consulte rapidement pour un bilan.",
+      "androgens": "Poils qui apparaissent brutalement, voix qui devient plus grave : consulte rapidement.",
+      "sleep": "Ronflements avec somnolence dans la journée : parles-en à ton médecin.",
+      "mood": "Humeur basse depuis plus de deux semaines : parles-en à un professionnel.",
+      "crisis": "Idées noires ou suicidaires : appelle le 3114, 24 h/24, gratuit. En cas de danger immédiat : 15 ou 112.",
+      "eating": "Rapport difficile à l’alimentation (restriction, crises, vomissements, peur intense de grossir) : parles-en à ton médecin, ou appelle la ligne d’écoute de la FFAB au 09 69 325 900.",
+      "treatment": "Ne modifie jamais un traitement sans avis médical."
+    },
+    "a11y": {
+      "toggleOn": "{label}, activé",
+      "toggleOff": "{label}, désactivé",
+      "deleteButton": "Supprimer toutes mes données. Action définitive."
+    }
+  },
+  "notifications": {
+    "_notes": "Lisibles par n’importe qui sur l’écran verrouillé. Interdits : SOPK, règles, cycle, ovulation, fertilité, symptôme, douleur, saignement, santé, médecin, traitement, pilule, hormone, poids, humeur, anxiété, ventre, peau, poils, grossesse, bébé, prénom, chiffres, dates. Pas d’emoji, pas de « ! », jamais de relance. Titre : « Ovéa » ou vide. Rotation aléatoire parmi les variantes du type choisi.",
+    "title": "Ovéa",
+    "reminders": {
+      "r01": "Un petit moment pour toi ?",
+      "r02": "Ton check-in t’attend, sans pression.",
+      "r03": "Comment se passe ta journée ?",
+      "r04": "Dix secondes pour faire le point ?",
+      "r05": "Une idée de recette pour ce soir ?",
+      "r06": "Envie de cuisiner quelque chose de simple ?",
+      "r07": "Envie de bouger un peu ? Même cinq minutes comptent.",
+      "r08": "Une petite marche après le repas ?",
+      "r09": "Une pause étirements, si tu en as envie ?",
+      "r10": "On respire un instant ensemble ?"
+    },
+    "byType": {
+      "_notes": "Associations conseillées type de rappel → variantes.",
+      "checkin": "r01,r02,r03,r04",
+      "recipe": "r05,r06",
+      "move": "r07,r08,r09,r10"
+    },
+    "timerDone": {
+      "_notes": "Minuteur du mode cuisine quand l’app est en arrière-plan.",
+      "body": "Ton minuteur est terminé."
+    }
+  },
+  "lock": {
+    "_notes": "Écran affiché dans le sélecteur d’apps et avant déverrouillage : aucun contenu visible.",
+    "title": "Ovéa",
+    "body": "Contenu masqué",
+    "cta": "Déverrouiller"
+  },
+  "errors": {
+    "_notes": "Erreurs génériques. Pas de code d’erreur visible. Toujours rassurer sur les données, ne jamais accuser.",
+    "generic": {
+      "title": "Un souci est survenu",
+      "body": "Ce n’est pas de ton fait. Tes données sont en sécurité. Réessaie dans un instant."
+    },
+    "storageFull": {
+      "title": "Plus assez d’espace",
+      "body": "Ton iPhone manque d’espace pour enregistrer. Libère un peu de place, puis réessaie. Rien n’a été perdu."
+    },
+    "dataLoad": {
+      "title": "Impossible d’afficher tes données",
+      "body": "Ferme et rouvre Ovéa. Si le problème continue, exporte tes données depuis les Réglages."
+    },
+    "migration": {
+      "title": "Mise à jour en cours",
+      "body": "Ovéa met à jour tes données. Ça ne prend qu’un instant."
+    },
+    "shareUnavailable": "Le partage n’est pas disponible pour le moment. Réessaie dans un instant."
+  }
+}
