@@ -158,7 +158,7 @@ Ces messages doivent être affichés de façon **sobre, non alarmiste et non cul
 | Allégations de santé sur un aliment en dehors du règlement CE 1924/2006 | Description factuelle (fibres, protéines) |
 
 ### 4.3 Disclaimers
-- **À la première ouverture** (doit être validé activement) : « SOPK Food est une application de bien-être et d'information générale. Elle ne pose pas de diagnostic, ne prédit pas l'ovulation ni la fertilité, ne remplace pas une consultation médicale et ne doit pas servir de contraception. En cas de doute ou de symptôme inhabituel, consultez un professionnel de santé. En cas d'urgence, appelez le 15 ou le 112. »
+- **À la première ouverture** (doit être validé activement) : « Ovéa est une application de bien-être et d'information générale. Elle ne pose pas de diagnostic, ne prédit pas l'ovulation ni la fertilité, ne remplace pas une consultation médicale et ne doit pas servir de contraception. En cas de doute ou de symptôme inhabituel, consultez un professionnel de santé. En cas d'urgence, appelez le 15 ou le 112. »
 - **Permanent** dans les réglages : section « À propos / Informations médicales », avec les sources, la date de la dernière relecture et le nom ou la qualité du relecteur.
 - **Dans le contexte** : sous chaque contenu santé, une ligne « Informations générales, ne remplace pas un avis médical. »
 
