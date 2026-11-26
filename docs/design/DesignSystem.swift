@@ -416,20 +416,20 @@ struct OveaSecondaryButtonStyle: ButtonStyle {
 /// Niveau d'énergie déclaré. Volontairement mono-teinte (sauge) : pas de feu rouge/vert,
 /// une énergie basse n'est pas « mauvaise ».
 enum EnergyLevel: Int, CaseIterable, Identifiable, Sendable {
-    case basse = 1, moyenne, haute
+    case basse = 1, moyenne, bonne
     var id: Int { rawValue }
     var label: String {
         switch self {
         case .basse: "Basse"
         case .moyenne: "Moyenne"
-        case .haute: "Haute"
+        case .bonne: "Bonne"
         }
     }
     var hint: String {
         switch self {
         case .basse: "On fait simple aujourd'hui"
         case .moyenne: "Un peu d'élan"
-        case .haute: "Envie de bouger"
+        case .bonne: "Envie de bouger"
         }
     }
 }
@@ -575,7 +575,7 @@ private struct DesignSystemGallery: View {
                     Text("Filtres").oveaOverline()
                     HStack(spacing: OveaSpacing.sm) {
                         OveaChip(title: "IG bas", systemImage: "leaf", isSelected: $igBas)
-                        OveaChip(title: "≤ 15 min", systemImage: "timer", isSelected: $express)
+                        OveaChip(title: "15 min ou moins", systemImage: "timer", isSelected: $express)
                         OveaChip(title: "Sans lactose", isSelected: $sansLactose)
                     }
                 }
@@ -598,7 +598,7 @@ private struct DesignSystemGallery: View {
                     kind: .warning,
                     title: "Pas de règles notées depuis plus de 90 jours",
                     message: "C'est fréquent avec le SOPK, et ça vaut le coup d'en parler à ton médecin.",
-                    actionTitle: "Préparer un résumé",
+                    actionTitle: "En savoir plus",
                     action: {}
                 )
 

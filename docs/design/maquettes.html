@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ovéa — maquettes</title>
+<meta name="description" content="Maquettes haute fidélité des écrans du MVP d'Ovéa (iOS 18), light et dark, à partir des tokens de docs/design/tokens.json.">
+<style>
+/* ---- Tokens (générés depuis tokens.json) ---- */
+:root {
+  --background: #F8F5EF;
+  --surface: #FFFFFF;
+  --surface-muted: #EFEAE1;
+  --surface-raised: #FFFFFF;
+  --separator: #E2DCD1;
+  --border: #8A8276;
+  --text-primary: #1E2621;
+  --text-secondary: #566059;
+  --text-tertiary: #5F6661;
+  --accent: #3B6A55;
+  --on-accent: #FFFFFF;
+  --accent-soft: #E2ECE5;
+  --on-accent-soft: #2A4F3F;
+  --highlight: #A54F2E;
+  --on-highlight: #FFFFFF;
+  --highlight-soft: #F6E5DB;
+  --success: #2D6A47;
+  --success-soft: #E1EEE4;
+  --warning: #855600;
+  --warning-soft: #FAEFD8;
+  --info: #2E5C78;
+  --info-soft: #E2EDF3;
+  --destructive: #B3261E;
+  --period: #9E3957;
+  --on-period: #FFFFFF;
+  --period-soft: #F5E3E7;
+  --spotting: #B2647A;
+  --miel: #795610;
+  --miel-soft: #F6ECD3;
+  --olive: #4A6220;
+  --olive-soft: #E7EED8;
+  --lagon: #1E6662;
+  --lagon-soft: #DBEEED;
+  --ardoise: #3C4E86;
+  --ardoise-soft: #E4E8F5;
+  --argile: #984829;
+  --argile-soft: #F7E5DB;
+  --lavande: #654F8E;
+  --lavande-soft: #ECE6F5;
+  --shadow-card: 0 1px 2px rgba(43,58,48,.04), 0 4px 12px rgba(43,58,48,.06);
+  --shadow-raised: 0 8px 24px rgba(43,58,48,.10);
+  --card-stroke: var(--separator);
+}
+html[data-theme="dark"] {
+  --background: #121614;
+  --surface: #1B201D;
+  --surface-muted: #252C28;
+  --surface-raised: #222825;
+  --separator: #323A35;
+  --border: #7D8680;
+  --text-primary: #F0EDE6;
+  --text-secondary: #B4BBB5;
+  --text-tertiary: #959D97;
+  --accent: #8EC3A6;
+  --on-accent: #0E2218;
+  --accent-soft: #21362B;
+  --on-accent-soft: #AAD6BD;
+  --highlight: #EE9F7D;
+  --on-highlight: #2A1206;
+  --highlight-soft: #3B251B;
+  --success: #8DCB9F;
+  --success-soft: #1E3426;
+  --warning: #E8BD69;
+  --warning-soft: #372C13;
+  --info: #90C1DE;
+  --info-soft: #1B2E39;
+  --destructive: #FFB4AB;
+  --period: #F097AF;
+  --on-period: #33101C;
+  --period-soft: #3C1E28;
+  --spotting: #D99AAB;
+  --miel: #E3BF72;
+  --miel-soft: #382E17;
+  --olive: #B6CB86;
+  --olive-soft: #2A321F;
+  --lagon: #80CAC7;
+  --lagon-soft: #173434;
+  --ardoise: #A9B6EB;
+  --ardoise-soft: #222A43;
+  --argile: #EDA585;
+  --argile-soft: #3B251B;
+  --lavande: #C7B7E6;
+  --lavande-soft: #2D273E;
+  --shadow-card: none;
+  --shadow-raised: none;
+}
+
+:root {
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --serif: "New York", ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --rounded: ui-rounded, "SF Pro Rounded", var(--sans);
+  --page-bg: #E9E4DA;
+  --page-text: #1E2621;
+  --frame: #1A1C1B;
+  color-scheme: light;
+}
+html[data-theme="dark"] { --page-bg: #0B0D0C; --page-text: #F0EDE6; --frame: #2A2E2C; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--page-bg); color: var(--page-text); font-family: var(--sans); -webkit-font-smoothing: antialiased; transition: background .25s; }
+.page-head { max-width: 1200px; margin: 0 auto; padding: 32px 16px 8px; display: flex; flex-wrap: wrap; gap: 16px; align-items: end; justify-content: space-between; }
+.page-head h1 { font-family: var(--serif); font-weight: 600; font-size: 32px; margin: 0 0 4px; }
+.page-head p { margin: 0; color: var(--text-secondary); font-size: 15px; max-width: 640px; line-height: 1.45; }
+.toggle { font: 600 15px var(--sans); color: var(--on-accent); background: var(--accent); border: 0; border-radius: 999px; padding: 12px 20px; min-height: 44px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.toggle:focus-visible, button:focus-visible { outline: 3px solid var(--info); outline-offset: 2px; }
+.rail { display: flex; gap: 48px; overflow-x: auto; padding: 32px 16px 56px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+@media (min-width: 1300px) { .rail { flex-wrap: wrap; justify-content: center; overflow: visible; } }
+.shot { flex: none; scroll-snap-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.shot figcaption { font-size: 14px; font-weight: 600; color: var(--text-secondary); letter-spacing: .02em; }
+
+/* ---- Cadre iPhone 390×844 ---- */
+.phone { width: 390px; height: 844px; border-radius: 55px; position: relative; overflow: hidden; background: var(--background); color: var(--text-primary);
+  box-shadow: 0 0 0 11px var(--frame), 0 0 0 12px #4a4d4b, 0 30px 70px rgba(0,0,0,.28); font-size: 17px; line-height: 1.3; transition: background .25s, color .25s; }
+.island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 126px; height: 37px; background: #000; border-radius: 20px; z-index: 30; }
+.status { position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; justify-content: space-between; align-items: center; padding: 6px 34px 0 46px; font: 600 17px var(--sans); z-index: 25; }
+.status .sys { display: flex; gap: 6px; align-items: center; }
+.status .bat { width: 25px; height: 12px; border: 1.5px solid currentColor; border-radius: 4px; position: relative; opacity: .9; }
+.status .bat::after { content: ""; position: absolute; inset: 1.5px; right: 6px; background: currentColor; border-radius: 1.5px; }
+.home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; border-radius: 3px; background: var(--text-primary); z-index: 40; }
+.screen { position: absolute; inset: 54px 0 0 0; overflow: hidden; padding: 0 20px; }
+.screen.with-tabs { bottom: 83px; }
+
+/* ---- Tab bar ---- */
+.tabbar { position: absolute; bottom: 0; left: 0; right: 0; height: 83px; background: color-mix(in srgb, var(--surface) 92%, transparent); border-top: .5px solid var(--separator); display: grid; grid-template-columns: repeat(4, 1fr); padding: 7px 8px 0; z-index: 20; backdrop-filter: blur(20px); }
+.tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; font-weight: 500; color: var(--text-secondary); }
+.tab svg { width: 26px; height: 26px; }
+.tab.on { color: var(--accent); }
+
+/* ---- Typo ---- */
+.display { font: 600 34px/1.12 var(--serif); letter-spacing: -.01em; margin: 0; }
+.title1 { font: 600 28px/1.15 var(--serif); margin: 0; }
+.title2 { font: 600 22px/1.2 var(--serif); margin: 0; }
+.title3 { font: 600 20px/1.25 var(--sans); margin: 0; }
+.headline { font: 600 17px/1.3 var(--sans); }
+.callout { font-size: 16px; }
+.sub { font-size: 15px; line-height: 1.35; }
+.foot { font-size: 13px; line-height: 1.35; }
+.cap { font-size: 12px; font-weight: 500; }
+.overline { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 8px; }
+.metric { font: 600 22px var(--rounded); font-variant-numeric: tabular-nums; }
+.quote { font: italic 400 19px/1.35 var(--serif); }
+.muted { color: var(--text-secondary); }
+.c-accent { color: var(--accent); } .c-info { color: var(--info); } .c-period { color: var(--period); } .c-destructive { color: var(--destructive); }
+
+/* ---- Icônes ---- */
+svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } svg.i.xl { width: 44px; height: 44px; stroke-width: 1.5; }
+
+/* ---- Composants ---- */
+.card { background: var(--surface); border-radius: 20px; padding: 16px; box-shadow: var(--shadow-card); border: .5px solid var(--card-stroke); }
+.card.soft { background: var(--accent-soft); box-shadow: none; border-color: transparent; }
+.row { display: flex; align-items: center; gap: 12px; }
+.stack > * + * { margin-top: 16px; }
+.sec { margin-top: 32px; }
+.chips { display: flex; gap: 8px; flex-wrap: nowrap; overflow: hidden; }
+.chips.wrap { flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); font-size: 15px; font-weight: 500; white-space: nowrap; border: 1.5px solid transparent; flex: none; }
+.chip.on { background: var(--accent-soft); color: var(--on-accent-soft); border-color: var(--accent); }
+.chip.dashed { background: transparent; border: 1.5px dashed var(--border); color: var(--text-secondary); }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 14px; font: 600 17px var(--sans); border: 0; width: 100%; }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.btn.ghost { background: transparent; color: var(--accent); height: 44px; }
+.btn.disabled { background: var(--surface-muted); color: var(--text-secondary); }
+.iconbtn { width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--surface-muted); color: var(--accent); flex: none; }
+.badge { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); }
+.cat { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--fg); }
+.search { display: flex; align-items: center; gap: 8px; height: 40px; border-radius: 12px; background: var(--surface-muted); padding: 0 12px; color: var(--text-secondary); font-size: 17px; }
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--surface-muted); border-radius: 10px; padding: 2px; }
+.seg span { text-align: center; font-size: 13px; font-weight: 500; padding: 7px 4px; border-radius: 8px; color: var(--text-primary); }
+.seg span.on { background: var(--surface-raised); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; border: .5px solid var(--separator); }
+.banner { display: flex; gap: 12px; padding: 14px 16px; border-radius: 20px; background: var(--info-soft); }
+.banner.warn { background: var(--warning-soft); }
+.banner > svg { color: var(--info); margin-top: 1px; }
+.banner.warn > svg { color: var(--warning); }
+.banner a { color: var(--info); font-weight: 600; text-decoration: none; font-size: 15px; display: inline-block; margin-top: 6px; }
+
+/* Teintes de saison */
+.t-miel { --fg: var(--miel); --soft: var(--miel-soft); }
+.t-olive { --fg: var(--olive); --soft: var(--olive-soft); }
+.t-lagon { --fg: var(--lagon); --soft: var(--lagon-soft); }
+.t-ardoise { --fg: var(--ardoise); --soft: var(--ardoise-soft); }
+.t-argile { --fg: var(--argile); --soft: var(--argile-soft); }
+.t-lavande { --fg: var(--lavande); --soft: var(--lavande-soft); }
+.vig { background: var(--soft); color: var(--fg); position: relative; overflow: hidden; display: grid; place-items: center; border-radius: 14px; }
+.vig svg.blobs { position: absolute; inset: 0; width: 100%; height: 100%; }
+.vig svg.blobs * { fill: var(--fg); }
+.vig > svg.i { position: relative; }
+
+/* Énergie */
+.energy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.energy div { height: 76px; border-radius: 14px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600; }
+.energy div.on { background: var(--accent); color: var(--on-accent); }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 22px; }
+.bars i { width: 7px; border-radius: 2px; border: 1.5px solid var(--border); display: block; }
+.bars i:nth-child(1) { height: 11px; } .bars i:nth-child(2) { height: 16px; } .bars i:nth-child(3) { height: 21px; }
+.bars i.f { background: var(--accent); border-color: var(--accent); }
+.on .bars i { border-color: color-mix(in srgb, var(--on-accent) 60%, transparent); }
+.on .bars i.f { background: var(--on-accent); border-color: var(--on-accent); }
+.mood { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.mood div { height: 64px; border-radius: 14px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 600; }
+.mood div svg { color: var(--accent); }
+.mood div.on { background: var(--accent); color: var(--on-accent); }
+.mood div.on svg { color: var(--on-accent); }
+.mood.compact div { height: 54px; flex-direction: row; gap: 6px; }
+.energy.compact div { height: 60px; gap: 6px; }
+.seg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.seg3 span { height: 38px; border-radius: 10px; background: var(--surface-muted); display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 500; }
+.seg3 span.on { background: var(--accent-soft); color: var(--on-accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent); font-weight: 600; }
+
+/* Liste groupée (Réglages) */
+.group { background: var(--surface); border-radius: 14px; overflow: hidden; border: .5px solid var(--card-stroke); }
+.group .it { display: flex; align-items: center; gap: 12px; padding: 0 16px; min-height: 48px; font-size: 16px; }
+.group .it + .it { border-top: .5px solid var(--separator); margin-left: 52px; padding-left: 0; }
+.group .it .ico { width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); flex: none; }
+.group .it + .it .ico { margin-left: -40px; }
+.group .it .v { margin-left: auto; color: var(--text-secondary); font-size: 15px; display: flex; align-items: center; gap: 4px; }
+.group-title { font-size: 13px; color: var(--text-secondary); margin: 22px 16px 7px; text-transform: uppercase; letter-spacing: .04em; font-weight: 500; }
+.switch { width: 51px; height: 31px; border-radius: 16px; background: var(--accent); position: relative; margin-left: auto; flex: none; }
+.switch::after { content: ""; position: absolute; top: 2px; right: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
+.switch.off { background: var(--surface-muted); box-shadow: inset 0 0 0 1.5px var(--border); }
+.switch.off::after { right: auto; left: 2px; }
+
+/* Calendrier */
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 4px; text-align: center; }
+.cal .dow { font-size: 12px; font-weight: 600; color: var(--text-secondary); padding-bottom: 6px; }
+.cal .d { height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; font: 500 16px var(--rounded); font-variant-numeric: tabular-nums; position: relative; }
+.cal .d .n { width: 34px; height: 34px; border-radius: 17px; display: grid; place-items: center; }
+.cal .d.p .n { background: var(--period); color: var(--on-period); font-weight: 600; }
+.cal .d.s .n { box-shadow: inset 0 0 0 2px var(--spotting); }
+.cal .d.today .n { box-shadow: inset 0 0 0 2px var(--accent); color: var(--accent); font-weight: 700; }
+.cal .d .dot { width: 5px; height: 5px; border-radius: 3px; background: var(--text-secondary); position: absolute; bottom: 1px; }
+.cal .d.future { color: var(--text-tertiary); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--text-secondary); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.lg-p { width: 14px; height: 14px; border-radius: 7px; background: var(--period); }
+.lg-s { width: 14px; height: 14px; border-radius: 7px; box-shadow: inset 0 0 0 2px var(--spotting); }
+.lg-c { width: 6px; height: 6px; border-radius: 3px; background: var(--text-secondary); }
+.lg-t { width: 14px; height: 14px; border-radius: 7px; box-shadow: inset 0 0 0 2px var(--accent); }
+.hist .it { padding: 12px 0; border-top: .5px solid var(--separator); }
+.hist .track { height: 8px; border-radius: 4px; background: var(--surface-muted); margin-top: 8px; position: relative; overflow: hidden; }
+.hist .track b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--period); border-radius: 4px; }
+.hist .track i { position: absolute; top: 0; bottom: 0; background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--border); border-radius: 0 4px 4px 0; }
+
+/* Lecteur */
+.ring { width: 220px; height: 220px; position: relative; margin: 0 auto; display: grid; place-items: center; }
+.ring svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+.ring .t { font: 300 64px var(--rounded); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.progress { display: flex; gap: 4px; }
+.progress i { flex: 1; height: 4px; border-radius: 2px; background: var(--surface-muted); }
+.progress i.d { background: var(--accent); }
+.progress i.c { background: linear-gradient(90deg, var(--accent) 40%, var(--surface-muted) 40%); }
+.ctrl { display: flex; align-items: center; justify-content: center; gap: 28px; }
+.ctrl .b { width: 56px; height: 56px; border-radius: 28px; display: grid; place-items: center; background: var(--surface-muted); color: var(--text-primary); }
+.ctrl .b.main { width: 80px; height: 80px; border-radius: 40px; background: var(--accent); color: var(--on-accent); }
+
+/* Sheet */
+.dim { position: absolute; inset: 0; background: rgba(10,14,12,.38); z-index: 10; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 62px; background: var(--surface-raised); border-radius: 28px 28px 0 0; z-index: 15; padding: 8px 20px 0; box-shadow: var(--shadow-raised); }
+.grabber { width: 36px; height: 5px; border-radius: 3px; background: var(--border); opacity: .6; margin: 0 auto 10px; }
+.field { height: 44px; border-radius: 10px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 12px; color: var(--text-tertiary); font-size: 16px; }
+.lbl { font-size: 15px; font-weight: 600; margin: 0 0 8px; display: flex; align-items: center; gap: 6px; }
+.optsep { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin: 18px 0 14px; }
+.optsep::before, .optsep::after { content: ""; flex: 1; height: .5px; background: var(--separator); }
+.toast { position: absolute; }
+.navbar { display: flex; align-items: center; justify-content: space-between; height: 44px; color: var(--accent); font-size: 17px; }
+.check { width: 24px; height: 24px; border-radius: 12px; border: 1.5px solid var(--border); flex: none; display: grid; place-items: center; }
+.check.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.ingr { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: .5px solid var(--separator); font-size: 16px; }
+.ingr .q { margin-left: auto; color: var(--text-secondary); font-variant-numeric: tabular-nums; font-size: 15px; white-space: nowrap; }
+.ingr.done .nm { color: var(--text-secondary); text-decoration: line-through; }
+.dock { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 20px 34px; background: color-mix(in srgb, var(--background) 94%, transparent); border-top: .5px solid var(--separator); display: flex; gap: 12px; z-index: 5; backdrop-filter: blur(20px); }
+.stepper { display: inline-flex; align-items: center; gap: 0; background: var(--surface-muted); border-radius: 10px; height: 36px; }
+.stepper span { width: 40px; display: grid; place-items: center; color: var(--accent); }
+.stepper b { font: 600 15px var(--rounded); padding: 0 6px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M3 18.5h18M6.5 18.5a5.5 5.5 0 0 1 11 0M12 6.5V9M5.6 10.1l1.6 1.6M18.4 10.1l-1.6 1.6M2.8 15H5.2M18.8 15h2.4"/></symbol>
+    <symbol id="i-fork" viewBox="0 0 24 24"><path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3M16.5 21V3c-2 1-3.5 3.5-3.5 7 0 2 1 3 3.5 3"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13.5" cy="4.5" r="1.8"/><path d="M12.5 8.5l-2.5 5 3 2.5-1.5 5M12.5 8.5l2.5 3.5h3M10 13.5l-2.5 2.5M13 16l3 5M12.5 8.5L9 10l-1.5 3"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15zM5 19l8-8"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5M10 2.8h4M18.2 7l1.5-1.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 7.6 4.2 4.2 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M9.5 11.5h5v4h-5zM10.5 11.5v-1.3a1.5 1.5 0 0 1 3 0v1.3"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9.5 5.5l6.5 6.5-6.5 6.5"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.7v.1"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V13M12 16.3v.1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.5A7.8 7.8 0 1 1 9.5 4.5a6.3 6.3 0 0 0 10 10z"/><path d="M17 3.5v3M15.5 5h3"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 9h12v4.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M3 21h14M8 3.5c0 1.5 1 1.5 1 3M12 3.5c0 1.5 1 1.5 1 3"/></symbol>
+    <symbol id="i-carrot" viewBox="0 0 24 24"><path d="M14 8.5c-3 .5-10 10-10 11.5 1.5 0 11-7 11.5-10a1.5 1.5 0 0 0-1.5-1.5zM15 7l2-3.5M16.5 9l3.5-1.5M16 8l3.5-3.5M8 14l1.5 1.5M10.5 11.5l1.5 1.5"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11.5h18a9 9 0 0 1-18 0zM8 8c0-1.5 1-1.5 1-3.5M12 8c0-1.5 1-1.5 1-3.5M16 8c0-1.5 1-1.5 1-3.5"/></symbol>
+    <symbol id="i-yoga" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 8v6M4.5 10.5L12 12l7.5-1.5M12 14l-5.5 5.5h11L12 14"/></symbol>
+    <symbol id="i-strength" viewBox="0 0 24 24"><path d="M3.5 9.5v5M6.5 7v10M17.5 7v10M20.5 9.5v5M6.5 12h11"/></symbol>
+    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 9h11a3 3 0 1 0-3-3M3 13h15a3 3 0 1 1-3 3M3 17h6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4M7 10.5H5.5v10h13v-10H17"/></symbol>
+    <symbol id="i-face" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M9 9.5v1M15 9.5v1M12 9.5v3.5h-1M9.5 16c1.5 1 3.5 1 5 0"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4.5h6V7M6 7l1 13h10l1-13M10 11v5M14 11v5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 3h7.5l4.5 4.5V21h-12zM14 3v4.5h4.5M9.5 13h5.5M9.5 16.5h5.5"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6.5v11M15 6.5v11" stroke-width="3"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M6 6.5l8 5.5-8 5.5zM17.5 6.5v11"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M18 6.5l-8 5.5 8 5.5zM6.5 6.5v11"/></symbol>
+    <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3.5 3.5l17 17M10.6 6.2A9 9 0 0 1 12 6c5 0 9 6 9 6a15 15 0 0 1-3 3.4M6.5 7.6C4.3 9.1 3 12 3 12s4 6 9 6c1.4 0 2.7-.4 3.8-1M9.9 10a3 3 0 0 0 4.2 4.2"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9M15 5v4M9 15v4"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1-3.5 4-5 7-5s6 1.5 7 5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7.5H6.2"/><circle cx="9" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></symbol>
+    <symbol id="i-calplus" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18.5V6.5M3 13.5h18v5M21 13.5v-1a3 3 0 0 0-3-3h-7v4"/><circle cx="7" cy="11" r="1.6"/></symbol>
+    <symbol id="i-good" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10v.6M15 10v.6M8.5 14.5c2 2 5 2 7 0"/></symbol>
+    <symbol id="i-meh" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10v.6M15 10v.6M9 15h6"/></symbol>
+    <symbol id="i-low" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10.5v.6M15 10.5v.6M8.8 16.2c2-1.6 4.4-1.6 6.4 0"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5l1.8 5.2 5.2 1.8-5.2 1.8L12 17.5l-1.8-5.2L5 10.5l5.2-1.8z"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 18l4.5-12L13 18M5.7 14h5.6M15 18v-6.5M15 14.5c0-2 1.2-3 2.7-3s2.8 1 2.8 3V18"/></symbol>
+    <symbol id="blobs" viewBox="0 0 340 190" preserveAspectRatio="xMidYMid slice"><path opacity=".13" d="M-20 140c30-60 90-90 160-70s110 70 190 40 60 90 60 90H-20z"/><path opacity=".09" d="M230-20c50 10 110 30 120 80s-40 80-90 70-90-40-80-90 10-70 50-60z"/><ellipse opacity=".16" cx="70" cy="50" rx="34" ry="24" transform="rotate(-20 70 50)"/><ellipse opacity=".11" cx="292" cy="160" rx="26" ry="17" transform="rotate(15 292 160)"/></symbol>
+  </defs>
+</svg>
+
+<header class="page-head">
+  <div>
+    <h1>Ovéa — maquettes MVP</h1>
+    <p>Neuf écrans iPhone 390 × 844 pt, à partir des tokens de <code>tokens.json</code>. Textes réalistes, aucun poids, aucune calorie, aucune prédiction d'ovulation. Les icônes sont des approximations des SF Symbols listés dans <code>02-ui.md</code>.</p>
+  </div>
+  <button class="toggle" id="themeToggle" type="button" aria-pressed="false">
+    <svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span>Passer en sombre</span>
+  </button>
+</header>
+
+<main class="rail">
+
+<!-- ======================= 1. AUJOURD'HUI ======================= -->
+<figure class="shot"><figcaption>1 · Aujourd'hui</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen with-tabs">
+    <div class="row" style="justify-content:space-between;margin-top:6px">
+      <span class="sub muted">Jeudi 26 novembre</span>
+      <span class="iconbtn" style="background:var(--accent-soft);color:var(--on-accent-soft);font:600 17px var(--rounded)" aria-label="Profil et réglages">L</span>
+    </div>
+    <h2 class="display" style="margin-top:2px">Bonjour Léa</h2>
+
+    <div class="card" style="margin-top:20px">
+      <p class="overline" style="margin-bottom:4px">Check-in du jour</p>
+      <div class="title2" style="font-size:21px">Comment est ton énergie ?</div><div class="foot muted" style="margin-top:2px">Un tap suffit. Le reste est facultatif.</div>
+      <div class="energy" style="margin-top:14px">
+        <div style="height:64px"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
+        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
+        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:12px;gap:10px">
+      <div class="card" style="flex:1;padding:12px 14px">
+        <div class="row" style="gap:10px"><svg class="i c-accent"><use href="#i-cal"/></svg>
+          <div><div class="metric" style="font-size:20px">Jour 23</div><div class="foot muted">du cycle</div></div></div>
+      </div>
+      <div class="card" style="padding:12px 14px;width:142px">
+        <div class="row" style="gap:8px"><svg class="i c-period"><use href="#i-drop"/></svg><div class="foot" style="font-weight:600;line-height:1.25">Noter mes règles</div></div>
+      </div>
+    </div>
+
+    <p class="overline" style="margin-top:28px">Pour toi aujourd'hui</p>
+    <div class="row" style="gap:12px;align-items:stretch">
+      <div class="card t-ardoise" style="flex:1;padding:0;overflow:hidden">
+        <div class="vig" style="height:92px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl"><use href="#i-bowl"/></svg></div>
+        <div style="padding:10px 12px 12px">
+          <span class="cat"><svg class="i sm"><use href="#i-moon"/></svg>Dîner</span>
+          <div class="headline" style="font-size:15px;margin-top:3px;line-height:1.25">Dahl de lentilles corail et butternut</div>
+          <div class="foot muted" style="margin-top:4px">30 min · IG bas</div>
+        </div>
+      </div>
+      <div class="card t-miel" style="flex:1;padding:0;overflow:hidden">
+        <div class="vig" style="height:92px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl"><use href="#i-walk"/></svg></div>
+        <div style="padding:10px 12px 12px">
+          <span class="cat"><svg class="i sm"><use href="#i-walk"/></svg>Cardio doux</span>
+          <div class="headline" style="font-size:15px;margin-top:3px;line-height:1.25">Marche après le repas</div>
+          <div class="foot muted" style="margin-top:4px">12 min · sans matériel</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px;background:var(--highlight-soft);border-color:transparent;box-shadow:none">
+      <div class="row" style="gap:8px;color:var(--highlight)"><svg class="i sm"><use href="#i-sparkle"/></svg><span class="cap" style="font-weight:600">Une idée pour ce matin</span></div>
+      <p class="quote" style="margin:8px 0 6px;font-size:17px">Des protéines au petit-déjeuner aident à garder une énergie plus stable jusqu'à midi.</p>
+      <span class="sub c-info" style="font-weight:600">Pourquoi ? ›</span>
+    </div>
+  </div>
+  <nav class="tabbar">
+    <span class="tab on"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
+    <span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
+    <span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
+    <span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
+  </nav>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 2. CHECK-IN ======================= -->
+<figure class="shot"><figcaption>2 · Check-in (sheet)</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen" style="filter:saturate(.8)">
+    <span class="sub muted">Jeudi 26 novembre</span>
+    <h2 class="display">Bonjour Léa</h2>
+  </div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="grabber"></div>
+    <div class="row" style="justify-content:space-between">
+      <div><div class="title2">Check-in</div><div class="foot muted">Seule l'énergie est demandée.</div></div>
+      <span class="iconbtn" aria-label="Fermer" style="width:32px;height:32px;color:var(--text-secondary)"><svg class="i sm"><use href="#i-x"/></svg></span>
+    </div>
+
+    <p class="lbl" style="margin-top:12px">Énergie</p>
+    <div class="energy compact">
+      <div class="on"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
+      <div><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
+      <div><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
+    </div>
+
+    <div class="optsep" style="margin:14px 0 10px">Facultatif</div>
+
+    <p class="lbl">Humeur</p>
+    <div class="seg3"><span>Bien</span><span class="on">Bof</span><span>Dur</span></div>
+    <p class="lbl" style="margin-top:10px"><svg class="i sm c-period"><use href="#i-drop"/></svg>Règles</p>
+
+    <div class="seg3"><span class="on">Non</span><span>Quelques traces</span><span>Oui</span></div>
+    <p class="lbl" style="margin-top:10px">Douleurs</p>
+    <div class="chips wrap" style="gap:6px">
+      <span class="chip" style="height:32px;font-size:14px">Aucune</span>
+      <span class="chip on" style="height:32px;font-size:14px"><svg class="i sm"><use href="#i-check"/></svg>Bas-ventre, crampes</span>
+      <span class="chip" style="height:32px;font-size:14px">Articulations, dos</span>
+      <span class="chip" style="height:32px;font-size:14px">Maux de tête</span>
+    </div>
+    <p class="lbl" style="margin-top:10px"><svg class="i sm muted"><use href="#i-bed"/></svg>Sommeil</p>
+    <div class="seg3"><span>Difficile</span><span class="on">Correct</span><span>Bon</span></div>
+
+    <div class="row" style="justify-content:space-between;margin-top:12px;min-height:44px;border-top:.5px solid var(--separator);color:var(--accent)">
+      <span class="sub" style="font-weight:600">Plus de détails</span><span class="foot muted">ressentis, note</span>
+    </div>
+
+    <div style="position:absolute;left:20px;right:20px;bottom:34px">
+      <div class="btn primary"><svg class="i"><use href="#i-check"/></svg>Valider</div>
+    </div>
+  </div>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 3. CUISINE ======================= -->
+<figure class="shot"><figcaption>3 · Cuisine — liste</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen with-tabs">
+    <div class="row" style="justify-content:space-between;margin-top:6px">
+      <h2 class="display">Cuisine</h2>
+      <span class="iconbtn" aria-label="Mes favoris"><svg class="i"><use href="#i-heart"/></svg></span>
+    </div>
+    <div class="search" style="margin-top:12px"><svg class="i"><use href="#i-search"/></svg>Rechercher une recette</div>
+    <div class="chips" style="margin-top:12px;margin-right:-20px">
+      <span class="chip on"><svg class="i sm"><use href="#i-check"/></svg>IG bas</span>
+      <span class="chip"><svg class="i sm"><use href="#i-timer"/></svg>15 min ou moins</span>
+      <span class="chip">Sans lactose</span>
+      <span class="chip">Végétarien</span>
+    </div>
+
+    <p class="overline" style="margin-top:22px">Pour toi aujourd'hui</p>
+    <div class="card t-ardoise" style="padding:0;overflow:hidden">
+      <div class="vig" style="height:150px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl" style="width:56px;height:56px"><use href="#i-bowl"/></svg></div>
+      <div style="padding:12px 16px 14px">
+        <div class="row" style="justify-content:space-between"><span class="cat"><svg class="i sm"><use href="#i-moon"/></svg>Dîner</span><svg class="i muted"><use href="#i-heart"/></svg></div>
+        <div class="title2" style="font-size:20px;margin-top:4px">Dahl de lentilles corail et butternut</div>
+        <div class="row foot muted" style="gap:10px;margin-top:6px"><span class="row" style="gap:4px"><svg class="i sm"><use href="#i-timer"/></svg>30 min</span><span class="row" style="gap:4px"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas</span><span>Végétalien</span></div>
+      </div>
+    </div>
+
+    <div class="stack" style="margin-top:12px">
+      <div class="row t-olive" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-bowl"/></svg></div>
+        <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-fork"/></svg>Déjeuner</span><div class="headline" style="font-size:16px;line-height:1.25">Bowl quinoa, pois chiches au cumin et sauce tahini</div><div class="foot muted">30 min · IG bas · à emporter</div></div></div>
+      <div class="row t-miel" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-cup"/></svg></div>
+        <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-cup"/></svg>Petit-déjeuner</span><div class="headline" style="font-size:16px;line-height:1.25">Overnight oats pomme, cannelle et noix</div><div class="foot muted">10 min · IG bas · la veille</div></div></div>
+      <div class="row t-argile" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-carrot"/></svg></div>
+        <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-carrot"/></svg>Collation</span><div class="headline" style="font-size:16px;line-height:1.25">Houmous de betterave et crudités</div><div class="foot muted">10 min · IG bas · sans cuisson</div></div></div>
+    </div>
+  </div>
+  <nav class="tabbar">
+    <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
+    <span class="tab on"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
+    <span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
+    <span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
+  </nav>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 4. RECETTE ======================= -->
+<figure class="shot"><figcaption>4 · Cuisine — fiche recette</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status" style="z-index:26"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen" style="padding:0;top:0">
+    <div class="vig t-ardoise" style="height:280px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl" style="width:80px;height:80px;stroke-width:1.2;margin-top:30px"><use href="#i-bowl"/></svg></div>
+    <div class="row" style="position:absolute;top:54px;left:16px;right:16px;justify-content:space-between">
+      <span class="iconbtn" style="background:var(--surface);box-shadow:var(--shadow-card)" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></span>
+      <span class="row" style="gap:10px"><span class="iconbtn" style="background:var(--surface)" aria-label="Partager"><svg class="i"><use href="#i-share"/></svg></span><span class="iconbtn" style="background:var(--surface)" aria-label="Ajouter aux favoris"><svg class="i"><use href="#i-heart"/></svg></span></span>
+    </div>
+    <div style="padding:0 20px;margin-top:-24px;position:relative">
+      <div class="card" style="border-radius:24px;padding:18px">
+        <span class="cat t-ardoise"><svg class="i sm"><use href="#i-moon"/></svg>Dîner · Déjeuner</span>
+        <h2 class="title1" style="font-size:26px;margin-top:6px">Dahl de lentilles corail et butternut</h2>
+        <div class="chips wrap" style="margin-top:12px;gap:6px">
+          <span class="badge"><svg class="i sm"><use href="#i-timer"/></svg>30 min</span>
+          <span class="badge" style="background:var(--accent-soft);color:var(--on-accent-soft)"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas (estimé)</span>
+          <span class="badge">Végétalien</span><span class="badge">Se congèle</span>
+        </div>
+      </div>
+      <div class="card soft" style="margin-top:12px">
+        <div class="headline" style="font-size:15px;color:var(--on-accent-soft)">Pourquoi cette recette</div>
+        <p class="sub" style="margin:4px 0 0">Lentilles et riz semi-complet ensemble ralentissent l'absorption des glucides et apportent des protéines végétales complètes.</p>
+      </div>
+      <div class="row" style="justify-content:space-between;margin-top:20px">
+        <div class="title3">Ingrédients</div>
+        <span class="stepper"><span><svg class="i sm"><use href="#i-minus"/></svg></span><b>4 portions</b><span><svg class="i sm"><use href="#i-plus"/></svg></span></span>
+      </div>
+      <div style="margin-top:8px">
+        <div class="ingr done"><span class="check on"><svg class="i sm"><use href="#i-check"/></svg></span><span class="nm">Lentilles corail</span><span class="q">250 g</span></div>
+        <div class="ingr done"><span class="check on"><svg class="i sm"><use href="#i-check"/></svg></span><span class="nm">Courge butternut</span><span class="q">600 g</span></div>
+        <div class="ingr"><span class="check"></span><span class="nm">Lait de coco</span><span class="q">200 ml</span></div>
+        <div class="ingr"><span class="check"></span><span class="nm">Riz semi-complet</span><span class="q">200 g</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="dock">
+    <div class="btn primary"><svg class="i"><use href="#i-fork"/></svg>Mode cuisine</div>
+  </div>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 5. BOUGER ======================= -->
+<figure class="shot"><figcaption>5 · Bouger — liste</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen with-tabs">
+    <h2 class="display" style="margin-top:6px">Bouger</h2>
+    <div class="card" style="margin-top:16px">
+      <div class="row" style="justify-content:space-between"><span class="headline">Ton énergie aujourd'hui</span><span class="foot c-accent" style="font-weight:600">Modifier</span></div>
+      <div class="energy" style="margin-top:12px">
+        <div class="on" style="height:64px"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
+        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
+        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
+      </div>
+      <p class="foot muted" style="margin:10px 0 0">Repris de ton check-in de ce matin.</p>
+    </div>
+
+    <p class="overline" style="margin-top:24px">Doux pour aujourd'hui</p>
+    <div class="stack">
+      <div class="card t-lagon" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-yoga"/></svg></div>
+        <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-yoga"/></svg>Mobilité</span><div class="headline" style="line-height:1.25">Mobilité et respiration anti-stress</div><div class="foot muted">15 min · tapis · idéal pendant les règles</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
+      <div class="card t-miel" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-walk"/></svg></div>
+        <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-walk"/></svg>Cardio doux</span><div class="headline" style="line-height:1.25">Marche après le repas</div><div class="foot muted">12 min · sans matériel</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
+      <div class="card t-argile" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-strength"/></svg></div>
+        <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-strength"/></svg>Renforcement doux</span><div class="headline" style="line-height:1.25">Réveil en douceur</div><div class="foot muted">10 min · une chaise</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
+    </div>
+    <p class="sub muted" style="margin-top:16px;text-align:center;font-family:var(--serif);font-style:italic">Une petite séance douce compte autant. Le repos aussi.</p>
+  </div>
+  <nav class="tabbar">
+    <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
+    <span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
+    <span class="tab on"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
+    <span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
+  </nav>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 6. LECTEUR ======================= -->
+<figure class="shot"><figcaption>6 · Bouger — lecteur de séance</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen">
+    <div class="navbar" style="margin-top:2px">
+      <span style="font-weight:600">Terminer</span>
+      <span class="foot muted" style="font-weight:600">Mobilité douce · tour 1 sur 2</span>
+      <span class="iconbtn" style="width:36px;height:36px" aria-label="Taille du texte"><svg class="i sm"><use href="#i-text"/></svg></span>
+    </div>
+    <div class="progress" style="margin-top:8px" aria-label="Exercice 3 sur 9"><i class="d"></i><i class="d"></i><i class="c"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="vig t-lagon" style="height:150px;margin-top:18px;border-radius:24px"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl" style="width:68px;height:68px;stroke-width:1.3"><use href="#i-yoga"/></svg></div>
+
+    <h2 class="title1" style="text-align:center;margin-top:18px">Chat-vache</h2>
+    <p class="sub muted" style="text-align:center;margin:4px 0 0">Exercice 3 sur 9 · 1 min</p>
+
+    <div class="ring" style="margin-top:14px">
+      <svg viewBox="0 0 220 220"><circle cx="110" cy="110" r="100" fill="none" stroke="var(--surface-muted)" stroke-width="10"/><circle cx="110" cy="110" r="100" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="628.3" stroke-dashoffset="188.5"/></svg>
+      <div style="text-align:center"><div class="t">0:42</div><div class="foot muted">restantes</div></div>
+    </div>
+
+    <p class="callout" style="text-align:center;margin:14px 6px 0;line-height:1.4">Sur l'expiration, arrondis le dos en rentrant le menton. Sur l'inspiration, creuse-le doucement.</p>
+    <p style="text-align:center;margin:8px 0 0"><span class="sub c-accent" style="font-weight:600">Variante plus facile ›</span></p>
+
+    <div class="ctrl" style="position:absolute;left:0;right:0;bottom:58px">
+      <span class="b" aria-label="Exercice précédent"><svg class="i"><use href="#i-prev"/></svg></span>
+      <span class="b main" aria-label="Pause"><svg class="i lg"><use href="#i-pause"/></svg></span>
+      <span class="b" aria-label="Exercice suivant"><svg class="i"><use href="#i-next"/></svg></span>
+    </div>
+    <p class="foot muted" style="position:absolute;left:0;right:0;bottom:24px;text-align:center;margin:0">Ensuite : posture de l'enfant · 1 min</p>
+  </div>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 7. MON CYCLE ======================= -->
+<figure class="shot"><figcaption>7 · Mon cycle — calendrier et historique</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen with-tabs">
+    <div class="row" style="justify-content:space-between;margin-top:6px">
+      <h2 class="display">Mon cycle</h2>
+      <span class="iconbtn" aria-label="Exporter mes données"><svg class="i"><use href="#i-share"/></svg></span>
+    </div>
+    <div class="row" style="margin-top:6px;gap:8px"><span class="metric" style="font-size:20px">Jour 23</span><span class="sub muted">· cycle commencé le 4 novembre</span></div>
+
+    <div class="card" style="margin-top:14px;padding:14px 10px 10px">
+      <div class="row" style="justify-content:space-between;padding:0 8px 10px"><span class="headline">Novembre 2026</span><span class="row c-accent" style="gap:14px"><svg class="i"><use href="#i-back"/></svg><svg class="i"><use href="#i-chev"/></svg></span></div>
+      <div class="cal">
+        <span class="dow">L</span><span class="dow">M</span><span class="dow">M</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span class="d"><span class="n">1</span></span>
+        <span class="d"><span class="n">2</span><i class="dot"></i></span><span class="d"><span class="n">3</span><i class="dot"></i></span><span class="d p"><span class="n">4</span><i class="dot"></i></span><span class="d p"><span class="n">5</span><i class="dot"></i></span><span class="d p"><span class="n">6</span><i class="dot"></i></span><span class="d p"><span class="n">7</span></span><span class="d s"><span class="n">8</span><i class="dot"></i></span>
+        <span class="d"><span class="n">9</span><i class="dot"></i></span><span class="d"><span class="n">10</span></span><span class="d"><span class="n">11</span><i class="dot"></i></span><span class="d"><span class="n">12</span><i class="dot"></i></span><span class="d"><span class="n">13</span></span><span class="d"><span class="n">14</span></span><span class="d"><span class="n">15</span><i class="dot"></i></span>
+        <span class="d"><span class="n">16</span><i class="dot"></i></span><span class="d"><span class="n">17</span><i class="dot"></i></span><span class="d"><span class="n">18</span></span><span class="d"><span class="n">19</span><i class="dot"></i></span><span class="d"><span class="n">20</span><i class="dot"></i></span><span class="d"><span class="n">21</span></span><span class="d"><span class="n">22</span><i class="dot"></i></span>
+        <span class="d"><span class="n">23</span><i class="dot"></i></span><span class="d"><span class="n">24</span><i class="dot"></i></span><span class="d"><span class="n">25</span><i class="dot"></i></span><span class="d today"><span class="n">26</span></span><span class="d future"><span class="n">27</span></span><span class="d future"><span class="n">28</span></span><span class="d future"><span class="n">29</span></span>
+        <span class="d future"><span class="n">30</span></span>
+      </div>
+      <div class="legend" style="padding:8px 8px 2px"><span><i class="lg-p"></i>Règles</span><span><i class="lg-s"></i>Quelques traces</span><span><i class="lg-c"></i>Check-in</span><span><i class="lg-t"></i>Aujourd'hui</span></div>
+    </div>
+
+    <div class="banner" style="margin-top:12px">
+      <svg class="i"><use href="#i-info"/></svg>
+      <div><div class="sub" style="font-weight:600">Pas d'estimation des prochaines règles</div>
+        <div class="foot" style="margin-top:2px">Tes 3 derniers cycles varient beaucoup. C'est fréquent avec le SOPK.</div></div>
+    </div>
+
+    <div class="row" style="justify-content:space-between;margin-top:20px"><span class="title3">Historique</span><span class="foot muted">durées en jours</span></div>
+    <div class="hist" style="margin-top:6px">
+      <div class="it"><div class="row" style="justify-content:space-between"><span class="sub" style="font-weight:600">24 sept. → 3 nov.</span><span class="metric" style="font-size:17px">41</span></div><div class="track"><b style="width:9%"></b><i style="left:9%;width:69%"></i></div></div>
+      <div class="it"><div class="row" style="justify-content:space-between"><span class="sub" style="font-weight:600">3 août → 23 sept.</span><span class="metric" style="font-size:17px">52</span></div><div class="track"><b style="width:7%"></b><i style="left:7%;width:91%"></i></div></div>
+    </div>
+  </div>
+  <nav class="tabbar">
+    <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
+    <span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
+    <span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
+    <span class="tab on"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
+  </nav>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 8. RÉGLAGES ======================= -->
+<figure class="shot"><figcaption>8 · Réglages et confidentialité</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen" style="padding:0 16px">
+    <div class="navbar"><span></span><span style="font-weight:600;color:var(--text-primary)">Réglages</span><span style="font-weight:600">OK</span></div>
+
+    <div class="card soft" style="margin-top:8px;display:flex;gap:14px;align-items:center">
+      <span style="width:48px;height:48px;border-radius:24px;background:var(--surface);display:grid;place-items:center;color:var(--accent);flex:none"><svg class="i lg"><use href="#i-lock"/></svg></span>
+      <div><div class="headline" style="color:var(--on-accent-soft)">Stocké uniquement sur cet iPhone</div><div class="foot" style="margin-top:2px">Pas de compte, pas de serveur, pas de publicité. Personne d'autre que toi n'y a accès.</div></div>
+    </div>
+
+    <div class="group-title">Confidentialité</div>
+    <div class="group">
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-face"/></svg></span>Verrouiller avec Face ID<span class="switch"></span></div>
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-eyeoff"/></svg></span>Masquer dans le sélecteur d'apps<span class="switch"></span></div>
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-bell"/></svg></span>Rappels discrets<span class="v">20 h <svg class="i sm"><use href="#i-chev"/></svg></span></div>
+    </div>
+
+    <div class="group-title">Mes suivis</div>
+    <div class="group">
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-cal"/></svg></span>Estimation des règles<span class="v">Désactivée <svg class="i sm"><use href="#i-chev"/></svg></span></div>
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-heart"/></svg></span>Enceinte ou allaitante<span class="v">Non <svg class="i sm"><use href="#i-chev"/></svg></span></div>
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-sliders"/></svg></span>Mode sans chiffres<span class="switch off"></span></div>
+    </div>
+
+    <div class="group-title">Mes données</div>
+    <div class="group">
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-share"/></svg></span>Exporter mes données<span class="v">JSON, CSV <svg class="i sm"><use href="#i-chev"/></svg></span></div>
+      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-doc"/></svg></span>Restaurer une sauvegarde<span class="v"><svg class="i sm"><use href="#i-chev"/></svg></span></div>
+    </div>
+
+    <div class="group" style="margin-top:22px">
+      <div class="it c-destructive" style="justify-content:center;font-weight:500"><svg class="i sm"><use href="#i-trash"/></svg>Supprimer toutes mes données</div>
+    </div>
+    <p class="foot muted" style="text-align:center;margin:14px 8px 0">Ovéa t'accompagne au quotidien. Elle ne remplace pas l'avis de ton médecin. · Version 1.0</p>
+  </div>
+  <div class="home-ind"></div>
+</div></figure>
+
+<!-- ======================= 9. ONBOARDING ======================= -->
+<figure class="shot"><figcaption>9 · Onboarding — bienvenue</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="screen" style="padding:0 24px">
+    <div class="row" style="justify-content:flex-end;height:44px"><span class="sub muted" style="font-weight:600">Passer</span></div>
+    <div style="position:relative;height:200px;margin:0 -24px 0">
+      <svg viewBox="0 25 390 220" width="100%" height="100%" aria-hidden="true">
+        <ellipse cx="200" cy="140" rx="128" ry="96" fill="var(--accent-soft)"/>
+        <path d="M120 175c10-60 50-95 115-100-5 65-45 100-115 100z" fill="var(--accent)" opacity=".85"/>
+        <path d="M120 175l70-62" stroke="var(--surface)" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <ellipse cx="268" cy="168" rx="44" ry="30" fill="var(--highlight)" opacity=".85" transform="rotate(-12 268 168)"/>
+        <ellipse cx="236" cy="198" rx="30" ry="18" fill="var(--miel)" opacity=".7" transform="rotate(8 236 198)"/>
+        <circle cx="292" cy="92" r="14" fill="var(--lagon)" opacity=".55"/>
+        <circle cx="112" cy="96" r="8" fill="var(--lavande)" opacity=".6"/>
+      </svg>
+    </div>
+    <h2 class="display" style="margin-top:8px">Bienvenue dans Ovéa</h2>
+    <p class="callout muted" style="margin:10px 0 0;line-height:1.45">Des recettes simples, des séances courtes et un journal pour toi. À ton rythme, sans jugement.</p>
+    <div style="margin-top:22px;display:grid;gap:14px">
+      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--olive-soft);color:var(--olive)"><svg class="i sm"><use href="#i-fork"/></svg></span><span class="sub">Des recettes simples, à IG bas</span></div>
+      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--lagon-soft);color:var(--lagon)"><svg class="i sm"><use href="#i-walk"/></svg></span><span class="sub">Des séances qui suivent ton énergie du jour</span></div>
+      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--period-soft);color:var(--period)"><svg class="i sm"><use href="#i-cal"/></svg></span><span class="sub">Un journal de ton cycle, tel qu'il est, sans prédictions</span></div>
+      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--accent-soft);color:var(--accent)"><svg class="i sm"><use href="#i-lock"/></svg></span><span class="sub">Pas de compte. Tout reste sur ton iPhone.</span></div>
+    </div>
+    <div style="position:absolute;left:24px;right:24px;bottom:30px">
+      <div class="row" style="justify-content:center;gap:6px;margin-bottom:18px" aria-label="Étape 1 sur 6"><i style="width:20px;height:6px;border-radius:3px;background:var(--accent)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i></div>
+      <div class="btn primary">Commencer</div>
+      <div class="btn ghost" style="font-size:15px">Restaurer une sauvegarde</div>
+    </div>
+  </div>
+  <div class="home-ind"></div>
+</div></figure>
+
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('themeToggle');
+  var root = document.documentElement;
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    var dark = theme === 'dark';
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.querySelector('span').textContent = dark ? 'Passer en clair' : 'Passer en sombre';
+    btn.querySelector('use').setAttribute('href', dark ? '#i-sun' : '#i-moon');
+  }
+  btn.addEventListener('click', function () {
+    apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>

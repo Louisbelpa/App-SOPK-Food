@@ -249,9 +249,9 @@
   },
 
   "checkin": {
-    "_notes": "Sheet. Validation active dès humeur + énergie. Tout le reste est facultatif. Énergie : basse / moyenne / bonne (jamais « faible »).",
+    "_notes": "Sheet. Validation active dès que l'énergie est choisie (arbitrage 01-ux.md). Humeur, douleurs, règles, sommeil et le reste sont facultatifs. Énergie : basse / moyenne / bonne (jamais « faible »).",
     "title": "Check-in",
-    "subtitle": "Seules l'humeur et l'énergie sont demandées. Le reste est facultatif.",
+    "subtitle": "Seule l'énergie est demandée. Le reste est facultatif.",
     "mood": {
       "label": "Humeur",
       "good": "Bien",
@@ -307,7 +307,7 @@
       "placeholder": "Ce que tu veux garder en tête…"
     },
     "cta": "Valider",
-    "ctaDisabledHint": "Choisis ton humeur et ton énergie pour valider.",
+    "ctaDisabledHint": "Choisis ton énergie pour valider.",
     "confirmation": {
       "default": "Merci, c'est noté.",
       "hardDay": "Merci de l'avoir noté. Aujourd'hui, on fait simple.",
@@ -362,7 +362,7 @@
       "painOption": "Douleur : {value}",
       "sleepOption": "Sommeil : {value}",
       "symptomChip": "{value}, ressenti",
-      "validateDisabled": "Valider. Indisponible tant que l'humeur et l'énergie ne sont pas choisies.",
+      "validateDisabled": "Valider. Indisponible tant que l'énergie n'est pas choisie.",
       "sheetHandle": "Glisser vers le bas pour fermer"
     }
   },
