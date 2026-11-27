@@ -16,54 +16,81 @@ def cr(a, b):
     return (hi + 0.05) / (lo + 0.05)
 
 # token: (light, dark, usage)
+# V3 « Mascotte & illustrations » : la palette part de Mousse (galet lilas, mousse verte, trait encre).
+# Base native : neutres pierre peu saturés (fini le lin crème), un seul accent (myrtille), la chaleur vient des illustrations.
 C = {
- # fonds — V2 « cosy » : lin, mie de pain, chocolat
- "background":        ("#FBF3E7", "#1C1512", "Fond d'écran (lin ensoleillé / chocolat noir)"),
- "surface":           ("#FFFAF2", "#271E1A", "Cartes, listes groupées (blanc crème, jamais #FFF pur)"),
- "surfaceMuted":      ("#F4E7D5", "#33281F", "Chips au repos, champs, segments (lin)"),
- "surfaceRaised":     ("#FFFCF7", "#2E241F", "Sheets, popovers (élévation 2)"),
- "separator":         ("#EEE1CF", "#3A2E27", "Filets décoratifs, très discrets (non porteurs de sens)"),
- "border":            ("#937F69", "#8F7D6F", "Contours de champs/contrôles (≥ 3:1)"),
- # texte — bruns chauds au lieu de vert-de-gris
- "textPrimary":       ("#2F221B", "#F6EBDD", "Texte principal (espresso / crème)"),
- "textSecondary":     ("#6A5545", "#CDBBA9", "Légendes, métadonnées"),
- "textTertiary":      ("#6F5B4B", "#AA988A", "Placeholders, aides (reste ≥ 4.5:1)"),
- # interaction — terracotta « argile cuite » devient l'accent
- "accent":            ("#A1482A", "#F0A27D", "Terracotta : boutons, liens, sélection, anneau « aujourd'hui »"),
- "onAccent":          ("#FFFFFF", "#2B1307", "Texte/icône sur accent"),
- "accentSoft":        ("#F9E3D5", "#45291D", "Fond abricot : chip sélectionnée, carte check-in"),
- "onAccentSoft":      ("#7A3219", "#F9C5AA", "Texte sur accentSoft"),
- "leaf":              ("#556A2C", "#BFD08F", "Sauge dorée : nature, IG bas, confidentialité, réussite"),
- "leafSoft":          ("#EBEDD5", "#2E3119", "Fond sauge dorée"),
- "highlight":         ("#855810", "#EDC47C", "Miel : petit mot du jour, mise en avant ponctuelle"),
+ # fonds — pierre claire / nuit myrtille, proches des fonds groupés iOS
+ "background":        ("#F4F3F1", "#121117", "Fond d'écran, listes groupées (pierre claire / nuit myrtille)"),
+ "surface":           ("#FFFFFF", "#1D1B23", "Cellules de liste, la seule carte mise en avant de l'écran"),
+ "surfaceMuted":      ("#EAE8E4", "#2A2731", "Chips au repos, champs, segments"),
+ "surfaceRaised":     ("#FFFFFF", "#242129", "Sheets, popovers (élévation 2)"),
+ "separator":         ("#DEDBD5", "#34313C", "Séparateurs de liste (non porteurs de sens)"),
+ "border":            ("#7F7A86", "#837E8E", "Contours de champs/contrôles (≥ 3:1)"),
+ # texte — encre (la couleur du trait des illustrations)
+ "textPrimary":       ("#1D1B22", "#F3F1F6", "Texte principal (encre / lait)"),
+ "textSecondary":     ("#5D5966", "#BDB8C7", "Légendes, métadonnées"),
+ "textTertiary":      ("#67636F", "#A39EAE", "Placeholders, aides (reste ≥ 4.5:1)"),
+ # interaction — myrtille, tirée de l'ombre du galet ; seul accent cliquable
+ "accent":            ("#3F3895", "#B4AEF6", "Myrtille : boutons, liens, sélection, anneau « aujourd'hui »"),
+ "onAccent":          ("#FFFFFF", "#15123F", "Texte/icône sur accent"),
+ "accentSoft":        ("#E8E6F7", "#2C2950", "Fond myrtille pâle : option sélectionnée"),
+ "onAccentSoft":      ("#383189", "#D7D3FB", "Texte sur accentSoft"),
+ "leaf":              ("#456E1B", "#B3D57A", "Mousse : nature, IG bas, confidentialité, « c'est noté »"),
+ "leafSoft":          ("#E5EDD6", "#232D18", "Fond mousse (bannière confidentialité)"),
+ "highlight":         ("#8A5300", "#F2C46B", "Courge : mise en avant très ponctuelle (petit mot du jour)"),
  "onHighlight":       ("#FFFFFF", "#2B1D06", "Texte sur highlight"),
- "highlightSoft":     ("#FBEACB", "#3D2E17", "Fond miel"),
+ "highlightSoft":     ("#FBEBCB", "#3A2C12", "Fond courge (rare)"),
  # états
- "success":           ("#4E6727", "#BBCD8C", "Confirmation (« C'est noté »)"),
- "successSoft":       ("#E9EDD3", "#2C301B", "Fond confirmation"),
- "warning":           ("#8A5300", "#F0C173", "Alerte douce (seuil 90 j, contre-indication)"),
- "warningSoft":       ("#FCEBCB", "#3D2C12", "Fond alerte douce"),
- "info":              ("#3D5F6B", "#A2C8D0", "Information, source, mention d'estimation (bleu-gris chaud)"),
- "infoSoft":          ("#E4ECE9", "#1F2E30", "Fond information"),
- "destructive":       ("#A3172B", "#FFB1AA", "Suppression de données UNIQUEMENT (jamais une donnée corporelle)"),
- # cycle — prune, nettement distincte du terracotta
- "period":            ("#86345F", "#E8A5C5", "Règles (toujours avec drop.fill + libellé)"),
+ "success":           ("#456E1B", "#B3D57A", "Confirmation (« C'est noté ») = mousse"),
+ "successSoft":       ("#E5EDD6", "#232D18", "Fond confirmation"),
+ "warning":           ("#8A5300", "#F2C46B", "Alerte douce (seuil 90 j, contre-indication) — écran sans mascotte"),
+ "warningSoft":       ("#FBEBCB", "#3A2C12", "Fond alerte douce"),
+ "info":              ("#2F6178", "#9CCBE0", "Information, source, mention d'estimation"),
+ "infoSoft":          ("#E1EDF2", "#1A2B33", "Fond information"),
+ "destructive":       ("#B3261E", "#FFB4AB", "Suppression de données UNIQUEMENT (jamais une donnée corporelle)"),
+ # cycle — framboise sourde, plus claire que la myrtille (distinctes en luminance, pas seulement en teinte)
+ "period":            ("#A83A62", "#EFA6C8", "Règles (toujours avec drop.fill + libellé)"),
  "onPeriod":          ("#FFFFFF", "#3A0F25", "Texte sur period"),
- "periodSoft":        ("#F6E2EA", "#3F2131", "Fond jour de règles"),
- "spotting":          ("#A9688A", "#CA8DAC", "Quelques traces (contour, jamais seul)"),
- # teintes de saison (catégories)
- "miel":              ("#7E5512", "#E7C37D", "Teinte miel"),
- "mielSoft":          ("#F9EACB", "#3B2D17", ""),
- "olive":             ("#566529", "#C3CF8F", "Teinte olive"),
- "oliveSoft":         ("#EDECD2", "#2F3019", ""),
- "lagon":             ("#2C625C", "#8ECFC2", "Teinte lagon (vert d'eau chaud)"),
- "lagonSoft":         ("#DFEDE6", "#1C3230", ""),
- "ardoise":           ("#544878", "#C0B6E4", "Teinte ardoise (bleu nuit tirant sur la prune)"),
- "ardoiseSoft":       ("#EDE5EC", "#30273A", ""),
- "cacao":             ("#74482F", "#DEB391", "Teinte cacao"),
- "cacaoSoft":         ("#F3E3D6", "#3A281D", ""),
- "lavande":           ("#694E86", "#CEB9E3", "Teinte lavande"),
- "lavandeSoft":       ("#EFE5F1", "#31263A", ""),
+ "periodSoft":        ("#F7E2EC", "#3C1F30", "Fond jour de règles"),
+ "spotting":          ("#B06A8E", "#C98BAA", "Quelques traces (contour, jamais seul)"),
+ # teintes de catégorie : libellé + icône uniquement ; le fond doux sert aux tuiles d'icône (style Réglages iOS)
+ "miel":              ("#8A5A00", "#EFC370", "Teinte courge (petit-déjeuner, cardio doux)"),
+ "mielSoft":          ("#FAEBCD", "#3A2D14", ""),
+ "olive":             ("#4D6A1E", "#BCD58A", "Teinte pousse (déjeuner)"),
+ "oliveSoft":         ("#E8EED8", "#262E18", ""),
+ "lagon":             ("#22655D", "#8FD0C3", "Teinte lagon (mobilité)"),
+ "lagonSoft":         ("#DDEEEA", "#17302C", ""),
+ "ardoise":           ("#45577E", "#AFC0E6", "Teinte ardoise (dîner, fractionné)"),
+ "ardoiseSoft":       ("#E3E8F3", "#1E2536", ""),
+ "cacao":             ("#7A4A30", "#DFB494", "Teinte cacao (collation, renforcement)"),
+ "cacaoSoft":         ("#F3E5DA", "#33251C", ""),
+ "lavande":           ("#6A4C8C", "#CDB8E6", "Teinte lavande (respiration)"),
+ "lavandeSoft":       ("#EEE7F5", "#2C2438", ""),
+}
+
+# Palette d'illustration : couleurs FIXES (identiques en clair et en sombre, comme une photo).
+# 8 teintes, chacune avec au plus une ombre ; le trait est toujours « encre ».
+ILLU = {
+ "encre":        ("#2A2438", "Trait unique (4 u sur 240), yeux, bouche"),
+ "galet":        ("#CEC7DB", "Corps de Mousse"),
+ "galetOmbre":   ("#B2A8C4", "Ombre portée sur le corps, mouchetures"),
+ "mousse":       ("#8DB34A", "Coussin de mousse, feuilles, herbes"),
+ "mousseOmbre":  ("#6F9736", "Ombre de la mousse, thym"),
+ "mousseClaire": ("#C2DB86", "Nouvelle feuille (célébration douce)"),
+ "abricot":      ("#F4B49A", "Joues, coussin"),
+ "abricotOmbre": ("#E3957A", "Ombre abricot"),
+ "courge":       ("#F2A23A", "Dahl, carottes, plaid (avec courgeOmbre)"),
+ "courgeOmbre":  ("#DA8228", "Dés de butternut, rayures du plaid"),
+ "paprika":      ("#D9573B", "Cocotte, pomme, épices"),
+ "betterave":    ("#A63A6B", "Chou rouge, houmous (plats uniquement, jamais sur Mousse)"),
+ "betteraveClaire": ("#D2709B", "Houmous de betterave"),
+ "porcelaine":   ("#FAF8F5", "Assiettes, bols, reflets, sauces blanches"),
+ "creme":        ("#EFE6D3", "Riz, écrasé, flocons"),
+ "bois":         ("#CC9563", "Planches, cuillère, quinoa"),
+ "boisOmbre":    ("#AE7546", "Veinage des planches"),
+ "cacaoIllu":    ("#6B4331", "Bouchées cacao, cumin"),
+ "table":        ("#E5E3EF", "Fond des illustrations de plats (lavande grisée, complémentaire des plats chauds)"),
+ "tableOmbre":   ("#D2CFE1", "Ombre portée à plat sous les contenants (décalage 5/7 u, sans flou)"),
 }
 
 ALIASES = {
@@ -73,10 +100,10 @@ ALIASES = {
 }
 
 HC = {  # variantes « Augmenter le contraste »
- "textSecondary": ("#4E3D31", "#E3D5C6"),
- "border":        ("#64543F", "#B3A294"),
- "accent":        ("#7E3418", "#F8BE9F"),
- "period":        ("#6B2149", "#F3C2D9"),
+ "textSecondary": ("#45424D", "#DAD6E2"),
+ "border":        ("#5C5863", "#A9A4B4"),
+ "accent":        ("#2E2878", "#CFCBFF"),
+ "period":        ("#86284C", "#F6C6DC"),
 }
 
 BG3 = ["background", "surface", "surfaceMuted"]
@@ -105,10 +132,30 @@ checks += [
  ("accent", ["surfaceMuted"], 3.0, "UI"),
 ]
 for s in ["miel", "olive", "lagon", "ardoise", "cacao", "lavande"]:
+    checks.append((s, ["surfaceMuted"], 4.5, "texte"))
     checks.append((s, ["surface", "background", s + "Soft"], 4.5, "texte"))
     checks.append((s + "Soft", ["surface"], 1.0, "déco"))  # informative only
 
-fail = False
+# Illustration sur les fonds de l'app : la silhouette de Mousse doit rester lisible (WCAG 1.4.11, 3:1)
+# en clair grâce au trait encre, en sombre grâce au corps galet. Couleurs fixes => on teste le meilleur des deux.
+illu_rows = []
+for mode, i in (("light", 0), ("dark", 1)):
+    for bgk in ["background", "surface"]:
+        bgc = C[bgk][i]
+        best = max(cr(ILLU["encre"][0], bgc), cr(ILLU["galet"][0], bgc))
+        illu_rows.append((mode, bgk, cr(ILLU["encre"][0], bgc), cr(ILLU["galet"][0], bgc), best))
+        if best < 3.0:
+            print("FAIL silhouette", mode, bgk, f"{best:.2f}", file=sys.stderr)
+            ILLU_FAIL = True
+# Lisibilité interne : le trait encre se détache de chaque aplat (≥ 3:1), sauf les ombres (décor).
+for k, (hexv, _) in ILLU.items():
+    if k in ("encre", "cacaoIllu", "betterave", "boisOmbre", "paprika", "mousseOmbre"):
+        continue
+    if cr(ILLU["encre"][0], hexv) < 3.0:
+        print("FAIL trait sur aplat", k, file=sys.stderr)
+        ILLU_FAIL = True
+
+fail = "ILLU_FAIL" in globals()
 rows = []
 for fg, bgs, mn, kind in checks:
     for mode, i in (("light", 0), ("dark", 1)):
@@ -139,6 +186,14 @@ if "--md" in sys.argv:
     for fg, bgs, mn, l, d in rows:
         out.append(f"| `{fg}` | {' / '.join('`'+b+'`' for b in bgs)} | {mn}:1 | "
                    f"{' / '.join(f'{v:.2f}' for v in l)} | {' / '.join(f'{v:.2f}' for v in d)} |")
+    out.append("\n\n#### Silhouette de Mousse sur les fonds de l'app (≥ 3:1)\n")
+    out.append("| Mode | Fond | trait encre | corps galet | retenu |\n|---|---|---|---|---|")
+    for mode, bgk, e, g, best in illu_rows:
+        out.append(f"| {mode} | `{bgk}` | {e:.2f} | {g:.2f} | {best:.2f} |")
+    out.append("\n\n#### Palette d'illustration (fixe)\n")
+    out.append("| Nom | Hex | Rôle |\n|---|---|---|")
+    for k, (h, u) in ILLU.items():
+        out.append(f"| `{k}` | `{h}` | {u} |")
     out.append("\n\n#### Variantes « Augmenter le contraste » (min. sur background/surface/surfaceMuted)\n")
     out.append("| Token | Light HC | ratio min | Dark HC | ratio min |\n|---|---|---|---|---|")
     for t, l, lv, d, dv in hc_rows:
@@ -147,9 +202,12 @@ if "--md" in sys.argv:
 
 if "--json" in sys.argv:
     tokens = {
-      "$schema_note": "Tokens Ovéa v2 (direction cosy). Couleurs sRGB hex. Généré par script de contraste (WCAG 2.x).",
+      "$schema_note": "Tokens Ovéa v3 (mascotte & illustrations). Couleurs sRGB hex. Généré par palette.py (contrastes WCAG 2.x vérifiés).",
       "color": {k: {"light": l, "dark": d, **({"description": u} if u else {})} for k, (l, d, u) in C.items()},
       "colorAliases": ALIASES,
+      "illustration": {k: {"hex": h, "description": u} for k, (h, u) in ILLU.items()},
+      "illustrationGrid": {"viewBox": 240, "grid": 8, "stroke": 4, "strokeColor": "encre", "lineCap": "round",
+                           "lineJoin": "round", "shadowOffset": [5, 7], "_note": "Aucun filtre, dégradé ni clipPath. Couleurs fixes, identiques en clair et en sombre."},
       "colorHighContrast": {k: {"light": l, "dark": d} for k, (l, d) in HC.items()},
       "spacing": {"xxs": 2, "xs": 4, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 48,
                   "screenMargin": 20, "cardPadding": 16, "sectionGap": 32, "minTapTarget": 44},
