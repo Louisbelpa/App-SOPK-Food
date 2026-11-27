@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="t d">
+<title id="t">Mousse, énergie basse</title>
+<desc id="d">Mousse est posée, les yeux mi-clos, sa tige penchée ne porte qu'une feuille. Elle est calme, pas triste.</desc>
+<ellipse cx="121" cy="205" rx="81.7" ry="7" fill="#2A2438" opacity=".12"/><path d="M55.3 200 C34.4 200 23.9 184.1 28.1 166.5 C34.4 137.9 74.1 114 122 114 C172.1 114 209.7 136.3 213.9 168.2 C216.9 192 201.4 200 182.6 200 Z" fill="#CEC7DB"/>
+<path d="M213.9 168.2 C216.9 192 201.4 200 182.6 200 L83 200 C151.4 194 197 188 213.9 168.2 Z" fill="#B2A8C4"/>
+<circle cx="64" cy="150.1" r="3" fill="#B2A8C4"/><circle cx="73.5" cy="142.4" r="2" fill="#B2A8C4"/><circle cx="189.4" cy="182.8" r="2.4" fill="#B2A8C4"/>
+<path d="M55.3 200 C34.4 200 23.9 184.1 28.1 166.5 C34.4 137.9 74.1 114 122 114 C172.1 114 209.7 136.3 213.9 168.2 C216.9 192 201.4 200 182.6 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 104 C122 90 128 82 140 80" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(140 80) rotate(48)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 126 C84 114 94 106 104 110 C108 100 124 98 130 106 C138 100 152 104 152 116 C158 118 160 126 154 130 C134 122 108 122 86 126 Z" fill="#8DB34A"/><path d="M92 124 C110 120 134 120 152 127 C138 123 110 123 92 124 Z" fill="#6F9736"/><circle cx="106" cy="115" r="2.6" fill="#6F9736"/><circle cx="136" cy="113" r="2.6" fill="#6F9736"/><path d="M86 126 C84 114 94 106 104 110 C108 100 124 98 130 106 C138 100 152 104 152 116 C158 118 160 126 154 130 C134 122 108 122 86 126 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="85.8" cy="170.8" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="159.9" cy="170.8" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M97 157 Q103 162 109 157" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M136.8 157 Q142.8 162 148.8 157" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118.9 169 Q122.9 172 126.9 169" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -3,312 +3,290 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ovéa — maquettes</title>
-<meta name="description" content="Maquettes haute fidélité des écrans du MVP d'Ovéa (iOS 18), light et dark, à partir des tokens de docs/design/tokens.json.">
+<title>Ovéa — maquettes V3</title>
+<meta name="description" content="Maquettes V3 « Mascotte & illustrations » des 9 écrans du MVP d'Ovéa (iOS 18), clair et sombre, tokens de docs/design/tokens.json et illustrations de docs/design/illustrations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Nunito:wght@500..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600..800&display=swap" rel="stylesheet">
 <style>
-/* ---- Tokens (générés depuis tokens.json) ---- */
+/* ---- Tokens V3 (générés depuis tokens.json) ---- */
 :root {
-  --background: #FBF3E7;
-  --surface: #FFFAF2;
-  --surface-muted: #F4E7D5;
-  --surface-raised: #FFFCF7;
-  --separator: #EEE1CF;
-  --border: #937F69;
-  --text-primary: #2F221B;
-  --text-secondary: #6A5545;
-  --text-tertiary: #6F5B4B;
-  --accent: #A1482A;
+  --background: #F4F3F1;
+  --surface: #FFFFFF;
+  --surface-muted: #EAE8E4;
+  --surface-raised: #FFFFFF;
+  --separator: #DEDBD5;
+  --border: #7F7A86;
+  --text-primary: #1D1B22;
+  --text-secondary: #5D5966;
+  --text-tertiary: #67636F;
+  --accent: #3F3895;
   --on-accent: #FFFFFF;
-  --accent-soft: #F9E3D5;
-  --on-accent-soft: #7A3219;
-  --leaf: #556A2C;
-  --leaf-soft: #EBEDD5;
-  --highlight: #855810;
+  --accent-soft: #E8E6F7;
+  --on-accent-soft: #383189;
+  --leaf: #456E1B;
+  --leaf-soft: #E5EDD6;
+  --highlight: #8A5300;
   --on-highlight: #FFFFFF;
-  --highlight-soft: #FBEACB;
-  --success: #4E6727;
-  --success-soft: #E9EDD3;
+  --highlight-soft: #FBEBCB;
+  --success: #456E1B;
+  --success-soft: #E5EDD6;
   --warning: #8A5300;
-  --warning-soft: #FCEBCB;
-  --info: #3D5F6B;
-  --info-soft: #E4ECE9;
-  --destructive: #A3172B;
-  --period: #86345F;
+  --warning-soft: #FBEBCB;
+  --info: #2F6178;
+  --info-soft: #E1EDF2;
+  --destructive: #B3261E;
+  --period: #A83A62;
   --on-period: #FFFFFF;
-  --period-soft: #F6E2EA;
-  --spotting: #A9688A;
-  --miel: #7E5512;
-  --miel-soft: #F9EACB;
-  --olive: #566529;
-  --olive-soft: #EDECD2;
-  --lagon: #2C625C;
-  --lagon-soft: #DFEDE6;
-  --ardoise: #544878;
-  --ardoise-soft: #EDE5EC;
-  --cacao: #74482F;
-  --cacao-soft: #F3E3D6;
-  --lavande: #694E86;
-  --lavande-soft: #EFE5F1;
-  --shadow-card: 0 1px 2px rgba(92,52,28,.04), 0 8px 20px rgba(92,52,28,.07);
-  --shadow-raised: 0 12px 32px rgba(92,52,28,.12);
-  --card-stroke: transparent;
-  --grain-blend: multiply;
+  --period-soft: #F7E2EC;
+  --spotting: #B06A8E;
+  --miel: #8A5A00;
+  --miel-soft: #FAEBCD;
+  --olive: #4D6A1E;
+  --olive-soft: #E8EED8;
+  --lagon: #22655D;
+  --lagon-soft: #DDEEEA;
+  --ardoise: #45577E;
+  --ardoise-soft: #E3E8F3;
+  --cacao: #7A4A30;
+  --cacao-soft: #F3E5DA;
+  --lavande: #6A4C8C;
+  --lavande-soft: #EEE7F5;
+  --shadow-1: 0 4px 12px rgba(29,27,34,.06);
+  --shadow-2: 0 10px 28px rgba(29,27,34,.14);
+  --dim: rgba(18,17,23,.32);
 }
 html[data-theme="dark"] {
-  --background: #1C1512;
-  --surface: #271E1A;
-  --surface-muted: #33281F;
-  --surface-raised: #2E241F;
-  --separator: #3A2E27;
-  --border: #8F7D6F;
-  --text-primary: #F6EBDD;
-  --text-secondary: #CDBBA9;
-  --text-tertiary: #AA988A;
-  --accent: #F0A27D;
-  --on-accent: #2B1307;
-  --accent-soft: #45291D;
-  --on-accent-soft: #F9C5AA;
-  --leaf: #BFD08F;
-  --leaf-soft: #2E3119;
-  --highlight: #EDC47C;
+  --background: #121117;
+  --surface: #1D1B23;
+  --surface-muted: #2A2731;
+  --surface-raised: #242129;
+  --separator: #34313C;
+  --border: #837E8E;
+  --text-primary: #F3F1F6;
+  --text-secondary: #BDB8C7;
+  --text-tertiary: #A39EAE;
+  --accent: #B4AEF6;
+  --on-accent: #15123F;
+  --accent-soft: #2C2950;
+  --on-accent-soft: #D7D3FB;
+  --leaf: #B3D57A;
+  --leaf-soft: #232D18;
+  --highlight: #F2C46B;
   --on-highlight: #2B1D06;
-  --highlight-soft: #3D2E17;
-  --success: #BBCD8C;
-  --success-soft: #2C301B;
-  --warning: #F0C173;
-  --warning-soft: #3D2C12;
-  --info: #A2C8D0;
-  --info-soft: #1F2E30;
-  --destructive: #FFB1AA;
-  --period: #E8A5C5;
+  --highlight-soft: #3A2C12;
+  --success: #B3D57A;
+  --success-soft: #232D18;
+  --warning: #F2C46B;
+  --warning-soft: #3A2C12;
+  --info: #9CCBE0;
+  --info-soft: #1A2B33;
+  --destructive: #FFB4AB;
+  --period: #EFA6C8;
   --on-period: #3A0F25;
-  --period-soft: #3F2131;
-  --spotting: #CA8DAC;
-  --miel: #E7C37D;
-  --miel-soft: #3B2D17;
-  --olive: #C3CF8F;
-  --olive-soft: #2F3019;
-  --lagon: #8ECFC2;
-  --lagon-soft: #1C3230;
-  --ardoise: #C0B6E4;
-  --ardoise-soft: #30273A;
-  --cacao: #DEB391;
-  --cacao-soft: #3A281D;
-  --lavande: #CEB9E3;
-  --lavande-soft: #31263A;
-  --shadow-card: 0 6px 16px rgba(0,0,0,.28);
-  --shadow-raised: 0 10px 28px rgba(0,0,0,.40);
-  --card-stroke: transparent;
-  --grain-blend: soft-light;
+  --period-soft: #3C1F30;
+  --spotting: #C98BAA;
+  --miel: #EFC370;
+  --miel-soft: #3A2D14;
+  --olive: #BCD58A;
+  --olive-soft: #262E18;
+  --lagon: #8FD0C3;
+  --lagon-soft: #17302C;
+  --ardoise: #AFC0E6;
+  --ardoise-soft: #1E2536;
+  --cacao: #DFB494;
+  --cacao-soft: #33251C;
+  --lavande: #CDB8E6;
+  --lavande-soft: #2C2438;
+  --shadow-1: none;
+  --shadow-2: 0 10px 28px rgba(0,0,0,.45);
+  --dim: rgba(0,0,0,.55);
 }
-
 :root {
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  --serif: "Fraunces", "New York", ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  /* SF Pro ; Inter sert de substitut hors Apple. SF Pro Rounded ; Nunito sert de substitut hors Apple. */
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
   --rounded: ui-rounded, "SF Pro Rounded", "Nunito", var(--sans);
-  --page-bg: #EEDFCB;
-  --page-text: #2F221B;
-  --frame: #2B201B;
+  --page-bg: #E7E5E1; --page-text: #1D1B22; --frame: #1D1B22;
   color-scheme: light;
 }
-html[data-theme="dark"] { --page-bg: #110C0A; --page-text: #F6EBDD; --frame: #3A2D26; color-scheme: dark; }
+html[data-theme="dark"] { --page-bg: #08070B; --page-text: #F3F1F6; --frame: #2F2C36; color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { background: var(--page-bg) radial-gradient(1200px 600px at 20% 0%, color-mix(in srgb, var(--highlight-soft) 70%, transparent), transparent); color: var(--page-text); font-family: var(--sans); -webkit-font-smoothing: antialiased; transition: background .25s; }
-.page-head { max-width: 1200px; margin: 0 auto; padding: 32px 16px 8px; display: flex; flex-wrap: wrap; gap: 16px; align-items: end; justify-content: space-between; }
-.page-head h1 { font-family: var(--serif); font-weight: 600; font-variation-settings: "SOFT" 100; font-size: 32px; margin: 0 0 4px; }
-.page-head p { margin: 0; color: var(--text-secondary); font-size: 15px; max-width: 640px; line-height: 1.45; }
-.toggle { font: 700 15px var(--rounded); color: var(--on-accent); background: var(--accent); border: 0; border-radius: 999px; padding: 12px 20px; min-height: 44px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
-.toggle:focus-visible, button:focus-visible { outline: 3px solid var(--info); outline-offset: 2px; }
-.rail { display: flex; gap: 48px; overflow-x: auto; padding: 32px 16px 56px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+body { background: var(--page-bg); color: var(--page-text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+.page-head { max-width: 1240px; margin: 0 auto; padding: 32px 16px 0; display: flex; flex-wrap: wrap; gap: 16px; align-items: end; justify-content: space-between; }
+.page-head h1 { font: 800 30px/1.15 var(--rounded); margin: 0 0 6px; letter-spacing: -.01em; }
+.page-head p { margin: 0; color: var(--text-secondary); font-size: 15px; max-width: 680px; line-height: 1.45; }
+.page-head code { font-size: 13px; }
+.toggle { font: 600 15px var(--sans); color: var(--on-accent); background: var(--accent); border: 0; border-radius: 14px; padding: 12px 18px; min-height: 44px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.toggle:focus-visible { outline: 3px solid var(--info); outline-offset: 2px; }
+.rail { display: flex; gap: 44px; overflow-x: auto; padding: 32px 16px 40px; scroll-snap-type: x mandatory; }
 @media (min-width: 1300px) { .rail { flex-wrap: wrap; justify-content: center; overflow: visible; } }
-.shot { flex: none; scroll-snap-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center; }
-.shot figcaption { font-size: 14px; font-weight: 600; color: var(--text-secondary); letter-spacing: .02em; }
+.shot { flex: none; scroll-snap-align: center; display: flex; flex-direction: column; gap: 14px; align-items: center; margin: 0; }
+.shot figcaption { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
 
 /* ---- Cadre iPhone 390×844 ---- */
 .phone { width: 390px; height: 844px; border-radius: 55px; position: relative; overflow: hidden; background: var(--background); color: var(--text-primary);
-  box-shadow: 0 0 0 11px var(--frame), 0 0 0 12px #5a4a40, 0 30px 70px rgba(0,0,0,.28); font-size: 17px; line-height: 1.3; transition: background .25s, color .25s; }
+  box-shadow: 0 0 0 11px var(--frame), 0 0 0 12px #55515e, 0 30px 70px rgba(0,0,0,.25); font-size: 17px; line-height: 1.3; letter-spacing: -.01em; }
 .island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 126px; height: 37px; background: #000; border-radius: 20px; z-index: 30; }
 .status { position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; justify-content: space-between; align-items: center; padding: 6px 34px 0 46px; font: 600 17px var(--sans); z-index: 25; }
-.status .sys { display: flex; gap: 6px; align-items: center; }
-.status .bat { width: 25px; height: 12px; border: 1.5px solid currentColor; border-radius: 4px; position: relative; opacity: .9; }
+.status .bat { width: 25px; height: 12px; border: 1.5px solid currentColor; border-radius: 4px; position: relative; opacity: .9; display: inline-block; }
 .status .bat::after { content: ""; position: absolute; inset: 1.5px; right: 6px; background: currentColor; border-radius: 1.5px; }
 .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; border-radius: 3px; background: var(--text-primary); z-index: 40; }
-.screen { position: absolute; inset: 54px 0 0 0; overflow: hidden; padding: 0 20px; }
+.screen { position: absolute; inset: 54px 0 0 0; overflow: hidden; padding: 0 16px; }
 .screen.with-tabs { bottom: 83px; }
 
-/* ---- Tab bar ---- */
-.tabbar { position: absolute; bottom: 0; left: 0; right: 0; height: 83px; background: color-mix(in srgb, var(--surface) 92%, transparent); border-top: .5px solid var(--separator); display: grid; grid-template-columns: repeat(4, 1fr); padding: 7px 8px 0; z-index: 20; backdrop-filter: blur(20px); }
-.tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; font-weight: 500; color: var(--text-secondary); }
-.tab svg { width: 26px; height: 26px; }
+/* ---- Tab bar standard ---- */
+.tabbar { position: absolute; bottom: 0; left: 0; right: 0; height: 83px; background: color-mix(in srgb, var(--surface) 88%, transparent); border-top: .5px solid var(--separator); display: grid; grid-template-columns: repeat(4, 1fr); padding: 7px 8px 0; z-index: 20; backdrop-filter: blur(20px); }
+.tab { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10px; font-weight: 500; color: var(--text-secondary); }
+.tab svg { width: 25px; height: 25px; }
 .tab.on { color: var(--accent); }
 
-/* ---- Typo ---- */
-.display { font: 600 34px/1.12 var(--serif); letter-spacing: -.005em; font-variation-settings: "SOFT" 100, "opsz" 72; margin: 0; }
-.title1 { font: 600 28px/1.15 var(--serif); font-variation-settings: "SOFT" 100; margin: 0; }
-.title2 { font: 600 22px/1.2 var(--serif); font-variation-settings: "SOFT" 100; margin: 0; }
-.title3 { font: 600 20px/1.25 var(--sans); margin: 0; }
-.headline { font: 600 17px/1.3 var(--sans); }
-.callout { font-size: 16px; }
+/* ---- Typo (Dynamic Type « Large ») ---- */
+.large { font: 700 34px/1.12 var(--rounded); letter-spacing: -.01em; margin: 0; }
+.t1 { font: 700 28px/1.15 var(--rounded); margin: 0; letter-spacing: -.01em; }
+.t2 { font: 600 22px/1.22 var(--sans); margin: 0; letter-spacing: -.02em; }
+.t3 { font: 600 20px/1.25 var(--sans); margin: 0; letter-spacing: -.02em; }
+.hl { font: 600 17px/1.3 var(--sans); }
 .sub { font-size: 15px; line-height: 1.35; }
 .foot { font-size: 13px; line-height: 1.35; }
-.cap { font-size: 12px; font-weight: 500; }
-.overline { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 8px; }
-.metric { font: 600 22px var(--rounded); font-variant-numeric: tabular-nums; }
-.quote { font: italic 400 19px/1.38 var(--serif); font-variation-settings: "SOFT" 100; }
 .muted { color: var(--text-secondary); }
-.c-accent { color: var(--accent); } .c-info { color: var(--info); } .c-period { color: var(--period); } .c-destructive { color: var(--destructive); }
+.c-accent { color: var(--accent); } .c-period { color: var(--period); } .c-leaf { color: var(--leaf); } .c-destructive { color: var(--destructive); } .c-info { color: var(--info); }
+.sechead { display: flex; justify-content: space-between; align-items: baseline; margin: 26px 4px 8px; }
+.sechead .t3 { font-size: 20px; }
+.sechead a { font-size: 15px; color: var(--accent); text-decoration: none; }
+.navrow { display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
 
 /* ---- Icônes ---- */
-svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } svg.i.xl { width: 44px; height: 44px; stroke-width: 1.5; }
+svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; }
+.mascot { display: block; flex: none; }
 
-/* ---- Composants ---- */
-.card { background: var(--surface); border-radius: 24px; padding: 16px; box-shadow: var(--shadow-card); border: .5px solid var(--card-stroke); }
-.card.soft { background: var(--accent-soft); box-shadow: none; border-color: transparent; }
-.row { display: flex; align-items: center; gap: 12px; }
-.stack > * + * { margin-top: 16px; }
-.sec { margin-top: 32px; }
-.chips { display: flex; gap: 8px; flex-wrap: nowrap; overflow: hidden; }
-.chips.wrap { flex-wrap: wrap; }
-.chip { font-family: var(--sans); display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); font-size: 15px; font-weight: 500; white-space: nowrap; border: 1.5px solid transparent; flex: none; }
-.chip.on { background: var(--accent-soft); color: var(--on-accent-soft); border-color: var(--accent); }
-.chip.dashed { background: transparent; border: 1.5px dashed var(--border); color: var(--text-secondary); }
-.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 54px; border-radius: 999px; font: 700 17px var(--rounded); border: 0; width: 100%; }
-.btn.primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 28%, transparent); }
-.btn.secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
-.btn.ghost { background: transparent; color: var(--accent); height: 44px; }
-.btn.disabled { background: var(--surface-muted); color: var(--text-secondary); }
-.iconbtn { width: 44px; height: 44px; border-radius: 22px; display: grid; place-items: center; background: var(--surface-muted); color: var(--accent); flex: none; }
-.badge { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--surface-muted); color: var(--text-primary); }
-.cat { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--fg); }
-.search { display: flex; align-items: center; gap: 8px; height: 44px; border-radius: 999px; padding-left: 16px !important; background: var(--surface-muted); padding: 0 12px; color: var(--text-secondary); font-size: 17px; }
-.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--surface-muted); border-radius: 999px; padding: 2px; }
-.seg span { text-align: center; font-size: 13px; font-weight: 500; padding: 7px 4px; border-radius: 8px; color: var(--text-primary); }
-.seg span.on { background: var(--surface-raised); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; border: .5px solid var(--separator); }
-.banner { display: flex; gap: 12px; padding: 14px 16px; border-radius: 24px; background: var(--info-soft); }
-.banner.warn { background: var(--warning-soft); }
-.banner > svg { color: var(--info); margin-top: 1px; }
-.banner.warn > svg { color: var(--warning); }
-.banner a { color: var(--info); font-weight: 600; text-decoration: none; font-size: 15px; display: inline-block; margin-top: 6px; }
-
-/* Teintes de saison */
-.t-miel { --fg: var(--miel); --soft: var(--miel-soft); }
-.t-olive { --fg: var(--olive); --soft: var(--olive-soft); }
-.t-lagon { --fg: var(--lagon); --soft: var(--lagon-soft); }
-.t-ardoise { --fg: var(--ardoise); --soft: var(--ardoise-soft); }
-.t-cacao { --fg: var(--cacao); --soft: var(--cacao-soft); }
-.t-lavande { --fg: var(--lavande); --soft: var(--lavande-soft); }
-.vig { background: var(--soft); color: var(--fg); position: relative; overflow: hidden; display: grid; place-items: center; border-radius: 20px; }
-.vig::after, .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35; mix-blend-mode: var(--grain-blend);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .22 0 0 0 0 .12 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-.grain { position: relative; overflow: hidden; }
-.plaid { background-image:
-  repeating-linear-gradient(0deg, color-mix(in srgb, var(--fg, var(--accent)) 22%, transparent) 0 4px, transparent 4px 14px),
-  repeating-linear-gradient(90deg, color-mix(in srgb, var(--fg, var(--accent)) 22%, transparent) 0 4px, transparent 4px 14px),
-  repeating-linear-gradient(90deg, transparent 0 6px, color-mix(in srgb, var(--fg, var(--accent)) 10%, transparent) 6px 7px, transparent 7px 14px); }
-.doodle { fill: none; stroke: var(--text-primary); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.vig svg.blobs { position: absolute; inset: 0; width: 100%; height: 100%; }
-.vig svg.blobs * { fill: var(--fg); }
-.vig > svg.i { position: relative; }
-
-/* Énergie */
-.energy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.energy div { height: 76px; border-radius: 20px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font: 700 15px var(--rounded); }
-.energy.on-soft div { background: var(--surface); box-shadow: 0 2px 6px rgba(92,52,28,.06); }
-.energy.on-soft div.on { background: var(--accent); }
-.energy div.on { background: var(--accent); color: var(--on-accent); }
-.bars { display: flex; align-items: flex-end; gap: 3px; height: 22px; }
-.bars i { width: 7px; border-radius: 2px; border: 1.5px solid var(--border); display: block; }
-.bars i:nth-child(1) { height: 11px; } .bars i:nth-child(2) { height: 16px; } .bars i:nth-child(3) { height: 21px; }
-.bars i.f { background: var(--accent); border-color: var(--accent); }
-.on .bars i { border-color: color-mix(in srgb, var(--on-accent) 60%, transparent); }
-.on .bars i.f { background: var(--on-accent); border-color: var(--on-accent); }
-.mood { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.mood div { height: 64px; border-radius: 20px; background: var(--surface-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 600; }
-.mood div svg { color: var(--accent); }
-.mood div.on { background: var(--accent); color: var(--on-accent); }
-.mood div.on svg { color: var(--on-accent); }
-.mood.compact div { height: 54px; flex-direction: row; gap: 6px; }
-.energy.compact div { height: 60px; gap: 6px; }
-.seg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.seg3 span { height: 38px; border-radius: 999px; background: var(--surface-muted); display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 500; }
-.seg3 span.on { background: var(--accent-soft); color: var(--on-accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent); font-weight: 600; }
-
-/* Liste groupée (Réglages) */
-.group { background: var(--surface); border-radius: 20px; box-shadow: var(--shadow-card); overflow: hidden; border: .5px solid var(--card-stroke); }
-.group .it { display: flex; align-items: center; gap: 12px; padding: 0 16px; min-height: 48px; font-size: 16px; }
-.group .it + .it { border-top: .5px solid var(--separator); margin-left: 52px; padding-left: 0; }
-.group .it .ico { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); flex: none; }
-.group .it + .it .ico { margin-left: -40px; }
-.group .it .v { white-space: nowrap; margin-left: auto; color: var(--text-secondary); font-size: 15px; display: flex; align-items: center; gap: 4px; }
-.group-title { font-size: 13px; color: var(--text-secondary); margin: 22px 16px 7px; text-transform: uppercase; letter-spacing: .04em; font-weight: 500; }
-.switch { width: 51px; height: 31px; border-radius: 16px; background: var(--accent); position: relative; margin-left: auto; flex: none; }
+/* ---- Listes groupées (natives) ---- */
+.group { background: var(--surface); border-radius: 12px; overflow: hidden; }
+.it { display: flex; align-items: center; gap: 12px; padding: 0 16px; min-height: 48px; position: relative; font-size: 17px; }
+.it + .it::before { content: ""; position: absolute; top: 0; right: 0; left: var(--inset, 16px); border-top: .5px solid var(--separator); }
+.it .v { margin-left: auto; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; white-space: nowrap; font-size: 17px; }
+.it .chev { color: var(--text-tertiary); opacity: .7; }
+.it .txt { flex: 1; min-width: 0; padding: 10px 0; }
+.it .txt .s { font-size: 15px; color: var(--text-secondary); margin-top: 1px; }
+.tile { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: var(--soft); color: var(--fg); flex: none; }
+.tile.big { width: 56px; height: 56px; border-radius: 12px; }
+.thumb { width: 60px; height: 60px; border-radius: 10px; overflow: hidden; flex: none; display: block; }
+.thumb svg { width: 100%; height: 100%; display: block; }
+.ghdr { font-size: 13px; color: var(--text-secondary); margin: 22px 16px 7px; }
+.gfoot { font-size: 13px; color: var(--text-secondary); margin: 7px 16px 0; line-height: 1.35; }
+.switch { width: 51px; height: 31px; border-radius: 16px; background: var(--leaf); position: relative; margin-left: auto; flex: none; }
 .switch::after { content: ""; position: absolute; top: 2px; right: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
-.switch.off { background: var(--surface-muted); box-shadow: inset 0 0 0 1.5px var(--border); }
+.switch.off { background: var(--surface-muted); }
 .switch.off::after { right: auto; left: 2px; }
 
+/* Teintes de catégorie : libellé, icône, tuile */
+.t-miel { --fg: var(--miel); --soft: var(--miel-soft); } .t-olive { --fg: var(--olive); --soft: var(--olive-soft); }
+.t-lagon { --fg: var(--lagon); --soft: var(--lagon-soft); } .t-ardoise { --fg: var(--ardoise); --soft: var(--ardoise-soft); }
+.t-cacao { --fg: var(--cacao); --soft: var(--cacao-soft); } .t-lavande { --fg: var(--lavande); --soft: var(--lavande-soft); }
+.t-accent { --fg: var(--accent); --soft: var(--accent-soft); } .t-leaf { --fg: var(--leaf); --soft: var(--leaf-soft); }
+.t-period { --fg: var(--period); --soft: var(--period-soft); } .t-info { --fg: var(--info); --soft: var(--info-soft); }
+.cat { font-size: 13px; font-weight: 600; color: var(--fg); display: inline-flex; gap: 4px; align-items: center; }
+
+/* ---- Contrôles ---- */
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 50px; border-radius: 14px; font: 600 17px var(--sans); border: 0; width: 100%; }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.plain { background: transparent; color: var(--accent); height: 44px; }
+.btn.tinted { background: var(--accent-soft); color: var(--on-accent-soft); }
+.search { display: flex; align-items: center; gap: 6px; height: 36px; border-radius: 10px; background: var(--surface-muted); padding: 0 8px; color: var(--text-secondary); font-size: 17px; }
+.chips { display: flex; gap: 8px; overflow: hidden; }
+.chip { display: inline-flex; align-items: center; gap: 5px; height: 32px; padding: 0 12px; border-radius: 16px; background: var(--surface); color: var(--text-primary); font-size: 15px; white-space: nowrap; flex: none; border: .5px solid var(--separator); }
+.chip.on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--surface-muted); border-radius: 9px; padding: 2px; }
+.seg span { text-align: center; font-size: 13px; font-weight: 500; padding: 6px 4px; border-radius: 7px; }
+.seg span.on { background: var(--surface-raised); box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; }
+html[data-theme="dark"] .seg span.on { background: #4A4654; }
+.opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.opt { height: 48px; border-radius: 12px; background: var(--surface); display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 16px; font-weight: 500; border: .5px solid var(--separator); }
+.opt svg { color: var(--leaf); }
+.opt.on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.opt.on svg { color: var(--on-accent); }
+.opts.sm .opt { height: 40px; font-size: 15px; }
+.energy .opt { height: 76px; flex-direction: column; gap: 4px; font: 600 16px var(--sans); }
+.energy .opt svg { width: 26px; height: 26px; }
+.pchip { display: inline-flex; align-items: center; height: 34px; padding: 0 12px; border-radius: 10px; background: var(--surface); border: .5px solid var(--separator); font-size: 15px; white-space: nowrap; }
+.pchip.on { background: var(--accent-soft); color: var(--on-accent-soft); border-color: var(--accent); }
+.lbl { font-size: 17px; font-weight: 600; margin: 18px 0 8px; display: flex; align-items: center; gap: 8px; }
+.lbl .opt-tag { font-size: 13px; font-weight: 400; color: var(--text-secondary); }
+
+/* Une seule carte mise en avant par écran */
+.feature { background: var(--surface); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-1); }
+
+/* Sheet */
+.dim { position: absolute; inset: 0; background: var(--dim); z-index: 21; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 64px; background: var(--surface-raised); border-radius: 22px 22px 0 0; z-index: 22; padding: 6px 16px 0; box-shadow: var(--shadow-2); }
+html[data-theme="light"] .sheet { background: var(--background); }
+.grabber { width: 36px; height: 5px; border-radius: 3px; background: var(--border); opacity: .5; margin: 0 auto 6px; }
+.dock { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px 34px; background: color-mix(in srgb, var(--background) 92%, transparent); border-top: .5px solid var(--separator); z-index: 5; backdrop-filter: blur(20px); }
+
 /* Calendrier */
-.cal { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 4px; text-align: center; }
-.cal .dow { font-size: 12px; font-weight: 600; color: var(--text-secondary); padding-bottom: 6px; }
-.cal .d { height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; font: 500 16px var(--rounded); font-variant-numeric: tabular-nums; position: relative; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 2px; text-align: center; }
+.cal .dow { font-size: 13px; font-weight: 600; color: var(--text-secondary); padding-bottom: 6px; }
+.cal .d { height: 37px; display: flex; align-items: center; justify-content: center; font: 400 17px var(--sans); font-variant-numeric: tabular-nums; position: relative; }
 .cal .d .n { width: 34px; height: 34px; border-radius: 17px; display: grid; place-items: center; }
 .cal .d.p .n { background: var(--period); color: var(--on-period); font-weight: 600; }
 .cal .d.s .n { box-shadow: inset 0 0 0 2px var(--spotting); }
 .cal .d.today .n { box-shadow: inset 0 0 0 2px var(--accent); color: var(--accent); font-weight: 700; }
-.cal .d .dot { width: 5px; height: 5px; border-radius: 3px; background: var(--text-secondary); position: absolute; bottom: 1px; }
+.cal .d .dot { width: 5px; height: 5px; border-radius: 3px; background: var(--text-secondary); position: absolute; bottom: 0; }
 .cal .d.future { color: var(--text-tertiary); }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--text-secondary); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
-.lg-p { width: 14px; height: 14px; border-radius: 7px; background: var(--period); }
-.lg-s { width: 14px; height: 14px; border-radius: 7px; box-shadow: inset 0 0 0 2px var(--spotting); }
+.lg-p { width: 12px; height: 12px; border-radius: 6px; background: var(--period); }
+.lg-s { width: 12px; height: 12px; border-radius: 6px; box-shadow: inset 0 0 0 2px var(--spotting); }
 .lg-c { width: 6px; height: 6px; border-radius: 3px; background: var(--text-secondary); }
-.lg-t { width: 14px; height: 14px; border-radius: 7px; box-shadow: inset 0 0 0 2px var(--accent); }
-.hist .it { padding: 12px 0; border-top: .5px solid var(--separator); }
-.hist .track { height: 8px; border-radius: 4px; background: var(--surface-muted); margin-top: 8px; position: relative; overflow: hidden; }
-.hist .track b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--period); border-radius: 4px; }
-.hist .track i { position: absolute; top: 0; bottom: 0; background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--border); border-radius: 0 4px 4px 0; }
+.lg-t { width: 12px; height: 12px; border-radius: 6px; box-shadow: inset 0 0 0 2px var(--accent); }
+.bar { height: 6px; border-radius: 3px; background: var(--surface-muted); margin-top: 6px; position: relative; overflow: hidden; }
+.bar b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--period); border-radius: 3px; }
 
 /* Lecteur */
-.ring { width: 220px; height: 220px; position: relative; margin: 0 auto; display: grid; place-items: center; }
+.ring { width: 230px; height: 230px; position: relative; margin: 0 auto; display: grid; place-items: center; }
 .ring svg { position: absolute; inset: 0; transform: rotate(-90deg); }
-.ring .t { font: 300 64px var(--rounded); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.ring .t { font: 600 60px var(--rounded); font-variant-numeric: tabular-nums; letter-spacing: -.02em; line-height: 1; }
 .progress { display: flex; gap: 4px; }
 .progress i { flex: 1; height: 4px; border-radius: 2px; background: var(--surface-muted); }
 .progress i.d { background: var(--accent); }
-.progress i.c { background: linear-gradient(90deg, var(--accent) 40%, var(--surface-muted) 40%); }
-.ctrl { display: flex; align-items: center; justify-content: center; gap: 28px; }
-.ctrl .b { width: 56px; height: 56px; border-radius: 28px; display: grid; place-items: center; background: var(--surface-muted); color: var(--text-primary); }
-.ctrl .b.main { width: 80px; height: 80px; border-radius: 40px; background: var(--accent); color: var(--on-accent); }
+.ctrl { display: flex; align-items: center; justify-content: center; gap: 32px; }
+.ctrl .b { width: 56px; height: 56px; border-radius: 28px; display: grid; place-items: center; background: var(--surface); color: var(--text-primary); }
+.ctrl .b.main { width: 78px; height: 78px; border-radius: 39px; background: var(--accent); color: var(--on-accent); }
 
-/* Sheet */
-.dim { position: absolute; inset: 0; background: rgba(10,14,12,.38); z-index: 10; }
-.sheet { position: absolute; left: 0; right: 0; bottom: 0; top: 62px; background: var(--surface-raised); border-radius: 32px 32px 0 0; z-index: 15; padding: 8px 20px 0; box-shadow: var(--shadow-raised); }
-.grabber { width: 36px; height: 5px; border-radius: 3px; background: var(--border); opacity: .6; margin: 0 auto 10px; }
-.field { height: 44px; border-radius: 14px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 12px; color: var(--text-tertiary); font-size: 16px; }
-.lbl { font-size: 15px; font-weight: 600; margin: 0 0 8px; display: flex; align-items: center; gap: 6px; }
-.optsep { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin: 18px 0 14px; }
-.optsep::before, .optsep::after { content: ""; flex: 1; height: .5px; background: var(--separator); }
-.toast { position: absolute; }
-.navbar { display: flex; align-items: center; justify-content: space-between; height: 44px; color: var(--accent); font-size: 17px; }
-.check { width: 24px; height: 24px; border-radius: 12px; border: 1.5px solid var(--border); flex: none; display: grid; place-items: center; }
+.ingr { display: flex; align-items: center; gap: 12px; min-height: 46px; font-size: 17px; position: relative; padding: 0 16px; }
+.ingr + .ingr::before { content: ""; position: absolute; top: 0; right: 0; left: 52px; border-top: .5px solid var(--separator); }
+.ingr .q { margin-left: auto; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.check { width: 22px; height: 22px; border-radius: 11px; border: 1.5px solid var(--border); flex: none; display: grid; place-items: center; }
 .check.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.ingr { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: .5px solid var(--separator); font-size: 16px; }
-.ingr .q { margin-left: auto; color: var(--text-secondary); font-variant-numeric: tabular-nums; font-size: 15px; white-space: nowrap; }
 .ingr.done .nm { color: var(--text-secondary); text-decoration: line-through; }
-.dock { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 20px 34px; background: color-mix(in srgb, var(--background) 94%, transparent); border-top: .5px solid var(--separator); display: flex; gap: 12px; z-index: 5; backdrop-filter: blur(20px); }
-.stepper { display: inline-flex; align-items: center; gap: 0; background: var(--surface-muted); border-radius: 999px; height: 36px; }
-.stepper span { width: 40px; display: grid; place-items: center; color: var(--accent); }
-.stepper b { font: 600 15px var(--rounded); padding: 0 6px; }
+.stepper { display: inline-flex; align-items: center; background: var(--surface-muted); border-radius: 9px; height: 32px; }
+.stepper span { width: 40px; display: grid; place-items: center; color: var(--text-primary); }
+.stepper i { width: .5px; height: 18px; background: var(--border); opacity: .5; }
+.circbtn { width: 36px; height: 36px; border-radius: 18px; display: grid; place-items: center; background: color-mix(in srgb, var(--surface) 80%, transparent); backdrop-filter: blur(12px); color: var(--text-primary); }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 15px; color: var(--text-secondary); }
+.facts span { display: inline-flex; gap: 5px; align-items: center; }
+
+/* Planches */
+.board { max-width: 1240px; margin: 0 auto; padding: 8px 16px 64px; }
+.board h2 { font: 800 22px var(--rounded); margin: 28px 0 4px; }
+.board > p { color: var(--text-secondary); margin: 0 0 16px; font-size: 15px; max-width: 760px; line-height: 1.45; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+.cell { background: var(--background); border-radius: 16px; padding: 10px 10px 12px; text-align: center; }
+.cell svg { width: 150px; height: 150px; display: block; margin: 0 auto; }
+.cell.dish svg { width: 100%; height: auto; border-radius: 12px; }
+.cell b { display: block; font-size: 13px; font-weight: 600; margin-top: 6px; }
+.cell span { display: block; font-size: 12px; color: var(--text-secondary); margin-top: 2px; line-height: 1.3; }
+.sw { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.sw div { border-radius: 12px; padding: 10px; font-size: 12px; background: var(--background); }
+.sw i { display: block; height: 40px; border-radius: 8px; margin-bottom: 6px; border: .5px solid rgba(0,0,0,.08); }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+
     <symbol id="i-sun" viewBox="0 0 24 24"><path d="M3 18.5h18M6.5 18.5a5.5 5.5 0 0 1 11 0M12 6.5V9M5.6 10.1l1.6 1.6M18.4 10.1l-1.6 1.6M2.8 15H5.2M18.8 15h2.4"/></symbol>
     <symbol id="i-fork" viewBox="0 0 24 24"><path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3M16.5 21V3c-2 1-3.5 3.5-3.5 7 0 2 1 3 3.5 3"/></symbol>
     <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13.5" cy="4.5" r="1.8"/><path d="M12.5 8.5l-2.5 5 3 2.5-1.5 5M12.5 8.5l2.5 3.5h3M10 13.5l-2.5 2.5M13 16l3 5M12.5 8.5L9 10l-1.5 3"/></symbol>
@@ -353,14 +331,17 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
     <symbol id="i-low" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10.5v.6M15 10.5v.6M8.8 16.2c2-1.6 4.4-1.6 6.4 0"/></symbol>
     <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5l1.8 5.2 5.2 1.8-5.2 1.8L12 17.5l-1.8-5.2L5 10.5l5.2-1.8z"/></symbol>
     <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 18l4.5-12L13 18M5.7 14h5.6M15 18v-6.5M15 14.5c0-2 1.2-3 2.7-3s2.8 1 2.8 3V18"/></symbol>
-    <symbol id="blobs" viewBox="0 0 340 190" preserveAspectRatio="xMidYMid slice"><path opacity=".13" d="M-20 140c30-60 90-90 160-70s110 70 190 40 60 90 60 90H-20z"/><path opacity=".09" d="M230-20c50 10 110 30 120 80s-40 80-90 70-90-40-80-90 10-70 50-60z"/><ellipse opacity=".16" cx="70" cy="50" rx="34" ry="24" transform="rotate(-20 70 50)"/><ellipse opacity=".11" cx="292" cy="160" rx="26" ry="17" transform="rotate(15 292 160)"/></symbol>
+  
+    <symbol id="g-e1" viewBox="0 0 26 26"><path d="M13 23V12"/><path d="M13 12c0-4 3-6 7-6-.5 4-3 6-7 6z" fill="currentColor" fill-opacity=".25"/></symbol>
+    <symbol id="g-e2" viewBox="0 0 26 26"><path d="M13 23V9"/><path d="M13 15c0-3.6 2.8-5.6 6.5-5.6-.4 3.6-2.8 5.6-6.5 5.6z" fill="currentColor" fill-opacity=".25"/><path d="M13 12c0-3.4-2.6-5.4-6-5.4.4 3.4 2.6 5.4 6 5.4z" fill="currentColor" fill-opacity=".25"/></symbol>
+    <symbol id="g-e3" viewBox="0 0 26 26"><path d="M13 23V5"/><path d="M13 17c0-3.4 2.6-5.2 6-5.2-.4 3.4-2.6 5.2-6 5.2z" fill="currentColor" fill-opacity=".25"/><path d="M13 13.5c0-3.2-2.4-5-5.6-5 .4 3.2 2.4 5 5.6 5z" fill="currentColor" fill-opacity=".25"/><path d="M13 7.5c0-2.6 2-4.2 4.6-4.2-.3 2.6-2 4.2-4.6 4.2z" fill="currentColor" fill-opacity=".25"/></symbol>
   </defs>
 </svg>
 
 <header class="page-head">
   <div>
-    <h1>Ovéa — maquettes MVP · V2 cosy</h1>
-    <p>Neuf écrans iPhone 390 × 844 pt, à partir des tokens V2 de <code>tokens.json</code> (lin, terracotta, miel, chocolat en sombre ; titres en Fraunces). Textes réalistes, aucun poids, aucune calorie, aucune prédiction d'ovulation. Les icônes sont des approximations des SF Symbols listés dans <code>02-ui.md</code>.</p>
+    <h1>Ovéa — maquettes V3 · Mascotte & illustrations</h1>
+    <p>Neuf écrans iPhone 390 × 844 pt sur une base iOS native (grands titres, listes groupées, tab bar standard, SF Pro). La personnalité vient de Mousse, la mascotte, et des illustrations de plats ; une seule carte mise en avant par écran. Tokens : <code>tokens.json</code>. Illustrations : <code>illustrations/</code> (prototypes de direction). Aucun poids, aucune calorie, aucune prédiction d'ovulation.</p>
   </div>
   <button class="toggle" id="themeToggle" type="button" aria-pressed="false">
     <svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span>Passer en sombre</span>
@@ -372,426 +353,507 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
 <!-- ======================= 1. AUJOURD'HUI ======================= -->
 <figure class="shot"><figcaption>1 · Aujourd'hui</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
   <div class="screen with-tabs">
-    <div class="row" style="justify-content:space-between;margin-top:6px">
-      <span class="sub muted row" style="gap:6px">
-        <svg class="doodle" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="stroke:var(--highlight)"><circle cx="12" cy="12" r="4.2"/><path d="M12 3.2v2.2M12 18.6v2.2M3.2 12h2.2M18.6 12h2.2M5.9 5.8l1.5 1.6M16.6 16.6l1.6 1.5M5.8 18.1l1.6-1.5M16.7 7.3l1.4-1.5"/></svg>
-        Jeudi 26 novembre</span>
-      <span class="iconbtn" style="background:var(--accent-soft);color:var(--on-accent-soft);font:700 17px var(--rounded)" aria-label="Profil et réglages">L</span>
+    <div class="navrow" style="margin-top:2px">
+      <span class="sub muted">Jeudi 26 novembre</span>
+      <span style="display:flex;gap:14px;align-items:center"><span class="c-accent sub" style="display:flex;gap:4px;align-items:center;font-weight:500"><svg class="i sm"><use href="#i-leaf"/></svg>Journée difficile</span>
+      <span style="width:34px;height:34px;border-radius:17px;background:var(--accent-soft);color:var(--on-accent-soft);display:grid;place-items:center;font-weight:600;font-size:15px" aria-label="Profil et réglages">L</span></span>
     </div>
-    <h2 class="display" style="margin-top:2px">Bonjour Léa</h2>
+    <h2 class="large">Bonjour Léa</h2>
 
-    <div class="card soft" style="margin-top:16px">
-      <p class="overline" style="margin-bottom:4px;color:var(--on-accent-soft)">Check-in du jour</p>
-      <div class="title2" style="font-size:21px">Comment est ton énergie ?</div><div class="foot muted" style="margin-top:2px">Un tap suffit. Le reste est facultatif.</div>
-      <div class="energy on-soft" style="margin-top:14px">
-        <div style="height:64px"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
-        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
-        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
+    <div style="display:flex;align-items:center;gap:4px;margin:6px 0 2px">
+      <svg class="mascot" style="width:150px;height:150px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse dit bonjour">
+<ellipse cx="110" cy="205" rx="78.3" ry="7" fill="#2A2438" opacity=".12"/><path d="M47 200 C27 200 17 180 21 158 C27 122 65 92 110.9 92 C159 92 195 120 199 160 C201.9 190 187 200 169 200 Z" fill="#CEC7DB"/>
+<path d="M199 160 C201.9 190 187 200 169 200 L73.6 200 C139.1 192.4 182.8 184.9 199 160 Z" fill="#B2A8C4"/>
+<circle cx="55.4" cy="137.4" r="3" fill="#B2A8C4"/><circle cx="64.5" cy="127.6" r="2" fill="#B2A8C4"/><circle cx="175.5" cy="178.4" r="2.4" fill="#B2A8C4"/>
+<path d="M47 200 C27 200 17 180 21 158 C27 122 65 92 110.9 92 C159 92 195 120 199 160 C201.9 190 187 200 169 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M111 82 C109 68 115 56 125 48" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(125 48) rotate(-40)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(112 66) rotate(205)" d="M0 0 C5 -8 14.4 -8.4 20 0 C14.4 6 5 6.4 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 104 C73 92 83 84 93 88 C97 78 113 76 119 84 C127 78 141 82 141 94 C147 96 149 104 143 108 C123 100 97 100 75 104 Z" fill="#8DB34A"/><path d="M81 102 C99 98 123 98 141 105 C127 101 99 101 81 102 Z" fill="#6F9736"/><circle cx="95" cy="93" r="2.6" fill="#6F9736"/><circle cx="125" cy="91" r="2.6" fill="#6F9736"/><path d="M75 104 C73 92 83 84 93 88 C97 78 113 76 119 84 C127 78 141 82 141 94 C147 96 149 104 143 108 C123 100 97 100 75 104 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="76.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="147.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="92.7" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="91.3" cy="143.6" r="1.6" fill="#FAF8F5"/><ellipse cx="130.9" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="129.5" cy="143.6" r="1.6" fill="#FAF8F5"/>
+<path d="M104.8 160.1 Q111.8 167.1 118.8 160.1" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="-8" y="-38" width="16" height="38" rx="8" transform="translate(168 132) rotate(28)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 82 q8 2 12 9 M207 72 q10 3 15 13" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+</svg>
+      <div>
+        <div class="t2">Comment est ton énergie&nbsp;?</div>
+        <div class="foot muted" style="margin-top:4px">Un tap suffit. Le reste est facultatif.</div>
       </div>
     </div>
-
-    <div class="card grain t-miel" style="margin-top:12px;background:var(--highlight-soft);box-shadow:none;padding:16px 16px 14px 28px">
-      <span class="plaid" style="position:absolute;left:0;top:0;bottom:0;width:14px" aria-hidden="true"></span>
-      <div class="row" style="align-items:flex-start;gap:10px">
-        <div style="flex:1">
-          <div class="row" style="gap:6px;color:var(--highlight)"><svg class="i sm"><use href="#i-sparkle"/></svg><span class="cap" style="font-weight:700">Petit mot du jour</span></div>
-          <p class="quote" style="margin:6px 0 6px;font-size:18px">Des protéines au petit-déjeuner aident à garder une énergie plus stable jusqu'à midi.</p>
-          <span class="sub" style="font-weight:700;color:var(--highlight)">Pourquoi ? ›</span>
-        </div>
-        <svg class="doodle" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true" style="flex:none;margin-top:4px">
-          <path d="M23 22c-3-4 3-6.5 0-11M31.5 21c-3-4 3-6.5 0-11M40 22c-3-4 3-6.5 0-11" opacity=".55"/>
-          <path d="M13.5 28.5c-.6 10 4.2 19 16.5 19.2 12.3-.2 16.8-9.4 16.2-19.4z" fill="var(--surface)"/>
-          <path d="M46 31.5c5.5-1.4 8.7 1.2 8.1 5.2-.6 3.9-4.6 5.6-9.1 4.6"/>
-          <path d="M19 37c3.4 1.7 7 1.7 10.6 0s7.2-1.7 10.6 0" style="stroke:var(--accent)"/>
-          <path d="M9 52.5c9.5 2.6 32.5 2.6 42 0"/>
-        </svg>
-      </div>
+    <div class="opts energy">
+      <div class="opt"><svg class="i"><use href="#g-e1"/></svg>Basse</div>
+      <div class="opt"><svg class="i"><use href="#g-e2"/></svg>Moyenne</div>
+      <div class="opt"><svg class="i"><use href="#g-e3"/></svg>Bonne</div>
     </div>
 
-    <div class="card" style="margin-top:12px;padding:12px 14px">
-      <div class="row" style="justify-content:space-between">
-        <div class="row" style="gap:10px"><svg class="i c-accent"><use href="#i-cal"/></svg>
-          <div><span class="metric" style="font-size:19px">Jour 23</span> <span class="foot muted">du cycle</span></div></div>
-        <span class="row foot" style="gap:6px;font-weight:700;color:var(--period)"><svg class="i sm"><use href="#i-drop"/></svg>Noter mes règles</span>
+    <div class="sechead" style="margin-top:22px"><span class="t3">Pour toi aujourd'hui</span></div>
+    <div class="group">
+      <div class="it t-ardoise" style="--inset:88px;min-height:76px">
+        <span class="thumb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Dahl de lentilles corail et butternut">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="109" cy="119" r="80" fill="#D2CFE1"/><circle cx="104" cy="112" r="80" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="104" cy="112" r="64" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 120 C70 96 96 80 116 92 C132 102 124 124 106 120 C96 118 96 106 104 104" fill="none" stroke="#FAF8F5" stroke-width="4" stroke-linecap="round"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(132 84) rotate(12)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(140 122) rotate(-8)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(92 146) rotate(20)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(66 100) rotate(-14)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(120 150) rotate(4)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(78 74) rotate(30)" fill="#DA8228"/><circle cx="112" cy="70" r="2.4" fill="#D9573B"/><circle cx="146" cy="104" r="2.4" fill="#D9573B"/><circle cx="60" cy="128" r="2.4" fill="#D9573B"/><circle cx="100" cy="132" r="2.4" fill="#D9573B"/><circle cx="128" cy="136" r="2.4" fill="#D9573B"/><g transform="translate(118 108) rotate(0) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(88 92) rotate(40) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(138 142) rotate(-30) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(74 136) rotate(15) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><circle cx="195" cy="199" r="38" fill="#D2CFE1"/><circle cx="190" cy="192" r="38" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="190" cy="192" r="28" fill="#EFE6D3"/><ellipse cx="206" cy="192" rx="3.2" ry="1.6" transform="rotate(0 206 192)" fill="#CC9563" opacity=".45"/><ellipse cx="201.5" cy="201.6" rx="3.2" ry="1.6" transform="rotate(47 201.5 201.6)" fill="#CC9563" opacity=".45"/><ellipse cx="193.1" cy="209.5" rx="3.2" ry="1.6" transform="rotate(94 193.1 209.5)" fill="#CC9563" opacity=".45"/><ellipse cx="183" cy="204.2" rx="3.2" ry="1.6" transform="rotate(141 183 204.2)" fill="#CC9563" opacity=".45"/><ellipse cx="173.5" cy="198" rx="3.2" ry="1.6" transform="rotate(8 173.5 198)" fill="#CC9563" opacity=".45"/><ellipse cx="175.6" cy="186.8" rx="3.2" ry="1.6" transform="rotate(55 175.6 186.8)" fill="#CC9563" opacity=".45"/><ellipse cx="182.2" cy="178.5" rx="3.2" ry="1.6" transform="rotate(102 182.2 178.5)" fill="#CC9563" opacity=".45"/><ellipse cx="193" cy="174.9" rx="3.2" ry="1.6" transform="rotate(149 193 174.9)" fill="#CC9563" opacity=".45"/><ellipse cx="200.8" cy="182.9" rx="3.2" ry="1.6" transform="rotate(16 200.8 182.9)" fill="#CC9563" opacity=".45"/><ellipse cx="195.3" cy="194.9" rx="3.2" ry="1.6" transform="rotate(63 195.3 194.9)" fill="#CC9563" opacity=".45"/><ellipse cx="187.3" cy="196.9" rx="3.2" ry="1.6" transform="rotate(110 187.3 196.9)" fill="#CC9563" opacity=".45"/><ellipse cx="184.2" cy="188.8" rx="3.2" ry="1.6" transform="rotate(157 184.2 188.8)" fill="#CC9563" opacity=".45"/><ellipse cx="192.5" cy="187.4" rx="3.2" ry="1.6" transform="rotate(24 192.5 187.4)" fill="#CC9563" opacity=".45"/>
+</svg></span>
+        <div class="txt"><span class="cat">Dîner</span><div class="hl">Dahl de lentilles corail et butternut</div><div class="s">30 min</div></div>
+        <svg class="i sm chev"><use href="#i-chev"/></svg>
+      </div>
+      <div class="it t-miel" style="--inset:88px;min-height:68px">
+        <span class="tile big"><svg class="i lg"><use href="#i-walk"/></svg></span>
+        <div class="txt"><span class="cat">Cardio doux</span><div class="hl">Marche après le repas</div><div class="s">12 min · sans matériel</div></div>
+        <svg class="i sm chev"><use href="#i-chev"/></svg>
       </div>
     </div>
 
-    <p class="overline" style="margin-top:22px">Pour toi aujourd'hui</p>
-    <div class="row" style="gap:12px;align-items:stretch">
-      <div class="card t-ardoise" style="flex:1;padding:0;overflow:hidden">
-        <div class="vig" style="height:92px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl"><use href="#i-bowl"/></svg></div>
-        <div style="padding:10px 12px 12px">
-          <span class="cat"><svg class="i sm"><use href="#i-moon"/></svg>Dîner</span>
-          <div class="headline" style="font-size:15px;margin-top:3px;line-height:1.25">Dahl de lentilles corail et butternut</div>
-        </div>
-      </div>
-      <div class="card t-miel" style="flex:1;padding:0;overflow:hidden">
-        <div class="vig" style="height:92px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl"><use href="#i-walk"/></svg></div>
-        <div style="padding:10px 12px 12px">
-          <span class="cat"><svg class="i sm"><use href="#i-walk"/></svg>Cardio doux</span>
-          <div class="headline" style="font-size:15px;margin-top:3px;line-height:1.25">Marche après le repas</div>
-        </div>
-      </div>
+    <div class="group" style="margin-top:12px">
+      <div class="it"><svg class="i c-period"><use href="#i-drop"/></svg><span>Jour 23 du cycle</span><span class="v c-accent" style="font-size:15px">Noter mes règles</span></div>
     </div>
+    <p class="sub" style="margin:14px 4px 0"><span class="muted">Petit mot du jour · </span>Des protéines au petit-déjeuner aident à garder une énergie plus stable jusqu'à midi.</p>
   </div>
-  <nav class="tabbar">
-    <span class="tab on"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
-    <span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
-    <span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
-    <span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
-  </nav>
+  <nav class="tabbar"><span class="tab on"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span><span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span><span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span><span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span></nav>
   <div class="home-ind"></div>
 </div></figure>
 
 <!-- ======================= 2. CHECK-IN ======================= -->
 <figure class="shot"><figcaption>2 · Check-in (sheet)</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
-  <div class="screen" style="filter:saturate(.8)">
-    <span class="sub muted">Jeudi 26 novembre</span>
-    <h2 class="display">Bonjour Léa</h2>
-  </div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
+  <div class="screen with-tabs"><div class="sub muted" style="margin-top:12px">Jeudi 26 novembre</div><h2 class="large">Bonjour Léa</h2></div>
+  <nav class="tabbar"><span class="tab on"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span><span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span><span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span><span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span></nav>
   <div class="dim"></div>
   <div class="sheet">
     <div class="grabber"></div>
-    <div class="row" style="justify-content:space-between">
-      <div><div class="title2">Check-in</div><div class="foot muted">Seule l'énergie est demandée.</div></div>
-      <span class="iconbtn" aria-label="Fermer" style="width:32px;height:32px;color:var(--text-secondary)"><svg class="i sm"><use href="#i-x"/></svg></span>
+    <div class="navrow"><span class="c-accent">Fermer</span><span class="hl">Check-in</span><span class="c-accent sub" style="display:flex;gap:4px;align-items:center"><svg class="i sm"><use href="#i-leaf"/></svg>Journée difficile</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+      <svg class="mascot" style="width:72px;height:72px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse, énergie basse">
+<ellipse cx="121" cy="205" rx="81.7" ry="7" fill="#2A2438" opacity=".12"/><path d="M55.3 200 C34.4 200 23.9 184.1 28.1 166.5 C34.4 137.9 74.1 114 122 114 C172.1 114 209.7 136.3 213.9 168.2 C216.9 192 201.4 200 182.6 200 Z" fill="#CEC7DB"/>
+<path d="M213.9 168.2 C216.9 192 201.4 200 182.6 200 L83 200 C151.4 194 197 188 213.9 168.2 Z" fill="#B2A8C4"/>
+<circle cx="64" cy="150.1" r="3" fill="#B2A8C4"/><circle cx="73.5" cy="142.4" r="2" fill="#B2A8C4"/><circle cx="189.4" cy="182.8" r="2.4" fill="#B2A8C4"/>
+<path d="M55.3 200 C34.4 200 23.9 184.1 28.1 166.5 C34.4 137.9 74.1 114 122 114 C172.1 114 209.7 136.3 213.9 168.2 C216.9 192 201.4 200 182.6 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 104 C122 90 128 82 140 80" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(140 80) rotate(48)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 126 C84 114 94 106 104 110 C108 100 124 98 130 106 C138 100 152 104 152 116 C158 118 160 126 154 130 C134 122 108 122 86 126 Z" fill="#8DB34A"/><path d="M92 124 C110 120 134 120 152 127 C138 123 110 123 92 124 Z" fill="#6F9736"/><circle cx="106" cy="115" r="2.6" fill="#6F9736"/><circle cx="136" cy="113" r="2.6" fill="#6F9736"/><path d="M86 126 C84 114 94 106 104 110 C108 100 124 98 130 106 C138 100 152 104 152 116 C158 118 160 126 154 130 C134 122 108 122 86 126 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="85.8" cy="170.8" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="159.9" cy="170.8" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M97 157 Q103 162 109 157" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M136.8 157 Q142.8 162 148.8 157" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118.9 169 Q122.9 172 126.9 169" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      <div><div class="hl">Énergie</div><div class="foot muted">Seule l'énergie est demandée. Le reste est facultatif.</div></div>
     </div>
-
-    <p class="lbl" style="margin-top:12px">Énergie</p>
-    <div class="energy compact">
-      <div class="on"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
-      <div><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
-      <div><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
+    <div class="opts energy" style="margin-top:8px">
+      <div class="opt on"><svg class="i"><use href="#g-e1"/></svg>Basse</div>
+      <div class="opt"><svg class="i"><use href="#g-e2"/></svg>Moyenne</div>
+      <div class="opt"><svg class="i"><use href="#g-e3"/></svg>Bonne</div>
     </div>
-
-    <div class="optsep" style="margin:14px 0 10px">Facultatif</div>
-
-    <p class="lbl">Humeur</p>
-    <div class="seg3"><span>Bien</span><span class="on">Bof</span><span>Dur</span></div>
-    <p class="lbl" style="margin-top:10px"><svg class="i sm c-period"><use href="#i-drop"/></svg>Règles</p>
-
-    <div class="seg3"><span class="on">Non</span><span>Quelques traces</span><span>Oui</span></div>
-    <p class="lbl" style="margin-top:10px">Douleurs</p>
-    <div class="chips wrap" style="gap:6px">
-      <span class="chip" style="height:32px;font-size:14px">Aucune</span>
-      <span class="chip on" style="height:32px;font-size:14px"><svg class="i sm"><use href="#i-check"/></svg>Bas-ventre, crampes</span>
-      <span class="chip" style="height:32px;font-size:14px">Articulations, dos</span>
-      <span class="chip" style="height:32px;font-size:14px">Maux de tête</span>
-    </div>
-    <p class="lbl" style="margin-top:10px"><svg class="i sm muted"><use href="#i-bed"/></svg>Sommeil</p>
-    <div class="seg3"><span>Difficile</span><span class="on">Correct</span><span>Bon</span></div>
-
-    <div class="row" style="justify-content:space-between;margin-top:12px;min-height:44px;border-top:.5px solid var(--separator);color:var(--accent)">
-      <span class="sub" style="font-weight:600">Plus de détails</span><span class="foot muted">ressentis, note</span>
-    </div>
-
-    <div style="position:absolute;left:20px;right:20px;bottom:34px">
-      <div class="btn primary"><svg class="i"><use href="#i-check"/></svg>Valider</div>
-    </div>
+    <div class="lbl">Humeur <span class="opt-tag">facultatif</span></div>
+    <div class="opts sm"><div class="opt">Bien</div><div class="opt">Bof</div><div class="opt">Dur</div></div>
+    <div class="lbl">Règles <span class="opt-tag">facultatif</span></div>
+    <div class="opts sm"><div class="opt">Non</div><div class="opt" style="font-size:14px">Quelques traces</div><div class="opt">Oui</div></div>
+    <div class="lbl">Douleurs <span class="opt-tag">facultatif</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pchip on">Aucune</span><span class="pchip">Bas-ventre, crampes</span><span class="pchip">Articulations, dos</span><span class="pchip">Maux de tête</span></div>
+    <div class="lbl">Sommeil <span class="opt-tag">facultatif</span></div>
+    <div class="opts sm"><div class="opt">Difficile</div><div class="opt on">Correct</div><div class="opt">Bon</div></div>
+    <div class="group" style="margin-top:14px"><div class="it"><span>Plus de détails</span><span class="v" style="font-size:15px">ressentis, note <svg class="i sm chev"><use href="#i-chev"/></svg></span></div></div>
+    <div class="dock" style="background:transparent;border:0"><div class="btn primary">Valider</div></div>
   </div>
   <div class="home-ind"></div>
 </div></figure>
 
-<!-- ======================= 3. CUISINE ======================= -->
+<!-- ======================= 3. CUISINE LISTE ======================= -->
 <figure class="shot"><figcaption>3 · Cuisine — liste</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
   <div class="screen with-tabs">
-    <div class="row" style="justify-content:space-between;margin-top:6px">
-      <h2 class="display">Cuisine</h2>
-      <span class="iconbtn" aria-label="Mes favoris"><svg class="i"><use href="#i-heart"/></svg></span>
-    </div>
-    <div class="search" style="margin-top:12px"><svg class="i"><use href="#i-search"/></svg>Rechercher une recette</div>
-    <div class="chips" style="margin-top:12px;margin-right:-20px">
-      <span class="chip on"><svg class="i sm"><use href="#i-check"/></svg>IG bas</span>
-      <span class="chip"><svg class="i sm"><use href="#i-timer"/></svg>15 min ou moins</span>
-      <span class="chip">Sans lactose</span>
-      <span class="chip">Végétarien</span>
-    </div>
+    <div class="navrow" style="justify-content:flex-end"><svg class="i c-accent"><use href="#i-heart"/></svg></div>
+    <h2 class="large">Cuisine</h2>
+    <div class="search" style="margin-top:10px"><svg class="i sm"><use href="#i-search"/></svg>Rechercher une recette</div>
+    <div class="chips" style="margin-top:12px"><span class="chip on">IG bas</span><span class="chip">15 min ou moins</span><span class="chip">Sans lactose</span><span class="chip">Végétarien</span></div>
 
-    <p class="overline" style="margin-top:22px">Pour toi aujourd'hui</p>
-    <div class="card t-ardoise" style="padding:0;overflow:hidden">
-      <div class="vig" style="height:150px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl" style="width:56px;height:56px"><use href="#i-bowl"/></svg></div>
-      <div style="padding:12px 16px 14px">
-        <div class="row" style="justify-content:space-between"><span class="cat"><svg class="i sm"><use href="#i-moon"/></svg>Dîner</span><svg class="i muted"><use href="#i-heart"/></svg></div>
-        <div class="title2" style="font-size:20px;margin-top:4px">Dahl de lentilles corail et butternut</div>
-        <div class="row foot muted" style="gap:10px;margin-top:6px"><span class="row" style="gap:4px"><svg class="i sm"><use href="#i-timer"/></svg>30 min</span><span class="row" style="gap:4px"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas</span><span>Végétalien</span></div>
+    <div class="sechead"><span class="t3">Pour toi aujourd'hui</span></div>
+    <div class="feature t-ardoise">
+      <div style="height:150px;overflow:hidden"><svg style="width:100%;height:100%;display:block" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Dahl de lentilles corail et butternut">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="109" cy="119" r="80" fill="#D2CFE1"/><circle cx="104" cy="112" r="80" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="104" cy="112" r="64" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 120 C70 96 96 80 116 92 C132 102 124 124 106 120 C96 118 96 106 104 104" fill="none" stroke="#FAF8F5" stroke-width="4" stroke-linecap="round"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(132 84) rotate(12)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(140 122) rotate(-8)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(92 146) rotate(20)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(66 100) rotate(-14)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(120 150) rotate(4)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(78 74) rotate(30)" fill="#DA8228"/><circle cx="112" cy="70" r="2.4" fill="#D9573B"/><circle cx="146" cy="104" r="2.4" fill="#D9573B"/><circle cx="60" cy="128" r="2.4" fill="#D9573B"/><circle cx="100" cy="132" r="2.4" fill="#D9573B"/><circle cx="128" cy="136" r="2.4" fill="#D9573B"/><g transform="translate(118 108) rotate(0) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(88 92) rotate(40) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(138 142) rotate(-30) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(74 136) rotate(15) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><circle cx="195" cy="199" r="38" fill="#D2CFE1"/><circle cx="190" cy="192" r="38" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="190" cy="192" r="28" fill="#EFE6D3"/><ellipse cx="206" cy="192" rx="3.2" ry="1.6" transform="rotate(0 206 192)" fill="#CC9563" opacity=".45"/><ellipse cx="201.5" cy="201.6" rx="3.2" ry="1.6" transform="rotate(47 201.5 201.6)" fill="#CC9563" opacity=".45"/><ellipse cx="193.1" cy="209.5" rx="3.2" ry="1.6" transform="rotate(94 193.1 209.5)" fill="#CC9563" opacity=".45"/><ellipse cx="183" cy="204.2" rx="3.2" ry="1.6" transform="rotate(141 183 204.2)" fill="#CC9563" opacity=".45"/><ellipse cx="173.5" cy="198" rx="3.2" ry="1.6" transform="rotate(8 173.5 198)" fill="#CC9563" opacity=".45"/><ellipse cx="175.6" cy="186.8" rx="3.2" ry="1.6" transform="rotate(55 175.6 186.8)" fill="#CC9563" opacity=".45"/><ellipse cx="182.2" cy="178.5" rx="3.2" ry="1.6" transform="rotate(102 182.2 178.5)" fill="#CC9563" opacity=".45"/><ellipse cx="193" cy="174.9" rx="3.2" ry="1.6" transform="rotate(149 193 174.9)" fill="#CC9563" opacity=".45"/><ellipse cx="200.8" cy="182.9" rx="3.2" ry="1.6" transform="rotate(16 200.8 182.9)" fill="#CC9563" opacity=".45"/><ellipse cx="195.3" cy="194.9" rx="3.2" ry="1.6" transform="rotate(63 195.3 194.9)" fill="#CC9563" opacity=".45"/><ellipse cx="187.3" cy="196.9" rx="3.2" ry="1.6" transform="rotate(110 187.3 196.9)" fill="#CC9563" opacity=".45"/><ellipse cx="184.2" cy="188.8" rx="3.2" ry="1.6" transform="rotate(157 184.2 188.8)" fill="#CC9563" opacity=".45"/><ellipse cx="192.5" cy="187.4" rx="3.2" ry="1.6" transform="rotate(24 192.5 187.4)" fill="#CC9563" opacity=".45"/>
+</svg></div>
+      <div style="padding:12px 14px 14px">
+        <span class="cat">Dîner</span>
+        <div class="t3" style="font-size:19px;margin-top:2px">Dahl de lentilles corail et butternut</div>
+        <div class="facts" style="margin-top:6px"><span><svg class="i sm"><use href="#i-timer"/></svg>30 min</span><span class="c-leaf"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas</span><span>Végétalien</span></div>
       </div>
     </div>
 
-    <div class="stack" style="margin-top:12px">
-      <div class="row t-olive" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-bowl"/></svg></div>
-        <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-fork"/></svg>Déjeuner</span><div class="headline" style="font-size:16px;line-height:1.25">Bowl quinoa, pois chiches au cumin et sauce tahini</div><div class="foot muted">30 min · IG bas · à emporter</div></div></div>
-      <div class="row t-miel" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-cup"/></svg></div>
-        <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-cup"/></svg>Petit-déjeuner</span><div class="headline" style="font-size:16px;line-height:1.25">Overnight oats pomme, cannelle et noix</div><div class="foot muted">10 min · IG bas · la veille</div></div></div>
-      <div class="row t-cacao" style="gap:12px"><div class="vig" style="width:64px;height:64px;flex:none"><svg class="i lg"><use href="#i-carrot"/></svg></div>
-        <div style="flex:1;min-width:0"><span class="cat"><svg class="i sm"><use href="#i-carrot"/></svg>Collation</span><div class="headline" style="font-size:16px;line-height:1.25">Houmous de betterave et crudités</div><div class="foot muted">10 min · IG bas · sans cuisson</div></div></div>
+    <div class="sechead"><span class="t3">Toutes les recettes</span><a>Filtres</a></div>
+    <div class="group">
+      <div class="it t-olive" style="--inset:88px;min-height:76px"><span class="thumb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Bowl quinoa, pois chiches au cumin et sauce tahini">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="125" cy="127" r="92" fill="#D2CFE1"/><circle cx="120" cy="120" r="92" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="120" r="76" fill="#EFE6D3"/><circle cx="106" cy="150" r="2.6" fill="#CC9563"/><circle cx="101.4" cy="161" r="2.6" fill="#CC9563"/><circle cx="97.9" cy="170" r="2.6" fill="#CC9563"/><circle cx="91.1" cy="168" r="2.6" fill="#CC9563"/><circle cx="87.8" cy="173.8" r="2.6" fill="#CC9563"/><circle cx="79.7" cy="170.6" r="2.6" fill="#CC9563"/><circle cx="69.4" cy="165.7" r="2.6" fill="#CC9563"/><circle cx="60.9" cy="155.8" r="2.6" fill="#CC9563"/><circle cx="64.9" cy="146.3" r="2.6" fill="#CC9563"/><circle cx="61.9" cy="139.4" r="2.6" fill="#CC9563"/><circle cx="67.8" cy="137.7" r="2.6" fill="#CC9563"/><circle cx="71.6" cy="131.4" r="2.6" fill="#CC9563"/><circle cx="82.4" cy="127" r="2.6" fill="#CC9563"/><circle cx="93.7" cy="132.7" r="2.6" fill="#CC9563"/><circle cx="104.5" cy="136.4" r="2.6" fill="#CC9563"/><circle cx="102.8" cy="144.1" r="2.6" fill="#CC9563"/><circle cx="93.6" cy="153" r="2.6" fill="#CC9563"/><circle cx="88.4" cy="158.3" r="2.6" fill="#CC9563"/><circle cx="80.7" cy="160.6" r="2.6" fill="#CC9563"/><circle cx="76.2" cy="154.1" r="2.6" fill="#CC9563"/><circle cx="73.5" cy="146.8" r="2.6" fill="#CC9563"/><circle cx="79.5" cy="141.5" r="2.6" fill="#CC9563"/><circle cx="86.9" cy="140.7" r="2.6" fill="#CC9563"/><circle cx="93.6" cy="144.9" r="2.6" fill="#CC9563"/><path d="M62 70 C76 64 92 72 104 66" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M64 77 C77 71 92 79 103 73" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M66 84 C78 78 92 86 102 80" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M68 91 C79 85 92 93 101 87" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M70 98 C80 92 92 100 100 94" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M72 105 C81 99 92 107 99 101" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M74 112 C82 106 92 114 98 108" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><circle cx="146" cy="72" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="146" cy="72" r="3" fill="#DA8228"/><circle cx="166" cy="84" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="166" cy="84" r="3" fill="#DA8228"/><circle cx="150" cy="96" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="96" r="3" fill="#DA8228"/><circle cx="172" cy="106" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="172" cy="106" r="3" fill="#DA8228"/><circle cx="136" cy="90" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="136" cy="90" r="3" fill="#DA8228"/><circle cx="140" cy="140" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M137 138 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="156" cy="136" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M153 134 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="170" cy="148" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M167 146 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="150" cy="156" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M147 154 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="166" cy="166" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M163 164 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="136" cy="162" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M133 160 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="154" cy="176" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M151 174 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><path d="M66 118 C86 104 96 134 116 120 C136 106 146 134 170 122" fill="none" stroke="#FAF8F5" stroke-width="6" stroke-linecap="round"/><path d="M66 118 C86 104 96 134 116 120 C136 106 146 134 170 122" fill="none" stroke="#CC9563" stroke-width="1.5" stroke-linecap="round" opacity=".5"/><g transform="translate(118 150) rotate(0) scale(0.85)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(108 86) rotate(30) scale(0.85)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(126 98) rotate(-20) scale(0.85)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g>
+</svg></span>
+        <div class="txt"><span class="cat">Déjeuner</span><div class="hl" style="font-size:16px">Bowl quinoa, pois chiches au cumin et sauce tahini</div><div class="s">30 min · IG bas · à emporter</div></div></div>
+      <div class="it t-miel" style="--inset:88px;min-height:76px"><span class="thumb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Overnight oats pomme, cannelle et noix">
+<rect width="240" height="240" fill="#E5E3EF"/><ellipse cx="120" cy="206" rx="70" ry="9" fill="#D2CFE1"/><path d="M70 70 H170 V184 a20 20 0 0 1 -20 20 H90 a20 20 0 0 1 -20 -20 Z" fill="#F3F2F9"/><path d="M74 132 H166 V184 a16 16 0 0 1 -16 16 H90 a16 16 0 0 1 -16 -16 Z" fill="#EFE6D3"/><path d="M74 104 C96 98 140 110 166 102 V134 C140 140 100 128 74 136 Z" fill="#E7E9A6"/><circle cx="90" cy="150" r="2.4" fill="#CC9563"/><circle cx="110" cy="166" r="2.4" fill="#CC9563"/><circle cx="140" cy="156" r="2.4" fill="#CC9563"/><circle cx="126" cy="182" r="2.4" fill="#CC9563"/><circle cx="98" cy="186" r="2.4" fill="#CC9563"/><circle cx="152" cy="176" r="2.4" fill="#CC9563"/><circle cx="118" cy="146" r="2.4" fill="#CC9563"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(92 116) rotate(2)" fill="#D3D876"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(112 120) rotate(22)" fill="#D3D876"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(132 114) rotate(12)" fill="#D3D876"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(150 118) rotate(0)" fill="#D3D876"/><path transform="translate(96 92)" d="M-10 0 C-10 -8 -2 -10 0 -5 C2 -10 10 -8 10 0 C10 6 2 8 0 4 C-2 8 -10 6 -10 0 Z" fill="#A8703F" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(132 90)" d="M-10 0 C-10 -8 -2 -10 0 -5 C2 -10 10 -8 10 0 C10 6 2 8 0 4 C-2 8 -10 6 -10 0 Z" fill="#A8703F" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(114 86)" d="M-10 0 C-10 -8 -2 -10 0 -5 C2 -10 10 -8 10 0 C10 6 2 8 0 4 C-2 8 -10 6 -10 0 Z" fill="#A8703F" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82" cy="98" r="2" fill="#6B4331"/><circle cx="150" cy="96" r="2" fill="#6B4331"/><circle cx="120" cy="100" r="2" fill="#6B4331"/><path d="M70 70 H170 V184 a20 20 0 0 1 -20 20 H90 a20 20 0 0 1 -20 -20 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 62 H176 V74 H64 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 150 V186" stroke="#FAF8F5" stroke-width="6" stroke-linecap="round" opacity=".8"/><circle cx="196" cy="184" r="22" fill="#D9573B" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M196 162 c0 -8 4 -12 8 -14" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(200 156) rotate(-20)" d="M0 0 C4 -6.4 11.5 -6.7 16 0 C11.5 4.8 4 5.1 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M186 176 q4 -6 10 -6" fill="none" stroke="#FAF8F5" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+</svg></span>
+        <div class="txt"><span class="cat">Petit-déjeuner</span><div class="hl" style="font-size:16px">Overnight oats pomme, cannelle et noix</div><div class="s">10 min · IG bas · la veille</div></div></div>
+      <div class="it t-cacao" style="--inset:88px;min-height:76px"><span class="thumb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Houmous de betterave et crudités">
+<rect width="240" height="240" fill="#E5E3EF"/><rect x="28" y="40" width="190" height="170" rx="28" fill="#D2CFE1" transform="translate(5 7)"/><rect x="28" y="40" width="190" height="170" rx="28" fill="#CC9563" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 64 C90 58 150 58 196 66 M48 186 C100 192 150 192 198 184" fill="none" stroke="#AE7546" stroke-width="4" stroke-linecap="round"/><path transform="translate(176 168) rotate(-40)" d="M0 0 C10 -6 34 -8 46 0 C34 8 10 6 0 0 Z" fill="#E9EDBF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(176 168) rotate(-40)" d="M6 0 H38" stroke="#C9D58A" stroke-width="3" stroke-linecap="round"/><path transform="translate(190 140) rotate(-70)" d="M0 0 C10 -6 34 -8 46 0 C34 8 10 6 0 0 Z" fill="#E9EDBF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(190 140) rotate(-70)" d="M6 0 H38" stroke="#C9D58A" stroke-width="3" stroke-linecap="round"/><path transform="translate(182 112) rotate(-100)" d="M0 0 C10 -6 34 -8 46 0 C34 8 10 6 0 0 Z" fill="#E9EDBF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(182 112) rotate(-100)" d="M6 0 H38" stroke="#C9D58A" stroke-width="3" stroke-linecap="round"/><rect x="-6" y="-38" width="12" height="40" rx="6" transform="translate(56 92) rotate(-60)" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="-6" y="-38" width="12" height="40" rx="6" transform="translate(66 80) rotate(-40)" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="-6" y="-38" width="12" height="40" rx="6" transform="translate(50 150) rotate(70)" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="121" cy="131" r="56" fill="#D2CFE1"/><circle cx="116" cy="124" r="56" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="116" cy="124" r="44" fill="#D2709B" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M92 128 C88 108 110 96 126 106 C138 114 132 132 118 130 C108 128 108 116 116 114" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M126 132 c6 -2 12 2 10 8 c-2 6 -12 6 -14 0 c-1 -4 1 -7 4 -8 Z" fill="#F2A23A" opacity=".9"/><circle cx="100" cy="112" r="1.8" fill="#6B4331"/><circle cx="134" cy="118" r="1.8" fill="#6B4331"/><circle cx="106" cy="144" r="1.8" fill="#6B4331"/><circle cx="124" cy="100" r="1.8" fill="#6B4331"/><g transform="translate(140 142) rotate(20) scale(0.8)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g>
+</svg></span>
+        <div class="txt"><span class="cat">Collation</span><div class="hl" style="font-size:16px">Houmous de betterave et crudités</div><div class="s">10 min · IG bas · sans cuisson</div></div></div>
     </div>
   </div>
-  <nav class="tabbar">
-    <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
-    <span class="tab on"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
-    <span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
-    <span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
-  </nav>
+  <nav class="tabbar"><span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span><span class="tab on"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span><span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span><span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span></nav>
   <div class="home-ind"></div>
 </div></figure>
 
-<!-- ======================= 4. RECETTE ======================= -->
+<!-- ======================= 4. FICHE RECETTE ======================= -->
 <figure class="shot"><figcaption>4 · Cuisine — fiche recette</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status" style="z-index:26"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
-  <div class="screen" style="padding:0;top:0">
-    <div class="vig t-ardoise" style="height:280px;border-radius:0"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl" style="width:80px;height:80px;stroke-width:1.2;margin-top:30px"><use href="#i-bowl"/></svg></div>
-    <div class="row" style="position:absolute;top:54px;left:16px;right:16px;justify-content:space-between">
-      <span class="iconbtn" style="background:var(--surface);box-shadow:var(--shadow-card)" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></span>
-      <span class="row" style="gap:10px"><span class="iconbtn" style="background:var(--surface)" aria-label="Partager"><svg class="i"><use href="#i-share"/></svg></span><span class="iconbtn" style="background:var(--surface)" aria-label="Ajouter aux favoris"><svg class="i"><use href="#i-heart"/></svg></span></span>
-    </div>
-    <div style="padding:0 20px;margin-top:-24px;position:relative">
-      <div class="card" style="border-radius:24px;padding:18px">
-        <span class="cat t-ardoise"><svg class="i sm"><use href="#i-moon"/></svg>Dîner · Déjeuner</span>
-        <h2 class="title1" style="font-size:26px;margin-top:6px">Dahl de lentilles corail et butternut</h2>
-        <div class="chips wrap" style="margin-top:12px;gap:6px">
-          <span class="badge"><svg class="i sm"><use href="#i-timer"/></svg>30 min</span>
-          <span class="badge" style="background:var(--leaf-soft);color:var(--leaf)"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas (estimé)</span>
-          <span class="badge">Végétalien</span><span class="badge">Se congèle</span>
-        </div>
-      </div>
-      <div class="card soft" style="margin-top:12px">
-        <div class="headline" style="font-size:15px;color:var(--on-accent-soft)">Pourquoi cette recette</div>
-        <p class="sub" style="margin:4px 0 0">Lentilles et riz semi-complet ensemble ralentissent l'absorption des glucides et apportent des protéines végétales complètes.</p>
-      </div>
-      <div class="row" style="justify-content:space-between;margin-top:20px">
-        <div class="title3">Ingrédients</div>
-        <span class="stepper"><span><svg class="i sm"><use href="#i-minus"/></svg></span><b>4 portions</b><span><svg class="i sm"><use href="#i-plus"/></svg></span></span>
-      </div>
-      <div style="margin-top:8px">
-        <div class="ingr done"><span class="check on"><svg class="i sm"><use href="#i-check"/></svg></span><span class="nm">Lentilles corail</span><span class="q">250 g</span></div>
-        <div class="ingr done"><span class="check on"><svg class="i sm"><use href="#i-check"/></svg></span><span class="nm">Courge butternut</span><span class="q">600 g</span></div>
-        <div class="ingr"><span class="check"></span><span class="nm">Lait de coco</span><span class="q">200 ml</span></div>
-        <div class="ingr"><span class="check"></span><span class="nm">Riz semi-complet</span><span class="q">200 g</span></div>
-      </div>
+  <div class="status" style="z-index:26"><span>9:41</span><span class="bat"></span></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:300px;overflow:hidden"><svg style="width:100%;height:100%;display:block" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Dahl de lentilles corail et butternut">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="109" cy="119" r="80" fill="#D2CFE1"/><circle cx="104" cy="112" r="80" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="104" cy="112" r="64" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 120 C70 96 96 80 116 92 C132 102 124 124 106 120 C96 118 96 106 104 104" fill="none" stroke="#FAF8F5" stroke-width="4" stroke-linecap="round"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(132 84) rotate(12)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(140 122) rotate(-8)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(92 146) rotate(20)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(66 100) rotate(-14)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(120 150) rotate(4)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(78 74) rotate(30)" fill="#DA8228"/><circle cx="112" cy="70" r="2.4" fill="#D9573B"/><circle cx="146" cy="104" r="2.4" fill="#D9573B"/><circle cx="60" cy="128" r="2.4" fill="#D9573B"/><circle cx="100" cy="132" r="2.4" fill="#D9573B"/><circle cx="128" cy="136" r="2.4" fill="#D9573B"/><g transform="translate(118 108) rotate(0) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(88 92) rotate(40) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(138 142) rotate(-30) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(74 136) rotate(15) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><circle cx="195" cy="199" r="38" fill="#D2CFE1"/><circle cx="190" cy="192" r="38" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="190" cy="192" r="28" fill="#EFE6D3"/><ellipse cx="206" cy="192" rx="3.2" ry="1.6" transform="rotate(0 206 192)" fill="#CC9563" opacity=".45"/><ellipse cx="201.5" cy="201.6" rx="3.2" ry="1.6" transform="rotate(47 201.5 201.6)" fill="#CC9563" opacity=".45"/><ellipse cx="193.1" cy="209.5" rx="3.2" ry="1.6" transform="rotate(94 193.1 209.5)" fill="#CC9563" opacity=".45"/><ellipse cx="183" cy="204.2" rx="3.2" ry="1.6" transform="rotate(141 183 204.2)" fill="#CC9563" opacity=".45"/><ellipse cx="173.5" cy="198" rx="3.2" ry="1.6" transform="rotate(8 173.5 198)" fill="#CC9563" opacity=".45"/><ellipse cx="175.6" cy="186.8" rx="3.2" ry="1.6" transform="rotate(55 175.6 186.8)" fill="#CC9563" opacity=".45"/><ellipse cx="182.2" cy="178.5" rx="3.2" ry="1.6" transform="rotate(102 182.2 178.5)" fill="#CC9563" opacity=".45"/><ellipse cx="193" cy="174.9" rx="3.2" ry="1.6" transform="rotate(149 193 174.9)" fill="#CC9563" opacity=".45"/><ellipse cx="200.8" cy="182.9" rx="3.2" ry="1.6" transform="rotate(16 200.8 182.9)" fill="#CC9563" opacity=".45"/><ellipse cx="195.3" cy="194.9" rx="3.2" ry="1.6" transform="rotate(63 195.3 194.9)" fill="#CC9563" opacity=".45"/><ellipse cx="187.3" cy="196.9" rx="3.2" ry="1.6" transform="rotate(110 187.3 196.9)" fill="#CC9563" opacity=".45"/><ellipse cx="184.2" cy="188.8" rx="3.2" ry="1.6" transform="rotate(157 184.2 188.8)" fill="#CC9563" opacity=".45"/><ellipse cx="192.5" cy="187.4" rx="3.2" ry="1.6" transform="rotate(24 192.5 187.4)" fill="#CC9563" opacity=".45"/>
+</svg></div>
+  <div style="position:absolute;top:56px;left:16px;right:16px;display:flex;justify-content:space-between;z-index:5">
+    <span class="circbtn"><svg class="i"><use href="#i-back"/></svg></span>
+    <span style="display:flex;gap:10px"><span class="circbtn"><svg class="i"><use href="#i-share"/></svg></span><span class="circbtn"><svg class="i"><use href="#i-heart"/></svg></span></span>
+  </div>
+  <div class="screen" style="top:286px;background:var(--background);border-radius:16px 16px 0 0;padding-top:16px;bottom:96px">
+    <span class="cat t-ardoise">Dîner · Déjeuner</span>
+    <h2 class="t1" style="margin-top:4px">Dahl de lentilles corail et butternut</h2>
+    <div class="facts" style="margin-top:10px"><span><svg class="i sm"><use href="#i-timer"/></svg>30 min</span><span class="c-leaf"><svg class="i sm"><use href="#i-leaf"/></svg>IG bas (estimé)</span><span>Végétalien</span><span>Se congèle</span></div>
+    <div class="hl" style="margin-top:18px">Pourquoi cette recette</div>
+    <p class="sub" style="margin:4px 0 0">Lentilles et riz semi-complet ensemble ralentissent l'absorption des glucides et apportent des protéines végétales complètes.</p>
+    <div class="sechead" style="margin:20px 4px 8px;align-items:center"><span class="t3">Ingrédients</span><span class="stepper"><span><svg class="i sm"><use href="#i-minus"/></svg></span><i></i><span><svg class="i sm"><use href="#i-plus"/></svg></span></span></div>
+    <div class="foot muted" style="margin:-4px 4px 8px">4 portions</div>
+    <div class="group">
+      <div class="ingr done"><span class="check on"><svg class="i sm" style="width:14px;height:14px;stroke-width:3"><use href="#i-check"/></svg></span><span class="nm">Lentilles corail</span><span class="q">250 g</span></div>
+      <div class="ingr"><span class="check"></span><span class="nm">Courge butternut</span><span class="q">600 g</span></div>
+      <div class="ingr"><span class="check"></span><span class="nm">Lait de coco</span><span class="q">200 ml</span></div>
+      <div class="ingr"><span class="check"></span><span class="nm">Riz semi-complet</span><span class="q">200 g</span></div>
     </div>
   </div>
-  <div class="dock">
-    <div class="btn primary"><svg class="i"><use href="#i-fork"/></svg>Mode cuisine</div>
-  </div>
+  <div class="dock"><div class="btn primary"><svg class="i"><use href="#i-cup"/></svg>Mode cuisine</div></div>
   <div class="home-ind"></div>
 </div></figure>
 
 <!-- ======================= 5. BOUGER ======================= -->
 <figure class="shot"><figcaption>5 · Bouger — liste</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
   <div class="screen with-tabs">
-    <h2 class="display" style="margin-top:6px">Bouger</h2>
-    <div class="card" style="margin-top:16px">
-      <div class="row" style="justify-content:space-between"><span class="headline">Ton énergie aujourd'hui</span><span class="foot c-accent" style="font-weight:600">Modifier</span></div>
-      <div class="energy" style="margin-top:12px">
-        <div class="on" style="height:64px"><span class="bars"><i class="f"></i><i></i><i></i></span>Basse</div>
-        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i></i></span>Moyenne</div>
-        <div style="height:64px"><span class="bars"><i class="f"></i><i class="f"></i><i class="f"></i></span>Bonne</div>
-      </div>
-      <p class="foot muted" style="margin:10px 0 0">Repris de ton check-in de ce matin.</p>
+    <div class="navrow"></div>
+    <h2 class="large">Bouger</h2>
+    <div class="group" style="margin-top:14px">
+      <div class="it"><svg class="i c-leaf"><use href="#g-e1"/></svg><div class="txt"><div>Énergie basse</div><div class="s">Repris de ton check-in de ce matin.</div></div><span class="v c-accent" style="font-size:15px">Modifier</span></div>
     </div>
 
-    <p class="overline" style="margin-top:24px">Doux pour aujourd'hui</p>
-    <div class="stack">
-      <div class="card t-lagon" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-yoga"/></svg></div>
-        <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-yoga"/></svg>Mobilité</span><div class="headline" style="line-height:1.25">Mobilité et respiration anti-stress</div><div class="foot muted">15 min · tapis · idéal pendant les règles</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
-      <div class="card t-miel" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-walk"/></svg></div>
-        <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-walk"/></svg>Cardio doux</span><div class="headline" style="line-height:1.25">Marche après le repas</div><div class="foot muted">12 min · sans matériel</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
-      <div class="card t-cacao" style="padding:12px"><div class="row"><div class="vig" style="width:64px;height:64px"><svg class="i lg"><use href="#i-strength"/></svg></div>
-        <div style="flex:1"><span class="cat"><svg class="i sm"><use href="#i-strength"/></svg>Renforcement doux</span><div class="headline" style="line-height:1.25">Réveil en douceur</div><div class="foot muted">10 min · une chaise</div></div><svg class="i muted"><use href="#i-chev"/></svg></div></div>
+    <div class="sechead"><span class="t3">Doux pour aujourd'hui</span></div>
+    <div class="feature t-lagon" style="padding:14px">
+      <div style="display:flex;gap:12px;align-items:center">
+        <span class="tile big"><svg class="i lg"><use href="#i-yoga"/></svg></span>
+        <div><span class="cat">Mobilité</span><div class="hl">Mobilité et respiration anti-stress</div><div class="foot muted">15 min · tapis · idéal pendant les règles</div></div>
+      </div>
+      <div class="btn tinted" style="margin-top:12px;height:44px">Commencer la séance</div>
     </div>
-    <p class="sub muted row" style="margin-top:14px;justify-content:center;gap:8px;font-family:var(--serif);font-style:italic"><svg class="doodle" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" style="stroke:var(--text-secondary)"><path d="M6 14c-.4 6 2.4 11 9 11s9.4-5 9-11z"/><path d="M24 16c3-.8 5 .6 4.6 2.8-.4 2.2-2.6 3.1-5.1 2.6M11 10c-2-2.6 2-4.2 0-7M17 10c-2-2.6 2-4.2 0-7"/></svg>Une petite séance douce compte autant. Le repos aussi.</p>
+
+    <div class="sechead"><span class="t3">Toutes les séances</span></div>
+    <div class="group">
+      <div class="it t-miel" style="--inset:58px"><span class="tile"><svg class="i sm"><use href="#i-walk"/></svg></span><div class="txt"><div>Marche après le repas</div><div class="s">12 min · sans matériel</div></div><svg class="i sm chev"><use href="#i-chev"/></svg></div>
+      <div class="it t-cacao" style="--inset:58px"><span class="tile"><svg class="i sm"><use href="#i-strength"/></svg></span><div class="txt"><div>Réveil en douceur</div><div class="s">10 min · une chaise</div></div><svg class="i sm chev"><use href="#i-chev"/></svg></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px;margin-top:14px">
+      <svg class="mascot" style="width:84px;height:84px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse se repose">
+<path d="M24 196 C20 178 40 170 120 170 C200 170 222 178 216 196 C212 210 30 210 24 196 Z" fill="#F4B49A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 190 C90 196 150 196 196 190" fill="none" stroke="#E3957A" stroke-width="4" stroke-linecap="round"/><path d="M61.5 184 C42.6 184 33.1 169.9 36.9 154.4 C42.6 129.1 78.5 108 121.9 108 C167.3 108 201.3 127.7 205.1 155.9 C207.9 176.9 193.8 184 176.7 184 Z" fill="#CEC7DB"/>
+<path d="M205.1 155.9 C207.9 176.9 193.8 184 176.7 184 L86.6 184 C148.5 178.7 189.8 173.4 205.1 155.9 Z" fill="#B2A8C4"/>
+<circle cx="69.4" cy="139.9" r="3" fill="#B2A8C4"/><circle cx="78" cy="133.1" r="2" fill="#B2A8C4"/><circle cx="182.9" cy="168.8" r="2.4" fill="#B2A8C4"/>
+<path d="M61.5 184 C42.6 184 33.1 169.9 36.9 154.4 C42.6 129.1 78.5 108 121.9 108 C167.3 108 201.3 127.7 205.1 155.9 C207.9 176.9 193.8 184 176.7 184 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 120 C84 108 94 100 104 104 C108 94 124 92 130 100 C138 94 152 98 152 110 C158 112 160 120 154 124 C134 116 108 116 86 120 Z" fill="#8DB34A"/><path d="M92 118 C110 114 134 114 152 121 C138 117 110 117 92 118 Z" fill="#6F9736"/><circle cx="106" cy="109" r="2.6" fill="#6F9736"/><circle cx="136" cy="107" r="2.6" fill="#6F9736"/><path d="M86 120 C84 108 94 100 104 104 C108 94 124 92 130 100 C138 94 152 98 152 110 C158 112 160 120 154 124 C134 116 108 116 86 120 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path transform="translate(144 104) rotate(18)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="89.2" cy="158.2" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="156.3" cy="158.2" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M98.7 146 Q104.7 151 110.7 146" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M134.8 146 Q140.8 151 146.8 146" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118.7 156.6 Q122.7 159.6 126.7 156.6" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      <div><p class="sub" style="margin:0">Une petite séance douce compte autant. Le repos aussi.</p>
+      <div class="c-accent sub" style="margin-top:6px;font-weight:500">Aujourd'hui, je me repose</div></div>
+    </div>
   </div>
-  <nav class="tabbar">
-    <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
-    <span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
-    <span class="tab on"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
-    <span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
-  </nav>
+  <nav class="tabbar"><span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span><span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span><span class="tab on"><svg class="i"><use href="#i-walk"/></svg>Bouger</span><span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span></nav>
   <div class="home-ind"></div>
 </div></figure>
 
 <!-- ======================= 6. LECTEUR ======================= -->
 <figure class="shot"><figcaption>6 · Bouger — lecteur de séance</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
   <div class="screen">
-    <div class="navbar" style="margin-top:2px">
-      <span style="font-weight:600">Terminer</span>
-      <span class="foot muted" style="font-weight:600">Mobilité douce · tour 1 sur 2</span>
-      <span class="iconbtn" style="width:36px;height:36px" aria-label="Taille du texte"><svg class="i sm"><use href="#i-text"/></svg></span>
+    <div class="navrow"><span class="c-accent">Terminer</span><span class="foot muted">Mobilité douce · tour 1 sur 2</span><span style="width:60px"></span></div>
+    <div class="progress" style="margin-top:6px"><i class="d"></i><i class="d"></i><i class="d"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <h2 class="t1" style="margin-top:26px">Chat-vache</h2>
+    <div class="sub muted" style="margin-top:4px">Exercice 3 sur 9 · 1 min</div>
+    <div class="ring" style="margin-top:30px">
+      <svg viewBox="0 0 230 230"><circle cx="115" cy="115" r="104" fill="none" stroke="var(--surface-muted)" stroke-width="10"/><circle cx="115" cy="115" r="104" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="653" stroke-dashoffset="190"/></svg>
+      <div style="text-align:center"><div class="t">0:42</div><div class="sub muted" style="margin-top:4px">restantes</div></div>
     </div>
-    <div class="progress" style="margin-top:8px" aria-label="Exercice 3 sur 9"><i class="d"></i><i class="d"></i><i class="c"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-
-    <div class="vig t-lagon" style="height:150px;margin-top:18px;border-radius:24px"><svg class="blobs"><use href="#blobs"/></svg><svg class="i xl" style="width:68px;height:68px;stroke-width:1.3"><use href="#i-yoga"/></svg></div>
-
-    <h2 class="title1" style="text-align:center;margin-top:18px">Chat-vache</h2>
-    <p class="sub muted" style="text-align:center;margin:4px 0 0">Exercice 3 sur 9 · 1 min</p>
-
-    <div class="ring" style="margin-top:14px">
-      <svg viewBox="0 0 220 220"><circle cx="110" cy="110" r="100" fill="none" stroke="var(--surface-muted)" stroke-width="10"/><circle cx="110" cy="110" r="100" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="628.3" stroke-dashoffset="188.5"/></svg>
-      <div style="text-align:center"><div class="t">0:42</div><div class="foot muted">restantes</div></div>
+    <p style="margin:30px 4px 0;font-size:17px;line-height:1.4">Sur l'expiration, arrondis le dos en rentrant le menton. Sur l'inspiration, creuse-le doucement.</p>
+    <div class="c-accent sub" style="margin:10px 4px 0;font-weight:500">Variante plus facile ›</div>
+    <div class="group" style="margin-top:18px"><div class="it"><span class="sub muted">Ensuite : posture de l'enfant · 1 min</span></div></div>
+    <div class="ctrl" style="margin-top:22px">
+      <span class="b"><svg class="i"><use href="#i-prev"/></svg></span>
+      <span class="b main"><svg class="i lg"><use href="#i-pause"/></svg></span>
+      <span class="b"><svg class="i"><use href="#i-next"/></svg></span>
     </div>
-
-    <p class="callout" style="text-align:center;margin:14px 6px 0;line-height:1.4">Sur l'expiration, arrondis le dos en rentrant le menton. Sur l'inspiration, creuse-le doucement.</p>
-    <p style="text-align:center;margin:8px 0 0"><span class="sub c-accent" style="font-weight:600">Variante plus facile ›</span></p>
-
-    <div class="ctrl" style="position:absolute;left:0;right:0;bottom:58px">
-      <span class="b" aria-label="Exercice précédent"><svg class="i"><use href="#i-prev"/></svg></span>
-      <span class="b main" aria-label="Pause"><svg class="i lg"><use href="#i-pause"/></svg></span>
-      <span class="b" aria-label="Exercice suivant"><svg class="i"><use href="#i-next"/></svg></span>
-    </div>
-    <p class="foot muted" style="position:absolute;left:0;right:0;bottom:24px;text-align:center;margin:0">Ensuite : posture de l'enfant · 1 min</p>
+    <div class="sub" style="text-align:center;margin-top:18px;color:var(--text-secondary)">Je ne me sens pas bien</div>
   </div>
   <div class="home-ind"></div>
 </div></figure>
 
 <!-- ======================= 7. MON CYCLE ======================= -->
-<figure class="shot"><figcaption>7 · Mon cycle — calendrier et historique</figcaption>
+<figure class="shot"><figcaption>7 · Mon cycle — calendrier et historique (sans mascotte)</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
   <div class="screen with-tabs">
-    <div class="row" style="justify-content:space-between;margin-top:6px">
-      <h2 class="display">Mon cycle</h2>
-      <span class="iconbtn" aria-label="Exporter mes données"><svg class="i"><use href="#i-share"/></svg></span>
+    <div class="navrow" style="justify-content:flex-end"><svg class="i c-accent"><use href="#i-calplus"/></svg></div>
+    <h2 class="large">Mon cycle</h2>
+    <div class="seg" style="margin-top:12px"><span class="on">Calendrier</span><span>Historique</span></div>
+    <div style="margin:14px 4px 10px"><span class="t3">Jour 23</span> <span class="sub muted">· cycle commencé le 4 novembre</span></div>
+    <div class="group" style="padding:12px 10px 12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:0 6px 10px"><span class="hl">Novembre 2026</span><span class="c-accent" style="display:flex;gap:18px"><svg class="i sm"><use href="#i-back"/></svg><svg class="i sm"><use href="#i-chev"/></svg></span></div>
+      <div class="cal"><span class="dow">L</span><span class="dow">M</span><span class="dow">M</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"><span class="n">1</span></span><span class="d"><span class="n">2</span><i class="dot"></i></span><span class="d"><span class="n">3</span></span><span class="d p"><span class="n">4</span></span><span class="d p"><span class="n">5</span><i class="dot"></i></span><span class="d p"><span class="n">6</span></span><span class="d p"><span class="n">7</span></span><span class="d p"><span class="n">8</span></span><span class="d s"><span class="n">9</span><i class="dot"></i></span><span class="d"><span class="n">10</span><i class="dot"></i></span><span class="d"><span class="n">11</span></span><span class="d"><span class="n">12</span><i class="dot"></i></span><span class="d"><span class="n">13</span></span><span class="d"><span class="n">14</span></span><span class="d"><span class="n">15</span></span><span class="d"><span class="n">16</span><i class="dot"></i></span><span class="d"><span class="n">17</span><i class="dot"></i></span><span class="d"><span class="n">18</span></span><span class="d"><span class="n">19</span><i class="dot"></i></span><span class="d"><span class="n">20</span><i class="dot"></i></span><span class="d"><span class="n">21</span></span><span class="d"><span class="n">22</span></span><span class="d"><span class="n">23</span><i class="dot"></i></span><span class="d"><span class="n">24</span><i class="dot"></i></span><span class="d"><span class="n">25</span><i class="dot"></i></span><span class="d today"><span class="n">26</span></span><span class="d future"><span class="n">27</span></span><span class="d future"><span class="n">28</span></span><span class="d future"><span class="n">29</span></span><span class="d future"><span class="n">30</span></span></div>
     </div>
-    <div class="row" style="margin-top:6px;gap:8px"><span class="metric" style="font-size:20px">Jour 23</span><span class="sub muted">· cycle commencé le 4 novembre</span></div>
-
-    <div class="card" style="margin-top:14px;padding:14px 10px 10px">
-      <div class="row" style="justify-content:space-between;padding:0 8px 10px"><span class="headline">Novembre 2026</span><span class="row c-accent" style="gap:14px"><svg class="i"><use href="#i-back"/></svg><svg class="i"><use href="#i-chev"/></svg></span></div>
-      <div class="cal">
-        <span class="dow">L</span><span class="dow">M</span><span class="dow">M</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span>
-        <span></span><span></span><span></span><span></span><span></span><span></span><span class="d"><span class="n">1</span></span>
-        <span class="d"><span class="n">2</span><i class="dot"></i></span><span class="d"><span class="n">3</span><i class="dot"></i></span><span class="d p"><span class="n">4</span><i class="dot"></i></span><span class="d p"><span class="n">5</span><i class="dot"></i></span><span class="d p"><span class="n">6</span><i class="dot"></i></span><span class="d p"><span class="n">7</span></span><span class="d s"><span class="n">8</span><i class="dot"></i></span>
-        <span class="d"><span class="n">9</span><i class="dot"></i></span><span class="d"><span class="n">10</span></span><span class="d"><span class="n">11</span><i class="dot"></i></span><span class="d"><span class="n">12</span><i class="dot"></i></span><span class="d"><span class="n">13</span></span><span class="d"><span class="n">14</span></span><span class="d"><span class="n">15</span><i class="dot"></i></span>
-        <span class="d"><span class="n">16</span><i class="dot"></i></span><span class="d"><span class="n">17</span><i class="dot"></i></span><span class="d"><span class="n">18</span></span><span class="d"><span class="n">19</span><i class="dot"></i></span><span class="d"><span class="n">20</span><i class="dot"></i></span><span class="d"><span class="n">21</span></span><span class="d"><span class="n">22</span><i class="dot"></i></span>
-        <span class="d"><span class="n">23</span><i class="dot"></i></span><span class="d"><span class="n">24</span><i class="dot"></i></span><span class="d"><span class="n">25</span><i class="dot"></i></span><span class="d today"><span class="n">26</span></span><span class="d future"><span class="n">27</span></span><span class="d future"><span class="n">28</span></span><span class="d future"><span class="n">29</span></span>
-        <span class="d future"><span class="n">30</span></span>
-      </div>
-      <div class="legend" style="padding:8px 8px 2px"><span><i class="lg-p"></i>Règles</span><span><i class="lg-s"></i>Quelques traces</span><span><i class="lg-c"></i>Check-in</span><span><i class="lg-t"></i>Aujourd'hui</span></div>
-    </div>
-
-    <div class="banner" style="margin-top:12px">
-      <svg class="i"><use href="#i-info"/></svg>
-      <div><div class="sub" style="font-weight:600">Pas d'estimation des prochaines règles</div>
-        <div class="foot" style="margin-top:2px">Tes 3 derniers cycles varient beaucoup. C'est fréquent avec le SOPK.</div></div>
-    </div>
-
-    <div class="row" style="justify-content:space-between;margin-top:20px"><span class="title3">Historique</span><span class="foot muted">durées en jours</span></div>
-    <div class="hist" style="margin-top:6px">
-      <div class="it"><div class="row" style="justify-content:space-between"><span class="sub" style="font-weight:600">24 sept. → 3 nov.</span><span class="metric" style="font-size:17px">41</span></div><div class="track"><b style="width:9%"></b><i style="left:9%;width:69%"></i></div></div>
-      <div class="it"><div class="row" style="justify-content:space-between"><span class="sub" style="font-weight:600">3 août → 23 sept.</span><span class="metric" style="font-size:17px">52</span></div><div class="track"><b style="width:7%"></b><i style="left:7%;width:91%"></i></div></div>
+    <div class="legend" style="margin:10px 4px 0"><span><i class="lg-p"></i>Règles</span><span><i class="lg-s"></i>Quelques traces</span><span><i class="lg-c"></i>Check-in</span><span><i class="lg-t"></i>Aujourd'hui</span></div>
+    <div style="display:flex;gap:8px;align-items:flex-start;margin:12px 4px 0"><svg class="i sm c-info" style="margin-top:2px"><use href="#i-info"/></svg><p class="foot" style="margin:0"><b>Pas d'estimation des prochaines règles.</b> Tes 3 derniers cycles varient beaucoup. C'est fréquent avec le SOPK.</p></div>
+    <div class="ghdr" style="margin-top:14px">Historique · durées en jours</div>
+    <div class="group">
+      <div class="it"><div class="txt"><div style="display:flex;justify-content:space-between"><span>24 sept. → 3 nov.</span><b style="font-variant-numeric:tabular-nums">41</b></div><div class="bar"><b style="width:12%"></b></div></div></div>
     </div>
   </div>
-  <nav class="tabbar">
-    <span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span>
-    <span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span>
-    <span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span>
-    <span class="tab on"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span>
-  </nav>
+  <nav class="tabbar"><span class="tab"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span><span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span><span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span><span class="tab on"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span></nav>
   <div class="home-ind"></div>
 </div></figure>
 
 <!-- ======================= 8. RÉGLAGES ======================= -->
 <figure class="shot"><figcaption>8 · Réglages et confidentialité</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
-  <div class="screen" style="padding:0 16px">
-    <div class="navbar"><span></span><span style="font-weight:600;color:var(--text-primary)">Réglages</span><span style="font-weight:600">OK</span></div>
-
-    <div class="card" style="margin-top:8px;display:flex;gap:14px;align-items:center;background:var(--leaf-soft);box-shadow:none">
-      <span style="width:48px;height:48px;border-radius:24px;background:var(--surface);display:grid;place-items:center;color:var(--leaf);flex:none"><svg class="i lg"><use href="#i-lock"/></svg></span>
-      <div><div class="headline" style="color:var(--leaf)">Stocké uniquement sur cet iPhone</div><div class="foot" style="margin-top:2px">Pas de compte, pas de serveur, pas de publicité. Personne d'autre que toi n'y a accès.</div></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
+  <div class="screen">
+    <div class="navrow" style="justify-content:flex-end"><span class="c-accent hl">OK</span></div>
+    <h2 class="large">Réglages</h2>
+    <div class="feature" style="margin-top:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start">
+      <span class="tile t-leaf" style="width:36px;height:36px;border-radius:10px"><svg class="i"><use href="#i-lock"/></svg></span>
+      <div><div class="hl">Stocké uniquement sur cet iPhone</div><div class="sub muted" style="margin-top:2px">Pas de compte, pas de serveur, pas de publicité. Personne d'autre que toi n'y a accès.</div></div>
     </div>
-
-    <div class="group-title">Confidentialité</div>
+    <div class="ghdr">Confidentialité</div>
     <div class="group">
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-face"/></svg></span>Verrouiller avec Face ID<span class="switch"></span></div>
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-eyeoff"/></svg></span>Masquer dans le sélecteur d'apps<span class="switch"></span></div>
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-bell"/></svg></span>Rappels discrets<span class="v">20 h <svg class="i sm"><use href="#i-chev"/></svg></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-accent"><svg class="i sm"><use href="#i-face"/></svg></span><span>Verrouiller avec Face ID</span><span class="switch"></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-accent"><svg class="i sm"><use href="#i-eyeoff"/></svg></span><span>Masquer dans le sélecteur d'apps</span><span class="switch"></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-accent"><svg class="i sm"><use href="#i-bell"/></svg></span><span>Rappels discrets</span><span class="v">20 h <svg class="i sm chev"><use href="#i-chev"/></svg></span></div>
     </div>
-
-    <div class="group-title">Mes suivis</div>
+    <div class="ghdr">Mes suivis</div>
     <div class="group">
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-cal"/></svg></span>Estimation des règles<span class="v">Désactivée <svg class="i sm"><use href="#i-chev"/></svg></span></div>
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-heart"/></svg></span>Enceinte ou allaitante<span class="v">Non <svg class="i sm"><use href="#i-chev"/></svg></span></div>
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-sliders"/></svg></span>Mode sans chiffres<span class="switch off"></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-period"><svg class="i sm"><use href="#i-cal"/></svg></span><span>Estimation des règles</span><span class="v">Désactivée <svg class="i sm chev"><use href="#i-chev"/></svg></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-period"><svg class="i sm"><use href="#i-person"/></svg></span><span>Enceinte ou allaitante</span><span class="v">Non <svg class="i sm chev"><use href="#i-chev"/></svg></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-info"><svg class="i sm"><use href="#i-eyeoff"/></svg></span><span>Mode sans chiffres</span><span class="switch off"></span></div>
     </div>
-
-    <div class="group-title">Mes données</div>
+    <div class="ghdr">Mes données</div>
     <div class="group">
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-share"/></svg></span>Exporter mes données<span class="v">JSON, CSV <svg class="i sm"><use href="#i-chev"/></svg></span></div>
-      <div class="it"><span class="ico"><svg class="i sm"><use href="#i-doc"/></svg></span>Restaurer une sauvegarde<span class="v"><svg class="i sm"><use href="#i-chev"/></svg></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-info"><svg class="i sm"><use href="#i-share"/></svg></span><span>Exporter mes données</span><span class="v">JSON, CSV <svg class="i sm chev"><use href="#i-chev"/></svg></span></div>
+      <div class="it" style="--inset:58px"><span class="tile t-info"><svg class="i sm"><use href="#i-doc"/></svg></span><span>Restaurer une sauvegarde</span><span class="v"><svg class="i sm chev"><use href="#i-chev"/></svg></span></div>
+      <div class="it c-destructive" style="--inset:16px;justify-content:center"><span>Supprimer toutes mes données</span></div>
     </div>
-
-    <div class="group" style="margin-top:22px">
-      <div class="it c-destructive" style="justify-content:center;font-weight:500"><svg class="i sm"><use href="#i-trash"/></svg>Supprimer toutes mes données</div>
-    </div>
-    <p class="foot muted" style="text-align:center;margin:14px 8px 0">Ovéa t'accompagne au quotidien. Elle ne remplace pas l'avis de ton médecin. · Version 1.0</p>
+    <p class="gfoot" style="margin-top:12px">Ovéa t'accompagne au quotidien. Elle ne remplace pas l'avis de ton médecin. · Version 1.0</p>
   </div>
   <div class="home-ind"></div>
 </div></figure>
 
 <!-- ======================= 9. ONBOARDING ======================= -->
-<figure class="shot"><figcaption>9 · Onboarding — bienvenue</figcaption>
+<figure class="shot"><figcaption>9 · Onboarding — bienvenue (étape 1 sur 6)</figcaption>
 <div class="phone"><div class="island"></div>
-  <div class="status"><span>9:41</span><span class="sys"><span class="bat"></span></span></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
   <div class="screen" style="padding:0 24px">
-    <div class="row" style="justify-content:flex-end;height:44px"><span class="sub muted" style="font-weight:600">Passer</span></div>
-    <div style="position:relative;height:200px;margin:0 -24px 0" class="">
-      <svg viewBox="0 0 390 210" width="100%" height="100%" aria-hidden="true">
-        <defs>
-          <pattern id="tartan" width="14" height="14" patternUnits="userSpaceOnUse">
-            <rect width="14" height="14" fill="var(--accent)"/>
-            <rect width="14" height="4" fill="var(--on-accent)" opacity=".22"/>
-            <rect width="4" height="14" fill="var(--on-accent)" opacity=".22"/>
-            <rect x="8" width="1.2" height="14" fill="var(--highlight-soft)" opacity=".5"/>
-          </pattern>
-        </defs>
-        <path d="M38 196c-6-70 40-150 150-158 108-8 170 58 166 126-1 20-6 32-6 32z" fill="var(--highlight-soft)"/>
-        <g class="doodle">
-          <path d="M150 150V84c0-30 20-50 46-50s46 20 46 50v66" fill="var(--surface-raised)"/>
-          <path d="M196 35v115M151 100h90"/>
-          <circle cx="222" cy="66" r="11" fill="var(--miel)" opacity=".55" stroke="none"/>
-          <path d="M40 172c60 2.4 250 2.4 312-.6"/>
-          <path d="M56 170c-1-9 1-20 2-26 18-2 60-2 82 0 2 7 2 17 1 26" fill="url(#tartan)"/>
-          <path d="M66 142c-1-6 0-12 1-16 16-1.4 44-1.4 60 0 1 5 1 10 0 16" fill="var(--leaf-soft)"/>
-          <path d="M80 131h34M80 137h22" opacity=".6"/>
-          <path d="M258 128c-1 22 6 41 22 41s23-19 22-41z" fill="var(--surface)"/>
-          <path d="M302 135c8-2 12 2 11 7s-6 7-12 5.5"/>
-          <path d="M270 120c-3-5 3-8 0-13M282 118c-3-5 3-8 0-13M294 120c-3-5 3-8 0-13" opacity=".55"/>
-          <path d="M264 147c5 2.4 10 2.4 15 0s10-2.4 15 0" style="stroke:var(--accent)"/>
-          <path d="M326 170l-5-26h28l-5 26z" fill="var(--cacao)" opacity=".9"/>
-          <path d="M335 144c-6-12-2-24 4-30M335 144c8-8 18-10 24-8M335 144c-10-4-16-12-17-20" style="stroke:var(--leaf)"/>
-        </g>
-      </svg>
+    <div class="navrow"><span class="progress" style="width:120px" aria-label="Étape 1 sur 6"><i class="d"></i><i></i><i></i><i></i><i></i><i></i></span><span class="c-accent">Passer</span></div>
+    <div style="display:flex;justify-content:center;margin-top:20px"><svg class="mascot" style="width:190px;height:190px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse dit bonjour">
+<ellipse cx="110" cy="205" rx="78.3" ry="7" fill="#2A2438" opacity=".12"/><path d="M47 200 C27 200 17 180 21 158 C27 122 65 92 110.9 92 C159 92 195 120 199 160 C201.9 190 187 200 169 200 Z" fill="#CEC7DB"/>
+<path d="M199 160 C201.9 190 187 200 169 200 L73.6 200 C139.1 192.4 182.8 184.9 199 160 Z" fill="#B2A8C4"/>
+<circle cx="55.4" cy="137.4" r="3" fill="#B2A8C4"/><circle cx="64.5" cy="127.6" r="2" fill="#B2A8C4"/><circle cx="175.5" cy="178.4" r="2.4" fill="#B2A8C4"/>
+<path d="M47 200 C27 200 17 180 21 158 C27 122 65 92 110.9 92 C159 92 195 120 199 160 C201.9 190 187 200 169 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M111 82 C109 68 115 56 125 48" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(125 48) rotate(-40)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(112 66) rotate(205)" d="M0 0 C5 -8 14.4 -8.4 20 0 C14.4 6 5 6.4 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 104 C73 92 83 84 93 88 C97 78 113 76 119 84 C127 78 141 82 141 94 C147 96 149 104 143 108 C123 100 97 100 75 104 Z" fill="#8DB34A"/><path d="M81 102 C99 98 123 98 141 105 C127 101 99 101 81 102 Z" fill="#6F9736"/><circle cx="95" cy="93" r="2.6" fill="#6F9736"/><circle cx="125" cy="91" r="2.6" fill="#6F9736"/><path d="M75 104 C73 92 83 84 93 88 C97 78 113 76 119 84 C127 78 141 82 141 94 C147 96 149 104 143 108 C123 100 97 100 75 104 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="76.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="147.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="92.7" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="91.3" cy="143.6" r="1.6" fill="#FAF8F5"/><ellipse cx="130.9" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="129.5" cy="143.6" r="1.6" fill="#FAF8F5"/>
+<path d="M104.8 160.1 Q111.8 167.1 118.8 160.1" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="-8" y="-38" width="16" height="38" rx="8" transform="translate(168 132) rotate(28)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 82 q8 2 12 9 M207 72 q10 3 15 13" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+</svg></div>
+    <h2 class="large" style="text-align:center;margin-top:8px">Bienvenue dans Ovéa</h2>
+    <p style="text-align:center;margin:10px 8px 0;font-size:17px;line-height:1.4" class="muted">Des recettes simples, des séances courtes et un journal pour toi. À ton rythme, sans jugement.</p>
+    <div style="margin-top:26px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;gap:14px;align-items:center"><span class="tile t-miel" style="width:36px;height:36px;border-radius:10px"><svg class="i"><use href="#i-bowl"/></svg></span><span>Des recettes simples, à IG bas</span></div>
+      <div style="display:flex;gap:14px;align-items:center"><span class="tile t-lagon" style="width:36px;height:36px;border-radius:10px"><svg class="i"><use href="#i-walk"/></svg></span><span>Des séances qui suivent ton énergie du jour</span></div>
+      <div style="display:flex;gap:14px;align-items:center"><span class="tile t-period" style="width:36px;height:36px;border-radius:10px"><svg class="i"><use href="#i-cal"/></svg></span><span>Un journal de ton cycle, tel qu'il est, sans prédictions</span></div>
     </div>
-    <h2 class="display" style="margin-top:8px">Bienvenue dans Ovéa</h2>
-    <p class="callout muted" style="margin:10px 0 0;line-height:1.45">Des recettes simples, des séances courtes et un journal pour toi. À ton rythme, sans jugement.</p>
-    <div style="margin-top:22px;display:grid;gap:14px">
-      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--accent-soft);color:var(--accent)"><svg class="i sm"><use href="#i-fork"/></svg></span><span class="sub">Des recettes simples, à IG bas</span></div>
-      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--lagon-soft);color:var(--lagon)"><svg class="i sm"><use href="#i-walk"/></svg></span><span class="sub">Des séances qui suivent ton énergie du jour</span></div>
-      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--period-soft);color:var(--period)"><svg class="i sm"><use href="#i-cal"/></svg></span><span class="sub">Un journal de ton cycle, tel qu'il est, sans prédictions</span></div>
-      <div class="row"><span class="iconbtn" style="width:36px;height:36px;background:var(--leaf-soft);color:var(--leaf)"><svg class="i sm"><use href="#i-lock"/></svg></span><span class="sub">Pas de compte. Tout reste sur ton iPhone.</span></div>
-    </div>
-    <div style="position:absolute;left:24px;right:24px;bottom:30px">
-      <div class="row" style="justify-content:center;gap:6px;margin-bottom:18px" aria-label="Étape 1 sur 6"><i style="width:20px;height:6px;border-radius:3px;background:var(--accent)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i><i style="width:6px;height:6px;border-radius:3px;background:var(--border)"></i></div>
+    <div style="position:absolute;left:24px;right:24px;bottom:42px">
+      <div class="foot muted" style="display:flex;gap:6px;justify-content:center;align-items:center;margin-bottom:14px"><svg class="i sm c-leaf"><use href="#i-lock"/></svg>Pas de compte. Tout reste sur ton iPhone.</div>
       <div class="btn primary">Commencer</div>
-      <div class="btn ghost" style="font-size:15px">Restaurer une sauvegarde</div>
+      <div class="btn plain" style="margin-top:4px">Restaurer une sauvegarde</div>
     </div>
   </div>
   <div class="home-ind"></div>
 </div></figure>
 
+<!-- ======================= 1 bis. JOUR DIFFICILE (variante) ======================= -->
+<figure class="shot"><figcaption>1 bis · Aujourd'hui — jour difficile (variante)</figcaption>
+<div class="phone"><div class="island"></div>
+  <div class="status"><span>9:41</span><span class="bat"></span></div>
+  <div class="screen with-tabs">
+    <div class="navrow" style="margin-top:2px"><span class="sub muted">Jeudi 26 novembre</span>
+      <span style="width:34px;height:34px;border-radius:17px;background:var(--accent-soft);color:var(--on-accent-soft);display:grid;place-items:center;font-weight:600;font-size:15px">L</span></div>
+    <div style="display:flex;justify-content:center;margin-top:18px"><svg class="mascot" style="width:200px;height:200px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse sous un plaid">
+<ellipse cx="112" cy="205" rx="83.6" ry="7" fill="#2A2438" opacity=".12"/><path d="M51.1 200 C31.7 200 22.1 183.7 25.9 165.8 C31.7 136.5 68.5 112 112.9 112 C159.3 112 194.2 134.8 198.1 167.4 C200.9 191.8 186.4 200 169 200 Z" fill="#CEC7DB"/>
+<path d="M198.1 167.4 C200.9 191.8 186.4 200 169 200 L76.8 200 C140.2 193.8 182.4 187.7 198.1 167.4 Z" fill="#B2A8C4"/>
+<circle cx="59.2" cy="149" r="3" fill="#B2A8C4"/><circle cx="68" cy="141" r="2" fill="#B2A8C4"/><circle cx="175.4" cy="182.4" r="2.4" fill="#B2A8C4"/>
+<path d="M51.1 200 C31.7 200 22.1 183.7 25.9 165.8 C31.7 136.5 68.5 112 112.9 112 C159.3 112 194.2 134.8 198.1 167.4 C200.9 191.8 186.4 200 169 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M77 124 C75 112 85 104 95 108 C99 98 115 96 121 104 C129 98 143 102 143 114 C149 116 151 124 145 128 C125 120 99 120 77 124 Z" fill="#8DB34A"/><path d="M83 122 C101 118 125 118 143 125 C129 121 101 121 83 122 Z" fill="#6F9736"/><circle cx="97" cy="113" r="2.6" fill="#6F9736"/><circle cx="127" cy="111" r="2.6" fill="#6F9736"/><path d="M77 124 C75 112 85 104 95 108 C99 98 115 96 121 104 C129 98 143 102 143 114 C149 116 151 124 145 128 C125 120 99 120 77 124 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path transform="translate(135 108) rotate(18)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="79.4" cy="170.1" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="148.1" cy="170.1" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M89.3 156 Q95.3 161 101.3 156" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M126.2 156 Q132.2 161 138.2 156" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M109.8 168.3 Q113.8 171.3 117.8 168.3" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 202 C10 183 28 165 58 159 C102 171 142 157 186 161 C210 169 214 180 208 202 Z" fill="#F5C766"/><path d="M46 167 L42 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M86 167 L82 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M138 167 L134 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M176 167 L172 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M18 193 C72 199 152 191 210 195" fill="none" stroke="#DA8228" stroke-width="6"/><path d="M16 179 C72 185 152 177 212 181" fill="none" stroke="#FAF8F5" stroke-width="2.5" opacity=".7"/><path d="M14 202 C10 183 28 165 58 159 C102 171 142 157 186 161 C210 169 214 180 208 202 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 159 C68 173 64 185 54 193" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M188 172 h36 v14 a16 16 0 0 1 -16 16 h-4 a16 16 0 0 1 -16 -16 Z" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M224 177 c10 0 12 14 0 14" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M194 180 h24" stroke="#8DB34A" stroke-width="4" stroke-linecap="round"/><path d="M200 164 C194 157.4 206 150.8 200 142" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/><path d="M212 164 C206 157.4 218 150.8 212 142" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+</svg></div>
+    <h2 class="t1" style="text-align:center;margin-top:4px">Aujourd'hui, on fait simple.</h2>
+    <p class="sub muted" style="text-align:center;margin:6px 0 0">Une seule idée, si tu en as envie.</p>
+    <div class="group" style="margin-top:22px">
+      <div class="it t-cacao" style="--inset:88px;min-height:76px"><span class="thumb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Bouchées cacao-amandes sans cuisson">
+<rect width="240" height="240" fill="#E5E3EF"/><rect x="34" y="54" width="180" height="140" rx="24" fill="#D2CFE1" transform="translate(5 7)"/><rect x="34" y="54" width="180" height="140" rx="24" fill="#CC9563" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M54 76 C100 70 160 72 196 78 M54 172 C100 178 160 176 194 170" fill="none" stroke="#AE7546" stroke-width="4" stroke-linecap="round"/><circle cx="78" cy="104" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 98 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><circle cx="118" cy="98" r="17" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="112" cy="94" r="1.6" fill="#CC9563"/><circle cx="123" cy="91" r="1.6" fill="#CC9563"/><circle cx="125" cy="102" r="1.6" fill="#CC9563"/><circle cx="115" cy="105" r="1.6" fill="#CC9563"/><circle cx="109" cy="101" r="1.6" fill="#CC9563"/><circle cx="158" cy="106" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 100 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><circle cx="92" cy="146" r="17" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="142" r="1.6" fill="#CC9563"/><circle cx="97" cy="139" r="1.6" fill="#CC9563"/><circle cx="99" cy="150" r="1.6" fill="#CC9563"/><circle cx="89" cy="153" r="1.6" fill="#CC9563"/><circle cx="83" cy="149" r="1.6" fill="#CC9563"/><circle cx="134" cy="142" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M126 136 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><circle cx="176" cy="148" r="17" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="170" cy="144" r="1.6" fill="#CC9563"/><circle cx="181" cy="141" r="1.6" fill="#CC9563"/><circle cx="183" cy="152" r="1.6" fill="#CC9563"/><circle cx="173" cy="155" r="1.6" fill="#CC9563"/><circle cx="167" cy="151" r="1.6" fill="#CC9563"/><circle cx="60" cy="152" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 146 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><ellipse cx="0" cy="0" rx="8" ry="5" transform="translate(196 92) rotate(30)" fill="#E0B07E"/><ellipse cx="0" cy="0" rx="8" ry="5" transform="translate(186 118) rotate(-20)" fill="#E0B07E"/><ellipse cx="0" cy="0" rx="8" ry="5" transform="translate(150 172) rotate(60)" fill="#E0B07E"/>
+</svg></span><div class="txt"><span class="cat">Sans cuisson</span><div class="hl" style="font-size:16px">Bouchées cacao-amandes sans cuisson</div><div class="s">15 min</div></div></div>
+      <div class="it t-lagon" style="--inset:88px;min-height:72px"><span class="tile big"><svg class="i lg"><use href="#i-wind"/></svg></span><div class="txt"><span class="cat">Doux</span><div class="hl" style="font-size:16px">Mobilité et respiration anti-stress</div><div class="s">15 min</div></div></div>
+      <div class="it" style="--inset:88px;min-height:60px"><span style="width:56px"></span><div class="txt"><div class="hl" style="font-size:16px">Rien de tout ça aujourd'hui, c'est ok.</div></div></div>
+    </div>
+    <div class="btn plain" style="margin-top:8px;font-size:15px;font-weight:500">Revenir à l'affichage habituel</div>
+  </div>
+  <nav class="tabbar"><span class="tab on"><svg class="i"><use href="#i-sun"/></svg>Aujourd'hui</span><span class="tab"><svg class="i"><use href="#i-fork"/></svg>Cuisine</span><span class="tab"><svg class="i"><use href="#i-walk"/></svg>Bouger</span><span class="tab"><svg class="i"><use href="#i-cal"/></svg>Mon cycle</span></nav>
+  <div class="home-ind"></div>
+</div></figure>
+
 </main>
+
+<section class="board" aria-label="Planches d'illustration">
+  <h2>Mousse — les états</h2>
+  <p>Un galet couvert de mousse. Sa tige porte une, deux ou trois feuilles selon l'énergie déclarée : c'est l'élément signature de l'écran Aujourd'hui. Elle ne parle jamais (la voix de l'app reste « on »), et n'apparaît jamais sur les écrans santé : Mon cycle, alerte 90 jours, signaux d'arrêt, suppression des données.</p>
+  <div class="grid"><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse dit bonjour">
+<ellipse cx="110" cy="205" rx="78.3" ry="7" fill="#2A2438" opacity=".12"/><path d="M47 200 C27 200 17 180 21 158 C27 122 65 92 110.9 92 C159 92 195 120 199 160 C201.9 190 187 200 169 200 Z" fill="#CEC7DB"/>
+<path d="M199 160 C201.9 190 187 200 169 200 L73.6 200 C139.1 192.4 182.8 184.9 199 160 Z" fill="#B2A8C4"/>
+<circle cx="55.4" cy="137.4" r="3" fill="#B2A8C4"/><circle cx="64.5" cy="127.6" r="2" fill="#B2A8C4"/><circle cx="175.5" cy="178.4" r="2.4" fill="#B2A8C4"/>
+<path d="M47 200 C27 200 17 180 21 158 C27 122 65 92 110.9 92 C159 92 195 120 199 160 C201.9 190 187 200 169 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M111 82 C109 68 115 56 125 48" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(125 48) rotate(-40)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(112 66) rotate(205)" d="M0 0 C5 -8 14.4 -8.4 20 0 C14.4 6 5 6.4 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 104 C73 92 83 84 93 88 C97 78 113 76 119 84 C127 78 141 82 141 94 C147 96 149 104 143 108 C123 100 97 100 75 104 Z" fill="#8DB34A"/><path d="M81 102 C99 98 123 98 141 105 C127 101 99 101 81 102 Z" fill="#6F9736"/><circle cx="95" cy="93" r="2.6" fill="#6F9736"/><circle cx="125" cy="91" r="2.6" fill="#6F9736"/><path d="M75 104 C73 92 83 84 93 88 C97 78 113 76 119 84 C127 78 141 82 141 94 C147 96 149 104 143 108 C123 100 97 100 75 104 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="76.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="147.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="92.7" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="91.3" cy="143.6" r="1.6" fill="#FAF8F5"/><ellipse cx="130.9" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="129.5" cy="143.6" r="1.6" fill="#FAF8F5"/>
+<path d="M104.8 160.1 Q111.8 167.1 118.8 160.1" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="-8" y="-38" width="16" height="38" rx="8" transform="translate(168 132) rotate(28)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 82 q8 2 12 9 M207 72 q10 3 15 13" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+</svg><b>Accueil</b><span>Onboarding, Aujourd'hui avant le check-in</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse, énergie basse">
+<ellipse cx="121" cy="205" rx="81.7" ry="7" fill="#2A2438" opacity=".12"/><path d="M55.3 200 C34.4 200 23.9 184.1 28.1 166.5 C34.4 137.9 74.1 114 122 114 C172.1 114 209.7 136.3 213.9 168.2 C216.9 192 201.4 200 182.6 200 Z" fill="#CEC7DB"/>
+<path d="M213.9 168.2 C216.9 192 201.4 200 182.6 200 L83 200 C151.4 194 197 188 213.9 168.2 Z" fill="#B2A8C4"/>
+<circle cx="64" cy="150.1" r="3" fill="#B2A8C4"/><circle cx="73.5" cy="142.4" r="2" fill="#B2A8C4"/><circle cx="189.4" cy="182.8" r="2.4" fill="#B2A8C4"/>
+<path d="M55.3 200 C34.4 200 23.9 184.1 28.1 166.5 C34.4 137.9 74.1 114 122 114 C172.1 114 209.7 136.3 213.9 168.2 C216.9 192 201.4 200 182.6 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 104 C122 90 128 82 140 80" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(140 80) rotate(48)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 126 C84 114 94 106 104 110 C108 100 124 98 130 106 C138 100 152 104 152 116 C158 118 160 126 154 130 C134 122 108 122 86 126 Z" fill="#8DB34A"/><path d="M92 124 C110 120 134 120 152 127 C138 123 110 123 92 124 Z" fill="#6F9736"/><circle cx="106" cy="115" r="2.6" fill="#6F9736"/><circle cx="136" cy="113" r="2.6" fill="#6F9736"/><path d="M86 126 C84 114 94 106 104 110 C108 100 124 98 130 106 C138 100 152 104 152 116 C158 118 160 126 154 130 C134 122 108 122 86 126 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="85.8" cy="170.8" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="159.9" cy="170.8" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M97 157 Q103 162 109 157" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M136.8 157 Q142.8 162 148.8 157" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118.9 169 Q122.9 172 126.9 169" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><b>Énergie basse</b><span>Une feuille, tige penchée, yeux mi-clos</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse, énergie moyenne">
+<ellipse cx="121" cy="205" rx="78.3" ry="7" fill="#2A2438" opacity=".12"/><path d="M58 200 C38 200 28 180 32 158 C38 122 76 92 121.9 92 C170 92 206 120 210 160 C212.9 190 198 200 180 200 Z" fill="#CEC7DB"/>
+<path d="M210 160 C212.9 190 198 200 180 200 L84.6 200 C150.1 192.4 193.8 184.9 210 160 Z" fill="#B2A8C4"/>
+<circle cx="66.4" cy="137.4" r="3" fill="#B2A8C4"/><circle cx="75.5" cy="127.6" r="2" fill="#B2A8C4"/><circle cx="186.5" cy="178.4" r="2.4" fill="#B2A8C4"/>
+<path d="M58 200 C38 200 28 180 32 158 C38 122 76 92 121.9 92 C170 92 206 120 210 160 C212.9 190 198 200 180 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 82 C120 68 126 56 136 48" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(136 48) rotate(-40)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(123 66) rotate(205)" d="M0 0 C5 -8 14.4 -8.4 20 0 C14.4 6 5 6.4 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 104 C84 92 94 84 104 88 C108 78 124 76 130 84 C138 78 152 82 152 94 C158 96 160 104 154 108 C134 100 108 100 86 104 Z" fill="#8DB34A"/><path d="M92 102 C110 98 134 98 152 105 C138 101 110 101 92 102 Z" fill="#6F9736"/><circle cx="106" cy="93" r="2.6" fill="#6F9736"/><circle cx="136" cy="91" r="2.6" fill="#6F9736"/><path d="M86 104 C84 92 94 84 104 88 C108 78 124 76 130 84 C138 78 152 82 152 94 C158 96 160 104 154 108 C134 100 108 100 86 104 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="87.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="158.3" cy="163.3" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="103.7" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="102.3" cy="143.6" r="1.6" fill="#FAF8F5"/><ellipse cx="141.9" cy="146" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="140.5" cy="143.6" r="1.6" fill="#FAF8F5"/>
+<path d="M118.8 161.1 Q122.8 164.1 126.8 161.1" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><b>Énergie moyenne</b><span>Deux feuilles</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse, bonne énergie">
+<ellipse cx="121" cy="205" rx="75.7" ry="7" fill="#2A2438" opacity=".12"/><path d="M60.1 200 C40.7 200 31.1 177.8 34.9 153.3 C40.7 113.4 77.5 80 121.9 80 C168.3 80 203.2 111.1 207.1 155.6 C209.9 188.8 195.4 200 178 200 Z" fill="#CEC7DB"/>
+<path d="M207.1 155.6 C209.9 188.8 195.4 200 178 200 L85.8 200 C149.2 191.6 191.4 183.2 207.1 155.6 Z" fill="#B2A8C4"/>
+<circle cx="68.2" cy="130.4" r="3" fill="#B2A8C4"/><circle cx="77" cy="119.6" r="2" fill="#B2A8C4"/><circle cx="184.4" cy="176" r="2.4" fill="#B2A8C4"/>
+<path d="M60.1 200 C40.7 200 31.1 177.8 34.9 153.3 C40.7 113.4 77.5 80 121.9 80 C168.3 80 203.2 111.1 207.1 155.6 C209.9 188.8 195.4 200 178 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 70 C120 52 124.0 36 128 22" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(128 22) rotate(-70)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(123 52) rotate(200)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(125 38) rotate(-18)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 92 C84 80 94 72 104 76 C108 66 124 64 130 72 C138 66 152 70 152 82 C158 84 160 92 154 96 C134 88 108 88 86 92 Z" fill="#8DB34A"/><path d="M92 90 C110 86 134 86 152 93 C138 89 110 89 92 90 Z" fill="#6F9736"/><circle cx="106" cy="81" r="2.6" fill="#6F9736"/><circle cx="136" cy="79" r="2.6" fill="#6F9736"/><path d="M86 92 C84 80 94 72 104 76 C108 66 124 64 130 72 C138 66 152 70 152 82 C158 84 160 92 154 96 C134 88 108 88 86 92 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="88.4" cy="159.2" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="157.1" cy="159.2" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="104.3" cy="140" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="102.9" cy="137.6" r="1.6" fill="#FAF8F5"/><ellipse cx="141.2" cy="140" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="139.8" cy="137.6" r="1.6" fill="#FAF8F5"/>
+<path d="M115.8 155.8 Q122.8 162.8 129.8 155.8" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><b>Bonne énergie</b><span>Trois feuilles, un peu plus haute</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse sous un plaid">
+<ellipse cx="112" cy="205" rx="83.6" ry="7" fill="#2A2438" opacity=".12"/><path d="M51.1 200 C31.7 200 22.1 183.7 25.9 165.8 C31.7 136.5 68.5 112 112.9 112 C159.3 112 194.2 134.8 198.1 167.4 C200.9 191.8 186.4 200 169 200 Z" fill="#CEC7DB"/>
+<path d="M198.1 167.4 C200.9 191.8 186.4 200 169 200 L76.8 200 C140.2 193.8 182.4 187.7 198.1 167.4 Z" fill="#B2A8C4"/>
+<circle cx="59.2" cy="149" r="3" fill="#B2A8C4"/><circle cx="68" cy="141" r="2" fill="#B2A8C4"/><circle cx="175.4" cy="182.4" r="2.4" fill="#B2A8C4"/>
+<path d="M51.1 200 C31.7 200 22.1 183.7 25.9 165.8 C31.7 136.5 68.5 112 112.9 112 C159.3 112 194.2 134.8 198.1 167.4 C200.9 191.8 186.4 200 169 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M77 124 C75 112 85 104 95 108 C99 98 115 96 121 104 C129 98 143 102 143 114 C149 116 151 124 145 128 C125 120 99 120 77 124 Z" fill="#8DB34A"/><path d="M83 122 C101 118 125 118 143 125 C129 121 101 121 83 122 Z" fill="#6F9736"/><circle cx="97" cy="113" r="2.6" fill="#6F9736"/><circle cx="127" cy="111" r="2.6" fill="#6F9736"/><path d="M77 124 C75 112 85 104 95 108 C99 98 115 96 121 104 C129 98 143 102 143 114 C149 116 151 124 145 128 C125 120 99 120 77 124 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path transform="translate(135 108) rotate(18)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="79.4" cy="170.1" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="148.1" cy="170.1" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M89.3 156 Q95.3 161 101.3 156" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M126.2 156 Q132.2 161 138.2 156" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M109.8 168.3 Q113.8 171.3 117.8 168.3" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 202 C10 183 28 165 58 159 C102 171 142 157 186 161 C210 169 214 180 208 202 Z" fill="#F5C766"/><path d="M46 167 L42 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M86 167 L82 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M138 167 L134 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M176 167 L172 200" stroke="#DA8228" stroke-width="6" stroke-linecap="butt"/><path d="M18 193 C72 199 152 191 210 195" fill="none" stroke="#DA8228" stroke-width="6"/><path d="M16 179 C72 185 152 177 212 181" fill="none" stroke="#FAF8F5" stroke-width="2.5" opacity=".7"/><path d="M14 202 C10 183 28 165 58 159 C102 171 142 157 186 161 C210 169 214 180 208 202 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 159 C68 173 64 185 54 193" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M188 172 h36 v14 a16 16 0 0 1 -16 16 h-4 a16 16 0 0 1 -16 -16 Z" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M224 177 c10 0 12 14 0 14" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M194 180 h24" stroke="#8DB34A" stroke-width="4" stroke-linecap="round"/><path d="M200 164 C194 157.4 206 150.8 200 142" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/><path d="M212 164 C206 157.4 218 150.8 212 142" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+</svg><b>Jour difficile</b><span>Sous un plaid, une tasse à côté</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse cuisine">
+<ellipse cx="92" cy="205" rx="60.2" ry="7" fill="#2A2438" opacity=".12"/><path d="M192 138 C186 130.2 198 122.4 192 112" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/><path d="M206 138 C200 130.2 212 122.4 206 112" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/><ellipse cx="184" cy="204" rx="44" ry="6" fill="#2A2438" opacity=".12"/><path d="M144 150 h80 v30 a20 20 0 0 1 -20 20 h-40 a20 20 0 0 1 -20 -20 Z" fill="#D9573B" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M132 158 h12 M224 158 h12" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="184" cy="150" rx="40" ry="8" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(178 148) rotate(-38)"><rect x="-4" y="-64" width="8" height="58" rx="4" fill="#CC9563" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="0" cy="-2" rx="9" ry="6" fill="#CC9563" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M43.6 200 C28.2 200 20.5 182.2 23.5 162.7 C28.2 130.7 57.4 104 92.7 104 C129.7 104 157.4 128.9 160.5 164.5 C162.7 191.1 151.2 200 137.4 200 Z" fill="#CEC7DB"/>
+<path d="M160.5 164.5 C162.7 191.1 151.2 200 137.4 200 L64 200 C114.4 193.3 148 186.6 160.5 164.5 Z" fill="#B2A8C4"/>
+<circle cx="50" cy="144.3" r="3" fill="#B2A8C4"/><circle cx="57" cy="135.7" r="2" fill="#B2A8C4"/><circle cx="142.4" cy="180.8" r="2.4" fill="#B2A8C4"/>
+<path d="M43.6 200 C28.2 200 20.5 182.2 23.5 162.7 C28.2 130.7 57.4 104 92.7 104 C129.7 104 157.4 128.9 160.5 164.5 C162.7 191.1 151.2 200 137.4 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M93 94 C91 80 97 68 107 60" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(107 60) rotate(-40)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(94 78) rotate(205)" d="M0 0 C5 -8 14.4 -8.4 20 0 C14.4 6 5 6.4 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M57 116 C55 104 65 96 75 100 C79 90 95 88 101 96 C109 90 123 94 123 106 C129 108 131 116 125 120 C105 112 79 112 57 116 Z" fill="#8DB34A"/><path d="M63 114 C81 110 105 110 123 117 C109 113 81 113 63 114 Z" fill="#6F9736"/><circle cx="77" cy="105" r="2.6" fill="#6F9736"/><circle cx="107" cy="103" r="2.6" fill="#6F9736"/><path d="M57 116 C55 104 65 96 75 100 C79 90 95 88 101 96 C109 90 123 94 123 106 C129 108 131 116 125 120 C105 112 79 112 57 116 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="66.1" cy="167.4" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="120.7" cy="167.4" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="81.7" cy="152" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="80.3" cy="149.6" r="1.6" fill="#FAF8F5"/><ellipse cx="111.1" cy="152" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="109.7" cy="149.6" r="1.6" fill="#FAF8F5"/>
+<path d="M86.4 164.4 Q93.4 171.4 100.4 164.4" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="-8" y="-26" width="16" height="26" rx="8" transform="translate(150 150) rotate(70)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><b>Cuisine</b><span>Mode cuisine, fin de recette</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse bouge">
+<ellipse cx="121" cy="205" rx="56" ry="6" fill="#2A2438" opacity=".12"/><path d="M62 204 h14 M164 204 h14" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/><g transform="rotate(-5 121 184)">
+<path d="M62.9 184 C44.4 184 35.2 164.4 38.8 142.8 C44.4 107.5 79.5 78 121.8 78 C166.2 78 199.5 105.5 203.2 144.8 C205.8 174.1 192.1 184 175.4 184 Z" fill="#CEC7DB"/>
+<path d="M203.2 144.8 C205.8 174.1 192.1 184 175.4 184 L87.4 184 C147.9 176.6 188.2 169.2 203.2 144.8 Z" fill="#B2A8C4"/>
+<circle cx="70.6" cy="122.5" r="3" fill="#B2A8C4"/><circle cx="79" cy="113" r="2" fill="#B2A8C4"/><circle cx="181.5" cy="162.8" r="2.4" fill="#B2A8C4"/>
+<path d="M62.9 184 C44.4 184 35.2 164.4 38.8 142.8 C44.4 107.5 79.5 78 121.8 78 C166.2 78 199.5 105.5 203.2 144.8 C205.8 174.1 192.1 184 175.4 184 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 68 C120 50 128.0 34 136 20" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(136 20) rotate(-62)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(123 50) rotate(200)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(127.7 36) rotate(-18)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 90 C84 78 94 70 104 74 C108 64 124 62 130 70 C138 64 152 68 152 80 C158 82 160 90 154 94 C134 86 108 86 86 90 Z" fill="#8DB34A"/><path d="M92 88 C110 84 134 84 152 91 C138 87 110 87 92 88 Z" fill="#6F9736"/><circle cx="106" cy="79" r="2.6" fill="#6F9736"/><circle cx="136" cy="77" r="2.6" fill="#6F9736"/><path d="M86 90 C84 78 94 70 104 74 C108 64 124 62 130 70 C138 64 152 68 152 80 C158 82 160 90 154 94 C134 86 108 86 86 90 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="89.9" cy="148" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="155.4" cy="148" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M99 133 Q105 125 111 133" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M134.3 133 Q140.3 125 146.3 133" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="122.7" cy="146.8" rx="3.4" ry="4" fill="#2A2438"/>
+<g transform="rotate(-5 121 184)"><rect x="-8" y="-36" width="16" height="36" rx="8" transform="translate(64 120) rotate(-38)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="-8" y="-36" width="16" height="36" rx="8" transform="translate(178 120) rotate(38)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g>
+</svg><b>Mouvement</b><span>Fin de séance</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse se repose">
+<path d="M24 196 C20 178 40 170 120 170 C200 170 222 178 216 196 C212 210 30 210 24 196 Z" fill="#F4B49A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 190 C90 196 150 196 196 190" fill="none" stroke="#E3957A" stroke-width="4" stroke-linecap="round"/><path d="M61.5 184 C42.6 184 33.1 169.9 36.9 154.4 C42.6 129.1 78.5 108 121.9 108 C167.3 108 201.3 127.7 205.1 155.9 C207.9 176.9 193.8 184 176.7 184 Z" fill="#CEC7DB"/>
+<path d="M205.1 155.9 C207.9 176.9 193.8 184 176.7 184 L86.6 184 C148.5 178.7 189.8 173.4 205.1 155.9 Z" fill="#B2A8C4"/>
+<circle cx="69.4" cy="139.9" r="3" fill="#B2A8C4"/><circle cx="78" cy="133.1" r="2" fill="#B2A8C4"/><circle cx="182.9" cy="168.8" r="2.4" fill="#B2A8C4"/>
+<path d="M61.5 184 C42.6 184 33.1 169.9 36.9 154.4 C42.6 129.1 78.5 108 121.9 108 C167.3 108 201.3 127.7 205.1 155.9 C207.9 176.9 193.8 184 176.7 184 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 120 C84 108 94 100 104 104 C108 94 124 92 130 100 C138 94 152 98 152 110 C158 112 160 120 154 124 C134 116 108 116 86 120 Z" fill="#8DB34A"/><path d="M92 118 C110 114 134 114 152 121 C138 117 110 117 92 118 Z" fill="#6F9736"/><circle cx="106" cy="109" r="2.6" fill="#6F9736"/><circle cx="136" cy="107" r="2.6" fill="#6F9736"/><path d="M86 120 C84 108 94 100 104 104 C108 94 124 92 130 100 C138 94 152 98 152 110 C158 112 160 120 154 124 C134 116 108 116 86 120 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path transform="translate(144 104) rotate(18)" d="M0 0 C5.5 -8.8 15.8 -9.2 22 0 C15.8 6.6 5.5 7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="89.2" cy="158.2" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="156.3" cy="158.2" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M98.7 146 Q104.7 151 110.7 146" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M134.8 146 Q140.8 151 146.8 146" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118.7 156.6 Q122.7 159.6 126.7 156.6" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><b>Repos</b><span>« Le repos aussi »</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse et un bol vide">
+<ellipse cx="100" cy="205" rx="67.1" ry="7" fill="#2A2438" opacity=".12"/><ellipse cx="196" cy="205" rx="34" ry="5" fill="#2A2438" opacity=".12"/><path d="M162 170 h68 a34 32 0 0 1 -34 32 a34 32 0 0 1 -34 -32 Z" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="196" cy="170" rx="34" ry="7" fill="#E5E3EF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M46 200 C28.9 200 20.3 181.1 23.7 160.3 C28.9 126.4 61.5 98 100.8 98 C142 98 172.9 124.4 176.3 162.3 C178.8 190.5 166 200 150.5 200 Z" fill="#CEC7DB"/>
+<path d="M176.3 162.3 C178.8 190.5 166 200 150.5 200 L68.8 200 C125 192.9 162.4 185.7 176.3 162.3 Z" fill="#B2A8C4"/>
+<circle cx="53.2" cy="140.8" r="3" fill="#B2A8C4"/><circle cx="61" cy="131.7" r="2" fill="#B2A8C4"/><circle cx="156.2" cy="179.6" r="2.4" fill="#B2A8C4"/>
+<path d="M46 200 C28.9 200 20.3 181.1 23.7 160.3 C28.9 126.4 61.5 98 100.8 98 C142 98 172.9 124.4 176.3 162.3 C178.8 190.5 166 200 150.5 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M101 88 C99 74 105 62 115 54" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(115 54) rotate(-40)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(102 72) rotate(205)" d="M0 0 C5 -8 14.4 -8.4 20 0 C14.4 6 5 6.4 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M65 110 C63 98 73 90 83 94 C87 84 103 82 109 90 C117 84 131 88 131 100 C137 102 139 110 133 114 C113 106 87 106 65 110 Z" fill="#8DB34A"/><path d="M71 108 C89 104 113 104 131 111 C117 107 89 107 71 108 Z" fill="#6F9736"/><circle cx="85" cy="99" r="2.6" fill="#6F9736"/><circle cx="115" cy="97" r="2.6" fill="#6F9736"/><path d="M65 110 C63 98 73 90 83 94 C87 84 103 82 109 90 C117 84 131 88 131 100 C137 102 139 110 133 114 C113 106 87 106 65 110 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="71.1" cy="165.3" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="132" cy="165.3" rx="9" ry="5" fill="#F4B49A"/>
+<ellipse cx="85.2" cy="147" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="83.8" cy="144.6" r="1.6" fill="#FAF8F5"/><ellipse cx="117.9" cy="147" rx="4.6" ry="6.2" fill="#2A2438"/><circle cx="116.5" cy="144.6" r="1.6" fill="#FAF8F5"/>
+<path d="M97.6 163.3 Q101.6 166.3 105.6 163.3" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="-7" y="-22" width="14" height="22" rx="7" transform="translate(166 168) rotate(84)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><b>État vide</b><span>Pas encore de favoris, rien trouvé</span></div><div class="cell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Mousse contente">
+<ellipse cx="121" cy="205" rx="76.5" ry="7" fill="#2A2438" opacity=".12"/><path d="M59.4 200 C39.8 200 30 178.9 34 155.7 C39.8 117.7 77 86 121.9 86 C168.9 86 204.1 115.5 208 157.8 C210.9 189.4 196.3 200 178.7 200 Z" fill="#CEC7DB"/>
+<path d="M208 157.8 C210.9 189.4 196.3 200 178.7 200 L85.4 200 C149.5 192 192.2 184 208 157.8 Z" fill="#B2A8C4"/>
+<circle cx="67.6" cy="133.9" r="3" fill="#B2A8C4"/><circle cx="76.5" cy="123.6" r="2" fill="#B2A8C4"/><circle cx="185.1" cy="177.2" r="2.4" fill="#B2A8C4"/>
+<path d="M59.4 200 C39.8 200 30 178.9 34 155.7 C39.8 117.7 77 86 121.9 86 C168.9 86 204.1 115.5 208 157.8 C210.9 189.4 196.3 200 178.7 200 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 76 C120 58 124.0 42 128 28" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(128 28) rotate(-70)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#C2DB86" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(123 58) rotate(200)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(125 44) rotate(-18)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 98 C84 86 94 78 104 82 C108 72 124 70 130 78 C138 72 152 76 152 88 C158 90 160 98 154 102 C134 94 108 94 86 98 Z" fill="#8DB34A"/><path d="M92 96 C110 92 134 92 152 99 C138 95 110 95 92 96 Z" fill="#6F9736"/><circle cx="106" cy="87" r="2.6" fill="#6F9736"/><circle cx="136" cy="85" r="2.6" fill="#6F9736"/><path d="M86 98 C84 86 94 78 104 82 C108 72 124 70 130 78 C138 72 152 76 152 88 C158 90 160 98 154 102 C134 94 108 94 86 98 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="88.1" cy="161.2" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="157.5" cy="161.2" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M98.1 145 Q104.1 137 110.1 145" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M135.5 145 Q141.5 137 147.5 145" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M115.8 158 Q122.8 165 129.8 158" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M151.9 22 l8 -6 M155.9 36 l10 0" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/>
+</svg><b>Célébration douce</b><span>Une nouvelle feuille, pas de confettis</span></div></div>
+  <h2>Illustrations de plats</h2>
+  <p>Vue de dessus pour les assiettes et les bols, trois quarts pour les bocaux. Même trait, même table lavande grisée, une seule ombre portée à plat, un seul accessoire au plus. Le nom du fichier est l'identifiant de la recette.</p>
+  <div class="grid"><div class="cell dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Bouchées cacao-amandes sans cuisson">
+<rect width="240" height="240" fill="#E5E3EF"/><rect x="34" y="54" width="180" height="140" rx="24" fill="#D2CFE1" transform="translate(5 7)"/><rect x="34" y="54" width="180" height="140" rx="24" fill="#CC9563" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M54 76 C100 70 160 72 196 78 M54 172 C100 178 160 176 194 170" fill="none" stroke="#AE7546" stroke-width="4" stroke-linecap="round"/><circle cx="78" cy="104" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 98 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><circle cx="118" cy="98" r="17" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="112" cy="94" r="1.6" fill="#CC9563"/><circle cx="123" cy="91" r="1.6" fill="#CC9563"/><circle cx="125" cy="102" r="1.6" fill="#CC9563"/><circle cx="115" cy="105" r="1.6" fill="#CC9563"/><circle cx="109" cy="101" r="1.6" fill="#CC9563"/><circle cx="158" cy="106" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 100 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><circle cx="92" cy="146" r="17" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="142" r="1.6" fill="#CC9563"/><circle cx="97" cy="139" r="1.6" fill="#CC9563"/><circle cx="99" cy="150" r="1.6" fill="#CC9563"/><circle cx="89" cy="153" r="1.6" fill="#CC9563"/><circle cx="83" cy="149" r="1.6" fill="#CC9563"/><circle cx="134" cy="142" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M126 136 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><circle cx="176" cy="148" r="17" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="170" cy="144" r="1.6" fill="#CC9563"/><circle cx="181" cy="141" r="1.6" fill="#CC9563"/><circle cx="183" cy="152" r="1.6" fill="#CC9563"/><circle cx="173" cy="155" r="1.6" fill="#CC9563"/><circle cx="167" cy="151" r="1.6" fill="#CC9563"/><circle cx="60" cy="152" r="17" fill="#6B4331" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 146 q5 -5 11 -4" fill="none" stroke="#8C5D46" stroke-width="3" stroke-linecap="round"/><ellipse cx="0" cy="0" rx="8" ry="5" transform="translate(196 92) rotate(30)" fill="#E0B07E"/><ellipse cx="0" cy="0" rx="8" ry="5" transform="translate(186 118) rotate(-20)" fill="#E0B07E"/><ellipse cx="0" cy="0" rx="8" ry="5" transform="translate(150 172) rotate(60)" fill="#E0B07E"/>
+</svg><span>collation-bouchees-cacao-amandes-sans-cuisson</span></div><div class="cell dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Houmous de betterave et crudités">
+<rect width="240" height="240" fill="#E5E3EF"/><rect x="28" y="40" width="190" height="170" rx="28" fill="#D2CFE1" transform="translate(5 7)"/><rect x="28" y="40" width="190" height="170" rx="28" fill="#CC9563" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 64 C90 58 150 58 196 66 M48 186 C100 192 150 192 198 184" fill="none" stroke="#AE7546" stroke-width="4" stroke-linecap="round"/><path transform="translate(176 168) rotate(-40)" d="M0 0 C10 -6 34 -8 46 0 C34 8 10 6 0 0 Z" fill="#E9EDBF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(176 168) rotate(-40)" d="M6 0 H38" stroke="#C9D58A" stroke-width="3" stroke-linecap="round"/><path transform="translate(190 140) rotate(-70)" d="M0 0 C10 -6 34 -8 46 0 C34 8 10 6 0 0 Z" fill="#E9EDBF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(190 140) rotate(-70)" d="M6 0 H38" stroke="#C9D58A" stroke-width="3" stroke-linecap="round"/><path transform="translate(182 112) rotate(-100)" d="M0 0 C10 -6 34 -8 46 0 C34 8 10 6 0 0 Z" fill="#E9EDBF" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(182 112) rotate(-100)" d="M6 0 H38" stroke="#C9D58A" stroke-width="3" stroke-linecap="round"/><rect x="-6" y="-38" width="12" height="40" rx="6" transform="translate(56 92) rotate(-60)" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="-6" y="-38" width="12" height="40" rx="6" transform="translate(66 80) rotate(-40)" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="-6" y="-38" width="12" height="40" rx="6" transform="translate(50 150) rotate(70)" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="121" cy="131" r="56" fill="#D2CFE1"/><circle cx="116" cy="124" r="56" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="116" cy="124" r="44" fill="#D2709B" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M92 128 C88 108 110 96 126 106 C138 114 132 132 118 130 C108 128 108 116 116 114" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M126 132 c6 -2 12 2 10 8 c-2 6 -12 6 -14 0 c-1 -4 1 -7 4 -8 Z" fill="#F2A23A" opacity=".9"/><circle cx="100" cy="112" r="1.8" fill="#6B4331"/><circle cx="134" cy="118" r="1.8" fill="#6B4331"/><circle cx="106" cy="144" r="1.8" fill="#6B4331"/><circle cx="124" cy="100" r="1.8" fill="#6B4331"/><g transform="translate(140 142) rotate(20) scale(0.8)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g>
+</svg><span>collation-houmous-betterave-crudites</span></div><div class="cell dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Bowl quinoa, pois chiches au cumin et sauce tahini">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="125" cy="127" r="92" fill="#D2CFE1"/><circle cx="120" cy="120" r="92" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="120" r="76" fill="#EFE6D3"/><circle cx="106" cy="150" r="2.6" fill="#CC9563"/><circle cx="101.4" cy="161" r="2.6" fill="#CC9563"/><circle cx="97.9" cy="170" r="2.6" fill="#CC9563"/><circle cx="91.1" cy="168" r="2.6" fill="#CC9563"/><circle cx="87.8" cy="173.8" r="2.6" fill="#CC9563"/><circle cx="79.7" cy="170.6" r="2.6" fill="#CC9563"/><circle cx="69.4" cy="165.7" r="2.6" fill="#CC9563"/><circle cx="60.9" cy="155.8" r="2.6" fill="#CC9563"/><circle cx="64.9" cy="146.3" r="2.6" fill="#CC9563"/><circle cx="61.9" cy="139.4" r="2.6" fill="#CC9563"/><circle cx="67.8" cy="137.7" r="2.6" fill="#CC9563"/><circle cx="71.6" cy="131.4" r="2.6" fill="#CC9563"/><circle cx="82.4" cy="127" r="2.6" fill="#CC9563"/><circle cx="93.7" cy="132.7" r="2.6" fill="#CC9563"/><circle cx="104.5" cy="136.4" r="2.6" fill="#CC9563"/><circle cx="102.8" cy="144.1" r="2.6" fill="#CC9563"/><circle cx="93.6" cy="153" r="2.6" fill="#CC9563"/><circle cx="88.4" cy="158.3" r="2.6" fill="#CC9563"/><circle cx="80.7" cy="160.6" r="2.6" fill="#CC9563"/><circle cx="76.2" cy="154.1" r="2.6" fill="#CC9563"/><circle cx="73.5" cy="146.8" r="2.6" fill="#CC9563"/><circle cx="79.5" cy="141.5" r="2.6" fill="#CC9563"/><circle cx="86.9" cy="140.7" r="2.6" fill="#CC9563"/><circle cx="93.6" cy="144.9" r="2.6" fill="#CC9563"/><path d="M62 70 C76 64 92 72 104 66" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M64 77 C77 71 92 79 103 73" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M66 84 C78 78 92 86 102 80" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M68 91 C79 85 92 93 101 87" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M70 98 C80 92 92 100 100 94" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M72 105 C81 99 92 107 99 101" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><path d="M74 112 C82 106 92 114 98 108" fill="none" stroke="#A63A6B" stroke-width="4" stroke-linecap="round"/><circle cx="146" cy="72" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="146" cy="72" r="3" fill="#DA8228"/><circle cx="166" cy="84" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="166" cy="84" r="3" fill="#DA8228"/><circle cx="150" cy="96" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="96" r="3" fill="#DA8228"/><circle cx="172" cy="106" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="172" cy="106" r="3" fill="#DA8228"/><circle cx="136" cy="90" r="9" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="136" cy="90" r="3" fill="#DA8228"/><circle cx="140" cy="140" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M137 138 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="156" cy="136" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M153 134 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="170" cy="148" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M167 146 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="150" cy="156" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M147 154 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="166" cy="166" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M163 164 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="136" cy="162" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M133 160 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><circle cx="154" cy="176" r="8" fill="#E7C17E" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M151 174 q3 -3 6 0" fill="none" stroke="#DA8228" stroke-width="2.5" stroke-linecap="round"/><path d="M66 118 C86 104 96 134 116 120 C136 106 146 134 170 122" fill="none" stroke="#FAF8F5" stroke-width="6" stroke-linecap="round"/><path d="M66 118 C86 104 96 134 116 120 C136 106 146 134 170 122" fill="none" stroke="#CC9563" stroke-width="1.5" stroke-linecap="round" opacity=".5"/><g transform="translate(118 150) rotate(0) scale(0.85)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(108 86) rotate(30) scale(0.85)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(126 98) rotate(-20) scale(0.85)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g>
+</svg><span>dejeuner-bowl-quinoa-pois-chiches-cumin-tahini</span></div><div class="cell dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Dahl de lentilles corail et butternut">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="109" cy="119" r="80" fill="#D2CFE1"/><circle cx="104" cy="112" r="80" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="104" cy="112" r="64" fill="#F2A23A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 120 C70 96 96 80 116 92 C132 102 124 124 106 120 C96 118 96 106 104 104" fill="none" stroke="#FAF8F5" stroke-width="4" stroke-linecap="round"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(132 84) rotate(12)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(140 122) rotate(-8)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(92 146) rotate(20)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(66 100) rotate(-14)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(120 150) rotate(4)" fill="#DA8228"/><rect x="-7" y="-7" width="14" height="14" rx="3" transform="translate(78 74) rotate(30)" fill="#DA8228"/><circle cx="112" cy="70" r="2.4" fill="#D9573B"/><circle cx="146" cy="104" r="2.4" fill="#D9573B"/><circle cx="60" cy="128" r="2.4" fill="#D9573B"/><circle cx="100" cy="132" r="2.4" fill="#D9573B"/><circle cx="128" cy="136" r="2.4" fill="#D9573B"/><g transform="translate(118 108) rotate(0) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(88 92) rotate(40) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(138 142) rotate(-30) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><g transform="translate(74 136) rotate(15) scale(0.9)" fill="#8DB34A"><circle cx="0" cy="-5" r="4.5"/><circle cx="-5" cy="2" r="4.5"/><circle cx="5" cy="2" r="4.5"/></g><circle cx="195" cy="199" r="38" fill="#D2CFE1"/><circle cx="190" cy="192" r="38" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="190" cy="192" r="28" fill="#EFE6D3"/><ellipse cx="206" cy="192" rx="3.2" ry="1.6" transform="rotate(0 206 192)" fill="#CC9563" opacity=".45"/><ellipse cx="201.5" cy="201.6" rx="3.2" ry="1.6" transform="rotate(47 201.5 201.6)" fill="#CC9563" opacity=".45"/><ellipse cx="193.1" cy="209.5" rx="3.2" ry="1.6" transform="rotate(94 193.1 209.5)" fill="#CC9563" opacity=".45"/><ellipse cx="183" cy="204.2" rx="3.2" ry="1.6" transform="rotate(141 183 204.2)" fill="#CC9563" opacity=".45"/><ellipse cx="173.5" cy="198" rx="3.2" ry="1.6" transform="rotate(8 173.5 198)" fill="#CC9563" opacity=".45"/><ellipse cx="175.6" cy="186.8" rx="3.2" ry="1.6" transform="rotate(55 175.6 186.8)" fill="#CC9563" opacity=".45"/><ellipse cx="182.2" cy="178.5" rx="3.2" ry="1.6" transform="rotate(102 182.2 178.5)" fill="#CC9563" opacity=".45"/><ellipse cx="193" cy="174.9" rx="3.2" ry="1.6" transform="rotate(149 193 174.9)" fill="#CC9563" opacity=".45"/><ellipse cx="200.8" cy="182.9" rx="3.2" ry="1.6" transform="rotate(16 200.8 182.9)" fill="#CC9563" opacity=".45"/><ellipse cx="195.3" cy="194.9" rx="3.2" ry="1.6" transform="rotate(63 195.3 194.9)" fill="#CC9563" opacity=".45"/><ellipse cx="187.3" cy="196.9" rx="3.2" ry="1.6" transform="rotate(110 187.3 196.9)" fill="#CC9563" opacity=".45"/><ellipse cx="184.2" cy="188.8" rx="3.2" ry="1.6" transform="rotate(157 184.2 188.8)" fill="#CC9563" opacity=".45"/><ellipse cx="192.5" cy="187.4" rx="3.2" ry="1.6" transform="rotate(24 192.5 187.4)" fill="#CC9563" opacity=".45"/>
+</svg><span>diner-dahl-lentilles-corail-butternut</span></div><div class="cell dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Saumon, poireaux fondants et écrasé de haricots blancs">
+<rect width="240" height="240" fill="#E5E3EF"/><circle cx="125" cy="127" r="94" fill="#D2CFE1"/><circle cx="120" cy="120" r="94" fill="#FAF8F5" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 140 C50 120 62 100 82 104 C96 92 116 104 112 122 C124 136 110 162 90 158 C74 170 54 158 60 140 Z" fill="#EFE6D3" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="120" r="2" fill="#CC9563"/><circle cx="94" cy="134" r="2" fill="#CC9563"/><circle cx="84" cy="146" r="2" fill="#CC9563"/><circle cx="98" cy="116" r="2" fill="#CC9563"/><path d="M72 132 C80 124 92 128 98 122" fill="none" stroke="#F2A23A" stroke-width="3" stroke-linecap="round" opacity=".7"/><circle cx="134" cy="168" r="11" fill="#D7E5A4" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="134" cy="168" r="5" fill="none" stroke="#8DB34A" stroke-width="3"/><circle cx="156" cy="158" r="11" fill="#D7E5A4" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="156" cy="158" r="5" fill="none" stroke="#8DB34A" stroke-width="3"/><circle cx="118" cy="176" r="11" fill="#D7E5A4" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="118" cy="176" r="5" fill="none" stroke="#8DB34A" stroke-width="3"/><circle cx="150" cy="180" r="11" fill="#D7E5A4" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="180" r="5" fill="none" stroke="#8DB34A" stroke-width="3"/><circle cx="170" cy="140" r="11" fill="#D7E5A4" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="170" cy="140" r="5" fill="none" stroke="#8DB34A" stroke-width="3"/><circle cx="128" cy="152" r="11" fill="#D7E5A4" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="128" cy="152" r="5" fill="none" stroke="#8DB34A" stroke-width="3"/><g transform="translate(150 104) rotate(-14)"><rect x="-36" y="-26" width="72" height="52" rx="12" fill="#F39C7C" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M-36 -10 H36 M-36 -10" stroke="#D9573B" stroke-width="0"/><path d="M-20 -24 C-26 -8 -26 8 -20 24 M-2 -25 C-8 -8 -8 8 -2 25 M16 -25 C10 -8 10 8 16 25" fill="none" stroke="#FAF8F5" stroke-width="3" stroke-linecap="round" opacity=".85"/></g><path d="M168 56 a26 26 0 0 1 26 26 h-26 Z" fill="#F5D35A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M174 64 l10 10 M170 72 l8 2" fill="none" stroke="#E2B92E" stroke-width="3" stroke-linecap="round"/><path d="M112 72 C120 66 128 66 138 60" fill="none" stroke="#6F9736" stroke-width="3" stroke-linecap="round"/><circle cx="116" cy="68" r="2.6" fill="#6F9736"/><circle cx="122" cy="70" r="2.6" fill="#6F9736"/><circle cx="128" cy="64" r="2.6" fill="#6F9736"/><circle cx="134" cy="64" r="2.6" fill="#6F9736"/><circle cx="124" cy="62" r="2.6" fill="#6F9736"/>
+</svg><span>diner-saumon-poireaux-fondants-ecrase-haricots-blancs</span></div><div class="cell dish"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Overnight oats pomme, cannelle et noix">
+<rect width="240" height="240" fill="#E5E3EF"/><ellipse cx="120" cy="206" rx="70" ry="9" fill="#D2CFE1"/><path d="M70 70 H170 V184 a20 20 0 0 1 -20 20 H90 a20 20 0 0 1 -20 -20 Z" fill="#F3F2F9"/><path d="M74 132 H166 V184 a16 16 0 0 1 -16 16 H90 a16 16 0 0 1 -16 -16 Z" fill="#EFE6D3"/><path d="M74 104 C96 98 140 110 166 102 V134 C140 140 100 128 74 136 Z" fill="#E7E9A6"/><circle cx="90" cy="150" r="2.4" fill="#CC9563"/><circle cx="110" cy="166" r="2.4" fill="#CC9563"/><circle cx="140" cy="156" r="2.4" fill="#CC9563"/><circle cx="126" cy="182" r="2.4" fill="#CC9563"/><circle cx="98" cy="186" r="2.4" fill="#CC9563"/><circle cx="152" cy="176" r="2.4" fill="#CC9563"/><circle cx="118" cy="146" r="2.4" fill="#CC9563"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(92 116) rotate(2)" fill="#D3D876"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(112 120) rotate(22)" fill="#D3D876"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(132 114) rotate(12)" fill="#D3D876"/><rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(150 118) rotate(0)" fill="#D3D876"/><path transform="translate(96 92)" d="M-10 0 C-10 -8 -2 -10 0 -5 C2 -10 10 -8 10 0 C10 6 2 8 0 4 C-2 8 -10 6 -10 0 Z" fill="#A8703F" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(132 90)" d="M-10 0 C-10 -8 -2 -10 0 -5 C2 -10 10 -8 10 0 C10 6 2 8 0 4 C-2 8 -10 6 -10 0 Z" fill="#A8703F" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(114 86)" d="M-10 0 C-10 -8 -2 -10 0 -5 C2 -10 10 -8 10 0 C10 6 2 8 0 4 C-2 8 -10 6 -10 0 Z" fill="#A8703F" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82" cy="98" r="2" fill="#6B4331"/><circle cx="150" cy="96" r="2" fill="#6B4331"/><circle cx="120" cy="100" r="2" fill="#6B4331"/><path d="M70 70 H170 V184 a20 20 0 0 1 -20 20 H90 a20 20 0 0 1 -20 -20 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 62 H176 V74 H64 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 150 V186" stroke="#FAF8F5" stroke-width="6" stroke-linecap="round" opacity=".8"/><circle cx="196" cy="184" r="22" fill="#D9573B" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M196 162 c0 -8 4 -12 8 -14" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(200 156) rotate(-20)" d="M0 0 C4 -6.4 11.5 -6.7 16 0 C11.5 4.8 4 5.1 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M186 176 q4 -6 10 -6" fill="none" stroke="#FAF8F5" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+</svg><span>petit-dejeuner-overnight-oats-pomme-cannelle-noix</span></div></div>
+  <h2>Palette V3</h2>
+  <p>Interface : neutres pierre, un seul accent myrtille. Illustration : couleurs fixes, identiques en clair et en sombre.</p>
+  <div class="sw"><div><i style="background:var(--background)"></i><b>background</b><br><span class="muted">#F4F3F1 / #121117</span></div><div><i style="background:var(--surface)"></i><b>surface</b><br><span class="muted">#FFFFFF / #1D1B23</span></div><div><i style="background:var(--text-primary)"></i><b>textPrimary</b><br><span class="muted">#1D1B22 / #F3F1F6</span></div><div><i style="background:var(--accent)"></i><b>accent</b><br><span class="muted">#3F3895 / #B4AEF6</span></div><div><i style="background:var(--accent-soft)"></i><b>accentSoft</b><br><span class="muted">#E8E6F7 / #2C2950</span></div><div><i style="background:var(--leaf)"></i><b>leaf</b><br><span class="muted">#456E1B / #B3D57A</span></div><div><i style="background:var(--period)"></i><b>period</b><br><span class="muted">#A83A62 / #EFA6C8</span></div><div><i style="background:var(--highlight)"></i><b>highlight</b><br><span class="muted">#8A5300 / #F2C46B</span></div><div><i style="background:var(--info)"></i><b>info</b><br><span class="muted">#2F6178 / #9CCBE0</span></div><div><i style="background:#2A2438"></i><b>illu · encre</b><br><span class="muted">#2A2438</span></div><div><i style="background:#CEC7DB"></i><b>illu · galet</b><br><span class="muted">#CEC7DB</span></div><div><i style="background:#8DB34A"></i><b>illu · mousse</b><br><span class="muted">#8DB34A</span></div><div><i style="background:#F4B49A"></i><b>illu · abricot</b><br><span class="muted">#F4B49A</span></div><div><i style="background:#F2A23A"></i><b>illu · courge</b><br><span class="muted">#F2A23A</span></div><div><i style="background:#D9573B"></i><b>illu · paprika</b><br><span class="muted">#D9573B</span></div><div><i style="background:#A63A6B"></i><b>illu · betterave</b><br><span class="muted">#A63A6B</span></div><div><i style="background:#FAF8F5"></i><b>illu · porcelaine</b><br><span class="muted">#FAF8F5</span></div><div><i style="background:#CC9563"></i><b>illu · bois</b><br><span class="muted">#CC9563</span></div><div><i style="background:#E5E3EF"></i><b>illu · table</b><br><span class="muted">#E5E3EF</span></div></div>
+</section>
 
 <script>
 (function () {
@@ -804,6 +866,8 @@ svg.i.sm { width: 16px; height: 16px; } svg.i.lg { width: 28px; height: 28px; } 
     btn.querySelector('span').textContent = dark ? 'Passer en clair' : 'Passer en sombre';
     btn.querySelector('use').setAttribute('href', dark ? '#i-sun' : '#i-moon');
   }
+  var q = new URLSearchParams(location.search).get('theme');
+  if (q === 'dark') apply('dark');
   btn.addEventListener('click', function () {
     apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });

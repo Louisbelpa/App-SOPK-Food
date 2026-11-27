@@ -1,15 +1,17 @@
 //
 //  DesignSystem.swift — Ovéa
 //
-//  Design system v2 « cosy » (voir docs/design/02-ui.md et docs/design/tokens.json).
+//  Design system V3 « Mascotte & illustrations » (voir docs/design/05-illustration.md,
+//  docs/design/tokens.json et docs/design/illustrations/).
 //  À coller tel quel dans le projet Xcode (cible iOS 18, Swift 6, mode strict).
-//  Aucune dépendance, aucun Asset Catalog requis : les couleurs sont adaptatives
-//  via UIColor(dynamicProvider:) et gèrent light / dark / « Augmenter le contraste ».
+//  Aucune dépendance. Couleurs adaptatives via UIColor(dynamicProvider:) : light / dark / « Augmenter le contraste ».
 //
-//  Règles d'usage :
-//  - Toujours passer par ces tokens (jamais de Color(red:…) dans les vues).
-//  - Typo uniquement via Dynamic Type (OveaFont.*), jamais de taille fixe
-//    (exception : le minuteur, qui reste indexé sur .largeTitle via @ScaledMetric).
+//  Principes V3 :
+//  - Base native : NavigationStack à grands titres, List(.insetGrouped), TabView standard, SF Pro.
+//    Nos composants ne remplacent que ce que le natif ne fait pas (sélecteur d'énergie, mascotte, carte mise en avant).
+//  - La personnalité vient de Mousse (OveaMascotView) et des illustrations de plats, PAS de cartes teintées.
+//  - Une seule carte mise en avant par écran (OveaFeatureCard). Le reste en listes groupées.
+//  - Un seul accent cliquable : myrtille. Typo système uniquement ; SF Pro Rounded pour les grands titres.
 //  - Une couleur ne porte jamais seule une information : icône + libellé.
 //
 
@@ -57,62 +59,93 @@ nonisolated private func adaptive(
     #endif
 }
 
-/// Tokens sémantiques V2 « cosy ». Contrastes vérifiés par palette.py (texte ≥ 4.5:1, UI ≥ 3:1).
+/// Tokens sémantiques V3. Contrastes vérifiés par palette.py (texte ≥ 4.5:1, UI ≥ 3:1, light et dark).
 enum OveaColor {
-    // Fonds : lin ensoleillé (clair) / chocolat noir (sombre). Jamais de #FFFFFF pur.
-    static let background = adaptive(0xFBF3E7, 0x1C1512)
-    static let surface = adaptive(0xFFFAF2, 0x271E1A)
-    static let surfaceMuted = adaptive(0xF4E7D5, 0x33281F)
-    static let surfaceRaised = adaptive(0xFFFCF7, 0x2E241F)
-    static let separator = adaptive(0xEEE1CF, 0x3A2E27)
-    static let border = adaptive(0x937F69, 0x8F7D6F, highContrastLight: 0x64543F, highContrastDark: 0xB3A294)
+    // Fonds
+    static let background = adaptive(0xF4F3F1, 0x121117)
+    static let surface = adaptive(0xFFFFFF, 0x1D1B23)
+    static let surfaceMuted = adaptive(0xEAE8E4, 0x2A2731)
+    static let surfaceRaised = adaptive(0xFFFFFF, 0x242129)
+    static let separator = adaptive(0xDEDBD5, 0x34313C)
+    static let border = adaptive(0x7F7A86, 0x837E8E, highContrastLight: 0x5C5863, highContrastDark: 0xA9A4B4)
 
-    // Texte : bruns chauds
-    static let textPrimary = adaptive(0x2F221B, 0xF6EBDD)
-    static let textSecondary = adaptive(0x6A5545, 0xCDBBA9, highContrastLight: 0x4E3D31, highContrastDark: 0xE3D5C6)
-    static let textTertiary = adaptive(0x6F5B4B, 0xAA988A, highContrastLight: 0x4E3D31, highContrastDark: 0xE3D5C6)
+    // Texte (encre)
+    static let textPrimary = adaptive(0x1D1B22, 0xF3F1F6)
+    static let textSecondary = adaptive(0x5D5966, 0xBDB8C7, highContrastLight: 0x45424D, highContrastDark: 0xDAD6E2)
+    static let textTertiary = adaptive(0x67636F, 0xA39EAE, highContrastLight: 0x45424D, highContrastDark: 0xDAD6E2)
 
-    // Interaction : terracotta « argile cuite ». Nature / calme : sauge dorée. Mise en avant : miel.
-    static let accent = adaptive(0xA1482A, 0xF0A27D, highContrastLight: 0x7E3418, highContrastDark: 0xF8BE9F)
-    static let onAccent = adaptive(0xFFFFFF, 0x2B1307)
-    static let accentSoft = adaptive(0xF9E3D5, 0x45291D)
-    static let onAccentSoft = adaptive(0x7A3219, 0xF9C5AA)
-    static let leaf = adaptive(0x556A2C, 0xBFD08F)
-    static let leafSoft = adaptive(0xEBEDD5, 0x2E3119)
-    static let highlight = adaptive(0x855810, 0xEDC47C)
+    // Interaction : myrtille (seul accent cliquable) et mousse
+    static let accent = adaptive(0x3F3895, 0xB4AEF6, highContrastLight: 0x2E2878, highContrastDark: 0xCFCBFF)
+    static let onAccent = adaptive(0xFFFFFF, 0x15123F)
+    static let accentSoft = adaptive(0xE8E6F7, 0x2C2950)
+    static let onAccentSoft = adaptive(0x383189, 0xD7D3FB)
+    static let leaf = adaptive(0x456E1B, 0xB3D57A)
+    static let leafSoft = adaptive(0xE5EDD6, 0x232D18)
+    static let highlight = adaptive(0x8A5300, 0xF2C46B)
     static let onHighlight = adaptive(0xFFFFFF, 0x2B1D06)
-    static let highlightSoft = adaptive(0xFBEACB, 0x3D2E17)
+    static let highlightSoft = adaptive(0xFBEBCB, 0x3A2C12)
 
     // États
-    static let success = adaptive(0x4E6727, 0xBBCD8C)
-    static let successSoft = adaptive(0xE9EDD3, 0x2C301B)
-    static let warning = adaptive(0x8A5300, 0xF0C173)
-    static let warningSoft = adaptive(0xFCEBCB, 0x3D2C12)
-    static let info = adaptive(0x3D5F6B, 0xA2C8D0)
-    static let infoSoft = adaptive(0xE4ECE9, 0x1F2E30)
-    /// Réservé aux actions destructives (supprimer mes données). Jamais sur une donnée corporelle.
-    static let destructive = adaptive(0xA3172B, 0xFFB1AA)
+    static let success = adaptive(0x456E1B, 0xB3D57A)
+    static let successSoft = adaptive(0xE5EDD6, 0x232D18)
+    static let warning = adaptive(0x8A5300, 0xF2C46B)
+    static let warningSoft = adaptive(0xFBEBCB, 0x3A2C12)
+    static let info = adaptive(0x2F6178, 0x9CCBE0)
+    static let infoSoft = adaptive(0xE1EDF2, 0x1A2B33)
+    static let destructive = adaptive(0xB3261E, 0xFFB4AB)
 
-    // Cycle : prune, nettement distincte du terracotta de l'accent
-    static let period = adaptive(0x86345F, 0xE8A5C5, highContrastLight: 0x6B2149, highContrastDark: 0xF3C2D9)
+    // Cycle (framboise, plus claire que la myrtille)
+    static let period = adaptive(0xA83A62, 0xEFA6C8, highContrastLight: 0x86284C, highContrastDark: 0xF6C6DC)
     static let onPeriod = adaptive(0xFFFFFF, 0x3A0F25)
-    static let periodSoft = adaptive(0xF6E2EA, 0x3F2131)
-    static let spotting = adaptive(0xA9688A, 0xCA8DAC)
+    static let periodSoft = adaptive(0xF7E2EC, 0x3C1F30)
+    static let spotting = adaptive(0xB06A8E, 0xC98BAA)
 }
 
-/// Teintes « de saison » : une paire premier plan / fond doux, réutilisée par les catégories.
+/// Teintes de catégorie : libellé, SF Symbol et tuile d'icône (style Réglages iOS).
+/// Le fond doux ne sert JAMAIS de fond de carte : c'est la règle anti-« cartes teintées partout » de la V3.
 struct OveaTint: Sendable, Hashable {
     let foreground: Color
     let soft: Color
 
-    static let miel = OveaTint(foreground: adaptive(0x7E5512, 0xE7C37D), soft: adaptive(0xF9EACB, 0x3B2D17))
-    static let olive = OveaTint(foreground: adaptive(0x566529, 0xC3CF8F), soft: adaptive(0xEDECD2, 0x2F3019))
-    static let lagon = OveaTint(foreground: adaptive(0x2C625C, 0x8ECFC2), soft: adaptive(0xDFEDE6, 0x1C3230))
-    static let ardoise = OveaTint(foreground: adaptive(0x544878, 0xC0B6E4), soft: adaptive(0xEDE5EC, 0x30273A))
-    static let cacao = OveaTint(foreground: adaptive(0x74482F, 0xDEB391), soft: adaptive(0xF3E3D6, 0x3A281D))
-    static let lavande = OveaTint(foreground: adaptive(0x694E86, 0xCEB9E3), soft: adaptive(0xEFE5F1, 0x31263A))
-    static let sauge = OveaTint(foreground: OveaColor.leaf, soft: OveaColor.leafSoft)
-    static let abricot = OveaTint(foreground: OveaColor.onAccentSoft, soft: OveaColor.accentSoft)
+    static let miel = OveaTint(foreground: adaptive(0x8A5A00, 0xEFC370), soft: adaptive(0xFAEBCD, 0x3A2D14))
+    static let olive = OveaTint(foreground: adaptive(0x4D6A1E, 0xBCD58A), soft: adaptive(0xE8EED8, 0x262E18))
+    static let lagon = OveaTint(foreground: adaptive(0x22655D, 0x8FD0C3), soft: adaptive(0xDDEEEA, 0x17302C))
+    static let ardoise = OveaTint(foreground: adaptive(0x45577E, 0xAFC0E6), soft: adaptive(0xE3E8F3, 0x1E2536))
+    static let cacao = OveaTint(foreground: adaptive(0x7A4A30, 0xDFB494), soft: adaptive(0xF3E5DA, 0x33251C))
+    static let lavande = OveaTint(foreground: adaptive(0x6A4C8C, 0xCDB8E6), soft: adaptive(0xEEE7F5, 0x2C2438))
+    static let mousse = OveaTint(foreground: OveaColor.leaf, soft: OveaColor.leafSoft)
+    static let myrtille = OveaTint(foreground: OveaColor.accent, soft: OveaColor.accentSoft)
+}
+
+/// Palette d'illustration : couleurs FIXES (identiques en clair et en sombre, comme une photo).
+/// Réservée aux illustrations dessinées en code (placeholder de la mascotte, graphiques décoratifs).
+/// Les vrais assets sont des SVG/PDF vectoriels dans l'Asset Catalog (« Preserve Vector Data »).
+enum OveaIllustration {
+    private static func fixed(_ hex: UInt32) -> Color {
+        Color(red: Double((hex >> 16) & 0xFF) / 255, green: Double((hex >> 8) & 0xFF) / 255, blue: Double(hex & 0xFF) / 255)
+    }
+    static let encre = fixed(0x2A2438)  // Trait unique (4 u sur 240), yeux, bouche
+    static let galet = fixed(0xCEC7DB)  // Corps de Mousse
+    static let galetOmbre = fixed(0xB2A8C4)  // Ombre portée sur le corps, mouchetures
+    static let mousse = fixed(0x8DB34A)  // Coussin de mousse, feuilles, herbes
+    static let mousseOmbre = fixed(0x6F9736)  // Ombre de la mousse, thym
+    static let mousseClaire = fixed(0xC2DB86)  // Nouvelle feuille (célébration douce)
+    static let abricot = fixed(0xF4B49A)  // Joues, coussin
+    static let abricotOmbre = fixed(0xE3957A)  // Ombre abricot
+    static let courge = fixed(0xF2A23A)  // Dahl, carottes, plaid (avec courgeOmbre)
+    static let courgeOmbre = fixed(0xDA8228)  // Dés de butternut, rayures du plaid
+    static let paprika = fixed(0xD9573B)  // Cocotte, pomme, épices
+    static let betterave = fixed(0xA63A6B)  // Chou rouge, houmous (plats uniquement, jamais sur Mousse)
+    static let betteraveClaire = fixed(0xD2709B)  // Houmous de betterave
+    static let porcelaine = fixed(0xFAF8F5)  // Assiettes, bols, reflets, sauces blanches
+    static let creme = fixed(0xEFE6D3)  // Riz, écrasé, flocons
+    static let bois = fixed(0xCC9563)  // Planches, cuillère, quinoa
+    static let boisOmbre = fixed(0xAE7546)  // Veinage des planches
+    static let cacaoIllu = fixed(0x6B4331)  // Bouchées cacao, cumin
+    static let table = fixed(0xE5E3EF)  // Fond des illustrations de plats (lavande grisée, complémentaire des plats chauds)
+    static let tableOmbre = fixed(0xD2CFE1)  // Ombre portée à plat sous les contenants (décalage 5/7 u, sans flou)
+    /// Épaisseur unique du trait, pour un viewBox de 240 (soit 1/60 de la taille affichée).
+    static let strokeRatio: CGFloat = 4.0 / 240.0
 }
 
 /// Catégories de repas (clés de recipes.json → types_repas).
@@ -180,18 +213,17 @@ enum ActivityCategory: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
-// MARK: - Typographie (Dynamic Type uniquement)
+// MARK: - Typographie (système uniquement, Dynamic Type)
 
 enum OveaFont {
-    /// Titres éditoriaux : Fraunces (OFL, axe SOFT=100) si elle est embarquée, sinon New York.
-    /// Embarquer : ajouter `Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf` (+ Italic) au target,
-    /// déclarer les fichiers dans Info.plist > UIAppFonts. Le nom PostScript est « Fraunces ».
-    static let display = editorial(size: 34, relativeTo: .largeTitle, fallback: .largeTitle, weight: .semibold)
-    static let title1 = editorial(size: 28, relativeTo: .title, fallback: .title, weight: .semibold)
-    static let title2 = editorial(size: 22, relativeTo: .title2, fallback: .title2, weight: .semibold)
-    static let quote = editorial(size: 20, relativeTo: .title3, fallback: .title3, weight: .regular).italic()
-    /// SF Pro — interface.
+    /// Une seule voix d'affichage : SF Pro Rounded (système, rien à embarquer), pour les grands titres et le minuteur.
+    /// Elle reprend la géométrie ronde de Mousse. Tout le reste est en SF Pro.
+    static let display = Font.system(.largeTitle, design: .rounded, weight: .bold)
+    static let title1 = Font.system(.title, design: .rounded, weight: .bold)
+    static let title2 = Font.system(.title2, weight: .semibold)
     static let title3 = Font.system(.title3, weight: .semibold)
+    /// Titre de section en casse de phrase (remplace les sur-titres en capitales espacées de la V2).
+    static let sectionHeader = Font.system(.title3, weight: .semibold)
     static let headline = Font.headline
     static let body = Font.body
     static let bodyEmphasis = Font.body.weight(.medium)
@@ -199,34 +231,16 @@ enum OveaFont {
     static let subheadline = Font.subheadline
     static let footnote = Font.footnote
     static let caption = Font.caption.weight(.medium)
-    /// Sur-titre de section (à combiner avec .textCase(.uppercase) et .tracking(0.6)).
-    static let overline = Font.caption2.weight(.semibold)
-    /// SF Pro Rounded — boutons, options d'énergie, chiffres : plus doux au toucher.
-    static let button = Font.system(.headline, design: .rounded, weight: .semibold)
+    static let button = Font.headline
     static let metric = Font.system(.title2, design: .rounded, weight: .semibold).monospacedDigit()
-
-    /// `Font.custom(_:size:relativeTo:)` suit Dynamic Type. Repli New York si la police n'est pas embarquée.
-    private static func editorial(
-        size: CGFloat,
-        relativeTo style: Font.TextStyle,
-        fallback: Font.TextStyle,
-        weight: Font.Weight
-    ) -> Font {
-        #if canImport(UIKit)
-        if UIFont(name: "Fraunces", size: size) != nil {
-            return Font.custom("Fraunces", size: size, relativeTo: style).weight(weight)
-        }
-        #endif
-        return Font.system(fallback, design: .serif, weight: weight)
-    }
 }
 
 /// Minuteur du lecteur de séance : grand, arrondi, chiffres tabulaires, qui suit Dynamic Type.
 struct OveaTimerStyle: ViewModifier {
-    @ScaledMetric(relativeTo: .largeTitle) private var size: CGFloat = 72
+    @ScaledMetric(relativeTo: .largeTitle) private var size: CGFloat = 64
     func body(content: Content) -> some View {
         content
-            .font(.system(size: size, weight: .light, design: .rounded).monospacedDigit())
+            .font(.system(size: size, weight: .semibold, design: .rounded).monospacedDigit())
             .contentTransition(.numericText(countsDown: true))
     }
 }
@@ -234,18 +248,17 @@ struct OveaTimerStyle: ViewModifier {
 extension View {
     func oveaTimerStyle() -> some View { modifier(OveaTimerStyle()) }
 
-    /// Sur-titre de section : « POUR TOI AUJOURD'HUI ».
-    func oveaOverline() -> some View {
-        font(OveaFont.overline)
-            .textCase(.uppercase)
-            .tracking(0.6)
-            .foregroundStyle(OveaColor.textSecondary)
+    /// Titre de section : « Pour toi aujourd'hui », en casse de phrase.
+    func oveaSectionHeader() -> some View {
+        font(OveaFont.sectionHeader)
+            .foregroundStyle(OveaColor.textPrimary)
+            .textCase(nil)
     }
 }
 
 // MARK: - Espacements, rayons, élévation
 
-/// Grille 4/8 pt.
+/// Grille 4/8 pt (la même que les illustrations : viewBox 240, pas de 8).
 enum OveaSpacing {
     static let xxs: CGFloat = 2
     static let xs: CGFloat = 4
@@ -255,46 +268,41 @@ enum OveaSpacing {
     static let xl: CGFloat = 24
     static let xxl: CGFloat = 32
     static let xxxl: CGFloat = 48
-    static let screenMargin: CGFloat = 20
+    static let screenMargin: CGFloat = 16
     static let cardPadding: CGFloat = 16
-    static let sectionGap: CGFloat = 32
+    static let sectionGap: CGFloat = 28
     static let minTapTarget: CGFloat = 44
 }
 
-/// Toujours avec `style: .continuous`.
+/// Proches d'iOS. Toujours avec `style: .continuous`. La rondeur vient de Mousse, pas des cartes.
 enum OveaRadius {
-    static let xs: CGFloat = 8     // pastilles, badges
-    static let sm: CGFloat = 12    // champs, petites vignettes
-    static let md: CGFloat = 18    // options d'énergie, vignettes
-    static let lg: CGFloat = 24    // cartes, bannières
-    static let xl: CGFloat = 32    // héros, sheets custom
-    // Boutons et chips : Capsule()
+    static let xs: CGFloat = 6     // badges
+    static let sm: CGFloat = 10    // vignettes de plats dans les listes, tuiles
+    static let md: CGFloat = 12    // options d'énergie, groupes de liste
+    static let lg: CGFloat = 16    // la carte mise en avant
+    static let xl: CGFloat = 22    // sheets custom
+    static let button: CGFloat = 14
 }
 
 enum OveaElevation: Sendable {
-    case flat, card, raised
+    case flat, feature, raised
 }
 
 private struct OveaElevationModifier: ViewModifier {
     let level: OveaElevation
     @Environment(\.colorScheme) private var scheme
-    /// Ombres teintées brun (jamais grises) : plus chaudes, plus diffuses.
-    private static let warmShadow = Color(red: 0x5C / 255, green: 0x34 / 255, blue: 0x1C / 255)
+    private static let ink = Color(red: 0x1D / 255, green: 0x1B / 255, blue: 0x22 / 255)
 
     func body(content: Content) -> some View {
         switch (level, scheme) {
-        case (.flat, _):
-            content
-        case (.card, .dark):
-            content.shadow(color: .black.opacity(0.28), radius: 16, y: 6)
-        case (.card, _):
-            content
-                .shadow(color: Self.warmShadow.opacity(0.04), radius: 1, y: 1)
-                .shadow(color: Self.warmShadow.opacity(0.07), radius: 20, y: 8)
+        case (.flat, _), (.feature, .dark):
+            content                                   // en sombre, l'élévation vient de la surface plus claire
+        case (.feature, _):
+            content.shadow(color: Self.ink.opacity(0.06), radius: 12, y: 4)
         case (.raised, .dark):
-            content.shadow(color: .black.opacity(0.40), radius: 28, y: 10)
+            content.shadow(color: .black.opacity(0.45), radius: 28, y: 10)
         case (.raised, _):
-            content.shadow(color: Self.warmShadow.opacity(0.12), radius: 32, y: 12)
+            content.shadow(color: Self.ink.opacity(0.14), radius: 28, y: 10)
         }
     }
 }
@@ -303,29 +311,53 @@ extension View {
     func oveaElevation(_ level: OveaElevation) -> some View { modifier(OveaElevationModifier(level: level)) }
 }
 
-// MARK: - Composant : OveaCard
+// MARK: - Composant : OveaFeatureCard (une seule par écran)
 
-/// Carte de contenu. `tint` donne un fond doux (catégorie, mise en avant) au lieu du blanc.
-struct OveaCard<Content: View>: View {
-    var tint: OveaTint?
-    var padding: CGFloat = OveaSpacing.cardPadding
+/// La carte mise en avant de l'écran (ex. « Pour toi aujourd'hui » dans Cuisine, « Doux pour aujourd'hui » dans Bouger).
+/// Fond `surface`, jamais teinté. Le reste de l'écran passe par des `List(.insetGrouped)`.
+struct OveaFeatureCard<Content: View>: View {
+    var illustration: String?            // nom d'asset d'un plat (identifiant de recette), affiché en bandeau
+    var illustrationHeight: CGFloat = 150
     @ViewBuilder var content: Content
 
     var body: some View {
-        content
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(padding)
-            .background(
-                tint?.soft ?? OveaColor.surface,
-                in: RoundedRectangle(cornerRadius: OveaRadius.lg, style: .continuous)
-            )
-            .oveaElevation(tint == nil ? .card : .flat)
+        VStack(alignment: .leading, spacing: 0) {
+            if let illustration {
+                Image(illustration)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: illustrationHeight)
+                    .frame(maxWidth: .infinity)
+                    .clipped()
+                    .accessibilityHidden(true)
+            }
+            content
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(OveaSpacing.cardPadding)
+        }
+        .background(OveaColor.surface, in: RoundedRectangle(cornerRadius: OveaRadius.lg, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: OveaRadius.lg, style: .continuous))
+        .oveaElevation(.feature)
+    }
+}
+
+/// Vignette d'illustration de plat pour une ligne de liste (60 pt, rayon 10).
+struct OveaDishThumbnail: View {
+    let recipeID: String
+    var size: CGFloat = 60
+    var body: some View {
+        Image(recipeID)
+            .resizable()
+            .scaledToFill()
+            .frame(width: size, height: size)
+            .clipShape(RoundedRectangle(cornerRadius: OveaRadius.sm, style: .continuous))
+            .accessibilityHidden(true)
     }
 }
 
 // MARK: - Composant : OveaChip (filtre / choix)
 
-/// Chip de filtre ou de choix. Cible tactile ≥ 44 pt même si la capsule visible fait 36 pt.
+/// Chip de filtre ou de choix. Cible tactile ≥ 44 pt même si la capsule visible fait 32 pt.
 struct OveaChip: View {
     let title: String
     var systemImage: String?
@@ -346,7 +378,7 @@ struct OveaChip: View {
                 Text(title).font(OveaFont.subheadline.weight(.medium))
             }
             .padding(.horizontal, OveaSpacing.md + 2)
-            .frame(minHeight: 36)
+            .frame(minHeight: 32)
         }
         .buttonStyle(OveaChipStyle(isSelected: isSelected))
         .accessibilityAddTraits(isSelected ? .isSelected : [])
@@ -361,18 +393,18 @@ private struct OveaChipStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundStyle(isSelected ? OveaColor.onAccentSoft : OveaColor.textPrimary)
-            .background(isSelected ? OveaColor.accentSoft : OveaColor.surfaceMuted, in: Capsule())
+            .foregroundStyle(isSelected ? OveaColor.onAccent : OveaColor.textPrimary)
+            .background(isSelected ? OveaColor.accent : OveaColor.surface, in: Capsule())
             .overlay {
-                Capsule().strokeBorder(isSelected ? OveaColor.accent : .clear, lineWidth: 1.5)
+                Capsule().strokeBorder(isSelected ? .clear : OveaColor.separator, lineWidth: 0.5)
             }
-            .padding(.vertical, 4)              // 36 pt visibles + 8 = 44 pt de cible tactile
+            .padding(.vertical, 6)              // 32 pt visibles + 12 = 44 pt de cible tactile
             .contentShape(Rectangle())
             .opacity(isEnabled ? (configuration.isPressed ? 0.75 : 1) : 0.45)
     }
 }
 
-// MARK: - Composant : OveaPrimaryButton
+// MARK: - Boutons (formes iOS « filled » / « tinted »)
 
 /// Bouton principal pleine largeur (1 par écran au maximum).
 struct OveaPrimaryButton: View {
@@ -400,42 +432,34 @@ struct OveaPrimaryButton: View {
 
 struct OveaPrimaryButtonStyle: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(OveaFont.button)
             .foregroundStyle(isEnabled ? OveaColor.onAccent : OveaColor.textSecondary)
-            .frame(maxWidth: .infinity, minHeight: 54)
+            .frame(maxWidth: .infinity, minHeight: 50)
             .padding(.horizontal, OveaSpacing.lg)
-            .background(isEnabled ? OveaColor.accent : OveaColor.surfaceMuted, in: Capsule())
-            .shadow(color: isEnabled ? OveaColor.accent.opacity(0.25) : .clear, radius: 12, y: 6)
-            .opacity(configuration.isPressed ? 0.85 : 1)
-            .scaleEffect(configuration.isPressed && !reduceMotion ? 0.98 : 1)
-            .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
+            .background(isEnabled ? OveaColor.accent : OveaColor.surfaceMuted,
+                        in: RoundedRectangle(cornerRadius: OveaRadius.button, style: .continuous))
+            .opacity(configuration.isPressed ? 0.8 : 1)
     }
 }
 
-/// Bouton secondaire (contour terracotta), même gabarit.
-struct OveaSecondaryButtonStyle: ButtonStyle {
+/// Bouton secondaire « tinted » (fond myrtille pâle), même gabarit.
+struct OveaTintedButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(OveaFont.button)
-            .foregroundStyle(OveaColor.accent)
-            .frame(maxWidth: .infinity, minHeight: 54)
-            .background(
-                Capsule()
-                    .strokeBorder(OveaColor.accent, lineWidth: 1.5)
-            )
-            .contentShape(Capsule())
+            .foregroundStyle(OveaColor.onAccentSoft)
+            .frame(maxWidth: .infinity, minHeight: 44)
+            .background(OveaColor.accentSoft, in: RoundedRectangle(cornerRadius: OveaRadius.button, style: .continuous))
             .opacity(configuration.isPressed ? 0.7 : 1)
     }
 }
 
-// MARK: - Composant : EnergyPicker
+// MARK: - Énergie : niveau, glyphe « tige », sélecteur
 
-/// Niveau d'énergie déclaré. Volontairement mono-teinte (terracotta) : pas de feu rouge/vert,
-/// une énergie basse n'est pas « mauvaise ».
+/// Niveau d'énergie déclaré. Mono-teinte : pas de feu rouge/vert, une énergie basse n'est pas « mauvaise ».
 enum EnergyLevel: Int, CaseIterable, Identifiable, Sendable {
     case basse = 1, moyenne, bonne
     var id: Int { rawValue }
@@ -453,24 +477,42 @@ enum EnergyLevel: Int, CaseIterable, Identifiable, Sendable {
         case .bonne: "Envie de bouger"
         }
     }
+    /// État de Mousse correspondant : c'est l'élément signature de l'écran Aujourd'hui.
+    var mascotState: OveaMascotState {
+        switch self {
+        case .basse: .energieBasse
+        case .moyenne: .energieMoyenne
+        case .bonne: .energieBonne
+        }
+    }
 }
 
-/// Trois barres croissantes ; `level` barres sont pleines.
+/// Une tige portant 1, 2 ou 3 feuilles : le même code que la tige de Mousse (remplace les barres de la V2).
 struct EnergyGlyph: View {
     let level: Int
-    var filled: Color = OveaColor.accent
-    var empty: Color = OveaColor.border
+    var color: Color = OveaColor.leaf
 
     var body: some View {
-        HStack(alignment: .bottom, spacing: 3) {
-            ForEach(1...3, id: \.self) { index in
-                RoundedRectangle(cornerRadius: 2, style: .continuous)
-                    .fill(index <= level ? filled : .clear)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 2, style: .continuous)
-                            .strokeBorder(index <= level ? filled : empty, lineWidth: 1.5)
-                    }
-                    .frame(width: 7, height: CGFloat(6 + index * 5))
+        Canvas { context, size in
+            let k = min(size.width, size.height) / 26
+            func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: x * k, y: y * k) }
+            let style = StrokeStyle(lineWidth: 2 * k, lineCap: .round, lineJoin: .round)
+            let index = max(0, min(2, level - 1))
+            let tops: [CGFloat] = [12, 9, 5]
+            let top = tops[index]
+            var stem = Path()
+            stem.move(to: p(13, 23)); stem.addLine(to: p(13, top))
+            context.stroke(stem, with: .color(color), style: style)
+            // feuilles : (point d'attache y, côté)
+            let allLeaves: [[(y: CGFloat, side: CGFloat)]] = [[(12, 1)], [(15, 1), (12, -1)], [(17, 1), (13.5, -1), (7.5, 1)]]
+            let leaves = allLeaves[index]
+            for (y, side) in leaves {
+                var leaf = Path()
+                leaf.move(to: p(13, y))
+                leaf.addQuadCurve(to: p(13 + 6.5 * side, y - 5.5), control: p(13 + 1 * side, y - 5))
+                leaf.addQuadCurve(to: p(13, y), control: p(13 + 6 * side, y - 0.5))
+                context.fill(leaf, with: .color(color.opacity(0.25)))
+                context.stroke(leaf, with: .color(color), style: style)
             }
         }
         .accessibilityHidden(true)
@@ -487,21 +529,19 @@ struct EnergyPicker: View {
                 Button {
                     selection = isOn ? nil : level
                 } label: {
-                    VStack(spacing: OveaSpacing.sm) {
-                        EnergyGlyph(
-                            level: level.rawValue,
-                            filled: isOn ? OveaColor.onAccent : OveaColor.accent,
-                            empty: isOn ? OveaColor.onAccent.opacity(0.6) : OveaColor.border
-                        )
-                        .frame(height: 22, alignment: .bottom)
-                        Text(level.label).font(.system(.subheadline, design: .rounded, weight: .bold))
+                    VStack(spacing: OveaSpacing.xs) {
+                        EnergyGlyph(level: level.rawValue, color: isOn ? OveaColor.onAccent : OveaColor.leaf)
+                            .frame(width: 26, height: 26)
+                        Text(level.label).font(OveaFont.headline)
                     }
                     .frame(maxWidth: .infinity, minHeight: 76)
                     .foregroundStyle(isOn ? OveaColor.onAccent : OveaColor.textPrimary)
-                    .background(
-                        isOn ? OveaColor.accent : OveaColor.surfaceMuted,
-                        in: RoundedRectangle(cornerRadius: OveaRadius.md, style: .continuous)
-                    )
+                    .background(isOn ? OveaColor.accent : OveaColor.surface,
+                                in: RoundedRectangle(cornerRadius: OveaRadius.md, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: OveaRadius.md, style: .continuous)
+                            .strokeBorder(isOn ? .clear : OveaColor.separator, lineWidth: 0.5)
+                    }
                     .contentShape(RoundedRectangle(cornerRadius: OveaRadius.md, style: .continuous))
                 }
                 .buttonStyle(.plain)
@@ -514,6 +554,173 @@ struct EnergyPicker: View {
         .animation(.easeInOut(duration: 0.2), value: selection)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Énergie du jour")
+    }
+}
+
+// MARK: - Mascotte : Mousse
+
+/// États de Mousse. `rawValue` = nom de l'asset dans l'Asset Catalog (SVG/PDF vectoriel, « Preserve Vector Data »),
+/// identique au nom de fichier dans docs/design/illustrations/.
+///
+/// Règles d'usage (05-illustration.md §6) :
+/// - au plus UNE apparition par écran ; jamais sur Mon cycle, l'alerte 90 jours, les signaux d'arrêt,
+///   l'avertissement santé ni la suppression des données : le ton y est sobre ;
+/// - Mousse ne parle pas (pas de bulle) : la voix de l'app reste « on » ;
+/// - elle ne commente jamais le corps, le poids ni les règles.
+enum OveaMascotState: String, CaseIterable, Identifiable, Sendable {
+    case accueil = "mousse-accueil"
+    case energieBasse = "mousse-energie-basse"
+    case energieMoyenne = "mousse-energie-moyenne"
+    case energieBonne = "mousse-energie-bonne"
+    case jourDifficile = "mousse-jour-difficile"
+    case cuisine = "mousse-cuisine"
+    case mouvement = "mousse-mouvement"
+    case repos = "mousse-repos"
+    case etatVide = "mousse-etat-vide"
+    case celebration = "mousse-celebration"
+
+    var id: String { rawValue }
+
+    /// Libellé VoiceOver : décrit l'image, sans interpréter l'état de la personne.
+    var accessibilityLabel: String {
+        switch self {
+        case .accueil: "Mousse, un petit galet couvert de mousse, te fait signe"
+        case .energieBasse: "Mousse se repose, sa tige porte une feuille"
+        case .energieMoyenne: "Mousse, sa tige porte deux feuilles"
+        case .energieBonne: "Mousse se tient droite, sa tige porte trois feuilles"
+        case .jourDifficile: "Mousse se repose sous un plaid, une tasse à côté"
+        case .cuisine: "Mousse tourne une cuillère dans une cocotte"
+        case .mouvement: "Mousse fait un petit saut"
+        case .repos: "Mousse dort sur un coussin"
+        case .etatVide: "Mousse, à côté d'un bol vide"
+        case .celebration: "Mousse sourit, une nouvelle feuille a poussé"
+        }
+    }
+
+    /// Nombre de feuilles sur la tige (placeholder dessiné en code).
+    fileprivate var leaves: Int {
+        switch self {
+        case .energieBasse, .jourDifficile, .repos: 1
+        case .energieBonne, .mouvement, .celebration: 3
+        default: 2
+        }
+    }
+    fileprivate var eyesClosed: Bool {
+        switch self {
+        case .energieBasse, .jourDifficile, .repos, .celebration: true
+        default: false
+        }
+    }
+}
+
+/// Affiche Mousse dans l'état demandé.
+/// - Utilise l'asset vectoriel `state.rawValue` s'il est présent ; sinon un placeholder dessiné en code (mêmes formes,
+///   même palette), pour que les previews et les tests marchent avant l'intégration des illustrations définitives.
+/// - Changement d'état en fondu ; légère « respiration » (échelle 1 → 1,015) désactivée si Réduire les animations.
+struct OveaMascotView: View {
+    let state: OveaMascotState
+    var size: CGFloat = 152
+    /// `true` quand le texte voisin dit déjà tout (ex. « Aujourd'hui, on fait simple. ») : VoiceOver l'ignore.
+    var isDecorative = false
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var breathe = false
+
+    var body: some View {
+        ZStack {
+            if Self.hasAsset(state.rawValue) {
+                Image(state.rawValue).resizable().scaledToFit()
+            } else {
+                MousseSketch(state: state)
+            }
+        }
+        .id(state)                                          // fondu entre deux états
+        .transition(.opacity)
+        .frame(width: size, height: size)
+        .scaleEffect(breathe && !reduceMotion ? 1.015 : 1, anchor: .bottom)
+        .animation(.easeInOut(duration: 0.35), value: state)
+        .onAppear {
+            guard !reduceMotion else { return }
+            withAnimation(.easeInOut(duration: 2.8).repeatForever(autoreverses: true)) { breathe = true }
+        }
+        .accessibilityElement()
+        .accessibilityLabel(isDecorative ? "" : state.accessibilityLabel)
+        .accessibilityAddTraits(.isImage)
+        .accessibilityHidden(isDecorative)
+    }
+
+    private static func hasAsset(_ name: String) -> Bool {
+        #if canImport(UIKit)
+        UIImage(named: name) != nil
+        #else
+        false
+        #endif
+    }
+}
+
+/// Placeholder vectoriel de Mousse (galet plus large que haut, coussin de mousse, tige à 1–3 feuilles).
+private struct MousseSketch: View {
+    let state: OveaMascotState
+
+    var body: some View {
+        Canvas { context, size in
+            let k = min(size.width, size.height) / 240
+            func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: x * k, y: y * k) }
+            let ink = GraphicsContext.Shading.color(OveaIllustration.encre)
+            let line = StrokeStyle(lineWidth: 4 * k, lineCap: .round, lineJoin: .round)
+            let low = state.leaves == 1
+            let top: CGFloat = low ? 112 : 92
+
+            // ombre au sol
+            context.fill(Path(ellipseIn: CGRect(x: 44 * k, y: 198 * k, width: 154 * k, height: 14 * k)),
+                         with: .color(OveaIllustration.encre.opacity(0.12)))
+            // corps (galet)
+            var pebble = Path()
+            pebble.move(to: p(58, 200))
+            pebble.addCurve(to: p(32, low ? 166 : 158), control1: p(34, 200), control2: p(28, 180))
+            pebble.addCurve(to: p(122, top), control1: p(38, top + 30), control2: p(76, top))
+            pebble.addCurve(to: p(210, low ? 168 : 160), control1: p(170, top), control2: p(206, top + 28))
+            pebble.addCurve(to: p(178, 200), control1: p(213, 190), control2: p(198, 200))
+            pebble.closeSubpath()
+            context.fill(pebble, with: .color(OveaIllustration.galet))
+            context.stroke(pebble, with: ink, style: line)
+
+            // tige + feuilles
+            var stem = Path()
+            stem.move(to: p(122, top - 10))
+            stem.addLine(to: p(124, top - 10 - CGFloat(14 + 12 * state.leaves)))
+            context.stroke(stem, with: ink, style: line)
+            for i in 0..<state.leaves {
+                let y = top - 22 - CGFloat(i * 13)
+                let side: CGFloat = i % 2 == 0 ? 1 : -1
+                var leaf = Path()
+                leaf.move(to: p(123, y))
+                leaf.addQuadCurve(to: p(123 + 22 * side, y - 8), control: p(123 + 6 * side, y - 14))
+                leaf.addQuadCurve(to: p(123, y), control: p(123 + 16 * side, y + 6))
+                context.fill(leaf, with: .color(OveaIllustration.mousse))
+                context.stroke(leaf, with: ink, style: line)
+            }
+            // coussin de mousse
+            let cap = Path(roundedRect: CGRect(x: 88 * k, y: (top - 14) * k, width: 68 * k, height: 26 * k), cornerRadius: 13 * k)
+            context.fill(cap, with: .color(OveaIllustration.mousse))
+            context.stroke(cap, with: ink, style: line)
+
+            // visage
+            let eyeY = top + (200 - top) * 0.5
+            for x in [104.0, 142.0] as [CGFloat] {
+                if state.eyesClosed {
+                    var e = Path(); e.move(to: p(x - 6, eyeY)); e.addQuadCurve(to: p(x + 6, eyeY), control: p(x, eyeY + 5))
+                    context.stroke(e, with: ink, style: line)
+                } else {
+                    context.fill(Path(ellipseIn: CGRect(x: (x - 4.6) * k, y: (eyeY - 6.2) * k, width: 9.2 * k, height: 12.4 * k)), with: ink)
+                }
+                context.fill(Path(ellipseIn: CGRect(x: (x - 22) * k, y: (eyeY + 12) * k, width: 18 * k, height: 10 * k)),
+                             with: .color(OveaIllustration.abricot))
+            }
+            var mouth = Path(); mouth.move(to: p(116, eyeY + 15)); mouth.addQuadCurve(to: p(128, eyeY + 15), control: p(122, eyeY + 20))
+            context.stroke(mouth, with: ink, style: line)
+        }
+        .accessibilityHidden(true)
     }
 }
 
@@ -558,7 +765,7 @@ struct OveaBanner: View {
     }
 }
 
-// MARK: - Détails « cosy » : salutation, petit mot du jour, tartan, doodle
+// MARK: - Salutation
 
 /// Salutation selon le moment de la journée (clés today.greeting.* de strings.fr.json).
 enum OveaGreeting {
@@ -574,188 +781,78 @@ enum OveaGreeting {
     }
 }
 
-/// Bande de tartan discrète (motif textile « plaid »), décorative.
-struct OveaPlaid: View {
-    var tone: Color = OveaColor.highlight
-
-    var body: some View {
-        Canvas { context, size in
-            let step: CGFloat = 14
-            var x: CGFloat = 0
-            while x < size.width {
-                context.fill(Path(CGRect(x: x, y: 0, width: 4, height: size.height)), with: .color(tone.opacity(0.22)))
-                context.fill(Path(CGRect(x: x + 6, y: 0, width: 1, height: size.height)), with: .color(tone.opacity(0.10)))
-                x += step
-            }
-            var y: CGFloat = 0
-            while y < size.height {
-                context.fill(Path(CGRect(x: 0, y: y, width: size.width, height: 4)), with: .color(tone.opacity(0.22)))
-                y += step
-            }
-        }
-        .accessibilityHidden(true)
-    }
-}
-
-/// Tasse fumante dessinée « à la main » (trait arrondi, légèrement irrégulier).
-struct OveaTeaCupDoodle: View {
-    var body: some View {
-        Canvas { context, size in
-            let k = min(size.width, size.height) / 64
-            func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: x * k, y: y * k) }
-            let ink = GraphicsContext.Shading.color(OveaColor.textPrimary)
-            let style = StrokeStyle(lineWidth: 2.2 * k, lineCap: .round, lineJoin: .round)
-
-            var cup = Path()
-            cup.move(to: p(13.5, 28.5))
-            cup.addCurve(to: p(30, 47.7), control1: p(12.9, 38.5), control2: p(17.7, 47.5))
-            cup.addCurve(to: p(46.2, 28.3), control1: p(42.3, 47.5), control2: p(46.8, 38.3))
-            cup.closeSubpath()
-            context.fill(cup, with: .color(OveaColor.surface))
-            context.stroke(cup, with: ink, style: style)
-
-            var handle = Path()
-            handle.move(to: p(46, 31.5))
-            handle.addCurve(to: p(45, 41.3), control1: p(55, 29), control2: p(56, 43))
-            context.stroke(handle, with: ink, style: style)
-
-            var tea = Path()
-            tea.move(to: p(19, 37))
-            tea.addQuadCurve(to: p(29.6, 37), control: p(24.3, 39.5))
-            tea.addQuadCurve(to: p(40.2, 37), control: p(34.9, 34.5))
-            context.stroke(tea, with: .color(OveaColor.accent), style: style)
-
-            var saucer = Path()
-            saucer.move(to: p(9, 52.5))
-            saucer.addQuadCurve(to: p(51, 52.5), control: p(30, 56.5))
-            context.stroke(saucer, with: ink, style: style)
-
-            for x in [23.0, 31.5, 40.0] as [CGFloat] {
-                var steam = Path()
-                steam.move(to: p(x, 22))
-                steam.addCurve(to: p(x, 11), control1: p(x - 4, 18), control2: p(x + 4, 15))
-                context.stroke(steam, with: .color(OveaColor.textPrimary.opacity(0.55)), style: style)
-            }
-        }
-        .accessibilityHidden(true)
-    }
-}
-
-/// Carte « Petit mot du jour » : miel, bande de tartan, tasse dessinée.
-struct OveaDailyNoteCard: View {
-    let text: String
-    var actionTitle: String? = "Pourquoi ?"
-    var action: (() -> Void)?
-
-    private var shape: RoundedRectangle { RoundedRectangle(cornerRadius: OveaRadius.lg, style: .continuous) }
-
-    var body: some View {
-        HStack(alignment: .top, spacing: OveaSpacing.md) {
-            VStack(alignment: .leading, spacing: OveaSpacing.sm) {
-                Label("Petit mot du jour", systemImage: "sparkles")
-                    .font(OveaFont.caption.weight(.bold))
-                    .foregroundStyle(OveaColor.highlight)
-                Text(text)
-                    .font(OveaFont.quote)
-                    .foregroundStyle(OveaColor.textPrimary)
-                    .fixedSize(horizontal: false, vertical: true)
-                if let actionTitle, let action {
-                    Button("\(actionTitle) ›", action: action)
-                        .font(OveaFont.subheadline.weight(.bold))
-                        .foregroundStyle(OveaColor.highlight)
-                        .frame(minHeight: OveaSpacing.minTapTarget, alignment: .leading)
-                }
-            }
-            Spacer(minLength: 0)
-            OveaTeaCupDoodle().frame(width: 64, height: 64)
-        }
-        .padding(OveaSpacing.lg)
-        .padding(.leading, OveaSpacing.md)
-        .background(OveaColor.highlightSoft, in: shape)
-        .overlay(alignment: .leading) {
-            OveaPlaid().frame(width: 14)
-        }
-        .clipShape(shape)
-        .accessibilityElement(children: .combine)
-    }
-}
-
 // MARK: - Previews
 
 private struct DesignSystemGallery: View {
     @State private var igBas = true
     @State private var express = false
-    @State private var sansLactose = false
-    @State private var energy: EnergyLevel? = .basse
+    @State private var energy: EnergyLevel?
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: OveaSpacing.xl) {
-                VStack(alignment: .leading, spacing: OveaSpacing.xs) {
-                    Text("jeudi 26 novembre").font(OveaFont.subheadline).foregroundStyle(OveaColor.textSecondary)
-                    Text(OveaGreeting.text(name: "Léa")).font(OveaFont.display).foregroundStyle(OveaColor.textPrimary)
+        NavigationStack {
+            List {
+                Section {
+                    VStack(alignment: .leading, spacing: OveaSpacing.md) {
+                        HStack(spacing: OveaSpacing.xs) {
+                            OveaMascotView(state: energy?.mascotState ?? .accueil, size: 140)
+                            VStack(alignment: .leading, spacing: OveaSpacing.xs) {
+                                Text("Comment est ton énergie ?").font(OveaFont.title2)
+                                Text("Un tap suffit. Le reste est facultatif.")
+                                    .font(OveaFont.footnote).foregroundStyle(OveaColor.textSecondary)
+                            }
+                        }
+                        EnergyPicker(selection: $energy)
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets())
                 }
 
-                OveaDailyNoteCard(
-                    text: "Des protéines au petit-déjeuner aident à garder une énergie plus stable jusqu'à midi.",
-                    action: {}
-                )
-
-                OveaCard {
+                Section {
                     HStack(spacing: OveaSpacing.md) {
-                        Image(systemName: "calendar")
-                            .font(.title3)
-                            .foregroundStyle(OveaColor.accent)
+                        OveaDishThumbnail(recipeID: "diner-dahl-lentilles-corail-butternut")
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Jour 23").font(OveaFont.metric).foregroundStyle(OveaColor.textPrimary)
-                            Text("du cycle").font(OveaFont.subheadline)
-                                .foregroundStyle(OveaColor.textSecondary)
+                            Label(MealCategory.diner.label, systemImage: MealCategory.diner.symbol)
+                                .font(OveaFont.caption).foregroundStyle(MealCategory.diner.tint.foreground)
+                            Text("Dahl de lentilles corail et butternut").font(OveaFont.headline)
+                            Text("30 min").font(OveaFont.subheadline).foregroundStyle(OveaColor.textSecondary)
                         }
                     }
+                    Label("Jour 23 du cycle", systemImage: "drop")
+                        .foregroundStyle(OveaColor.textPrimary)
+                } header: {
+                    Text("Pour toi aujourd'hui").oveaSectionHeader()
                 }
 
-                VStack(alignment: .leading, spacing: OveaSpacing.sm) {
-                    Text("Énergie du jour").oveaOverline()
-                    EnergyPicker(selection: $energy)
-                }
-
-                VStack(alignment: .leading, spacing: OveaSpacing.sm) {
-                    Text("Filtres").oveaOverline()
+                Section {
                     HStack(spacing: OveaSpacing.sm) {
-                        OveaChip(title: "IG bas", systemImage: "leaf", isSelected: $igBas)
-                        OveaChip(title: "15 min ou moins", systemImage: "timer", isSelected: $express)
-                        OveaChip(title: "Sans lactose", isSelected: $sansLactose)
+                        OveaChip(title: "IG bas", isSelected: $igBas)
+                        OveaChip(title: "15 min ou moins", isSelected: $express)
+                    }
+                    OveaPrimaryButton(title: "Valider") {}
+                    Button("Commencer la séance") {}.buttonStyle(OveaTintedButtonStyle())
+                }
+                .listRowBackground(Color.clear)
+            }
+            .listStyle(.insetGrouped)
+            .scrollContentBackground(.hidden)
+            .background(OveaColor.background)
+            .navigationTitle(OveaGreeting.text(name: "Léa"))
+        }
+        .tint(OveaColor.accent)
+    }
+}
+
+/// Planche des états de la mascotte.
+private struct MascotBoard: View {
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: OveaSpacing.lg) {
+                ForEach(OveaMascotState.allCases) { state in
+                    VStack(spacing: OveaSpacing.xs) {
+                        OveaMascotView(state: state, size: 140)
+                        Text(state.rawValue).font(OveaFont.caption).foregroundStyle(OveaColor.textSecondary)
                     }
                 }
-
-                OveaCard(tint: MealCategory.diner.tint) {
-                    VStack(alignment: .leading, spacing: OveaSpacing.sm) {
-                        Label(MealCategory.diner.label, systemImage: MealCategory.diner.symbol)
-                            .font(OveaFont.caption)
-                            .foregroundStyle(MealCategory.diner.tint.foreground)
-                        Text("Dahl de lentilles corail et butternut")
-                            .font(OveaFont.title2)
-                            .foregroundStyle(OveaColor.textPrimary)
-                        Text("30 min · IG bas · réconfortant")
-                            .font(OveaFont.subheadline)
-                            .foregroundStyle(OveaColor.textSecondary)
-                    }
-                }
-
-                OveaBanner(
-                    kind: .warning,
-                    title: "Pas de règles notées depuis plus de 90 jours",
-                    message: "C'est fréquent avec le SOPK, et ça vaut le coup d'en parler à ton médecin.",
-                    actionTitle: "En savoir plus",
-                    action: {}
-                )
-
-                Text("02:41").oveaTimerStyle().foregroundStyle(OveaColor.textPrimary)
-                    .frame(maxWidth: .infinity)
-
-                OveaPrimaryButton(title: "Valider", systemImage: "checkmark") {}
-                OveaPrimaryButton(title: "Valider") {}.disabled(true)
-                Button("Ajouter aux courses") {}.buttonStyle(OveaSecondaryButtonStyle())
             }
             .padding(OveaSpacing.screenMargin)
         }
@@ -763,16 +860,27 @@ private struct DesignSystemGallery: View {
     }
 }
 
-#Preview("Ovéa — clair") {
+#Preview("Ovéa V3 — clair") {
     DesignSystemGallery()
 }
 
-#Preview("Ovéa — sombre") {
+#Preview("Ovéa V3 — sombre") {
     DesignSystemGallery()
         .preferredColorScheme(.dark)
 }
 
-#Preview("Ovéa — AX3") {
+#Preview("Ovéa V3 — AX3") {
     DesignSystemGallery()
         .dynamicTypeSize(.accessibility3)
+}
+
+#Preview("Mousse — tous les états") {
+    MascotBoard()
+}
+
+#Preview("Mousse — énergie basse, sombre") {
+    OveaMascotView(state: .energieBasse)
+        .padding()
+        .background(OveaColor.background)
+        .preferredColorScheme(.dark)
 }

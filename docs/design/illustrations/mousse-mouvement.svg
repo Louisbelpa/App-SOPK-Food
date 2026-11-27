@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="t d">
+<title id="t">Mousse bouge</title>
+<desc id="d">Mousse fait un petit saut, les deux bras levés, sa tige se balance.</desc>
+<ellipse cx="121" cy="205" rx="56" ry="6" fill="#2A2438" opacity=".12"/><path d="M62 204 h14 M164 204 h14" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/><g transform="rotate(-5 121 184)">
+<path d="M62.9 184 C44.4 184 35.2 164.4 38.8 142.8 C44.4 107.5 79.5 78 121.8 78 C166.2 78 199.5 105.5 203.2 144.8 C205.8 174.1 192.1 184 175.4 184 Z" fill="#CEC7DB"/>
+<path d="M203.2 144.8 C205.8 174.1 192.1 184 175.4 184 L87.4 184 C147.9 176.6 188.2 169.2 203.2 144.8 Z" fill="#B2A8C4"/>
+<circle cx="70.6" cy="122.5" r="3" fill="#B2A8C4"/><circle cx="79" cy="113" r="2" fill="#B2A8C4"/><circle cx="181.5" cy="162.8" r="2.4" fill="#B2A8C4"/>
+<path d="M62.9 184 C44.4 184 35.2 164.4 38.8 142.8 C44.4 107.5 79.5 78 121.8 78 C166.2 78 199.5 105.5 203.2 144.8 C205.8 174.1 192.1 184 175.4 184 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 68 C120 50 128.0 34 136 20" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(136 20) rotate(-62)" d="M0 0 C6 -9.6 17.3 -10.1 24 0 C17.3 7.2 6 7.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(123 50) rotate(200)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(127.7 36) rotate(-18)" d="M0 0 C5.2 -8.4 15.1 -8.8 21 0 C15.1 6.3 5.2 6.7 0 0 Z" fill="#8DB34A" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M86 90 C84 78 94 70 104 74 C108 64 124 62 130 70 C138 64 152 68 152 80 C158 82 160 90 154 94 C134 86 108 86 86 90 Z" fill="#8DB34A"/><path d="M92 88 C110 84 134 84 152 91 C138 87 110 87 92 88 Z" fill="#6F9736"/><circle cx="106" cy="79" r="2.6" fill="#6F9736"/><circle cx="136" cy="77" r="2.6" fill="#6F9736"/><path d="M86 90 C84 78 94 70 104 74 C108 64 124 62 130 70 C138 64 152 68 152 80 C158 82 160 90 154 94 C134 86 108 86 86 90 Z" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="89.9" cy="148" rx="9" ry="5" fill="#F4B49A"/><ellipse cx="155.4" cy="148" rx="9" ry="5" fill="#F4B49A"/>
+<path d="M99 133 Q105 125 111 133" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M134.3 133 Q140.3 125 146.3 133" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="122.7" cy="146.8" rx="3.4" ry="4" fill="#2A2438"/>
+<g transform="rotate(-5 121 184)"><rect x="-8" y="-36" width="16" height="36" rx="8" transform="translate(64 120) rotate(-38)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="-8" y="-36" width="16" height="36" rx="8" transform="translate(178 120) rotate(38)" fill="#CEC7DB" stroke="#2A2438" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g>
+</svg>
